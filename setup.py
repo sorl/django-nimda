@@ -9,7 +9,7 @@ setup(
     author='Mikko Hellsing',
     author_email='mikko@aino.com',
     url='http://github.com/aino/django-nimda',
-    packages=['exmodel'],
+    packages=['nimda'],
     install_requires=['Django>=1.8'],
     license='ICS',
     classifiers=[
