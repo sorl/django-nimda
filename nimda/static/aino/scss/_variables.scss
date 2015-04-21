@@ -1,0 +1,69 @@
+
+/* 	————————————————————————————————————————————————
+	 Measurements
+	———————————————————————————————————————————————— */
+$distance: 17px;
+
+
+/* 	————————————————————————————————————————————————
+	 Colors
+	———————————————————————————————————————————————— */
+/* Definitions */
+$color-steel: #3f5976;
+$color-blue: #479eff;
+$color-red-dark: #d31d1d;
+
+$colorGrey: (
+  'micro' : #f4f4f4,
+  'lightest' : #f6f6f6,
+  'lighter' : #e7e7e7,
+  'light': #ccc,
+  'base' : #b5b5b5,
+  'dark' : #9a9a9a,
+  'darker' : #767676,
+  'darkest' : #353535,
+  'jumbo' : #1f1f1f
+);
+
+/* Semantic Aliases */
+$color-site: $color-steel;
+$color-hero: $color-blue;
+$color-destroy: $color-red-dark;
+
+
+/* 	————————————————————————————————————————————————
+	 Type
+	———————————————————————————————————————————————— */
+$letterSpacing: 0.5px;
+$letterSpacing-large: 1px;
+
+$fontSizes: (
+  'micro': 8px,
+  'smallest': 9px,
+  'smaller': 11px,
+  'small': 12px,
+  'base': 13px,
+  'large': 15px,
+  'larger': 17px,
+  'largest': 20px,
+  'jumbo': 25px
+);
+
+
+/* 	————————————————————————————————————————————————
+	 Icons
+	———————————————————————————————————————————————— */
+$faIcons: (
+  'fa-exclamation-circle': '\f06a',
+  'fa-globe': '\f0ac',
+  'fa-trash': '\f1f8',
+  'fa-cloud-upload': '\f0ee'
+);
+
+$faSizes: (
+  1: 13px,
+  2: 15px,
+  3: 18px,
+  4: 20px,
+  5: 24px
+);

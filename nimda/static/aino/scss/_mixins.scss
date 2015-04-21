@@ -1,0 +1,25 @@
+
+
+@mixin faIcon($name, $size) {
+  // Alternate way of displaying Font Awesome icons.
+  // Used as a substitute to the standard, preferred way of <i class="fa fa-iconname"></i>
+  // when this is not feasible (like when you can't control the markup).
+
+  content: map-get($faIcons, $name);
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: map-get($faSizes, $size);
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transform: translate(0,0);
+}
+
+
+@mixin transition($prop: all, $duration: 300ms, $addWebkitToProp: false, $easing: cubic-bezier(0.080, 0.360, 0.040, 1.000)) {
+  @if $addWebkitToProp == true {
+    -webkit-transition: -webkit-#{$prop} $duration $easing;
+  } @else {
+    -webkit-transition: $prop $duration $easing;
+  }
+  transition: $prop $duration $easing;
+}

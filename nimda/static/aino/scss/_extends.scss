@@ -1,0 +1,48 @@
+%font-body {
+  font-family: 'Roboto', helvetica, arial, sans-serif;
+}
+%font-title {
+  font-family: 'Maven Pro', helvetica, arial, sans-serif;
+}
+%fontSize {
+  font-size: map-get($fontSizes, base);
+}
+
+%button-base {
+  padding: 5px 10px;
+  border: 1px solid $color-hero;
+  background: transparent;
+  color: $color-hero;
+  cursor: pointer;
+  display: inline-block;
+
+  &:hover {
+    background-color: $color-hero;
+    color: #fff;
+    text-decoration: none;
+  }
+}
+%textfield-base {
+  @extend %fontSize;
+  padding: 6px 8px;
+  border-radius: 2px;
+  border: 1px solid map-get($colorGrey, 'light');
+  border-bottom-width: 2px;
+
+  &::selection {
+    background: $color-hero; /* WebKit/Blink Browsers */
+    color: #fff;
+  }
+
+  &:focus {
+    outline: 0;
+    border-bottom-color: $color-hero;
+  }
+}
+
+%letterSpacing-normal {
+  letter-spacing: $letterSpacing;
+}
+%letterSpacing-large {
+  letter-spacing: $letterSpacing-large;
+}
