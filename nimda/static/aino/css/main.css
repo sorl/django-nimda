@@ -1,0 +1,331 @@
+@charset "UTF-8";
+/*  ————————————————————————————————————————————————
+     Imports
+    ———————————————————————————————————————————————— */
+@import url(http://fonts.googleapis.com/css?family=Maven+Pro:400,500);
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+/* 	————————————————————————————————————————————————
+	 Measurements
+	———————————————————————————————————————————————— */
+/* 	————————————————————————————————————————————————
+	 Colors
+	———————————————————————————————————————————————— */
+/* Definitions */
+/* Semantic Aliases */
+/* 	————————————————————————————————————————————————
+	 Type
+	———————————————————————————————————————————————— */
+/* 	————————————————————————————————————————————————
+	 Icons
+	———————————————————————————————————————————————— */
+@import url(//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css);
+body {
+  font-family: 'Roboto', helvetica, arial, sans-serif; }
+
+h1, fieldset > h2:first-of-type, .selector h2 {
+  font-family: 'Maven Pro', helvetica, arial, sans-serif; }
+
+input[type="text"], input[type="password"], .vTextField, #changelist form #searchbar, body, label {
+  font-size: 13px; }
+
+.object-tools li a, .button, .submit-row input, #changelist form input[type="submit"] {
+  padding: 5px 10px;
+  border: 1px solid #479eff;
+  background: transparent;
+  color: #479eff;
+  cursor: pointer;
+  display: inline-block; }
+  .object-tools li a:hover, .button:hover, .submit-row input:hover, #changelist form input[type="submit"]:hover {
+    background-color: #479eff;
+    color: #fff;
+    text-decoration: none; }
+
+input[type="text"], input[type="password"], .vTextField, #changelist form #searchbar {
+  padding: 6px 8px;
+  border-radius: 2px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px; }
+  input[type="text"]::selection, input[type="password"]::selection, .vTextField::selection, #changelist form #searchbar::selection {
+    background: #479eff;
+    /* WebKit/Blink Browsers */
+    color: #fff; }
+  input[type="text"]:focus, input[type="password"]:focus, .vTextField:focus, #changelist form #searchbar:focus {
+    outline: 0;
+    border-bottom-color: #479eff; }
+
+body {
+  letter-spacing: 0.5px; }
+
+fieldset > h2:first-of-type, .selector h2 {
+  letter-spacing: 1px; }
+
+/*  ————————————————————————————————————————————————
+     Resets
+    ———————————————————————————————————————————————— */
+html, body {
+  min-height: 100%;
+  background: #f4f4f4;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  padding: 0;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale; }
+
+input, select {
+  font-family: inherit;
+  font-size: inherit; }
+
+::selection {
+  background: #479eff;
+  /* WebKit/Blink Browsers */
+  color: #fff; }
+
+/*  ————————————————————————————————————————————————
+     Main
+    ———————————————————————————————————————————————— */
+body {
+  background: #f4f4f4;
+  color: #333;
+  padding: 17px;
+  padding-top: 120px;
+  /* for fixed header */
+  padding-bottom: 50px;
+  /* for .submit-row */ }
+  body.popup {
+    padding: 20px; }
+
+h1 {
+  text-transform: uppercase; }
+
+a {
+  text-decoration: none;
+  color: #479eff;
+  border-bottom: 1px solid transparent; }
+  a:hover {
+    text-decoration: underline; }
+
+/*  ————————————————————————————————————————————————
+     Header
+    ———————————————————————————————————————————————— */
+#header {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background-color: #fff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15); }
+
+#branding {
+  background-color: #3f5976;
+  padding: 0 17px; }
+
+#site-name {
+  margin: 0; }
+  #site-name:before {
+    content: "";
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: 18px;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate(0, 0);
+    color: #fff;
+    margin-right: 10px; }
+  #site-name a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5); }
+
+#user-tools {
+  position: absolute;
+  top: 5px;
+  text-align: right;
+  right: 20px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 35px;
+  text-transform: uppercase;
+  font-size: 12px; }
+  #user-tools strong:first-of-type:after {
+    content: " ";
+    display: block; }
+  #user-tools a {
+    text-transform: none; }
+
+#content h1:first-of-type {
+  position: fixed;
+  z-index: 10;
+  top: 42px;
+  font-size: 16px;
+  -webkit-font-smoothing: subpixel-antialiased; }
+
+body.popup #content h1:first-of-type {
+  position: static; }
+
+#header + .breadcrumbs {
+  position: fixed;
+  z-index: 10;
+  top: 72px;
+  font-size: 14px;
+  margin-left: -2px; }
+  #header + .breadcrumbs a {
+    margin: 0 2px; }
+
+/*   ————————————————————————————————————————————————
+    Content
+  ———————————————————————————————————————————————— */
+.object-tools {
+  list-style: none;
+  margin: 0 0 20px;
+  padding: 0; }
+  .object-tools li {
+    display: inline-block; }
+    .object-tools li + li {
+      margin-left: 10px; }
+
+table {
+  text-align: left; }
+
+fieldset {
+  padding: 0;
+  background-color: #fff;
+  border: 0;
+  border-right: 3px solid rgba(0, 0, 0, 0.07);
+  border-bottom: 3px solid rgba(0, 0, 0, 0.07);
+  margin: 0 0 17px 0; }
+  fieldset > h2:first-of-type {
+    margin: 0;
+    background-color: #479eff;
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-right: 3px solid rgba(71, 158, 255, 0.5);
+    position: relative; }
+    fieldset > h2:first-of-type:after {
+      content: " ";
+      position: absolute;
+      right: -6px;
+      width: 3px;
+      height: 100%;
+      bottom: 0;
+      background-color: #1e88ff; }
+
+.aligned label {
+  width: 10em;
+  padding-top: 6px; }
+
+p.help {
+  color: #b5b5b5;
+  margin-top: 5px; }
+
+form .aligned p, form .aligned ul {
+  margin-left: 10em; }
+
+.form-row {
+  border-bottom: 0; }
+  .form-row:first-of-type {
+    padding-top: 15px; }
+  .form-row:last-of-type {
+    border-bottom: 0;
+    padding-bottom: 15px; }
+
+/*   ————————————————————————————————————————————————
+   Submit row
+  ———————————————————————————————————————————————— */
+.submit-row {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  background: #fff;
+  border: 0;
+  padding: 13px 17px;
+  border-top: 1px solid rgba(0, 0, 0, 0.15); }
+  .submit-row p {
+    margin: 0; }
+  .submit-row .deletelink-box {
+    position: relative; }
+    .submit-row .deletelink-box a.deletelink {
+      display: block;
+      padding-left: 0;
+      background: none;
+      border: 1px solid #d31d1d;
+      padding: 5px 10px;
+      position: relative;
+      color: #d31d1d; }
+      .submit-row .deletelink-box a.deletelink:before {
+        content: "";
+        font: normal normal normal 14px/1 FontAwesome;
+        font-size: 18px;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        transform: translate(0, 0);
+        margin-right: 10px;
+        position: relative;
+        top: 1px; }
+      .submit-row .deletelink-box a.deletelink:hover {
+        text-decoration: none;
+        color: #fff;
+        background-color: #d31d1d; }
+
+/*   ————————————————————————————————————————————————
+   Selector
+  ———————————————————————————————————————————————— */
+.selector h2 {
+  margin: 0;
+  text-transform: uppercase;
+  font-size: 13px;
+  padding: 6px;
+  border: 0; }
+.selector .selector-filter {
+  border-color: #e7e7e7;
+  padding: 9px; }
+.selector .selector-available h2 {
+  background: #f6f6f6; }
+.selector .selector-chosen h2 {
+  background: #eef6ff;
+  color: #479eff; }
+.selector select {
+  border-color: #e7e7e7;
+  padding: 8px;
+  font-size: 13px;
+  height: 200px; }
+  .selector select:active, .selector select:focus {
+    outline: none;
+    border-color: #479eff; }
+
+/*   ————————————————————————————————————————————————
+   Changelist
+  ———————————————————————————————————————————————— */
+#changelist #toolbar {
+  padding: 10px;
+  background: #fff; }
+  #changelist #toolbar img {
+    display: none; }
+#changelist .actions {
+  background: none;
+  padding: 5px; }
+  #changelist .actions select {
+    -webkit-appearance: none;
+    font-size: 13px;
+    border-radius: 0;
+    margin-right: 5px; }
+  #changelist .actions .button {
+    font-size: inherit;
+    padding: inherit; }
+#changelist .paginator {
+  background: none; }
+#changelist form input[type="submit"] {
+  display: none; }
+
+/*# sourceMappingURL=main.css.map */
