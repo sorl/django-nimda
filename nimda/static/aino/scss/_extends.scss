@@ -26,7 +26,8 @@
   @extend %fontSize;
   padding: 6px 8px;
   border-radius: 2px;
-  border: 1px solid map-get($colorGrey, 'light');
+  border: 1px solid map-get($colorGrey, 'lighter');
+  border-bottom-color: map-get($colorGrey, 'light');
   border-bottom-width: 2px;
 
   &::selection {

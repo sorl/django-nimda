@@ -21,6 +21,10 @@ input, select { font-family: inherit; font-size: inherit; }
   color: #fff;
 }
 
+th {
+  font-weight: inherit;
+}
+
 /*  ————————————————————————————————————————————————
      Main
     ———————————————————————————————————————————————— */
@@ -115,11 +119,16 @@ a {
   }
 }
 
-#content h1:first-of-type {
+#content-main {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+#content > h1:first-of-type {
   position: fixed;
   z-index: 10;
   top: 42px;
   font-size: 16px;
+  font-weight: 500;
   -webkit-font-smoothing: subpixel-antialiased;
 }
 body.popup #content h1:first-of-type {
@@ -158,7 +167,11 @@ body.popup #content h1:first-of-type {
     a {
       @extend %button-base;
 
-
+      &.addlink {
+        &:before {
+          @include faIcon('fa-plus')
+        }
+      }
     }
   }
 }
@@ -171,8 +184,8 @@ fieldset {
   padding: 0;
   background-color: #fff;
   border: 0;
-  border-right: 3px solid rgba(0,0,0,0.07);
-  border-bottom: 3px solid rgba(0,0,0,0.07);
+  border-right: $border-grey;
+  border-bottom: $border-grey;
   margin: 0 0 $distance 0;
 
   > h2:first-of-type {
@@ -339,25 +352,140 @@ input[type="text"], input[type="password"], .vTextField {
 /*   ————————————————————————————————————————————————
    Changelist
   ———————————————————————————————————————————————— */
+.change-list .filtered {
+  background: #fff !important;
+}
 #changelist {
+  border-right: $border-grey;
+  border-bottom: $border-grey;
+
+  #changelist-filter {
+    background: none;
+    width: 140px;
+    border-left: 0;
+
+    ul {
+      margin-left: 0;
+      margin-top: 5px;
+
+      li {
+        padding-left: 0;
+        border-left: 0;
+
+        &.selected {
+          margin-left: 0;
+          a {
+            color: $color-hero !important;
+          }
+        }
+      }
+    }
+
+
+    a {
+      display: block;
+      cursor: pointer;
+
+      &:hover {
+        color: inherit;
+        text-decoration: none;
+      }
+    }
+
+    h2 {
+      border-bottom: 0;
+      text-transform: uppercase;
+      background: $color-hero;
+      color: #fff;
+      position: relative;
+
+      &:after {
+        content: " ";
+        position: absolute;
+        width: 3px;
+        top: 0;
+        height: 19px;
+        right: -3px;
+        background-color: darken($color-hero, 8%);
+      }
+    }
+  }
+
+  .paginator {
+    border-bottom: 0;
+    border-right: 0;
+    padding-left: 10px;
+  }
+
   #toolbar {
-    padding: 10px;
     background: #fff;
+    float: right;
+    margin: 5px 0 0;
+    border-bottom-width: 0;
+    position: relative;
+    right: -3px;
 
     img {
       display: none;
+    }
+
+    form #searchbar {
+      @extend %textfield-base;
+      max-width: 140px;
+      // padding: 10px;
+    }
+  }
+
+  #result_list {
+    thead {
+      a {
+        color: #000;
+        -webkit-font-smoothing: subpixel-antialiased;
+      }
+    }
+  }
+
+  table {
+    tbody {
+      td, th {
+        border-left: 0;
+
+        &:first-child {
+          border-right: 0;
+        }
+      }
+    }
+    thead {
+      th {
+        padding: 5px 2px;
+        border-bottom: 1px solid map-get($colorGrey, 'base');
+      }
     }
   }
 
   .actions {
     background: none;
-    padding: 5px;
+    padding: 8px 5px;
+    border-right: 0;
 
     select {
       -webkit-appearance: none;
       font-size: map-get($fontSizes, 'base');
       border-radius: 0;
+      border: 1px solid map-get($colorGrey, 'light');
       margin-right: 5px;
+      padding: 7px 35px 7px 7px;
+      background: url(../img/select-arrows.png) no-repeat right 13px;
+      background-size: 25px 50px;
+
+      &:focus, &:active {
+        border-color: $color-hero;
+        outline: none;
+      }
+
+      &:hover {
+        background-position: right -27px;
+      }
     }
 
     .button {
@@ -376,8 +504,6 @@ input[type="text"], input[type="password"], .vTextField {
       display: none;
     }
 
-    #searchbar {
-      @extend %textfield-base;
-    }
+
   }
 }
