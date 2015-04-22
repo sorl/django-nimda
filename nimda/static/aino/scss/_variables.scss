@@ -13,6 +13,8 @@ $color-steel: #3f5976;
 $color-blue: #479eff;
 $color-red-dark: #d31d1d;
 
+$border-grey: 3px solid rgba(0,0,0,0.07);
+
 $colorGrey: (
   'micro' : #f4f4f4,
   'lightest' : #f6f6f6,
@@ -57,7 +59,8 @@ $faIcons: (
   'fa-exclamation-circle': '\f06a',
   'fa-globe': '\f0ac',
   'fa-trash': '\f1f8',
-  'fa-cloud-upload': '\f0ee'
+  'fa-cloud-upload': '\f0ee',
+  'fa-plus': '\f067'
 );
 
 $faSizes: (

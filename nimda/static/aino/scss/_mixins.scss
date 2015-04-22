@@ -1,6 +1,6 @@
 
 
-@mixin faIcon($name, $size) {
+@mixin faIcon($name, $size: 1) {
   // Alternate way of displaying Font Awesome icons.
   // Used as a substitute to the standard, preferred way of <i class="fa fa-iconname"></i>
   // when this is not feasible (like when you can't control the markup).
