@@ -65,10 +65,10 @@ input[type="text"], input[type="password"], input[type="number"], .vTextField, .
     border-bottom-color: #479eff; }
 
 body, .module > h2:first-of-type, .module caption {
-  letter-spacing: 0.5px; }
+  letter-spacing: 0.25px; }
 
 .selector h2 {
-  letter-spacing: 1px; }
+  letter-spacing: 0.75px; }
 
 /*  ————————————————————————————————————————————————
      Resets
@@ -148,7 +148,6 @@ a {
     background-color: #7a8ba0; }
 
 #branding {
-  background-color: #7a8ba0;
   max-width: 1100px;
   margin-left: auto;
   margin-right: auto; }
@@ -269,7 +268,7 @@ table {
   margin: 0;
   background-color: #c4cdd8;
   color: #fff;
-  padding: 5px 10px;
+  padding: 5px 13px;
   font-size: 13px;
   font-weight: bold;
   text-transform: uppercase;
@@ -285,7 +284,22 @@ table {
     background-color: #abb8c8; }
 
 #recent-actions-module h3 {
-  padding-left: 10px; }
+  padding-left: 13px; }
+#recent-actions-module .actionlist {
+  padding-left: 0; }
+  #recent-actions-module .actionlist li {
+    padding: 5px 13px;
+    border-bottom: 1px solid #f6f6f6; }
+    #recent-actions-module .actionlist li:nth-child(even) {
+      background-color: #fdfdfd; }
+    #recent-actions-module .actionlist li br {
+      display: none; }
+    #recent-actions-module .actionlist li span {
+      color: #b5b5b5; }
+      #recent-actions-module .actionlist li span:before {
+        content: "("; }
+      #recent-actions-module .actionlist li span:after {
+        content: ")"; }
 
 .required label, label.required {
   color: #7a8ba0 !important; }
@@ -314,6 +328,9 @@ form .aligned p, form .aligned ul {
   margin-left: 130px;
   padding-left: 0; }
 
+form .wide p.help {
+  margin-left: 197px; }
+
 .form-row {
   border-bottom: 0; }
   .form-row:first-of-type {
@@ -321,6 +338,21 @@ form .aligned p, form .aligned ul {
   .form-row:last-of-type {
     border-bottom: 0;
     padding-bottom: 15px; }
+
+select:not([multiple]) {
+  -webkit-appearance: none;
+  font-size: 13px;
+  border-radius: 0;
+  border: 1px solid #ccc;
+  margin-right: 5px;
+  padding: 7px 35px 7px 7px;
+  background: url(../img/select-arrows.png) no-repeat right 13px;
+  background-size: 25px 50px; }
+  select:not([multiple]):focus, select:not([multiple]):active {
+    border-color: #479eff;
+    outline: none; }
+  select:not([multiple]):hover {
+    background-position: right -30px; }
 
 /*   ————————————————————————————————————————————————
    Submit row
@@ -335,17 +367,9 @@ form .aligned p, form .aligned ul {
   margin: 0;
   background: #fff;
   border: 0;
-  padding: 13px 17px; }
-  .submit-row:before {
-    content: " ";
-    border-top: 3px solid rgba(0, 0, 0, 0.07);
-    position: fixed;
-    z-index: -1;
-    left: -100%;
-    right: -100%;
-    background: #fff;
-    height: 57px;
-    bottom: 0; }
+  padding: 13px 17px;
+  border-right: 3px solid rgba(0, 0, 0, 0.07);
+  border-top: 3px solid rgba(0, 0, 0, 0.07); }
   .submit-row p {
     margin: 0; }
   .submit-row .deletelink-box {
@@ -409,6 +433,10 @@ form .aligned p, form .aligned ul {
 .selector .selector-filter {
   border-color: #e7e7e7;
   padding: 9px; }
+  .selector .selector-filter label {
+    margin-right: 4px;
+    margin-top: 5px;
+    padding: 0; }
 .selector .selector-available h2 {
   background: #f6f6f6; }
 .selector .selector-chosen h2 {
@@ -497,20 +525,6 @@ form .aligned p, form .aligned ul {
     background: none;
     padding: 8px 5px;
     border-right: 0; }
-    #changelist .actions select {
-      -webkit-appearance: none;
-      font-size: 13px;
-      border-radius: 0;
-      border: 1px solid #ccc;
-      margin-right: 5px;
-      padding: 7px 35px 7px 7px;
-      background: url(../img/select-arrows.png) no-repeat right 13px;
-      background-size: 25px 50px; }
-      #changelist .actions select:focus, #changelist .actions select:active {
-        border-color: #479eff;
-        outline: none; }
-      #changelist .actions select:hover {
-        background-position: right -30px; }
     #changelist .actions .button {
       font-size: inherit;
       padding: inherit; }
@@ -520,9 +534,12 @@ form .aligned p, form .aligned ul {
     display: none; }
 
 /*   ————————————————————————————————————————————————
-   Inline list
+   Inline
   ———————————————————————————————————————————————— */
 .inline-related.tabular fieldset.module table {
   padding: 8px; }
+
+.inline-deletelink {
+  float: left; }
 
 /*# sourceMappingURL=main.css.map */
