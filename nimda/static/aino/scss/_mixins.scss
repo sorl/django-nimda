@@ -1,4 +1,13 @@
 
+@mixin adminBox() {
+  padding: 0;
+  background-color: #fff;
+  border: 0;
+  border-right: $border-grey;
+  border-bottom: $border-grey;
+  // margin: 0 0 $distance 0;
+  margin-bottom: $distance;
+}
 
 @mixin faIcon($name, $size: 1) {
   // Alternate way of displaying Font Awesome icons.

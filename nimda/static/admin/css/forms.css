@@ -249,11 +249,11 @@ body.popup .submit-row {
 
 /* INLINES */
 
-.inline-group {
+/*.inline-group {
     padding: 0;
     border: 1px solid #ccc;
     margin: 10px 0;
-}
+}*/
 
 .inline-group .aligned label {
     width: 8em;
@@ -284,7 +284,7 @@ body.popup .submit-row {
 .inline-related fieldset {
     margin: 0;
     background: #fff;
-    border: none;
+    /*border: none;*/
     width: 100%;
 }
 
@@ -299,8 +299,8 @@ body.popup .submit-row {
 }
 
 .inline-group .tabular fieldset.module {
-    border: none;
-    border-bottom: 1px solid #ddd;
+    /*border: none;*/
+    /*border-bottom: 1px solid #ddd;*/
 }
 
 .inline-related.tabular fieldset.module table {
@@ -308,7 +308,7 @@ body.popup .submit-row {
 }
 
 .last-related fieldset {
-    border: none;
+    /*border: none;*/
 }
 
 .inline-group .tabular tr.has_original td {
@@ -349,13 +349,13 @@ body.popup .submit-row {
     padding: 0 5px;
 }
 
-.inline-group div.add-row,
+/*.inline-group div.add-row,
 .inline-group .tabular tr.add-row td {
     color: #666;
     padding: 3px 5px;
     border-bottom: 1px solid #ddd;
     background: #e1e1e1 url(../img/nav-bg.gif) top left repeat-x;
-}
+}*/
 
 .inline-group .tabular tr.add-row td {
     padding: 4px 5px 3px;
