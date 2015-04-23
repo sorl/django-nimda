@@ -95,7 +95,7 @@ a {
 }
 
 #branding {
-  background-color: $color-site;
+  // background-color: $color-site;
   max-width: 1100px;
   margin-left: auto;
   margin-right: auto;
@@ -154,6 +154,8 @@ a {
   margin-left: auto;
   margin-right: auto;
 }
+
+
 #content {
   max-width: 1100px;
   margin-left: auto;
@@ -266,7 +268,7 @@ table {
     margin: 0;
     background-color: $color-sidekick;
     color: #fff;
-    padding: 5px 10px;
+    padding: 5px 13px;
     font-size: 13px;
     font-weight: bold;
     text-transform: uppercase;
@@ -287,7 +289,30 @@ table {
 
 #recent-actions-module {
   h3 {
-    padding-left: 10px;
+    padding-left: 13px;
+  }
+
+  .actionlist {
+    padding-left: 0;
+
+    li {
+      padding: 5px 13px;
+      border-bottom: 1px solid map-get($colorGrey, 'lightest');
+
+      &:nth-child(even) {
+        background-color: map-get($colorGrey, 'micro');
+      }
+
+      br {
+        display: none;
+      }
+
+      span {
+        color: map-get($colorGrey, 'base');
+        &:before { content: "(" };
+        &:after { content: ")" };
+      }
+    }
   }
 }
 
@@ -323,6 +348,10 @@ form .aligned p, form .aligned ul {
   padding-left: 0;
 }
 
+form .wide p.help {
+  margin-left: 197px;
+}
+
 .form-row {
   border-bottom: 0;
 
@@ -340,10 +369,33 @@ input[type="text"], input[type="password"], input[type="number"], .vTextField, .
   @extend %textfield-base;
 }
 
+select:not([multiple]) {
+  -webkit-appearance: none;
+  font-size: map-get($fontSizes, 'base');
+  border-radius: 0;
+  border: 1px solid map-get($colorGrey, 'light');
+  margin-right: 5px;
+  padding: 7px 35px 7px 7px;
+  background: url(../img/select-arrows.png) no-repeat right 13px;
+  background-size: 25px 50px;
+
+  &:focus, &:active {
+    border-color: $color-hero;
+    outline: none;
+  }
+
+  &:hover {
+    background-position: right -30px;
+  }
+}
+
 .button {
   @extend %button-base;
 }
 
+// a.addlink, a.changelink {
+//   @extend %button-base;
+// }
 
 /*   ————————————————————————————————————————————————
    Submit row
@@ -359,18 +411,20 @@ input[type="text"], input[type="password"], input[type="number"], .vTextField, .
   background: #fff;
   border: 0;
   padding: 13px $distance;
+  border-right: $border-grey;
+  border-top: $border-grey;
 
-  &:before {
-    content: " ";
-    border-top: $border-grey;
-    position: fixed;
-    z-index: -1;
-    left: -100%;
-    right: -100%;
-    background: #fff;
-    height: 57px;
-    bottom: 0;
-  }
+  // &:before {
+  //   content: " ";
+  //   border-top: $border-grey;
+  //   position: fixed;
+  //   z-index: -1;
+  //   left: -100%;
+  //   right: -100%;
+  //   background: #fff;
+  //   height: 57px;
+  //   bottom: 0;
+  // }
 
   p {
     margin: 0;
@@ -430,7 +484,7 @@ input[type="text"], input[type="password"], input[type="number"], .vTextField, .
     &:before {
       @include faIcon('fa-exclamation-circle');
       margin-right: 6px;
-      color: map-get($colorGrey, 'dark')
+      color: map-get($colorGrey, 'dark');
     }
   }
 }
@@ -457,6 +511,12 @@ input[type="text"], input[type="password"], input[type="number"], .vTextField, .
   .selector-filter {
     border-color: map-get($colorGrey, 'lighter');
     padding: 9px;
+
+    label {
+      margin-right: 4px;
+      margin-top: 5px;
+      padding: 0;
+    }
   }
 
   .selector-available h2 {
@@ -473,7 +533,6 @@ input[type="text"], input[type="password"], input[type="number"], .vTextField, .
     padding: 8px;
     font-size: map-get($fontSizes, 'base');
     height: 200px;
-
 
     &:active, &:focus {
       outline: none;
@@ -606,26 +665,6 @@ input[type="text"], input[type="password"], input[type="number"], .vTextField, .
     padding: 8px 5px;
     border-right: 0;
 
-    select {
-      -webkit-appearance: none;
-      font-size: map-get($fontSizes, 'base');
-      border-radius: 0;
-      border: 1px solid map-get($colorGrey, 'light');
-      margin-right: 5px;
-      padding: 7px 35px 7px 7px;
-      background: url(../img/select-arrows.png) no-repeat right 13px;
-      background-size: 25px 50px;
-
-      &:focus, &:active {
-        border-color: $color-hero;
-        outline: none;
-      }
-
-      &:hover {
-        background-position: right -30px;
-      }
-    }
-
     .button {
       font-size: inherit;
       padding: inherit;
@@ -648,7 +687,7 @@ input[type="text"], input[type="password"], input[type="number"], .vTextField, .
 
 
 /*   ————————————————————————————————————————————————
-   Inline list
+   Inline
   ———————————————————————————————————————————————— */
 .inline-group {
   ul.tools a.add, div.add-row a, .tabular tr.add-row td a {
@@ -658,4 +697,8 @@ input[type="text"], input[type="password"], input[type="number"], .vTextField, .
 
 .inline-related.tabular fieldset.module table {
   padding: 8px;
+}
+
+.inline-deletelink {
+  float: left;
 }

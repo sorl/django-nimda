@@ -272,11 +272,11 @@
     border-bottom: none;
 }
 
-#changelist .actions select {
+/*#changelist .actions select {
     border: 1px solid #aaa;
     margin-left: 0.5em;
     padding: 1px 2px;
-}
+}*/
 
 #changelist .actions label {
     font-size: 11px;
