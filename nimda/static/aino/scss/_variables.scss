@@ -9,7 +9,8 @@ $distance: 17px;
 	 Colors
 	———————————————————————————————————————————————— */
 /* Definitions */
-$color-steel: #3f5976;
+$color-steel: #7a8ba0;
+$color-steel-light: #c4cdd8;
 $color-blue: #479eff;
 $color-red-dark: #d31d1d;
 
@@ -29,6 +30,7 @@ $colorGrey: (
 
 /* Semantic Aliases */
 $color-site: $color-steel;
+$color-sidekick: $color-steel-light;
 $color-hero: $color-blue;
 $color-destroy: $color-red-dark;
 

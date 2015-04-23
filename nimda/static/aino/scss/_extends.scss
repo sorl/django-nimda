@@ -11,8 +11,11 @@
 %button-base {
   padding: 5px 10px;
   border: 1px solid $color-hero;
-  background: transparent;
-  color: $color-hero;
+  border-bottom-width: 2px;
+  transition: all 100ms;
+  background: lighten($color-hero, 10%);
+  // color: $color-hero;
+  color: #fff;
   cursor: pointer;
   display: inline-block;
 
@@ -21,6 +24,14 @@
     color: #fff;
     text-decoration: none;
   }
+}
+%adminBox {
+  padding: 0;
+  background-color: #fff;
+  border: 0;
+  border-right: $border-grey;
+  border-bottom: $border-grey;
+  margin: 0 0 $distance 0;
 }
 %textfield-base {
   @extend %fontSize;

@@ -21,6 +21,10 @@ input, select { font-family: inherit; font-size: inherit; }
   color: #fff;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 th {
   font-weight: inherit;
 }
@@ -35,9 +39,11 @@ body {
   @extend %fontSize;
   background: #f4f4f4;
   color:#333;
-  padding: $distance;
+  // padding: $distance;
+  padding-left: $distance;
+  padding-right: $distance;
   padding-top: 120px; /* for fixed header */
-  padding-bottom: 50px; /* for .submit-row */
+  padding-bottom: 60px; /* for .submit-row */
 
   &.popup {
     padding: 20px;
@@ -51,7 +57,7 @@ h1 {
 
 a {
   text-decoration: none;
-  color: $color-hero;
+  color: $color-blue;
   border-bottom: 1px solid transparent;
 
   &:hover {
@@ -66,17 +72,33 @@ a {
 #header {
   position: fixed;
   z-index: 10;
+  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
   top: 0;
-  left: 0;
-  right: 0;
+  padding: 0 $distance;
   height: 100px;
   background-color: #fff;
-  border-bottom: 1px solid rgba(0,0,0,0.15);
+  border-bottom: 3px solid rgba(0,0,0,0.07);
+
+  &:before {
+    content: " ";
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 42px;
+    // border-bottom: 1px solid rgba(0,0,0,0.4);
+    background-color: $color-site;
+  }
 }
 
 #branding {
   background-color: $color-site;
-  padding: 0 $distance;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #site-name {
@@ -95,17 +117,19 @@ a {
     display: inline-block;
     vertical-align: middle;
     padding: 10px 0;
-    border-bottom: 1px solid rgba(0,0,0,0.5);
   }
 }
 
 #user-tools {
-  position: absolute;
-  top: 5px;
+  position: relative;
+  top: -40px;
+  width: 100%;
+  max-width: 1100px;
   text-align: right;
-  right: 20px;
+  margin-left: auto;
+  margin-right: auto;
   color: rgba(255,255,255,0.7);
-  line-height: 35px;
+  line-height: 40px;
   text-transform: uppercase;
   font-size: 12px;
 
@@ -119,18 +143,32 @@ a {
   }
 }
 
-#content-main {
+#container {
   max-width: 1100px;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
 }
-#content > h1:first-of-type {
-  position: fixed;
-  z-index: 10;
-  top: 42px;
-  font-size: 16px;
-  font-weight: 500;
-  -webkit-font-smoothing: subpixel-antialiased;
+
+#content-main, .module {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
 }
+#content {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+
+  & > h1:first-of-type {
+    position: fixed;
+    z-index: 10;
+    top: 42px;
+    font-size: 16px;
+    font-weight: 500;
+    -webkit-font-smoothing: subpixel-antialiased;
+  }
+}
+
 body.popup #content h1:first-of-type {
   position: static;
 }
@@ -178,27 +216,61 @@ body.popup #content h1:first-of-type {
 
 table {
   text-align: left;
+
+  caption {
+    text-transform: uppercase;
+    @extend %font-title;
+    text-align: left;
+    font-weight: 500;
+    font-size: map-get($fontSizes, 'large');
+    letter-spacing: 0;
+
+    a.section {
+      color: inherit;
+      cursor: default;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  caption + tbody {
+    tr {
+      th, td {
+        padding: 3px 10px;
+      }
+
+      &:last-of-type {
+        th, td {
+          padding-bottom: 10px;
+        }
+      }
+      &:first-of-type {
+        th,td {
+          padding-top: 10px;
+        }
+      }
+    }
+  }
 }
 
-fieldset {
-  padding: 0;
-  background-color: #fff;
-  border: 0;
-  border-right: $border-grey;
-  border-bottom: $border-grey;
-  margin: 0 0 $distance 0;
+.module {
+  @extend %adminBox;
 
-  > h2:first-of-type {
+
+
+  > h2:first-of-type, caption {
     @extend %font-title;
-    @extend %letterSpacing-large;
+    @extend %letterSpacing-normal;
     margin: 0;
-    background-color: $color-hero;
+    background-color: $color-sidekick;
     color: #fff;
     padding: 5px 10px;
     font-size: 13px;
     font-weight: bold;
     text-transform: uppercase;
-    border-right: 3px solid rgba($color-hero, 0.5);
+    border-right: 3px solid rgba($color-sidekick, 0.5);
     position: relative;
 
     &:after {
@@ -208,8 +280,14 @@ fieldset {
       width: 3px;
       height: 100%;
       bottom: 0;
-      background-color: darken($color-hero, 8%);
+      background-color: darken($color-sidekick, 8%);
     }
+  }
+}
+
+#recent-actions-module {
+  h3 {
+    padding-left: 10px;
   }
 }
 
@@ -217,18 +295,32 @@ label {
   @extend %fontSize;
 }
 
+.required label, label.required {
+  color: $color-site !important;
+}
+
+.errornote {
+  color: $color-destroy;
+
+  &:before {
+    @include faIcon('fa-exclamation-circle')
+  }
+}
+
 .aligned label {
   width: 10em;
   padding-top: 6px;
 }
 
-p.help {
+form .aligned p.help {
   color: map-get($colorGrey, 'base');
   margin-top: 5px;
+  padding-left: 0;
 }
 
 form .aligned p, form .aligned ul {
-  margin-left: 10em;
+  margin-left: 130px;
+  padding-left: 0;
 }
 
 .form-row {
@@ -244,7 +336,7 @@ form .aligned p, form .aligned ul {
   }
 }
 
-input[type="text"], input[type="password"], .vTextField {
+input[type="text"], input[type="password"], input[type="number"], .vTextField, .vLargeTextField {
   @extend %textfield-base;
 }
 
@@ -259,13 +351,26 @@ input[type="text"], input[type="password"], .vTextField {
 .submit-row {
   position: fixed;
   bottom: 0;
-  left: 0;
-  right: 0;
+  transform: translateX(-50%);
+  left: 50%;
+  width: 100%;
+  max-width: 1100px;
   margin: 0;
   background: #fff;
   border: 0;
   padding: 13px $distance;
-  border-top: 1px solid rgba(0,0,0,0.15);
+
+  &:before {
+    content: " ";
+    border-top: $border-grey;
+    position: fixed;
+    z-index: -1;
+    left: -100%;
+    right: -100%;
+    background: #fff;
+    height: 57px;
+    bottom: 0;
+  }
 
   p {
     margin: 0;
@@ -273,21 +378,21 @@ input[type="text"], input[type="password"], .vTextField {
 
   input {
     @extend %button-base;
-
-
   }
 
   .deletelink-box {
     position: relative;
 
     a.deletelink {
-      display: block;
-      padding-left: 0;
-      background: none;
-      border: 1px solid $color-destroy;
+      @extend %button-base;
+      // display: block;
+      // padding-left: 0;
+      // background: none;
+      background-color: lighten($color-destroy, 15%);
+      border-color: $color-destroy;
       padding: 5px 10px;
       position: relative;
-      color: $color-destroy;
+
 
       &:before {
         @include faIcon(fa-trash, 3);
@@ -298,11 +403,40 @@ input[type="text"], input[type="password"], .vTextField {
 
       &:hover {
         text-decoration: none;
-        color: #fff;
         background-color: $color-destroy;
       }
     }
   }
+}
+
+
+/*   ————————————————————————————————————————————————
+   Message & Error list
+  ———————————————————————————————————————————————— */
+
+.messagelist, .errorlist {
+  padding: 0;
+  margin-left: 0;
+
+  li { list-style: none; }
+}
+
+.messagelist {
+  .success {
+    background: map-get($colorGrey, 'lighter');
+    border-bottom: 3px solid map-get($colorGrey, 'light');
+    padding: 10px;
+
+    &:before {
+      @include faIcon('fa-exclamation-circle');
+      margin-right: 6px;
+      color: map-get($colorGrey, 'dark')
+    }
+  }
+}
+
+.errorlist {
+  color: $color-destroy;
 }
 
 
@@ -363,6 +497,10 @@ input[type="text"], input[type="password"], .vTextField {
     background: none;
     width: 140px;
     border-left: 0;
+
+    h3 {
+      font-weight: 500;
+    }
 
     ul {
       margin-left: 0;
@@ -484,7 +622,7 @@ input[type="text"], input[type="password"], .vTextField {
       }
 
       &:hover {
-        background-position: right -27px;
+        background-position: right -30px;
       }
     }
 
@@ -506,4 +644,18 @@ input[type="text"], input[type="password"], .vTextField {
 
 
   }
+}
+
+
+/*   ————————————————————————————————————————————————
+   Inline list
+  ———————————————————————————————————————————————— */
+.inline-group {
+  ul.tools a.add, div.add-row a, .tabular tr.add-row td a {
+    @extend %button-base;
+  }
+}
+
+.inline-related.tabular fieldset.module table {
+  padding: 8px;
 }

@@ -2,7 +2,7 @@
 /*  ————————————————————————————————————————————————
      Imports
     ———————————————————————————————————————————————— */
-@import url(http://fonts.googleapis.com/css?family=Maven+Pro:400,500);
+@import url(http://fonts.googleapis.com/css?family=Maven+Pro:400,500,700);
 @import url(http://fonts.googleapis.com/css?family=Roboto);
 /* 	————————————————————————————————————————————————
 	 Measurements
@@ -22,42 +22,52 @@
 body {
   font-family: 'Roboto', helvetica, arial, sans-serif; }
 
-h1, fieldset > h2:first-of-type, .selector h2 {
+h1, table caption, .module > h2:first-of-type, .module caption, .selector h2 {
   font-family: 'Maven Pro', helvetica, arial, sans-serif; }
 
-input[type="text"], input[type="password"], .vTextField, #changelist #toolbar form #searchbar, body, label {
+input[type="text"], input[type="password"], input[type="number"], .vTextField, .vLargeTextField, #changelist #toolbar form #searchbar, body, label {
   font-size: 13px; }
 
-.object-tools li a, .button, .submit-row input, #changelist form input[type="submit"] {
+.object-tools li a, .button, .submit-row input, .submit-row .deletelink-box a.deletelink, #changelist form input[type="submit"], .inline-group ul.tools a.add, .inline-group div.add-row a, .inline-group .tabular tr.add-row td a {
   padding: 5px 10px;
   border: 1px solid #479eff;
-  background: transparent;
-  color: #479eff;
+  border-bottom-width: 2px;
+  transition: all 100ms;
+  background: #7ab9ff;
+  color: #fff;
   cursor: pointer;
   display: inline-block; }
-  .object-tools li a:hover, .button:hover, .submit-row input:hover, #changelist form input[type="submit"]:hover {
+  .object-tools li a:hover, .button:hover, .submit-row input:hover, .submit-row .deletelink-box a.deletelink:hover, #changelist form input[type="submit"]:hover, .inline-group ul.tools a.add:hover, .inline-group div.add-row a:hover, .inline-group .tabular tr.add-row td a:hover {
     background-color: #479eff;
     color: #fff;
     text-decoration: none; }
 
-input[type="text"], input[type="password"], .vTextField, #changelist #toolbar form #searchbar {
+.module {
+  padding: 0;
+  background-color: #fff;
+  border: 0;
+  border-right: 3px solid rgba(0, 0, 0, 0.07);
+  border-bottom: 3px solid rgba(0, 0, 0, 0.07);
+  margin: 0 0 17px 0; }
+
+input[type="text"], input[type="password"], input[type="number"], .vTextField, .vLargeTextField, #changelist #toolbar form #searchbar {
   padding: 6px 8px;
   border-radius: 2px;
   border: 1px solid #e7e7e7;
   border-bottom-color: #ccc;
   border-bottom-width: 2px; }
-  input[type="text"]::selection, input[type="password"]::selection, .vTextField::selection, #changelist #toolbar form #searchbar::selection {
+  input[type="text"]::selection, input[type="password"]::selection, input[type="number"]::selection, .vTextField::selection, .vLargeTextField::selection, #changelist #toolbar form #searchbar::selection {
     background: #479eff;
     /* WebKit/Blink Browsers */
     color: #fff; }
-  input[type="text"]:focus, input[type="password"]:focus, .vTextField:focus, #changelist #toolbar form #searchbar:focus {
+  input[type="text"]:focus, input[type="password"]:focus, input[type="number"]:focus, .vTextField:focus, .vLargeTextField:focus, #changelist #toolbar form #searchbar:focus {
     outline: 0;
     border-bottom-color: #479eff; }
 
-body {
+body, .module > h2:first-of-type, .module caption {
   letter-spacing: 0.5px; }
 
-fieldset > h2:first-of-type, .selector h2 {
+.selector h2 {
   letter-spacing: 1px; }
 
 /*  ————————————————————————————————————————————————
@@ -82,6 +92,9 @@ input, select {
   /* WebKit/Blink Browsers */
   color: #fff; }
 
+* {
+  box-sizing: border-box; }
+
 th {
   font-weight: inherit; }
 
@@ -91,10 +104,11 @@ th {
 body {
   background: #f4f4f4;
   color: #333;
-  padding: 17px;
+  padding-left: 17px;
+  padding-right: 17px;
   padding-top: 120px;
   /* for fixed header */
-  padding-bottom: 50px;
+  padding-bottom: 60px;
   /* for .submit-row */ }
   body.popup {
     padding: 20px; }
@@ -115,16 +129,29 @@ a {
 #header {
   position: fixed;
   z-index: 10;
+  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
   top: 0;
-  left: 0;
-  right: 0;
+  padding: 0 17px;
   height: 100px;
   background-color: #fff;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.15); }
+  border-bottom: 3px solid rgba(0, 0, 0, 0.07); }
+  #header:before {
+    content: " ";
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 42px;
+    background-color: #7a8ba0; }
 
 #branding {
-  background-color: #3f5976;
-  padding: 0 17px; }
+  background-color: #7a8ba0;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto; }
 
 #site-name {
   margin: 0; }
@@ -144,16 +171,18 @@ a {
     font-size: 18px;
     display: inline-block;
     vertical-align: middle;
-    padding: 10px 0;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.5); }
+    padding: 10px 0; }
 
 #user-tools {
-  position: absolute;
-  top: 5px;
+  position: relative;
+  top: -40px;
+  width: 100%;
+  max-width: 1100px;
   text-align: right;
-  right: 20px;
+  margin-left: auto;
+  margin-right: auto;
   color: rgba(255, 255, 255, 0.7);
-  line-height: 35px;
+  line-height: 40px;
   text-transform: uppercase;
   font-size: 12px; }
   #user-tools strong:first-of-type:after {
@@ -162,17 +191,27 @@ a {
   #user-tools a {
     text-transform: none; }
 
-#content-main {
+#container {
   max-width: 1100px;
-  margin: 0 auto; }
+  margin-left: auto;
+  margin-right: auto; }
 
-#content > h1:first-of-type {
-  position: fixed;
-  z-index: 10;
-  top: 42px;
-  font-size: 16px;
-  font-weight: 500;
-  -webkit-font-smoothing: subpixel-antialiased; }
+#content-main, .module {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto; }
+
+#content {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto; }
+  #content > h1:first-of-type {
+    position: fixed;
+    z-index: 10;
+    top: 42px;
+    font-size: 16px;
+    font-weight: 500;
+    -webkit-font-smoothing: subpixel-antialiased; }
 
 body.popup #content h1:first-of-type {
   position: static; }
@@ -208,43 +247,72 @@ body.popup #content h1:first-of-type {
 
 table {
   text-align: left; }
-
-fieldset {
-  padding: 0;
-  background-color: #fff;
-  border: 0;
-  border-right: 3px solid rgba(0, 0, 0, 0.07);
-  border-bottom: 3px solid rgba(0, 0, 0, 0.07);
-  margin: 0 0 17px 0; }
-  fieldset > h2:first-of-type {
-    margin: 0;
-    background-color: #479eff;
-    color: #fff;
-    padding: 5px 10px;
-    font-size: 13px;
-    font-weight: bold;
+  table caption {
     text-transform: uppercase;
-    border-right: 3px solid rgba(71, 158, 255, 0.5);
-    position: relative; }
-    fieldset > h2:first-of-type:after {
-      content: " ";
-      position: absolute;
-      right: -6px;
-      width: 3px;
-      height: 100%;
-      bottom: 0;
-      background-color: #1e88ff; }
+    text-align: left;
+    font-weight: 500;
+    font-size: 15px;
+    letter-spacing: 0; }
+    table caption a.section {
+      color: inherit;
+      cursor: default; }
+      table caption a.section:hover {
+        text-decoration: none; }
+  table caption + tbody tr th, table caption + tbody tr td {
+    padding: 3px 10px; }
+  table caption + tbody tr:last-of-type th, table caption + tbody tr:last-of-type td {
+    padding-bottom: 10px; }
+  table caption + tbody tr:first-of-type th, table caption + tbody tr:first-of-type td {
+    padding-top: 10px; }
+
+.module > h2:first-of-type, .module caption {
+  margin: 0;
+  background-color: #c4cdd8;
+  color: #fff;
+  padding: 5px 10px;
+  font-size: 13px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-right: 3px solid rgba(196, 205, 216, 0.5);
+  position: relative; }
+  .module > h2:first-of-type:after, .module caption:after {
+    content: " ";
+    position: absolute;
+    right: -6px;
+    width: 3px;
+    height: 100%;
+    bottom: 0;
+    background-color: #abb8c8; }
+
+#recent-actions-module h3 {
+  padding-left: 10px; }
+
+.required label, label.required {
+  color: #7a8ba0 !important; }
+
+.errornote {
+  color: #d31d1d; }
+  .errornote:before {
+    content: "";
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: 13px;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate(0, 0); }
 
 .aligned label {
   width: 10em;
   padding-top: 6px; }
 
-p.help {
+form .aligned p.help {
   color: #b5b5b5;
-  margin-top: 5px; }
+  margin-top: 5px;
+  padding-left: 0; }
 
 form .aligned p, form .aligned ul {
-  margin-left: 10em; }
+  margin-left: 130px;
+  padding-left: 0; }
 
 .form-row {
   border-bottom: 0; }
@@ -260,25 +328,33 @@ form .aligned p, form .aligned ul {
 .submit-row {
   position: fixed;
   bottom: 0;
-  left: 0;
-  right: 0;
+  transform: translateX(-50%);
+  left: 50%;
+  width: 100%;
+  max-width: 1100px;
   margin: 0;
   background: #fff;
   border: 0;
-  padding: 13px 17px;
-  border-top: 1px solid rgba(0, 0, 0, 0.15); }
+  padding: 13px 17px; }
+  .submit-row:before {
+    content: " ";
+    border-top: 3px solid rgba(0, 0, 0, 0.07);
+    position: fixed;
+    z-index: -1;
+    left: -100%;
+    right: -100%;
+    background: #fff;
+    height: 57px;
+    bottom: 0; }
   .submit-row p {
     margin: 0; }
   .submit-row .deletelink-box {
     position: relative; }
     .submit-row .deletelink-box a.deletelink {
-      display: block;
-      padding-left: 0;
-      background: none;
-      border: 1px solid #d31d1d;
+      background-color: #e85555;
+      border-color: #d31d1d;
       padding: 5px 10px;
-      position: relative;
-      color: #d31d1d; }
+      position: relative; }
       .submit-row .deletelink-box a.deletelink:before {
         content: "";
         font: normal normal normal 14px/1 FontAwesome;
@@ -292,8 +368,34 @@ form .aligned p, form .aligned ul {
         top: 1px; }
       .submit-row .deletelink-box a.deletelink:hover {
         text-decoration: none;
-        color: #fff;
         background-color: #d31d1d; }
+
+/*   ————————————————————————————————————————————————
+   Message & Error list
+  ———————————————————————————————————————————————— */
+.messagelist, .errorlist {
+  padding: 0;
+  margin-left: 0; }
+  .messagelist li, .errorlist li {
+    list-style: none; }
+
+.messagelist .success {
+  background: #e7e7e7;
+  border-bottom: 3px solid #ccc;
+  padding: 10px; }
+  .messagelist .success:before {
+    content: "";
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: 13px;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate(0, 0);
+    margin-right: 6px;
+    color: #9a9a9a; }
+
+.errorlist {
+  color: #d31d1d; }
 
 /*   ————————————————————————————————————————————————
    Selector
@@ -334,6 +436,8 @@ form .aligned p, form .aligned ul {
     background: none;
     width: 140px;
     border-left: 0; }
+    #changelist #changelist-filter h3 {
+      font-weight: 500; }
     #changelist #changelist-filter ul {
       margin-left: 0;
       margin-top: 5px; }
@@ -406,7 +510,7 @@ form .aligned p, form .aligned ul {
         border-color: #479eff;
         outline: none; }
       #changelist .actions select:hover {
-        background-position: right -27px; }
+        background-position: right -30px; }
     #changelist .actions .button {
       font-size: inherit;
       padding: inherit; }
@@ -414,5 +518,11 @@ form .aligned p, form .aligned ul {
     background: none; }
   #changelist form input[type="submit"] {
     display: none; }
+
+/*   ————————————————————————————————————————————————
+   Inline list
+  ———————————————————————————————————————————————— */
+.inline-related.tabular fieldset.module table {
+  padding: 8px; }
 
 /*# sourceMappingURL=main.css.map */
