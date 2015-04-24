@@ -79,7 +79,8 @@ a {
   padding: 0 $distance;
   height: 100px;
   background-color: #fff;
-  border-bottom: 3px solid rgba(0,0,0,0.07);
+  // border-bottom: 3px solid rgba(0,0,0,0.07);
+  box-shadow: 0 3px 0px rgba(0,0,0,0.07);
 
   &:before {
     content: " ";
@@ -143,13 +144,63 @@ a {
   }
 }
 
-#container {
+#header + .breadcrumbs {
+  position: fixed;
+  z-index: 10;
+  top: 71px;
+  font-size: 14px;
+  margin-left: -2px;
+
+  a {
+    margin: 0 2px;
+  }
+}
+
+/*   ————————————————————————————————————————————————
+   General Content styling
+  ———————————————————————————————————————————————— */
+#content-main, .module {
   max-width: 1100px;
   margin-left: auto;
   margin-right: auto;
 }
 
-#content-main, .module {
+.module {
+  @extend %adminBox;
+
+  > h2:first-of-type, caption {
+    @extend %font-title;
+    @extend %letterSpacing-normal;
+    margin: 0;
+    background-color: $color-sidekick;
+    color: $color-sand-dark;
+    padding: 5px 13px;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    // border-right: 3px solid rgba($color-sidekick, 0.5);
+
+    position: relative;
+
+    &:after {
+      content: " ";
+      position: absolute;
+      right: -3px;
+      width: 3px;
+      height: 100%;
+      bottom: 0;
+      background-color: darken($color-sidekick, 5%);
+    }
+  }
+
+  .datetime {
+    input {
+      margin-bottom: 5px;
+    }
+  }
+}
+
+#container {
   max-width: 1100px;
   margin-left: auto;
   margin-right: auto;
@@ -171,21 +222,52 @@ a {
   }
 }
 
+
+
+
+/*   ————————————————————————————————————————————————
+   Page: Dashboard
+  ———————————————————————————————————————————————— */
+body.dashboard {
+  div[class^="app-"] {
+    .changelink {
+      display: none;
+    }
+  }
+
+  .module ul.actionlist {
+      margin-left: 0;
+  }
+  .module table th {
+      width: 100%;
+  }
+  .module table td {
+      white-space: nowrap;
+  }
+
+  ul.actionlist li {
+      list-style-type: none;
+  }
+
+  ul.actionlist li {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      -o-text-overflow: ellipsis;
+  }
+}
+/*   ————————————————————————————————————————————————
+   Page: Popup
+  ———————————————————————————————————————————————— */
 body.popup #content h1:first-of-type {
   position: static;
 }
 
-#header + .breadcrumbs {
-  position: fixed;
-  z-index: 10;
-  top: 71px;
-  font-size: 14px;
-  margin-left: -2px;
 
-  a {
-    margin: 0 2px;
-  }
-}
+
+
+
+
+
 
 
 /*   ————————————————————————————————————————————————
@@ -257,39 +339,7 @@ table {
   }
 }
 
-.module {
-  @extend %adminBox;
 
-  > h2:first-of-type, caption {
-    @extend %font-title;
-    @extend %letterSpacing-normal;
-    margin: 0;
-    background-color: $color-sidekick;
-    color: #fff;
-    padding: 5px 13px;
-    font-size: 13px;
-    font-weight: bold;
-    text-transform: uppercase;
-    border-right: 3px solid rgba($color-sidekick, 0.5);
-    position: relative;
-
-    &:after {
-      content: " ";
-      position: absolute;
-      right: -6px;
-      width: 3px;
-      height: 100%;
-      bottom: 0;
-      background-color: darken($color-sidekick, 8%);
-    }
-  }
-
-  .datetime {
-    input {
-      margin-bottom: 5px;
-    }
-  }
-}
 
 #recent-actions-module {
   h3 {
@@ -304,8 +354,30 @@ table {
       padding: 5px 13px;
       border-bottom: 1px solid map-get($colorGrey, 'lightest');
 
+      &:before {
+        color: map-get($colorGrey, 'light');
+        width: 15px;
+        display: inline-block;
+        text-align: center;
+        margin-right: 5px;
+      }
+
       &.deletelink {
-        color: $color-destroy;
+        color: map-get($colorGrey, 'dark');
+
+        &:before {
+          @include faIcon(fa-trash)
+        }
+      }
+      &.changelink {
+        &:before {
+          @include faIcon(fa-pencil)
+        }
+      }
+      &.addlink {
+        &:before {
+          @include faIcon(fa-plus)
+        }
       }
 
       &:nth-child(even) {
@@ -411,9 +483,6 @@ body.delete-confirmation {
   }
 }
 
-// a.addlink, a.changelink {
-//   @extend %button-base;
-// }
 
 /*   ————————————————————————————————————————————————
    Submit row
@@ -536,6 +605,7 @@ body.delete-confirmation {
   ———————————————————————————————————————————————— */
 .change-list .filtered {
   background: #fff !important;
+  min-height: 650px;
 }
 #changelist {
   border-right: $border-grey;

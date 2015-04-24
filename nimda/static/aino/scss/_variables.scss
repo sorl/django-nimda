@@ -12,6 +12,8 @@ $distance: 17px;
 $color-steel: #7a8ba0;
 $color-steel-light: #c4cdd8;
 $color-blue: #479eff;
+$color-sand: #F5E9CC;
+$color-sand-dark: #A09480;
 $color-red-dark: #d31d1d;
 $color-red-darker: #822121;
 $color-green-light: #e1f1c6;
@@ -33,7 +35,7 @@ $colorGrey: (
 
 /* Semantic Aliases */
 $color-site: $color-steel;
-$color-sidekick: $color-steel-light;
+$color-sidekick: $color-sand;
 $color-hero: $color-blue;
 $color-destroy: $color-red-dark;
 
@@ -69,7 +71,9 @@ $faIcons: (
   'fa-sort-amount-asc': '\f160',
   'fa-sort-amount-desc': '\f161',
   'fa-sort-desc' : '\f0dd',
-  'fa-sort-asc' : '\f0de'
+  'fa-sort-asc' : '\f0de',
+  'fa-exchange' : '\f0ec',
+  'fa-pencil' : '\f040'
 );
 
 $faSizes: (
