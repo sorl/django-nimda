@@ -13,6 +13,9 @@ $color-steel: #7a8ba0;
 $color-steel-light: #c4cdd8;
 $color-blue: #479eff;
 $color-red-dark: #d31d1d;
+$color-red-darker: #822121;
+$color-green-light: #e1f1c6;
+$color-green-darker: #6e8742;
 
 $border-grey: 3px solid rgba(0,0,0,0.07);
 
@@ -62,7 +65,11 @@ $faIcons: (
   'fa-globe': '\f0ac',
   'fa-trash': '\f1f8',
   'fa-cloud-upload': '\f0ee',
-  'fa-plus': '\f067'
+  'fa-plus': '\f067',
+  'fa-sort-amount-asc': '\f160',
+  'fa-sort-amount-desc': '\f161',
+  'fa-sort-desc' : '\f0dd',
+  'fa-sort-asc' : '\f0de'
 );
 
 $faSizes: (
