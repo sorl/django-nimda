@@ -22,7 +22,7 @@
 body {
   font-family: 'Roboto', helvetica, arial, sans-serif; }
 
-h1, table caption, .module > h2:first-of-type, .module caption, .selector h2 {
+h1, .module > h2:first-of-type, .module caption, table caption, .selector h2 {
   font-family: 'Maven Pro', helvetica, arial, sans-serif; }
 
 input[type="text"], input[type="password"], input[type="number"], .vTextField, .vLargeTextField, #changelist #toolbar form #searchbar, body, label {
@@ -66,8 +66,8 @@ body.delete-confirmation input[type="submit"], .submit-row .deletelink-box a.del
   padding: 0;
   background-color: #fff;
   border: 0;
-  border-right: 3px solid rgba(0, 0, 0, 0.07);
-  border-bottom: 3px solid rgba(0, 0, 0, 0.07);
+  border-radius: 3px;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.03);
   margin: 0 0 17px 0; }
 
 input[type="text"], input[type="password"], input[type="number"], .vTextField, .vLargeTextField, #changelist #toolbar form #searchbar {
@@ -156,7 +156,7 @@ a {
   padding: 0 17px;
   height: 100px;
   background-color: #fff;
-  border-bottom: 3px solid rgba(0, 0, 0, 0.07); }
+  box-shadow: 0 3px 0px rgba(0, 0, 0, 0.07); }
   #header:before {
     content: " ";
     position: absolute;
@@ -210,12 +210,44 @@ a {
   #user-tools a {
     text-transform: none; }
 
-#container {
+#header + .breadcrumbs {
+  position: fixed;
+  z-index: 10;
+  top: 71px;
+  font-size: 14px;
+  margin-left: -2px; }
+  #header + .breadcrumbs a {
+    margin: 0 2px; }
+
+/*   ————————————————————————————————————————————————
+   General Content styling
+  ———————————————————————————————————————————————— */
+#content-main, .module {
   max-width: 1100px;
   margin-left: auto;
   margin-right: auto; }
 
-#content-main, .module {
+.module > h2:first-of-type, .module caption {
+  margin: 0;
+  background-color: #F5E9CC;
+  color: #A09480;
+  padding: 5px 13px;
+  font-size: 13px;
+  font-weight: bold;
+  text-transform: uppercase;
+  position: relative; }
+  .module > h2:first-of-type:after, .module caption:after {
+    content: " ";
+    position: absolute;
+    right: -3px;
+    width: 3px;
+    height: 100%;
+    bottom: 0;
+    background-color: #f1e0b7; }
+.module .datetime input {
+  margin-bottom: 5px; }
+
+#container {
   max-width: 1100px;
   margin-left: auto;
   margin-right: auto; }
@@ -232,17 +264,29 @@ a {
     font-weight: 500;
     -webkit-font-smoothing: subpixel-antialiased; }
 
+/*   ————————————————————————————————————————————————
+   Page: Dashboard
+  ———————————————————————————————————————————————— */
+body.dashboard div[class^="app-"] .changelink {
+  display: none; }
+body.dashboard .module ul.actionlist {
+  margin-left: 0; }
+body.dashboard .module table th {
+  width: 100%; }
+body.dashboard .module table td {
+  white-space: nowrap; }
+body.dashboard ul.actionlist li {
+  list-style-type: none; }
+body.dashboard ul.actionlist li {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis; }
+
+/*   ————————————————————————————————————————————————
+   Page: Popup
+  ———————————————————————————————————————————————— */
 body.popup #content h1:first-of-type {
   position: static; }
-
-#header + .breadcrumbs {
-  position: fixed;
-  z-index: 10;
-  top: 71px;
-  font-size: 14px;
-  margin-left: -2px; }
-  #header + .breadcrumbs a {
-    margin: 0 2px; }
 
 /*   ————————————————————————————————————————————————
     Content
@@ -284,27 +328,6 @@ table {
   table caption + tbody tr:first-of-type th, table caption + tbody tr:first-of-type td {
     padding-top: 10px; }
 
-.module > h2:first-of-type, .module caption {
-  margin: 0;
-  background-color: #c4cdd8;
-  color: #fff;
-  padding: 5px 13px;
-  font-size: 13px;
-  font-weight: bold;
-  text-transform: uppercase;
-  border-right: 3px solid rgba(196, 205, 216, 0.5);
-  position: relative; }
-  .module > h2:first-of-type:after, .module caption:after {
-    content: " ";
-    position: absolute;
-    right: -6px;
-    width: 3px;
-    height: 100%;
-    bottom: 0;
-    background-color: #abb8c8; }
-.module .datetime input {
-  margin-bottom: 5px; }
-
 #recent-actions-module h3 {
   padding-left: 13px;
   -webkit-font-smoothing: subpixel-antialiased; }
@@ -313,8 +336,38 @@ table {
   #recent-actions-module .actionlist li {
     padding: 5px 13px;
     border-bottom: 1px solid #f6f6f6; }
+    #recent-actions-module .actionlist li:before {
+      color: #ccc;
+      width: 15px;
+      display: inline-block;
+      text-align: center;
+      margin-right: 5px; }
     #recent-actions-module .actionlist li.deletelink {
-      color: #d31d1d; }
+      color: #9a9a9a; }
+      #recent-actions-module .actionlist li.deletelink:before {
+        content: "";
+        font: normal normal normal 14px/1 FontAwesome;
+        font-size: 13px;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        transform: translate(0, 0); }
+    #recent-actions-module .actionlist li.changelink:before {
+      content: "";
+      font: normal normal normal 14px/1 FontAwesome;
+      font-size: 13px;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      transform: translate(0, 0); }
+    #recent-actions-module .actionlist li.addlink:before {
+      content: "";
+      font: normal normal normal 14px/1 FontAwesome;
+      font-size: 13px;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      transform: translate(0, 0); }
     #recent-actions-module .actionlist li:nth-child(even) {
       background-color: #fdfdfd; }
     #recent-actions-module .actionlist li br {
@@ -464,7 +517,8 @@ select:not([multiple]) {
    Changelist
   ———————————————————————————————————————————————— */
 .change-list .filtered {
-  background: #fff !important; }
+  background: #fff !important;
+  min-height: 650px; }
 
 #changelist {
   border-right: 3px solid rgba(0, 0, 0, 0.07);

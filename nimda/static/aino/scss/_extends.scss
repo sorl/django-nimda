@@ -32,7 +32,6 @@
   padding: 5px 10px;
   position: relative;
 
-
   &:before {
     @include faIcon(fa-trash, 3);
     margin-right: 10px;
@@ -50,8 +49,10 @@
   padding: 0;
   background-color: #fff;
   border: 0;
-  border-right: $border-grey;
-  border-bottom: $border-grey;
+  // border-right: $border-grey;
+  // border-bottom: $border-grey;
+  border-radius: 3px;
+  box-shadow: 3px 3px 3px rgba(0,0,0,0.03);
   margin: 0 0 $distance 0;
 }
 %textfield-base {
