@@ -28,7 +28,7 @@ h1, table caption, .module > h2:first-of-type, .module caption, .selector h2 {
 input[type="text"], input[type="password"], input[type="number"], .vTextField, .vLargeTextField, #changelist #toolbar form #searchbar, body, label {
   font-size: 13px; }
 
-.object-tools li a, .button, .submit-row input, .submit-row .deletelink-box a.deletelink, #changelist form input[type="submit"], .inline-group ul.tools a.add, .inline-group div.add-row a, .inline-group .tabular tr.add-row td a {
+.object-tools li a, .button, input[type="submit"], .submit-row input, .submit-row .deletelink-box a.deletelink, #changelist form input[type="submit"], .inline-group ul.tools a.add, .inline-group div.add-row a, .inline-group .tabular tr.add-row td a {
   padding: 5px 10px;
   border: 1px solid #479eff;
   border-bottom-width: 2px;
@@ -37,10 +37,30 @@ input[type="text"], input[type="password"], input[type="number"], .vTextField, .
   color: #fff;
   cursor: pointer;
   display: inline-block; }
-  .object-tools li a:hover, .button:hover, .submit-row input:hover, .submit-row .deletelink-box a.deletelink:hover, #changelist form input[type="submit"]:hover, .inline-group ul.tools a.add:hover, .inline-group div.add-row a:hover, .inline-group .tabular tr.add-row td a:hover {
+  .object-tools li a:hover, .button:hover, input[type="submit"]:hover, .submit-row input:hover, .submit-row .deletelink-box a.deletelink:hover, #changelist form input[type="submit"]:hover, .inline-group ul.tools a.add:hover, .inline-group div.add-row a:hover, .inline-group .tabular tr.add-row td a:hover {
     background-color: #479eff;
     color: #fff;
     text-decoration: none; }
+
+body.delete-confirmation input[type="submit"], .submit-row .deletelink-box a.deletelink {
+  background-color: #e85555;
+  border-color: #d31d1d;
+  padding: 5px 10px;
+  position: relative; }
+  body.delete-confirmation input[type="submit"]:before, .submit-row .deletelink-box a.deletelink:before {
+    content: "";
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: 18px;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate(0, 0);
+    margin-right: 10px;
+    position: relative;
+    top: 1px; }
+  body.delete-confirmation input[type="submit"]:hover, .submit-row .deletelink-box a.deletelink:hover {
+    text-decoration: none;
+    background-color: #d31d1d; }
 
 .module {
   padding: 0;
@@ -207,7 +227,7 @@ a {
   #content > h1:first-of-type {
     position: fixed;
     z-index: 10;
-    top: 42px;
+    top: 40px;
     font-size: 16px;
     font-weight: 500;
     -webkit-font-smoothing: subpixel-antialiased; }
@@ -218,7 +238,7 @@ body.popup #content h1:first-of-type {
 #header + .breadcrumbs {
   position: fixed;
   z-index: 10;
-  top: 72px;
+  top: 71px;
   font-size: 14px;
   margin-left: -2px; }
   #header + .breadcrumbs a {
@@ -282,14 +302,19 @@ table {
     height: 100%;
     bottom: 0;
     background-color: #abb8c8; }
+.module .datetime input {
+  margin-bottom: 5px; }
 
 #recent-actions-module h3 {
-  padding-left: 13px; }
+  padding-left: 13px;
+  -webkit-font-smoothing: subpixel-antialiased; }
 #recent-actions-module .actionlist {
   padding-left: 0; }
   #recent-actions-module .actionlist li {
     padding: 5px 13px;
     border-bottom: 1px solid #f6f6f6; }
+    #recent-actions-module .actionlist li.deletelink {
+      color: #d31d1d; }
     #recent-actions-module .actionlist li:nth-child(even) {
       background-color: #fdfdfd; }
     #recent-actions-module .actionlist li br {
@@ -340,7 +365,9 @@ form .wide p.help {
     padding-bottom: 15px; }
 
 select:not([multiple]) {
+  -moz-appearance: none;
   -webkit-appearance: none;
+  appearance: none;
   font-size: 13px;
   border-radius: 0;
   border: 1px solid #ccc;
@@ -374,25 +401,6 @@ select:not([multiple]) {
     margin: 0; }
   .submit-row .deletelink-box {
     position: relative; }
-    .submit-row .deletelink-box a.deletelink {
-      background-color: #e85555;
-      border-color: #d31d1d;
-      padding: 5px 10px;
-      position: relative; }
-      .submit-row .deletelink-box a.deletelink:before {
-        content: "";
-        font: normal normal normal 14px/1 FontAwesome;
-        font-size: 18px;
-        text-rendering: auto;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        transform: translate(0, 0);
-        margin-right: 10px;
-        position: relative;
-        top: 1px; }
-      .submit-row .deletelink-box a.deletelink:hover {
-        text-decoration: none;
-        background-color: #d31d1d; }
 
 /*   ————————————————————————————————————————————————
    Message & Error list
@@ -404,9 +412,11 @@ select:not([multiple]) {
     list-style: none; }
 
 .messagelist .success {
-  background: #e7e7e7;
-  border-bottom: 3px solid #ccc;
-  padding: 10px; }
+  background: #e1f1c6;
+  border-right: 3px solid #d2eaa9;
+  border-bottom: 3px solid #d2eaa9;
+  padding: 10px;
+  color: #6e8742; }
   .messagelist .success:before {
     content: "";
     font: normal normal normal 14px/1 FontAwesome;
@@ -415,8 +425,7 @@ select:not([multiple]) {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     transform: translate(0, 0);
-    margin-right: 6px;
-    color: #9a9a9a; }
+    margin-right: 6px; }
 
 .errorlist {
   color: #d31d1d; }
@@ -499,28 +508,68 @@ select:not([multiple]) {
   #changelist .paginator {
     border-bottom: 0;
     border-right: 0;
-    padding-left: 10px; }
+    padding-left: 10px;
+    border-top-color: #ddd; }
   #changelist #toolbar {
     background: #fff;
     float: right;
-    margin: 5px 0 0;
+    margin: 5px 5px 0;
     border-bottom-width: 0;
-    position: relative;
-    right: -3px; }
+    position: relative; }
     #changelist #toolbar img {
       display: none; }
     #changelist #toolbar form #searchbar {
       max-width: 140px; }
-  #changelist #result_list thead a {
+  #changelist table .row2 {
+    background: #fdfdfd; }
+  #changelist table thead a {
     color: #000;
     -webkit-font-smoothing: subpixel-antialiased; }
+  #changelist table thead th {
+    padding: 5px 2px;
+    position: relative;
+    border-bottom: 1px solid #b5b5b5; }
+  #changelist table thead .sorted .sortoptions {
+    display: block;
+    float: left; }
+    #changelist table thead .sorted .sortoptions .sortpriority {
+      font-size: 10px;
+      background: #e7e7e7;
+      display: inline-block;
+      width: 10px;
+      border-radius: 3px;
+      text-align: center;
+      margin-right: 5px; }
+  #changelist table thead .sorted:after {
+    position: absolute;
+    top: 35%;
+    color: #ccc;
+    right: 5px; }
+  #changelist table thead .sorted.ascending:after {
+    content: "";
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: 13px;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate(0, 0); }
+  #changelist table thead .sorted.descending:after {
+    content: "";
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: 13px;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate(0, 0); }
+  #changelist table tbody tr td, #changelist table tbody tr th {
+    padding: 4px 0;
+    border-bottom: 1px solid #f6f6f6; }
+  #changelist table tbody tr:last-of-type td, #changelist table tbody tr:last-of-type th {
+    border-bottom: 0; }
   #changelist table tbody td, #changelist table tbody th {
     border-left: 0; }
     #changelist table tbody td:first-child, #changelist table tbody th:first-child {
       border-right: 0; }
-  #changelist table thead th {
-    padding: 5px 2px;
-    border-bottom: 1px solid #b5b5b5; }
   #changelist .actions {
     background: none;
     padding: 8px 5px;

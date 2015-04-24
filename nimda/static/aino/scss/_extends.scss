@@ -25,6 +25,27 @@
     text-decoration: none;
   }
 }
+
+%button-destroy {
+  background-color: lighten($color-destroy, 15%);
+  border-color: $color-destroy;
+  padding: 5px 10px;
+  position: relative;
+
+
+  &:before {
+    @include faIcon(fa-trash, 3);
+    margin-right: 10px;
+    position: relative;
+    top: 1px;
+  }
+
+  &:hover {
+    text-decoration: none;
+    background-color: $color-destroy;
+  }
+}
+
 %adminBox {
   padding: 0;
   background-color: #fff;
