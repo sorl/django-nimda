@@ -163,7 +163,7 @@ fieldset.monospace textarea {
 
 /* SUBMIT ROW */
 
-.submit-row {
+/*.submit-row {
     padding: 5px 7px;
     text-align: right;
     background: white url(../img/nav-bg.gif) 0 100% repeat-x;
@@ -171,28 +171,28 @@ fieldset.monospace textarea {
     margin: 5px 0;
     overflow: hidden;
 }
-
-body.popup .submit-row {
+*/
+/*body.popup .submit-row {
     overflow: auto;
-}
+}*/
 
-.submit-row input {
+/*.submit-row input {
     margin: 0 0 0 5px;
 }
 
 .submit-row p {
     margin: 0.3em;
-}
+}*/
 
-.submit-row p.deletelink-box {
+/*.submit-row p.deletelink-box {
     float: left;
-}
+}*/
 
-.submit-row .deletelink {
+/*.submit-row .deletelink {
     background: url(../img/icon_deletelink.gif) 0 50% no-repeat;
     padding-left: 14px;
 }
-
+*/
 /* CUSTOM FORM FIELDS */
 
 .vSelectMultipleField {
@@ -357,11 +357,11 @@ body.popup .submit-row {
     background: #e1e1e1 url(../img/nav-bg.gif) top left repeat-x;
 }*/
 
-.inline-group .tabular tr.add-row td {
+/*.inline-group .tabular tr.add-row td {
     padding: 4px 5px 3px;
     border-bottom: none;
 }
-
+*/
 
 
 .empty-form {

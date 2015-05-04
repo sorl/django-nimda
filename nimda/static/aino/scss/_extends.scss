@@ -11,8 +11,10 @@
 %button-base {
   padding: 5px 10px;
   border: 1px solid $color-hero;
+  border-radius: 2px;
   border-bottom-width: 2px;
   transition: all 100ms;
+  box-shadow: inset 0px 1px rgba(255,255,255,0.2);
   background: lighten($color-hero, 10%);
   // color: $color-hero;
   color: #fff;
@@ -20,6 +22,7 @@
   display: inline-block;
 
   &:hover {
+    box-shadow: none;
     background-color: $color-hero;
     color: #fff;
     text-decoration: none;
@@ -55,6 +58,15 @@
   box-shadow: 3px 3px 3px rgba(0,0,0,0.03);
   margin: 0 0 $distance 0;
 }
+
+%alternateRows {
+  border-bottom: 1px solid map-get($colorGrey, 'lightest');
+
+  &:nth-child(even) {
+    background-color: map-get($colorGrey, 'micro');
+  }
+}
+
 %textfield-base {
   @extend %fontSize;
   padding: 6px 8px;
@@ -62,6 +74,7 @@
   border: 1px solid map-get($colorGrey, 'lighter');
   border-bottom-color: map-get($colorGrey, 'light');
   border-bottom-width: 2px;
+  width: 120px;
 
   &::selection {
     background: $color-hero; /* WebKit/Blink Browsers */
