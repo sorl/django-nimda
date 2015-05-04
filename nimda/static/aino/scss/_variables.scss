@@ -3,7 +3,7 @@
 	 Measurements
 	———————————————————————————————————————————————— */
 $distance: 17px;
-
+$distance-small: 13px;
 
 /* 	————————————————————————————————————————————————
 	 Colors
@@ -73,7 +73,8 @@ $faIcons: (
   'fa-sort-desc' : '\f0dd',
   'fa-sort-asc' : '\f0de',
   'fa-exchange' : '\f0ec',
-  'fa-pencil' : '\f040'
+  'fa-pencil' : '\f040',
+  'fa-plus-circle' : '\f055'
 );
 
 $faSizes: (

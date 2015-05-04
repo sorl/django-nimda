@@ -46,13 +46,17 @@ body {
   padding-bottom: 60px; /* for .submit-row */
 
   &.popup {
-    padding: 20px;
+    padding-top: 20px;
   }
 }
 
 h1 {
     @extend %font-title;
     text-transform: uppercase;
+}
+
+h2,h3 {
+  font-weight: 500;
 }
 
 a {
@@ -71,16 +75,17 @@ a {
     ———————————————————————————————————————————————— */
 #header {
   position: fixed;
-  z-index: 10;
+  z-index: 100;
   width: 100%;
   left: 50%;
+  -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
   top: 0;
   padding: 0 $distance;
   height: 100px;
   background-color: #fff;
   // border-bottom: 3px solid rgba(0,0,0,0.07);
-  box-shadow: 0 3px 0px rgba(0,0,0,0.07);
+  box-shadow: 0 3px 1px rgba(0,0,0,0.05);
 
   &:before {
     content: " ";
@@ -146,7 +151,7 @@ a {
 
 #header + .breadcrumbs {
   position: fixed;
-  z-index: 10;
+  z-index: 110;
   top: 71px;
   font-size: 14px;
   margin-left: -2px;
@@ -174,13 +179,15 @@ a {
     margin: 0;
     background-color: $color-sidekick;
     color: $color-sand-dark;
-    padding: 5px 13px;
+    padding: 5px $distance-small;
     font-size: 13px;
     font-weight: bold;
     text-transform: uppercase;
-    // border-right: 3px solid rgba($color-sidekick, 0.5);
-
     position: relative;
+
+    @include breakpoint('desktop') {
+      font-size: 14px;
+    }
 
     &:after {
       content: " ";
@@ -214,8 +221,8 @@ a {
 
   & > h1:first-of-type {
     position: fixed;
-    z-index: 10;
-    top: 40px;
+    z-index: 110;
+    top: 42px;
     font-size: 16px;
     font-weight: 500;
     -webkit-font-smoothing: subpixel-antialiased;
@@ -223,83 +230,17 @@ a {
 }
 
 
-
-
-/*   ————————————————————————————————————————————————
-   Page: Dashboard
-  ———————————————————————————————————————————————— */
-body.dashboard {
-  div[class^="app-"] {
-    .changelink {
-      display: none;
-    }
-  }
-
-  .module ul.actionlist {
-      margin-left: 0;
-  }
-  .module table th {
-      width: 100%;
-  }
-  .module table td {
-      white-space: nowrap;
-  }
-
-  ul.actionlist li {
-      list-style-type: none;
-  }
-
-  ul.actionlist li {
-      overflow: hidden;
-      text-overflow: ellipsis;
-      -o-text-overflow: ellipsis;
-  }
-}
-/*   ————————————————————————————————————————————————
-   Page: Popup
-  ———————————————————————————————————————————————— */
-body.popup #content h1:first-of-type {
-  position: static;
-}
-
-
-
-
-
-
-
-
-
-/*   ————————————————————————————————————————————————
-    Content
-  ———————————————————————————————————————————————— */
-
-.object-tools {
-  list-style: none;
-  margin: 0 0 20px;
-  padding: 0;
-
-  li {
-    display: inline-block;
-
-    & + li {
-      margin-left: 10px;
-    }
-
-    a {
-      @extend %button-base;
-
-      &.addlink {
-        &:before {
-          @include faIcon('fa-plus')
-        }
-      }
-    }
-  }
-}
-
 table {
   text-align: left;
+  width: 100%;
+
+  thead {
+    th {
+      color: #000;
+      font-weight: 500;
+      border-bottom: 1px solid map-get($colorGrey, 'base');
+    }
+  }
 
   caption {
     text-transform: uppercase;
@@ -339,19 +280,94 @@ table {
   }
 }
 
+label {
+  @extend %fontSize;
+}
 
+.aligned label {
+  width: 155px;
+  padding-top: 6px;
+}
+
+input[type="text"], input[type="email"], input[type="password"], input[type="number"], textarea {
+  @extend %textfield-base;
+}
+
+input.vTextField {
+  width: 220px;
+}
+
+select:not([multiple]) {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  font-size: map-get($fontSizes, 'base');
+  border-radius: 0;
+  border: 1px solid map-get($colorGrey, 'light');
+  margin-right: 5px;
+  padding: 7px 35px 7px 7px;
+  background: url(../img/select-arrows.png) no-repeat right 13px;
+  background-size: 25px 50px;
+
+  &:focus, &:active {
+    border-color: $color-hero;
+    outline: none;
+  }
+
+  &:hover {
+    background-position: right -30px;
+  }
+}
+
+.button, input[type="submit"] {
+  @extend %button-base;
+}
+
+
+
+/*   ————————————————————————————————————————————————
+    Modules
+  ———————————————————————————————————————————————— */
+
+.object-tools {
+  list-style: none;
+  margin: 0 0 20px;
+  padding: 0;
+
+  li {
+    display: inline-block;
+
+    & + li {
+      margin-left: 10px;
+    }
+
+    a {
+      @extend %button-base;
+
+      &.addlink {
+        &:before {
+          @include faIcon('fa-plus')
+        }
+      }
+    }
+  }
+}
 
 #recent-actions-module {
   h3 {
-    padding-left: 13px;
+    padding-left: $distance-small;
     -webkit-font-smoothing: subpixel-antialiased;
+  }
+
+  p {
+    padding-left: $distance-small;
   }
 
   .actionlist {
     padding-left: 0;
 
     li {
-      padding: 5px 13px;
+      padding: 5px $distance-small;
       border-bottom: 1px solid map-get($colorGrey, 'lightest');
 
       &:before {
@@ -397,10 +413,6 @@ table {
   }
 }
 
-label {
-  @extend %fontSize;
-}
-
 .required label, label.required {
   color: $color-site !important;
   // font-weight: normal !important;
@@ -414,11 +426,6 @@ label {
   }
 }
 
-.aligned label {
-  width: 10em;
-  padding-top: 6px;
-}
-
 form .aligned p.help {
   color: map-get($colorGrey, 'base');
   margin-top: 5px;
@@ -426,7 +433,7 @@ form .aligned p.help {
 }
 
 form .aligned p, form .aligned ul {
-  margin-left: 130px;
+  margin-left: 155px;
   padding-left: 0;
 }
 
@@ -447,41 +454,7 @@ form .wide p.help {
   }
 }
 
-input[type="text"], input[type="password"], input[type="number"], .vTextField, .vLargeTextField {
-  @extend %textfield-base;
-}
 
-select:not([multiple]) {
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  appearance: none;
-  font-size: map-get($fontSizes, 'base');
-  border-radius: 0;
-  border: 1px solid map-get($colorGrey, 'light');
-  margin-right: 5px;
-  padding: 7px 35px 7px 7px;
-  background: url(../img/select-arrows.png) no-repeat right 13px;
-  background-size: 25px 50px;
-
-  &:focus, &:active {
-    border-color: $color-hero;
-    outline: none;
-  }
-
-  &:hover {
-    background-position: right -30px;
-  }
-}
-
-.button, input[type="submit"] {
-  @extend %button-base;
-}
-
-body.delete-confirmation {
-  input[type="submit"] {
-    @extend %button-destroy;
-  }
-}
 
 
 /*   ————————————————————————————————————————————————
@@ -490,6 +463,7 @@ body.delete-confirmation {
 .submit-row {
   position: fixed;
   bottom: 0;
+  -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
   left: 50%;
   width: 100%;
@@ -497,9 +471,12 @@ body.delete-confirmation {
   margin: 0;
   background: #fff;
   border: 0;
-  padding: 13px $distance;
-  border-right: $border-grey;
-  border-top: $border-grey;
+  text-align: left;
+  padding: $distance-small $distance;
+  border-radius: 2px;
+  // border-right: $border-grey;
+  // border-top: $border-grey;
+  box-shadow: 3px -3px 1px rgba(0, 0, 0, 0.05);
 
   p {
     margin: 0;
@@ -511,6 +488,7 @@ body.delete-confirmation {
 
   .deletelink-box {
     position: relative;
+    float: right;
 
     a.deletelink {
       @extend %button-base;
@@ -528,10 +506,12 @@ body.delete-confirmation {
   padding: 0;
   margin-left: 0;
 
-  li { list-style: none; }
+  li { list-style: none; display: inline-block; }
 }
 
 .messagelist {
+  text-align: center;
+
   .success {
     background: $color-green-light;
     border-right: 3px solid darken($color-green-light, 7%);
@@ -608,17 +588,18 @@ body.delete-confirmation {
   min-height: 650px;
 }
 #changelist {
-  border-right: $border-grey;
-  border-bottom: $border-grey;
+  // border-right: $border-grey;
+  // border-bottom: $border-grey;
 
   #changelist-filter {
     background: none;
     width: 140px;
     border-left: 0;
-
-    h3 {
-      font-weight: 500;
-    }
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 40;
+    margin: 0;
 
     ul {
       margin-left: 0;
@@ -651,7 +632,7 @@ body.delete-confirmation {
     h2 {
       border-bottom: 0;
       text-transform: uppercase;
-      background: $color-hero;
+      background: lighten($color-site,20%);
       color: #fff;
       position: relative;
 
@@ -662,7 +643,7 @@ body.delete-confirmation {
         top: 0;
         height: 19px;
         right: -3px;
-        background-color: darken($color-hero, 8%);
+        background-color: lighten($color-site, 8%);
       }
     }
   }
@@ -717,10 +698,12 @@ body.delete-confirmation {
 
           .sortpriority {
             font-size: 10px;
-            background: map-get($colorGrey, 'lighter');
+            background: map-get($colorGrey, 'lightest');
+            color: map-get($colorGrey, 'base');
             display: inline-block;
-            width: 10px;
-            border-radius: 3px;
+            vertical-align: 1px;
+            width: 13px;
+            height: 13px;
             text-align: center;
             margin-right: 5px;
           }
@@ -729,7 +712,7 @@ body.delete-confirmation {
         &:after {
           position: absolute;
           top: 35%;
-          color: map-get($colorGrey, 'light');
+          color: map-get($colorGrey, 'dark');
           right: 5px;
         }
 
@@ -805,11 +788,40 @@ body.delete-confirmation {
 
 
 /*   ————————————————————————————————————————————————
+   Change history table
+  ———————————————————————————————————————————————— */
+
+#change-history {
+  th, td {
+    padding: 4px 4px 4px 10px;
+  }
+
+  tbody {
+    tr {
+      th, td {
+        // padding: 4px 0;
+        border-bottom: 1px solid map-get($colorGrey, 'lightest');
+      }
+      &:nth-child(even) {
+        th, td {
+          background-color: map-get($colorGrey, 'micro');
+        }
+      }
+    }
+  }
+}
+
+
+/*   ————————————————————————————————————————————————
    Inline
   ———————————————————————————————————————————————— */
 .inline-group {
   ul.tools a.add, div.add-row a, .tabular tr.add-row td a {
     @extend %button-base;
+  }
+
+  td {
+    padding: 10px 0 0;
   }
 }
 
@@ -819,4 +831,81 @@ body.delete-confirmation {
 
 .inline-deletelink {
   float: left;
+}
+
+
+/*   ————————————————————————————————————————————————
+   Page: Dashboard
+  ———————————————————————————————————————————————— */
+body.dashboard {
+  #content-main {
+    -moz-column-count: 2;
+    -webkit-column-count: 2;
+    column-count: 2;
+    -moz-column-gap: 1em;
+    -webkit-column-gap: 20px;
+    column-gap: 1em;
+  }
+
+  div[class^="app-"] {
+    td:last-of-type, .changelink {
+      display: none;
+    }
+
+    .addlink {
+      // @extend %button-base;
+      // text-indent: -9999px;
+      color: transparent;
+      font-size: 0;
+      &:before {
+        color: $color-hero;
+        text-indent: 0;
+        @include faIcon(fa-plus-circle, 3)
+      }
+
+    }
+  }
+
+  .module {
+    display: inline-block;
+    width: 100%;
+
+    table {
+      th {
+        width: 100%;
+      }
+      td {
+        white-space: nowrap;
+      }
+    }
+
+    ul.actionlist {
+      margin-left: 0;
+
+      li {
+        list-style-type: none;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -o-text-overflow: ellipsis;
+      }
+    }
+  }
+
+
+}
+/*   ————————————————————————————————————————————————
+   Page: Popup
+  ———————————————————————————————————————————————— */
+body.popup #content h1:first-of-type {
+  position: static;
+}
+
+
+/*   ————————————————————————————————————————————————
+   Page: Delete confirmation
+  ———————————————————————————————————————————————— */
+body.delete-confirmation {
+  input[type="submit"] {
+    @extend %button-destroy;
+  }
 }
