@@ -277,7 +277,8 @@ a {
 
 table {
   text-align: left;
-  width: 100%; }
+  width: 100%;
+  border-spacing: 0px; }
   table thead th {
     color: #000;
     font-weight: 500;
@@ -519,127 +520,169 @@ form .wide p.help {
 /*   ————————————————————————————————————————————————
    Changelist
   ———————————————————————————————————————————————— */
-.change-list .filtered {
-  background: #fff !important;
-  min-height: 650px; }
-
-#changelist #changelist-filter {
-  background: none;
-  width: 140px;
-  border-left: 0;
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: 40;
-  margin: 0; }
-  #changelist #changelist-filter ul {
-    margin-left: 0;
-    margin-top: 5px; }
-    #changelist #changelist-filter ul li {
-      padding-left: 0;
-      border-left: 0; }
-      #changelist #changelist-filter ul li.selected {
-        margin-left: 0; }
-        #changelist #changelist-filter ul li.selected a {
-          color: #479eff !important; }
-  #changelist #changelist-filter a {
-    display: block;
-    cursor: pointer; }
-    #changelist #changelist-filter a:hover {
-      color: inherit;
-      text-decoration: none; }
-  #changelist #changelist-filter h2 {
-    border-bottom: 0;
-    text-transform: uppercase;
-    background: #b6bfcb;
-    color: #fff;
-    position: relative; }
-    #changelist #changelist-filter h2:after {
-      content: " ";
-      position: absolute;
-      width: 3px;
-      top: 0;
-      height: 19px;
-      right: -3px;
-      background-color: #92a0b1; }
-#changelist .paginator {
-  border-bottom: 0;
-  border-right: 0;
-  padding-left: 10px;
-  border-top-color: #ddd; }
-#changelist #toolbar {
-  background: #fff;
-  float: right;
-  margin: 5px 5px 0;
-  border-bottom-width: 0;
-  position: relative; }
-  #changelist #toolbar img {
-    display: none; }
-  #changelist #toolbar form #searchbar {
-    max-width: 140px; }
-#changelist table .row2 {
-  background: #fdfdfd; }
-#changelist table thead a {
-  color: #000;
-  -webkit-font-smoothing: subpixel-antialiased; }
-#changelist table thead th {
-  padding: 5px 2px;
-  position: relative;
-  border-bottom: 1px solid #b5b5b5; }
-#changelist table thead .sorted .sortoptions {
-  display: block;
-  float: left; }
-  #changelist table thead .sorted .sortoptions .sortpriority {
-    font-size: 10px;
-    background: #f6f6f6;
-    color: #b5b5b5;
-    display: inline-block;
-    vertical-align: 1px;
-    width: 13px;
-    height: 13px;
-    text-align: center;
-    margin-right: 5px; }
-#changelist table thead .sorted:after {
-  position: absolute;
-  top: 35%;
-  color: #9a9a9a;
-  right: 5px; }
-#changelist table thead .sorted.ascending:after {
-  content: "";
-  font: normal normal normal 14px/1 FontAwesome;
-  font-size: 13px;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  transform: translate(0, 0); }
-#changelist table thead .sorted.descending:after {
-  content: "";
-  font: normal normal normal 14px/1 FontAwesome;
-  font-size: 13px;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  transform: translate(0, 0); }
-#changelist table tbody tr td, #changelist table tbody tr th {
-  padding: 4px 0;
-  border-bottom: 1px solid #f6f6f6; }
-#changelist table tbody tr:last-of-type td, #changelist table tbody tr:last-of-type th {
-  border-bottom: 0; }
-#changelist table tbody td, #changelist table tbody th {
-  border-left: 0; }
-  #changelist table tbody td:first-child, #changelist table tbody th:first-child {
-    border-right: 0; }
-#changelist .actions {
-  background: none;
-  padding: 8px 5px;
-  border-right: 0; }
-  #changelist .actions .button {
-    font-size: inherit;
-    padding: inherit; }
-#changelist .paginator {
-  background: none; }
-#changelist form input[type="submit"] {
+.change-list .hiddenfields {
   display: none; }
+.change-list .filtered {
+  background: #fff;
+  min-height: 650px; }
+  .change-list .filtered table {
+    border-right: 1px solid #ddd; }
+
+.change-list .filtered .results, .change-list .filtered .paginator, .filtered #toolbar, .filtered div.xfull {
+  margin-right: 160px !important;
+  width: auto !important; }
+
+#changelist {
+  position: relative;
+  width: 100%; }
+  #changelist #changelist-filter {
+    background: none;
+    width: 140px;
+    border-left: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 40;
+    margin: 0; }
+    #changelist #changelist-filter ul {
+      margin-left: 0;
+      margin-top: 5px; }
+      #changelist #changelist-filter ul li {
+        padding-left: 0;
+        border-left: 0; }
+        #changelist #changelist-filter ul li.selected {
+          margin-left: 0; }
+          #changelist #changelist-filter ul li.selected a {
+            color: #479eff !important; }
+    #changelist #changelist-filter a {
+      display: block;
+      cursor: pointer; }
+      #changelist #changelist-filter a:hover {
+        color: inherit;
+        text-decoration: none; }
+    #changelist #changelist-filter h2 {
+      border-bottom: 0;
+      text-transform: uppercase;
+      background: #b6bfcb;
+      color: #fff;
+      position: relative; }
+      #changelist #changelist-filter h2:after {
+        content: " ";
+        position: absolute;
+        width: 3px;
+        top: 0;
+        height: 19px;
+        right: -3px;
+        background-color: #92a0b1; }
+  #changelist .toplinks {
+    border-bottom: 1px solid #ccc; }
+  #changelist .paginator {
+    color: #666;
+    border-top: 1px solid #ddd;
+    overflow: hidden;
+    border-right: 0;
+    padding-left: 10px; }
+  #changelist #changelist-search label:before {
+    content: "";
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: 13px;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate(0, 0);
+    color: #ccc;
+    margin-right: 3px;
+    display: inline-block; }
+  #changelist #toolbar {
+    padding: 10px 3px;
+    color: #666;
+    background: #fff;
+    margin: 5px 5px 0;
+    position: relative; }
+    #changelist #toolbar img {
+      display: none; }
+    #changelist #toolbar form #searchbar {
+      width: 300px; }
+  #changelist table {
+    border-top: 1px solid #eee; }
+    #changelist table .row2 {
+      background: #fdfdfd; }
+    #changelist table thead a {
+      color: #000;
+      display: block;
+      -webkit-font-smoothing: subpixel-antialiased; }
+    #changelist table thead th {
+      padding: 5px 7px;
+      white-space: nowrap;
+      vertical-align: middle;
+      position: relative;
+      border-bottom: 1px solid #b5b5b5;
+      border-right: 1px solid #e7e7e7; }
+      #changelist table thead th.action-checkbox-column {
+        width: 1.5em;
+        text-align: center; }
+    #changelist table thead .sorted .text {
+      padding-right: 10px; }
+    #changelist table thead .sorted .sortoptions {
+      display: block;
+      float: right;
+      margin-right: 8px; }
+      #changelist table thead .sorted .sortoptions .sortpriority {
+        font-size: 10px;
+        color: #b5b5b5;
+        display: inline-block;
+        vertical-align: 1px;
+        width: 13px;
+        height: 13px;
+        text-align: center; }
+    #changelist table thead .sorted:after {
+      position: absolute;
+      top: 12px;
+      color: #9a9a9a;
+      right: 5px; }
+    #changelist table thead .sorted.ascending:after {
+      content: "";
+      font: normal normal normal 14px/1 FontAwesome;
+      font-size: 13px;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      transform: translate(0, 0); }
+    #changelist table thead .sorted.descending:after {
+      top: 6px;
+      content: "";
+      font: normal normal normal 14px/1 FontAwesome;
+      font-size: 13px;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      transform: translate(0, 0); }
+    #changelist table tbody tr td, #changelist table tbody tr th {
+      padding: 4px 7px;
+      border-bottom: 1px solid #f6f6f6; }
+    #changelist table tbody tr td.action-checkbox {
+      text-align: center; }
+    #changelist table tbody tr:last-of-type td, #changelist table tbody tr:last-of-type th {
+      border-bottom: 0; }
+  #changelist .actions {
+    background: none;
+    padding: 8px 5px;
+    border-right: 0;
+    position: absolute;
+    background: #fdfdfd;
+    border-top: 1px solid #f6f6f6;
+    color: #b5b5b5;
+    bottom: 0;
+    left: 0;
+    width: 100%; }
+    #changelist .actions .button {
+      font-size: inherit;
+      padding: inherit; }
+  #changelist form input[type="submit"] {
+    display: none; }
+
+#changelist-form .results {
+  overflow-x: auto; }
 
 /*   ————————————————————————————————————————————————
    Change history table

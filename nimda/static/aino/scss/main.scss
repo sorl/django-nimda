@@ -233,6 +233,7 @@ a {
 table {
   text-align: left;
   width: 100%;
+  border-spacing: 0px;
 
   thead {
     th {
@@ -583,13 +584,27 @@ form .wide p.help {
 /*   ————————————————————————————————————————————————
    Changelist
   ———————————————————————————————————————————————— */
-.change-list .filtered {
-  background: #fff !important;
-  min-height: 650px;
+.change-list {
+  .hiddenfields { display:none; }
+
+  .filtered {
+    background: #fff;
+    min-height: 650px;
+
+    table {
+        border-right: 1px solid #ddd;
+    }
+  }
 }
+
+.change-list .filtered .results, .change-list .filtered .paginator, .filtered #toolbar, .filtered div.xfull {
+  margin-right: 160px !important;
+  width: auto !important;
+}
+
 #changelist {
-  // border-right: $border-grey;
-  // border-bottom: $border-grey;
+  position: relative;
+  width: 100%;
 
   #changelist-filter {
     background: none;
@@ -648,20 +663,37 @@ form .wide p.help {
     }
   }
 
+  .toplinks {
+      border-bottom: 1px solid #ccc;
+  }
+
   .paginator {
-    border-bottom: 0;
+    color: #666;
+    border-top: 1px solid #ddd;
+    overflow: hidden;
     border-right: 0;
     padding-left: 10px;
-    border-top-color: #ddd;
+  }
+
+
+  #changelist-search {
+    label {
+      &:before {
+        @include faIcon('fa-search');
+        color: map-get($colorGrey, 'light');
+        margin-right: 3px;
+        display: inline-block;
+      }
+    }
   }
 
   #toolbar {
+    padding: 10px 3px;
+    color: #666;
     background: #fff;
-    float: right;
+    // float: left;
     margin: 5px 5px 0;
-    border-bottom-width: 0;
     position: relative;
-    // right: -3px;
 
     img {
       display: none;
@@ -669,13 +701,15 @@ form .wide p.help {
 
     form #searchbar {
       @extend %textfield-base;
-      max-width: 140px;
-      // padding: 10px;
+      width: 300px;
+      // max-width: 140px;
     }
   }
 
 
   table {
+    border-top: 1px solid #eee;
+
     .row2 {
       background: map-get($colorGrey, 'micro');
     }
@@ -683,35 +717,49 @@ form .wide p.help {
     thead {
       a {
         color: #000;
+        display: block;
         -webkit-font-smoothing: subpixel-antialiased;
       }
+
       th {
-        padding: 5px 2px;
+        padding: 5px 7px;
+        white-space: nowrap;
+        vertical-align: middle;
         position: relative;
         border-bottom: 1px solid map-get($colorGrey, 'base');
+        border-right: 1px solid map-get($colorGrey, 'lighter');
+
+        &.action-checkbox-column {
+          width: 1.5em;
+          text-align: center;
+        }
       }
 
       .sorted {
+        .text {
+          padding-right: 10px;
+        }
         .sortoptions {
           display: block;
-          float: left;
+          float: right;
+          margin-right: 8px;
 
           .sortpriority {
             font-size: 10px;
-            background: map-get($colorGrey, 'lightest');
+            // background: map-get($colorGrey, 'lightest');
             color: map-get($colorGrey, 'base');
             display: inline-block;
             vertical-align: 1px;
             width: 13px;
             height: 13px;
             text-align: center;
-            margin-right: 5px;
+
           }
         }
 
         &:after {
           position: absolute;
-          top: 35%;
+          top: 12px;
           color: map-get($colorGrey, 'dark');
           right: 5px;
         }
@@ -723,6 +771,7 @@ form .wide p.help {
         }
         &.descending {
           &:after {
+            top: 6px;
             @include faIcon(fa-sort-desc)
           }
         }
@@ -733,8 +782,12 @@ form .wide p.help {
       tr {
 
         td, th {
-          padding: 4px 0;
+          padding: 4px 7px;
           border-bottom: 1px solid map-get($colorGrey, 'lightest');
+        }
+
+        td.action-checkbox {
+          text-align:center;
         }
 
         &:last-of-type {
@@ -743,21 +796,8 @@ form .wide p.help {
           }
         }
 
-        &.selected {
-          td,th {
-            // background-color: map-get($colorGrey, 'lightest') !important;
-          }
-        }
-
       }
 
-      td, th {
-        border-left: 0;
-
-        &:first-child {
-          border-right: 0;
-        }
-      }
     }
   }
 
@@ -765,15 +805,18 @@ form .wide p.help {
     background: none;
     padding: 8px 5px;
     border-right: 0;
+    position: absolute;
+    background: map-get($colorGrey, 'micro');
+    border-top: 1px solid map-get($colorGrey, 'lightest');
+    color: map-get($colorGrey, 'base');
+    bottom: 0;
+    left: 0;
+    width: 100%;
 
     .button {
       font-size: inherit;
       padding: inherit;
     }
-  }
-
-  .paginator {
-    background: none;
   }
 
   form {
@@ -785,6 +828,11 @@ form .wide p.help {
 
   }
 }
+
+#changelist-form .results {
+  overflow-x: auto;
+}
+
 
 
 /*   ————————————————————————————————————————————————
@@ -853,8 +901,6 @@ body.dashboard {
     }
 
     .addlink {
-      // @extend %button-base;
-      // text-indent: -9999px;
       color: transparent;
       font-size: 0;
       &:before {

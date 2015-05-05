@@ -1,95 +1,8 @@
 /* CHANGELISTS */
 
-#changelist {
-    position: relative;
-    width: 100%;
-}
-
-#changelist table {
-    width: 100%;
-}
-
-.change-list .hiddenfields { display:none; }
-
-.change-list .filtered table {
-    border-right: 1px solid #ddd;
-}
-
-.change-list .filtered {
-    min-height: 400px;
-}
-
-.change-list .filtered {
-    background: white url(../img/changelist-bg.gif) top right repeat-y !important;
-}
-
-.change-list .filtered .results, .change-list .filtered .paginator, .filtered #toolbar, .filtered div.xfull {
-    margin-right: 160px !important;
-    width: auto !important;
-}
-
-.change-list .filtered table tbody th {
-    padding-right: 1em;
-}
-
-#changelist-form .results {
-  overflow-x: auto;
-}
-
-#changelist .toplinks {
-    border-bottom: 1px solid #ccc !important;
-}
-
-#changelist .paginator {
-    color: #666;
-    border-top: 1px solid #eee;
-    border-bottom: 1px solid #eee;
-    background: white url(../img/nav-bg.gif) 0 180% repeat-x;
-    overflow: hidden;
-}
-
-.change-list .filtered .paginator {
-    border-right: 1px solid #ddd;
-}
-
-/* CHANGELIST TABLES */
-
-#changelist table thead th {
-    padding: 0;
-    white-space: nowrap;
-    vertical-align: middle;
-}
-
-#changelist table thead th.action-checkbox-column {
-    width: 1.5em;
-    text-align: center;
-}
-
-#changelist table tbody td, #changelist table tbody th {
-    border-left: 1px solid #ddd;
-}
-
-#changelist table tbody td:first-child, #changelist table tbody th:first-child {
-    border-left: 0;
-    border-right: 1px solid #ddd;
-}
-
-#changelist table tbody td.action-checkbox {
-    text-align:center;
-}
-
-#changelist table tfoot {
-    color: #666;
-}
 
 /* TOOLBAR */
 
-#changelist #toolbar {
-    padding: 3px;
-    border-bottom: 1px solid #ddd;
-    background: #e1e1e1 url(../img/nav-bg.gif) top left repeat-x;
-    color: #666;
-}
 
 #changelist #toolbar form input {
     font-size: 11px;
@@ -245,13 +158,13 @@
     background-color: #FFFFCC;
 }
 
-#changelist .actions {
+/*#changelist .actions {
     color: #999;
     padding: 3px;
     border-top: 1px solid #fff;
     border-bottom: 1px solid #ddd;
     background: white url(../img/nav-bg-reverse.gif) 0 -10px repeat-x;
-}
+}*/
 
 #changelist .actions.selected {
     background: #fffccf;
