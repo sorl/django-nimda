@@ -213,7 +213,6 @@ a {
   margin-right: auto;
 }
 
-
 #content {
   max-width: 1100px;
   margin-left: auto;
@@ -280,6 +279,27 @@ table {
     }
   }
 }
+
+fieldset {
+  &.collapsed {
+    display: block;
+
+    * {
+      display: none;
+    }
+
+    h2 {
+      display: block;
+    }
+  }
+  &.collapse {
+    .collapse-toggle {
+      display: inline-block !important;
+      padding: 0 2px;
+    }
+  }
+}
+
 
 label {
   @extend %fontSize;
@@ -477,7 +497,7 @@ form .wide p.help {
   border-radius: 2px;
   // border-right: $border-grey;
   // border-top: $border-grey;
-  box-shadow: 3px -3px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: 3px -3px 3px rgba(0, 0, 0, 0.05);
 
   p {
     margin: 0;
@@ -485,6 +505,11 @@ form .wide p.help {
 
   input {
     @extend %button-base;
+    margin-left: 8px;
+
+    &:first-child {
+      margin-left: 0;
+    }
   }
 
   .deletelink-box {
@@ -675,7 +700,6 @@ form .wide p.help {
     padding-left: 10px;
   }
 
-
   #changelist-search {
     label {
       &:before {
@@ -728,6 +752,10 @@ form .wide p.help {
         position: relative;
         border-bottom: 1px solid map-get($colorGrey, 'base');
         border-right: 1px solid map-get($colorGrey, 'lighter');
+
+        &:last-child {
+          border-right: 0;
+        }
 
         &.action-checkbox-column {
           width: 1.5em;
@@ -829,8 +857,12 @@ form .wide p.help {
   }
 }
 
-#changelist-form .results {
-  overflow-x: auto;
+#changelist-form {
+  padding-bottom: 52px; /* height of .actions */
+
+  .results {
+    overflow-x: auto;
+  }
 }
 
 
@@ -838,7 +870,6 @@ form .wide p.help {
 /*   ————————————————————————————————————————————————
    Change history table
   ———————————————————————————————————————————————— */
-
 #change-history {
   th, td {
     padding: 4px 4px 4px 10px;
@@ -847,7 +878,6 @@ form .wide p.help {
   tbody {
     tr {
       th, td {
-        // padding: 4px 0;
         border-bottom: 1px solid map-get($colorGrey, 'lightest');
       }
       &:nth-child(even) {
@@ -874,7 +904,9 @@ form .wide p.help {
 }
 
 .inline-related.tabular fieldset.module table {
-  padding: 8px;
+  td,th {
+    padding: 7px 10px;
+  }
 }
 
 .inline-deletelink {
