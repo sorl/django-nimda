@@ -300,7 +300,6 @@ fieldset {
   }
 }
 
-
 label {
   @extend %fontSize;
 }
@@ -505,6 +504,7 @@ form .wide p.help {
 
   input {
     @extend %button-base;
+
     margin-left: 8px;
 
     &:first-child {
@@ -856,6 +856,7 @@ form .wide p.help {
 
   }
 }
+
 
 #changelist-form {
   padding-bottom: 52px; /* height of .actions */
