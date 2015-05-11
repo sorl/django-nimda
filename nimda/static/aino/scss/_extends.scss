@@ -10,22 +10,40 @@
 
 %button-base {
   padding: 5px 10px;
-  border: 1px solid $color-hero;
+  border: 1px solid $color-site;
   border-radius: 2px;
   border-bottom-width: 2px;
   transition: all 100ms;
   box-shadow: inset 0px 1px rgba(255,255,255,0.2);
-  background: lighten($color-hero, 10%);
+  background: $color-site;
+  font-size: inherit;
   // color: $color-hero;
   color: #fff;
   cursor: pointer;
   display: inline-block;
 
+  &:before {
+    position: relative;
+    top: 1px;
+    margin-right: 10px;
+  }
+
   &:hover {
     box-shadow: none;
-    background-color: $color-hero;
+    background-color: darken($color-site, 10%);
+    border-color: darken($color-site, 10%);
     color: #fff;
     text-decoration: none;
+  }
+}
+
+%button-strong {
+  background-color: $color-hero;
+  border-color: $color-hero;
+
+  &:hover {
+    background-color: darken($color-hero, 10%);
+    border-color: darken($color-hero, 10%);
   }
 }
 
@@ -38,12 +56,12 @@
   &:before {
     @include faIcon(fa-trash, 3);
     margin-right: 10px;
-    position: relative;
-    top: 1px;
+    top: 0px;
   }
 
   &:hover {
     text-decoration: none;
+    border-color: $color-destroy;
     background-color: $color-destroy;
   }
 }
