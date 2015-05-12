@@ -58,6 +58,7 @@ $border-grey: 3px solid rgba(0,0,0,0.07);
 }
 
 %button-base {
+  @extend %font-body;
   padding: 5px 10px;
   border: 1px solid $color-site;
   border-radius: 2px;

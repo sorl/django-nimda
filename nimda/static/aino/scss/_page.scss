@@ -1,0 +1,84 @@
+/*   ————————————————————————————————————————————————
+   Page: Dashboard
+  ———————————————————————————————————————————————— */
+body.dashboard {
+
+  #header {
+    height: 82px;
+  }
+
+  &[class*=' app-'], &[class^='app-'] {
+    #header {
+      height: 100px;
+    }
+  }
+
+  #content-main {
+    -moz-column-count: 2;
+    -webkit-column-count: 2;
+    column-count: 2;
+    -moz-column-gap: 1em;
+    -webkit-column-gap: 20px;
+    column-gap: 1em;
+  }
+
+  div[class^="app-"] {
+    td:last-of-type, .changelink {
+      display: none;
+    }
+
+    .addlink {
+      color: transparent;
+      font-size: 0;
+      &:before {
+        color: lighten($color-hero, 10%);
+        text-indent: 0;
+        @include faIcon(fa-plus-circle, 3)
+      }
+
+    }
+  }
+
+  .module {
+    display: inline-block;
+    width: 100%;
+
+    table {
+      th {
+        width: 100%;
+      }
+      td {
+        white-space: nowrap;
+      }
+    }
+
+    ul.actionlist {
+      margin-left: 0;
+
+      li {
+        list-style-type: none;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -o-text-overflow: ellipsis;
+      }
+    }
+  }
+
+
+}
+/*   ————————————————————————————————————————————————
+   Page: Popup
+  ———————————————————————————————————————————————— */
+body.popup #content h1:first-of-type {
+  position: static;
+}
+
+
+/*   ————————————————————————————————————————————————
+   Page: Delete confirmation
+  ———————————————————————————————————————————————— */
+body.delete-confirmation {
+  input[type="submit"] {
+    @extend %button-destroy;
+  }
+}

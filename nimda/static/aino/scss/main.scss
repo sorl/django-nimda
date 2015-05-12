@@ -166,8 +166,12 @@ a {
   margin-right: auto;
 }
 
-.module:not(.calendarbox) {
+.module:not(.calendarbox):not(.clockbox) {
   @extend %adminBox;
+
+  p {
+    padding: 10px;
+  }
 
   > h2:first-of-type, caption {
     @extend %font-title;
@@ -576,53 +580,6 @@ form .wide p.help {
 }
 
 
-/*   ————————————————————————————————————————————————
-   Selector
-  ———————————————————————————————————————————————— */
-.selector {
-  h2 {
-    @extend %font-title;
-    @extend %letterSpacing-large;
-    margin: 0;
-    text-transform: uppercase;
-    font-size: map-get($fontSizes, 'base');
-    padding: 6px;
-    border: 0;
-  }
-
-  .selector-filter {
-    border-color: color('grey', 3);
-    padding: 9px;
-
-    label {
-      margin-right: 4px;
-      margin-top: 5px;
-      padding: 0;
-    }
-  }
-
-  .selector-available h2 {
-    background: color('grey', 2);
-  }
-
-  .selector-chosen h2 {
-    background: #eef6ff;
-    color: $color-hero;
-  }
-
-  select {
-    border-color: color('grey', 3);
-    padding: 8px;
-    font-size: map-get($fontSizes, 'base');
-    height: 200px;
-
-    &:active, &:focus {
-      outline: none;
-      border-color: $color-hero;
-    }
-  }
-}
-
 
 /*   ————————————————————————————————————————————————
    Changelist
@@ -933,86 +890,12 @@ form .wide p.help {
 
 
 /*   ————————————————————————————————————————————————
-   Page: Dashboard
+   Widgets
   ———————————————————————————————————————————————— */
-body.dashboard {
-
-  #header {
-    height: 82px;
-  }
-
-  &[class*=' app-'], &[class^='app-'] {
-    #header {
-      height: 100px;
-    }
-  }
-
-  #content-main {
-    -moz-column-count: 2;
-    -webkit-column-count: 2;
-    column-count: 2;
-    -moz-column-gap: 1em;
-    -webkit-column-gap: 20px;
-    column-gap: 1em;
-  }
-
-  div[class^="app-"] {
-    td:last-of-type, .changelink {
-      display: none;
-    }
-
-    .addlink {
-      color: transparent;
-      font-size: 0;
-      &:before {
-        color: lighten($color-hero, 10%);
-        text-indent: 0;
-        @include faIcon(fa-plus-circle, 3)
-      }
-
-    }
-  }
-
-  .module {
-    display: inline-block;
-    width: 100%;
-
-    table {
-      th {
-        width: 100%;
-      }
-      td {
-        white-space: nowrap;
-      }
-    }
-
-    ul.actionlist {
-      margin-left: 0;
-
-      li {
-        list-style-type: none;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        -o-text-overflow: ellipsis;
-      }
-    }
-  }
-
-
-}
-/*   ————————————————————————————————————————————————
-   Page: Popup
-  ———————————————————————————————————————————————— */
-body.popup #content h1:first-of-type {
-  position: static;
-}
+@import 'widgets';
 
 
 /*   ————————————————————————————————————————————————
-   Page: Delete confirmation
+   Specific page styles
   ———————————————————————————————————————————————— */
-body.delete-confirmation {
-  input[type="submit"] {
-    @extend %button-destroy;
-  }
-}
+@import 'page';

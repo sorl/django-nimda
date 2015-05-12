@@ -29,12 +29,12 @@
    Extends
   ———————————————————————————————————————————————— */
 /* line 50, ../scss/_general.scss */
-body {
+.button, input[type="submit"], button, .object-tools li a, .submit-row input, .submit-row button, .submit-row .deletelink-box a.deletelink, #changelist form input[type="submit"], .inline-group ul.tools a.add, .inline-group div.add-row a, .inline-group .tabular tr.add-row td a, body, .calendarbox caption {
   font-family: 'Roboto', helvetica, arial, sans-serif;
 }
 
 /* line 53, ../scss/_general.scss */
-h1, .module:not(.calendarbox) > h2:first-of-type, .module:not(.calendarbox) caption, table caption, .selector h2 {
+h1, .module:not(.calendarbox):not(.clockbox) > h2:first-of-type, .module:not(.calendarbox):not(.clockbox) caption, table caption {
   font-family: 'Maven Pro', helvetica, arial, sans-serif;
 }
 
@@ -57,13 +57,13 @@ input[type="text"], input[type="email"], input[type="password"], input[type="num
   cursor: pointer;
   display: inline-block;
 }
-/* line 74, ../scss/_general.scss */
+/* line 75, ../scss/_general.scss */
 .button:before, input[type="submit"]:before, button:before, .object-tools li a:before, .submit-row input:before, .submit-row button:before, .submit-row .deletelink-box a.deletelink:before, #changelist form input[type="submit"]:before, .inline-group ul.tools a.add:before, .inline-group div.add-row a:before, .inline-group .tabular tr.add-row td a:before {
   position: relative;
   top: 1px;
   margin-right: 8px;
 }
-/* line 80, ../scss/_general.scss */
+/* line 81, ../scss/_general.scss */
 .button:hover, input[type="submit"]:hover, button:hover, .object-tools li a:hover, .submit-row input:hover, .submit-row .deletelink-box a.deletelink:hover, #changelist form input[type="submit"]:hover, .inline-group ul.tools a.add:hover, .inline-group div.add-row a:hover, .inline-group .tabular tr.add-row td a:hover {
   box-shadow: none;
   background-color: #607187;
@@ -72,25 +72,25 @@ input[type="text"], input[type="email"], input[type="password"], input[type="num
   text-decoration: none;
 }
 
-/* line 89, ../scss/_general.scss */
+/* line 90, ../scss/_general.scss */
 .button.default, input[type="submit"].default, button.default {
   background-color: #479eff;
   border-color: #479eff;
 }
-/* line 93, ../scss/_general.scss */
+/* line 94, ../scss/_general.scss */
 .button.default:hover, input[type="submit"].default:hover, button.default:hover {
   background-color: #1483ff;
   border-color: #1483ff;
 }
 
-/* line 99, ../scss/_general.scss */
+/* line 100, ../scss/_general.scss */
 .submit-row .deletelink-box a.deletelink, body.delete-confirmation input[type="submit"] {
   background-color: #e85555;
   border-color: #d31d1d;
   padding: 5px 10px;
   position: relative;
 }
-/* line 105, ../scss/_general.scss */
+/* line 106, ../scss/_general.scss */
 .submit-row .deletelink-box a.deletelink:before, body.delete-confirmation input[type="submit"]:before {
   content: "";
   font: normal normal normal 14px/1 FontAwesome;
@@ -101,15 +101,15 @@ input[type="text"], input[type="email"], input[type="password"], input[type="num
   transform: translate(0, 0);
   top: 0px;
 }
-/* line 110, ../scss/_general.scss */
+/* line 111, ../scss/_general.scss */
 .submit-row .deletelink-box a.deletelink:hover, body.delete-confirmation input[type="submit"]:hover {
   text-decoration: none;
   border-color: #d31d1d;
   background-color: #d31d1d;
 }
 
-/* line 117, ../scss/_general.scss */
-.module:not(.calendarbox) {
+/* line 118, ../scss/_general.scss */
+.module:not(.calendarbox):not(.clockbox) {
   padding: 0;
   background-color: #fff;
   border: 0;
@@ -118,7 +118,7 @@ input[type="text"], input[type="email"], input[type="password"], input[type="num
   margin: 0 0 17px 0;
 }
 
-/* line 136, ../scss/_general.scss */
+/* line 137, ../scss/_general.scss */
 input[type="text"], input[type="email"], input[type="password"], input[type="number"], textarea, #changelist #toolbar form #searchbar {
   padding: 6px 8px;
   border-radius: 2px;
@@ -127,24 +127,24 @@ input[type="text"], input[type="email"], input[type="password"], input[type="num
   border-bottom-width: 2px;
   width: 120px;
 }
-/* line 145, ../scss/_general.scss */
+/* line 146, ../scss/_general.scss */
 input[type="text"]::selection, input[type="email"]::selection, input[type="password"]::selection, input[type="number"]::selection, textarea::selection, #changelist #toolbar form #searchbar::selection {
   background: #479eff;
   /* WebKit/Blink Browsers */
   color: #fff;
 }
-/* line 150, ../scss/_general.scss */
+/* line 151, ../scss/_general.scss */
 input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, input[type="number"]:focus, textarea:focus, #changelist #toolbar form #searchbar:focus {
   outline: 0;
   border-bottom-color: #479eff;
 }
 
-/* line 156, ../scss/_general.scss */
-body, .module:not(.calendarbox) > h2:first-of-type, .module:not(.calendarbox) caption {
+/* line 157, ../scss/_general.scss */
+body, .module:not(.calendarbox):not(.clockbox) > h2:first-of-type, .module:not(.calendarbox):not(.clockbox) caption {
   letter-spacing: 0.25px;
 }
 
-/* line 159, ../scss/_general.scss */
+/* line 160, ../scss/_general.scss */
 .selector h2 {
   letter-spacing: 0.75px;
 }
@@ -341,7 +341,11 @@ a:hover {
 }
 
 /* line 172, ../scss/main.scss */
-.module:not(.calendarbox) > h2:first-of-type, .module:not(.calendarbox) caption {
+.module:not(.calendarbox):not(.clockbox) p {
+  padding: 10px;
+}
+/* line 176, ../scss/main.scss */
+.module:not(.calendarbox):not(.clockbox) > h2:first-of-type, .module:not(.calendarbox):not(.clockbox) caption {
   margin: 0;
   background-color: #F5E9CC;
   border-top-left-radius: 3px;
@@ -353,13 +357,13 @@ a:hover {
   position: relative;
 }
 @media only all and (min-width: 1000px) {
-  /* line 172, ../scss/main.scss */
-  .module:not(.calendarbox) > h2:first-of-type, .module:not(.calendarbox) caption {
+  /* line 176, ../scss/main.scss */
+  .module:not(.calendarbox):not(.clockbox) > h2:first-of-type, .module:not(.calendarbox):not(.clockbox) caption {
     font-size: 14px;
   }
 }
-/* line 189, ../scss/main.scss */
-.module:not(.calendarbox) > h2:first-of-type:after, .module:not(.calendarbox) caption:after {
+/* line 193, ../scss/main.scss */
+.module:not(.calendarbox):not(.clockbox) > h2:first-of-type:after, .module:not(.calendarbox):not(.clockbox) caption:after {
   content: " ";
   position: absolute;
   right: -3px;
@@ -369,25 +373,25 @@ a:hover {
   bottom: 0;
   background-color: #f1e0b7;
 }
-/* line 202, ../scss/main.scss */
-.module:not(.calendarbox) .datetime input {
+/* line 206, ../scss/main.scss */
+.module:not(.calendarbox):not(.clockbox) .datetime input {
   margin-bottom: 5px;
 }
 
-/* line 208, ../scss/main.scss */
+/* line 212, ../scss/main.scss */
 #container {
   max-width: 1100px;
   margin-left: auto;
   margin-right: auto;
 }
 
-/* line 214, ../scss/main.scss */
+/* line 218, ../scss/main.scss */
 #content {
   max-width: 1100px;
   margin-left: auto;
   margin-right: auto;
 }
-/* line 219, ../scss/main.scss */
+/* line 223, ../scss/main.scss */
 #content > h1:first-of-type {
   position: fixed;
   z-index: 110;
@@ -397,19 +401,19 @@ a:hover {
   -webkit-font-smoothing: subpixel-antialiased;
 }
 
-/* line 230, ../scss/main.scss */
+/* line 234, ../scss/main.scss */
 table {
   text-align: left;
   width: 100%;
   border-spacing: 0px;
 }
-/* line 236, ../scss/main.scss */
+/* line 240, ../scss/main.scss */
 table thead th {
   color: #000;
   font-weight: 500;
   border-bottom: 1px solid #e7e7e7;
 }
-/* line 243, ../scss/main.scss */
+/* line 247, ../scss/main.scss */
 table caption {
   text-transform: uppercase;
   text-align: left;
@@ -417,58 +421,58 @@ table caption {
   font-size: 15px;
   letter-spacing: 0;
 }
-/* line 251, ../scss/main.scss */
+/* line 255, ../scss/main.scss */
 table caption a.section {
   color: inherit;
   cursor: default;
 }
-/* line 255, ../scss/main.scss */
+/* line 259, ../scss/main.scss */
 table caption a.section:hover {
   text-decoration: none;
 }
-/* line 263, ../scss/main.scss */
+/* line 267, ../scss/main.scss */
 table caption + tbody tr th, table caption + tbody tr td {
   padding: 3px 13px;
 }
-/* line 268, ../scss/main.scss */
+/* line 272, ../scss/main.scss */
 table caption + tbody tr:last-of-type th, table caption + tbody tr:last-of-type td {
   padding-bottom: 10px;
 }
-/* line 273, ../scss/main.scss */
+/* line 277, ../scss/main.scss */
 table caption + tbody tr:first-of-type th, table caption + tbody tr:first-of-type td {
   padding-top: 10px;
 }
 
-/* line 282, ../scss/main.scss */
+/* line 286, ../scss/main.scss */
 fieldset.collapsed {
   display: block;
 }
-/* line 285, ../scss/main.scss */
+/* line 289, ../scss/main.scss */
 fieldset.collapsed * {
   display: none;
 }
-/* line 289, ../scss/main.scss */
+/* line 293, ../scss/main.scss */
 fieldset.collapsed h2 {
   display: block;
 }
-/* line 294, ../scss/main.scss */
+/* line 298, ../scss/main.scss */
 fieldset.collapse .collapse-toggle {
   display: inline-block !important;
   padding: 0 2px;
 }
 
-/* line 305, ../scss/main.scss */
+/* line 309, ../scss/main.scss */
 .aligned label {
   width: 155px;
   padding-top: 6px;
 }
 
-/* line 314, ../scss/main.scss */
+/* line 318, ../scss/main.scss */
 input.vTextField {
   width: 220px;
 }
 
-/* line 318, ../scss/main.scss */
+/* line 322, ../scss/main.scss */
 select:not([multiple]) {
   -moz-appearance: none;
   -webkit-appearance: none;
@@ -483,12 +487,12 @@ select:not([multiple]) {
   background: url(../img/select-arrows.png) #fff no-repeat right 13px;
   background-size: 25px 50px;
 }
-/* line 332, ../scss/main.scss */
+/* line 336, ../scss/main.scss */
 select:not([multiple]):focus, select:not([multiple]):active {
   border-color: #479eff;
   outline: none;
 }
-/* line 337, ../scss/main.scss */
+/* line 341, ../scss/main.scss */
 select:not([multiple]):hover {
   background-position: right -30px;
 }
@@ -496,22 +500,22 @@ select:not([multiple]):hover {
 /*   ————————————————————————————————————————————————
     Modules
   ———————————————————————————————————————————————— */
-/* line 356, ../scss/main.scss */
+/* line 360, ../scss/main.scss */
 .object-tools {
   list-style: none;
   margin: 0 0 20px;
   padding: 0;
   text-align: right;
 }
-/* line 362, ../scss/main.scss */
+/* line 366, ../scss/main.scss */
 .object-tools li {
   display: inline-block;
 }
-/* line 365, ../scss/main.scss */
+/* line 369, ../scss/main.scss */
 .object-tools li + li {
   margin-left: 10px;
 }
-/* line 373, ../scss/main.scss */
+/* line 377, ../scss/main.scss */
 .object-tools li a.addlink:before {
   content: "";
   font: normal normal normal 14px/1 FontAwesome;
@@ -522,25 +526,25 @@ select:not([multiple]):hover {
   transform: translate(0, 0);
 }
 
-/* line 382, ../scss/main.scss */
+/* line 386, ../scss/main.scss */
 #recent-actions-module h3 {
   padding-left: 13px;
   -webkit-font-smoothing: subpixel-antialiased;
 }
-/* line 387, ../scss/main.scss */
+/* line 391, ../scss/main.scss */
 #recent-actions-module p {
   padding-left: 13px;
 }
-/* line 391, ../scss/main.scss */
+/* line 395, ../scss/main.scss */
 #recent-actions-module .actionlist {
   padding-left: 0;
 }
-/* line 394, ../scss/main.scss */
+/* line 398, ../scss/main.scss */
 #recent-actions-module .actionlist li {
   padding: 5px 13px;
   border-bottom: 1px solid #fafafa;
 }
-/* line 398, ../scss/main.scss */
+/* line 402, ../scss/main.scss */
 #recent-actions-module .actionlist li:before {
   color: #ccc;
   width: 15px;
@@ -548,11 +552,11 @@ select:not([multiple]):hover {
   text-align: center;
   margin-right: 5px;
 }
-/* line 406, ../scss/main.scss */
+/* line 410, ../scss/main.scss */
 #recent-actions-module .actionlist li.deletelink {
   color: #9a9a9a;
 }
-/* line 409, ../scss/main.scss */
+/* line 413, ../scss/main.scss */
 #recent-actions-module .actionlist li.deletelink:before {
   content: "";
   font: normal normal normal 14px/1 FontAwesome;
@@ -562,7 +566,7 @@ select:not([multiple]):hover {
   -moz-osx-font-smoothing: grayscale;
   transform: translate(0, 0);
 }
-/* line 414, ../scss/main.scss */
+/* line 418, ../scss/main.scss */
 #recent-actions-module .actionlist li.changelink:before {
   content: "";
   font: normal normal normal 14px/1 FontAwesome;
@@ -572,7 +576,7 @@ select:not([multiple]):hover {
   -moz-osx-font-smoothing: grayscale;
   transform: translate(0, 0);
 }
-/* line 419, ../scss/main.scss */
+/* line 423, ../scss/main.scss */
 #recent-actions-module .actionlist li.addlink:before {
   content: "";
   font: normal normal normal 14px/1 FontAwesome;
@@ -582,37 +586,37 @@ select:not([multiple]):hover {
   -moz-osx-font-smoothing: grayscale;
   transform: translate(0, 0);
 }
-/* line 424, ../scss/main.scss */
+/* line 428, ../scss/main.scss */
 #recent-actions-module .actionlist li:nth-child(even) {
   background-color: #fdfdfd;
 }
-/* line 428, ../scss/main.scss */
+/* line 432, ../scss/main.scss */
 #recent-actions-module .actionlist li br {
   display: none;
 }
-/* line 432, ../scss/main.scss */
+/* line 436, ../scss/main.scss */
 #recent-actions-module .actionlist li span {
   color: #b5b5b5;
 }
-/* line 434, ../scss/main.scss */
+/* line 438, ../scss/main.scss */
 #recent-actions-module .actionlist li span:before {
   content: "(";
 }
-/* line 435, ../scss/main.scss */
+/* line 439, ../scss/main.scss */
 #recent-actions-module .actionlist li span:after {
   content: ")";
 }
 
-/* line 441, ../scss/main.scss */
+/* line 445, ../scss/main.scss */
 .required label, label.required {
   color: #7a8ba0 !important;
 }
 
-/* line 446, ../scss/main.scss */
+/* line 450, ../scss/main.scss */
 .errornote {
   color: #d31d1d;
 }
-/* line 449, ../scss/main.scss */
+/* line 453, ../scss/main.scss */
 .errornote:before {
   content: "";
   font: normal normal normal 14px/1 FontAwesome;
@@ -623,33 +627,33 @@ select:not([multiple]):hover {
   transform: translate(0, 0);
 }
 
-/* line 454, ../scss/main.scss */
+/* line 458, ../scss/main.scss */
 form .aligned p.help {
   color: #b5b5b5;
   margin-top: 5px;
   padding-left: 0;
 }
 
-/* line 460, ../scss/main.scss */
+/* line 464, ../scss/main.scss */
 form .aligned p, form .aligned ul {
   margin-left: 155px;
   padding-left: 0;
 }
 
-/* line 465, ../scss/main.scss */
+/* line 469, ../scss/main.scss */
 form .wide p.help {
   margin-left: 197px;
 }
 
-/* line 469, ../scss/main.scss */
+/* line 473, ../scss/main.scss */
 .form-row {
   border-bottom: 0;
 }
-/* line 472, ../scss/main.scss */
+/* line 476, ../scss/main.scss */
 .form-row:first-of-type {
   padding-top: 15px;
 }
-/* line 476, ../scss/main.scss */
+/* line 480, ../scss/main.scss */
 .form-row:last-of-type {
   border-bottom: 0;
   padding-bottom: 15px;
@@ -658,7 +662,7 @@ form .wide p.help {
 /*   ————————————————————————————————————————————————
    Submit row
   ———————————————————————————————————————————————— */
-/* line 488, ../scss/main.scss */
+/* line 492, ../scss/main.scss */
 .submit-row {
   position: fixed;
   bottom: 0;
@@ -674,24 +678,24 @@ form .wide p.help {
   border-radius: 2px;
   box-shadow: 3px -3px 3px rgba(0, 0, 0, 0.05);
 }
-/* line 505, ../scss/main.scss */
+/* line 509, ../scss/main.scss */
 .submit-row > div {
   max-width: 1100px;
   margin: 0 auto;
 }
-/* line 510, ../scss/main.scss */
+/* line 514, ../scss/main.scss */
 .submit-row p {
   margin: 0;
 }
-/* line 514, ../scss/main.scss */
+/* line 518, ../scss/main.scss */
 .submit-row input, .submit-row button {
   margin-left: 8px;
 }
-/* line 518, ../scss/main.scss */
+/* line 522, ../scss/main.scss */
 .submit-row input:first-child, .submit-row button:first-child {
   margin-left: 0;
 }
-/* line 523, ../scss/main.scss */
+/* line 527, ../scss/main.scss */
 .submit-row input.default:before, .submit-row button.default:before {
   content: "";
   font: normal normal normal 14px/1 FontAwesome;
@@ -701,12 +705,12 @@ form .wide p.help {
   -moz-osx-font-smoothing: grayscale;
   transform: translate(0, 0);
 }
-/* line 529, ../scss/main.scss */
+/* line 533, ../scss/main.scss */
 .submit-row .deletelink-box {
   position: relative;
   float: right;
 }
-/* line 537, ../scss/main.scss */
+/* line 541, ../scss/main.scss */
 .submit-row .deletelink-box a.deletelink:before {
   font-size: 14px;
 }
@@ -714,22 +718,22 @@ form .wide p.help {
 /*   ————————————————————————————————————————————————
    Message & Error list
   ———————————————————————————————————————————————— */
-/* line 549, ../scss/main.scss */
+/* line 553, ../scss/main.scss */
 .messagelist, .errorlist {
   padding: 0;
   margin-left: 0;
 }
-/* line 553, ../scss/main.scss */
+/* line 557, ../scss/main.scss */
 .messagelist li, .errorlist li {
   list-style: none;
   display: inline-block;
 }
 
-/* line 556, ../scss/main.scss */
+/* line 560, ../scss/main.scss */
 .messagelist {
   text-align: center;
 }
-/* line 559, ../scss/main.scss */
+/* line 563, ../scss/main.scss */
 .messagelist .success {
   background: #e1f1c6;
   border-right: 3px solid #d2eaa9;
@@ -737,7 +741,7 @@ form .wide p.help {
   padding: 10px;
   color: #6e8742;
 }
-/* line 566, ../scss/main.scss */
+/* line 570, ../scss/main.scss */
 .messagelist .success:before {
   content: "";
   font: normal normal normal 14px/1 FontAwesome;
@@ -749,84 +753,40 @@ form .wide p.help {
   margin-right: 6px;
 }
 
-/* line 574, ../scss/main.scss */
+/* line 578, ../scss/main.scss */
 .errorlist {
   color: #d31d1d;
 }
 
 /*   ————————————————————————————————————————————————
-   Selector
-  ———————————————————————————————————————————————— */
-/* line 583, ../scss/main.scss */
-.selector h2 {
-  margin: 0;
-  text-transform: uppercase;
-  font-size: 13px;
-  padding: 6px;
-  border: 0;
-}
-/* line 593, ../scss/main.scss */
-.selector .selector-filter {
-  border-color: #e7e7e7;
-  padding: 9px;
-}
-/* line 597, ../scss/main.scss */
-.selector .selector-filter label {
-  margin-right: 4px;
-  margin-top: 5px;
-  padding: 0;
-}
-/* line 604, ../scss/main.scss */
-.selector .selector-available h2 {
-  background: #fafafa;
-}
-/* line 608, ../scss/main.scss */
-.selector .selector-chosen h2 {
-  background: #eef6ff;
-  color: #479eff;
-}
-/* line 613, ../scss/main.scss */
-.selector select {
-  border-color: #e7e7e7;
-  padding: 8px;
-  font-size: 13px;
-  height: 200px;
-}
-/* line 619, ../scss/main.scss */
-.selector select:active, .selector select:focus {
-  outline: none;
-  border-color: #479eff;
-}
-
-/*   ————————————————————————————————————————————————
    Changelist
   ———————————————————————————————————————————————— */
-/* line 631, ../scss/main.scss */
+/* line 588, ../scss/main.scss */
 .change-list .hiddenfields {
   display: none;
 }
-/* line 633, ../scss/main.scss */
+/* line 590, ../scss/main.scss */
 .change-list .filtered {
   background: #fff;
   min-height: 650px;
 }
-/* line 637, ../scss/main.scss */
+/* line 594, ../scss/main.scss */
 .change-list .filtered table {
   border-right: 1px solid #ddd;
 }
 
-/* line 643, ../scss/main.scss */
+/* line 600, ../scss/main.scss */
 .change-list .filtered .results, .change-list .filtered .paginator, .filtered #toolbar, .filtered div.xfull {
   margin-right: 160px !important;
   width: auto !important;
 }
 
-/* line 648, ../scss/main.scss */
+/* line 605, ../scss/main.scss */
 #changelist {
   position: relative;
   width: 100%;
 }
-/* line 652, ../scss/main.scss */
+/* line 609, ../scss/main.scss */
 #changelist #changelist-filter {
   background: none;
   width: 140px;
@@ -837,35 +797,35 @@ form .wide p.help {
   z-index: 40;
   margin: 0;
 }
-/* line 662, ../scss/main.scss */
+/* line 619, ../scss/main.scss */
 #changelist #changelist-filter ul {
   margin-left: 0;
   margin-top: 5px;
 }
-/* line 666, ../scss/main.scss */
+/* line 623, ../scss/main.scss */
 #changelist #changelist-filter ul li {
   padding-left: 0;
   border-left: 0;
 }
-/* line 670, ../scss/main.scss */
+/* line 627, ../scss/main.scss */
 #changelist #changelist-filter ul li.selected {
   margin-left: 0;
 }
-/* line 672, ../scss/main.scss */
+/* line 629, ../scss/main.scss */
 #changelist #changelist-filter ul li.selected a {
   color: #479eff !important;
 }
-/* line 680, ../scss/main.scss */
+/* line 637, ../scss/main.scss */
 #changelist #changelist-filter a {
   display: block;
   cursor: pointer;
 }
-/* line 684, ../scss/main.scss */
+/* line 641, ../scss/main.scss */
 #changelist #changelist-filter a:hover {
   color: inherit;
   text-decoration: none;
 }
-/* line 690, ../scss/main.scss */
+/* line 647, ../scss/main.scss */
 #changelist #changelist-filter h2 {
   border-bottom: 0;
   text-transform: uppercase;
@@ -873,7 +833,7 @@ form .wide p.help {
   color: #fff;
   position: relative;
 }
-/* line 697, ../scss/main.scss */
+/* line 654, ../scss/main.scss */
 #changelist #changelist-filter h2:after {
   content: " ";
   position: absolute;
@@ -883,11 +843,11 @@ form .wide p.help {
   right: -3px;
   background-color: #92a0b1;
 }
-/* line 709, ../scss/main.scss */
+/* line 666, ../scss/main.scss */
 #changelist .toplinks {
   border-bottom: 1px solid #ccc;
 }
-/* line 713, ../scss/main.scss */
+/* line 670, ../scss/main.scss */
 #changelist .paginator {
   color: #666;
   border-top: 1px solid #ddd;
@@ -895,7 +855,7 @@ form .wide p.help {
   border-right: 0;
   padding-left: 10px;
 }
-/* line 723, ../scss/main.scss */
+/* line 680, ../scss/main.scss */
 #changelist #changelist-search label:before {
   content: "";
   font: normal normal normal 14px/1 FontAwesome;
@@ -908,7 +868,7 @@ form .wide p.help {
   margin-right: 3px;
   display: inline-block;
 }
-/* line 732, ../scss/main.scss */
+/* line 689, ../scss/main.scss */
 #changelist #toolbar {
   padding: 10px 3px;
   color: #666;
@@ -916,29 +876,29 @@ form .wide p.help {
   margin: 5px 5px 0;
   position: relative;
 }
-/* line 740, ../scss/main.scss */
+/* line 697, ../scss/main.scss */
 #changelist #toolbar img {
   display: none;
 }
-/* line 744, ../scss/main.scss */
+/* line 701, ../scss/main.scss */
 #changelist #toolbar form #searchbar {
   width: 300px;
 }
-/* line 752, ../scss/main.scss */
+/* line 709, ../scss/main.scss */
 #changelist table {
   border-top: 1px solid #eee;
 }
-/* line 755, ../scss/main.scss */
+/* line 712, ../scss/main.scss */
 #changelist table .row2 {
   background: #fdfdfd;
 }
-/* line 760, ../scss/main.scss */
+/* line 717, ../scss/main.scss */
 #changelist table thead a {
   color: #000;
   display: block;
   -webkit-font-smoothing: subpixel-antialiased;
 }
-/* line 766, ../scss/main.scss */
+/* line 723, ../scss/main.scss */
 #changelist table thead th {
   padding: 5px 7px;
   white-space: nowrap;
@@ -947,26 +907,26 @@ form .wide p.help {
   border-bottom: 1px solid #b5b5b5;
   border-right: 1px solid #e7e7e7;
 }
-/* line 774, ../scss/main.scss */
+/* line 731, ../scss/main.scss */
 #changelist table thead th:last-child {
   border-right: 0;
 }
-/* line 778, ../scss/main.scss */
+/* line 735, ../scss/main.scss */
 #changelist table thead th.action-checkbox-column {
   width: 1.5em;
   text-align: center;
 }
-/* line 785, ../scss/main.scss */
+/* line 742, ../scss/main.scss */
 #changelist table thead .sorted .text {
   padding-right: 10px;
 }
-/* line 788, ../scss/main.scss */
+/* line 745, ../scss/main.scss */
 #changelist table thead .sorted .sortoptions {
   display: block;
   float: right;
   margin-right: 8px;
 }
-/* line 793, ../scss/main.scss */
+/* line 750, ../scss/main.scss */
 #changelist table thead .sorted .sortoptions .sortpriority {
   font-size: 10px;
   color: #b5b5b5;
@@ -976,14 +936,14 @@ form .wide p.help {
   height: 13px;
   text-align: center;
 }
-/* line 805, ../scss/main.scss */
+/* line 762, ../scss/main.scss */
 #changelist table thead .sorted:after {
   position: absolute;
   top: 12px;
   color: #9a9a9a;
   right: 5px;
 }
-/* line 813, ../scss/main.scss */
+/* line 770, ../scss/main.scss */
 #changelist table thead .sorted.ascending:after {
   content: "";
   font: normal normal normal 14px/1 FontAwesome;
@@ -993,7 +953,7 @@ form .wide p.help {
   -moz-osx-font-smoothing: grayscale;
   transform: translate(0, 0);
 }
-/* line 818, ../scss/main.scss */
+/* line 775, ../scss/main.scss */
 #changelist table thead .sorted.descending:after {
   top: 6px;
   content: "";
@@ -1004,20 +964,20 @@ form .wide p.help {
   -moz-osx-font-smoothing: grayscale;
   transform: translate(0, 0);
 }
-/* line 829, ../scss/main.scss */
+/* line 786, ../scss/main.scss */
 #changelist table tbody tr td, #changelist table tbody tr th {
   padding: 4px 7px;
   border-bottom: 1px solid #fafafa;
 }
-/* line 834, ../scss/main.scss */
+/* line 791, ../scss/main.scss */
 #changelist table tbody tr td.action-checkbox {
   text-align: center;
 }
-/* line 839, ../scss/main.scss */
+/* line 796, ../scss/main.scss */
 #changelist table tbody tr:last-of-type td, #changelist table tbody tr:last-of-type th {
   border-bottom: 0;
 }
-/* line 849, ../scss/main.scss */
+/* line 806, ../scss/main.scss */
 #changelist .actions {
   background: none;
   padding: 8px 5px;
@@ -1029,22 +989,22 @@ form .wide p.help {
   left: 0;
   width: 100%;
 }
-/* line 861, ../scss/main.scss */
+/* line 818, ../scss/main.scss */
 #changelist .actions .button {
   font-size: inherit;
   padding: inherit;
 }
-/* line 868, ../scss/main.scss */
+/* line 825, ../scss/main.scss */
 #changelist form input[type="submit"] {
   display: none;
 }
 
-/* line 878, ../scss/main.scss */
+/* line 835, ../scss/main.scss */
 #changelist-form {
   padding-bottom: 52px;
   /* height of .actions */
 }
-/* line 881, ../scss/main.scss */
+/* line 838, ../scss/main.scss */
 #changelist-form .results {
   overflow-x: auto;
 }
@@ -1052,15 +1012,15 @@ form .wide p.help {
 /*   ————————————————————————————————————————————————
    Change history table
   ———————————————————————————————————————————————— */
-/* line 892, ../scss/main.scss */
+/* line 849, ../scss/main.scss */
 #change-history th, #change-history td {
   padding: 4px 4px 4px 10px;
 }
-/* line 898, ../scss/main.scss */
+/* line 855, ../scss/main.scss */
 #change-history tbody tr th, #change-history tbody tr td {
   border-bottom: 1px solid #fafafa;
 }
-/* line 902, ../scss/main.scss */
+/* line 859, ../scss/main.scss */
 #change-history tbody tr:nth-child(even) th, #change-history tbody tr:nth-child(even) td {
   background-color: #fdfdfd;
 }
@@ -1068,33 +1028,190 @@ form .wide p.help {
 /*   ————————————————————————————————————————————————
    Inline
   ———————————————————————————————————————————————— */
-/* line 919, ../scss/main.scss */
+/* line 876, ../scss/main.scss */
 .inline-group td {
   padding: 10px 0 0;
 }
 
-/* line 925, ../scss/main.scss */
+/* line 882, ../scss/main.scss */
 .inline-related.tabular fieldset.module table td, .inline-related.tabular fieldset.module table th {
   padding: 7px 10px;
 }
 
-/* line 930, ../scss/main.scss */
+/* line 887, ../scss/main.scss */
 .inline-deletelink {
   float: left;
 }
 
 /*   ————————————————————————————————————————————————
+   Widgets
+  ———————————————————————————————————————————————— */
+/*   ————————————————————————————————————————————————
+   Calendarbox
+  ———————————————————————————————————————————————— */
+/* line 7, ../scss/_widgets.scss */
+.calendarbox caption {
+  text-align: center;
+  position: relative;
+  left: -1px;
+  right: -1px;
+  padding: 5px;
+  color: #7a8ba0;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+}
+/* line 19, ../scss/_widgets.scss */
+.calendarbox caption:before {
+  content: " ";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background-color: #e7e7e7;
+}
+/* line 30, ../scss/_widgets.scss */
+.calendarbox table {
+  border-collapse: collapse;
+  width: 100%;
+}
+/* line 34, ../scss/_widgets.scss */
+.calendarbox table td, .calendarbox table th {
+  text-align: center;
+}
+/* line 37, ../scss/_widgets.scss */
+.calendarbox table td a, .calendarbox table th a {
+  display: block;
+}
+/* line 43, ../scss/_widgets.scss */
+.calendarbox table td.selected {
+  background-color: #479eff;
+}
+/* line 45, ../scss/_widgets.scss */
+.calendarbox table td.selected a {
+  color: #fff;
+}
+/* line 52, ../scss/_widgets.scss */
+.calendarbox .calendarnav-previous, .calendarbox .calendarnav-next {
+  color: transparent;
+  width: 17px;
+}
+/* line 56, ../scss/_widgets.scss */
+.calendarbox .calendarnav-previous:before, .calendarbox .calendarnav-next:before {
+  color: #7a8ba0;
+}
+/* line 61, ../scss/_widgets.scss */
+.calendarbox .calendarnav-previous {
+  float: left;
+}
+/* line 64, ../scss/_widgets.scss */
+.calendarbox .calendarnav-previous:before {
+  content: "";
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: 18px;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transform: translate(0, 0);
+}
+/* line 69, ../scss/_widgets.scss */
+.calendarbox .calendarnav-next {
+  float: right;
+}
+/* line 72, ../scss/_widgets.scss */
+.calendarbox .calendarnav-next:before {
+  content: "";
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: 18px;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transform: translate(0, 0);
+}
+
+/* CALENDARS & CLOCKS */
+/* line 81, ../scss/_widgets.scss */
+.calendarbox, .clockbox {
+  width: 300px;
+  text-align: center;
+  background: #fff;
+  position: relative;
+  border-radius: 3px;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+  border: 1px solid #ccc;
+}
+/* line 90, ../scss/_widgets.scss */
+.calendarbox > div:first-of-type, .clockbox > div:first-of-type {
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+  padding: 7px 10px;
+}
+
+/* line 98, ../scss/_widgets.scss */
+.clockbox {
+  width: auto;
+}
+
+/*   ————————————————————————————————————————————————
+   Selector
+  ———————————————————————————————————————————————— */
+/* line 249, ../scss/_widgets.scss */
+.selector h2 {
+  margin: 0;
+  text-transform: uppercase;
+  font-size: 13px;
+  padding: 6px;
+  border: 0;
+}
+/* line 258, ../scss/_widgets.scss */
+.selector .selector-filter {
+  border-color: #e7e7e7;
+  padding: 9px;
+}
+/* line 262, ../scss/_widgets.scss */
+.selector .selector-filter label {
+  margin-right: 4px;
+  margin-top: 5px;
+  padding: 0;
+}
+/* line 269, ../scss/_widgets.scss */
+.selector .selector-available h2 {
+  background: #fafafa;
+}
+/* line 273, ../scss/_widgets.scss */
+.selector .selector-chosen h2 {
+  background: #eef6ff;
+  color: #479eff;
+}
+/* line 278, ../scss/_widgets.scss */
+.selector select {
+  border-color: #e7e7e7;
+  padding: 8px;
+  font-size: 13px;
+  height: 200px;
+}
+/* line 284, ../scss/_widgets.scss */
+.selector select:active, .selector select:focus {
+  outline: none;
+  border-color: #479eff;
+}
+
+/*   ————————————————————————————————————————————————
+   Specific page styles
+  ———————————————————————————————————————————————— */
+/*   ————————————————————————————————————————————————
    Page: Dashboard
   ———————————————————————————————————————————————— */
-/* line 940, ../scss/main.scss */
+/* line 6, ../scss/_page.scss */
 body.dashboard #header {
   height: 82px;
 }
-/* line 945, ../scss/main.scss */
+/* line 11, ../scss/_page.scss */
 body.dashboard[class*=' app-'] #header, body.dashboard[class^='app-'] #header {
   height: 100px;
 }
-/* line 950, ../scss/main.scss */
+/* line 16, ../scss/_page.scss */
 body.dashboard #content-main {
   -moz-column-count: 2;
   -webkit-column-count: 2;
@@ -1103,16 +1220,16 @@ body.dashboard #content-main {
   -webkit-column-gap: 20px;
   column-gap: 1em;
 }
-/* line 960, ../scss/main.scss */
+/* line 26, ../scss/_page.scss */
 body.dashboard div[class^="app-"] td:last-of-type, body.dashboard div[class^="app-"] .changelink {
   display: none;
 }
-/* line 964, ../scss/main.scss */
+/* line 30, ../scss/_page.scss */
 body.dashboard div[class^="app-"] .addlink {
   color: transparent;
   font-size: 0;
 }
-/* line 967, ../scss/main.scss */
+/* line 33, ../scss/_page.scss */
 body.dashboard div[class^="app-"] .addlink:before {
   color: #7ab9ff;
   text-indent: 0;
@@ -1124,24 +1241,24 @@ body.dashboard div[class^="app-"] .addlink:before {
   -moz-osx-font-smoothing: grayscale;
   transform: translate(0, 0);
 }
-/* line 976, ../scss/main.scss */
+/* line 42, ../scss/_page.scss */
 body.dashboard .module {
   display: inline-block;
   width: 100%;
 }
-/* line 981, ../scss/main.scss */
+/* line 47, ../scss/_page.scss */
 body.dashboard .module table th {
   width: 100%;
 }
-/* line 984, ../scss/main.scss */
+/* line 50, ../scss/_page.scss */
 body.dashboard .module table td {
   white-space: nowrap;
 }
-/* line 989, ../scss/main.scss */
+/* line 55, ../scss/_page.scss */
 body.dashboard .module ul.actionlist {
   margin-left: 0;
 }
-/* line 992, ../scss/main.scss */
+/* line 58, ../scss/_page.scss */
 body.dashboard .module ul.actionlist li {
   list-style-type: none;
   overflow: hidden;
@@ -1152,7 +1269,7 @@ body.dashboard .module ul.actionlist li {
 /*   ————————————————————————————————————————————————
    Page: Popup
   ———————————————————————————————————————————————— */
-/* line 1006, ../scss/main.scss */
+/* line 72, ../scss/_page.scss */
 body.popup #content h1:first-of-type {
   position: static;
 }
