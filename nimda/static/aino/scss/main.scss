@@ -1,13 +1,8 @@
 
 /*  ————————————————————————————————————————————————
-     Imports
+     Init
     ———————————————————————————————————————————————— */
-@import 'mixins';
-@import 'fonts';
-@import 'variables';
-@import 'extends';
-@import url(//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css);
-
+@import 'init';
 
 
 /*  ————————————————————————————————————————————————
@@ -84,7 +79,6 @@ a {
   padding: 0 $distance;
   height: 100px;
   background-color: #fff;
-  // border-bottom: 3px solid rgba(0,0,0,0.07);
   box-shadow: 0 3px 1px rgba(0,0,0,0.05);
 
   &:before {
@@ -95,20 +89,26 @@ a {
     right: 0;
     top: 0;
     height: 42px;
-    // border-bottom: 1px solid rgba(0,0,0,0.4);
     background-color: $color-site;
   }
 }
 
 #branding {
-  // background-color: $color-site;
   max-width: 1100px;
   margin-left: auto;
   margin-right: auto;
+  overflow: hidden;
+
+  .welcome-msg {
+    float: right;
+    color: #fff;
+    text-transform: uppercase;
+  }
 }
 
 #site-name {
   margin: 0;
+  float: left;
 
   &:before {
     @include faIcon(fa-globe, 3);
@@ -128,24 +128,20 @@ a {
 
 #user-tools {
   position: relative;
-  top: -40px;
-  width: 100%;
-  max-width: 1100px;
-  text-align: right;
-  margin-left: auto;
-  margin-right: auto;
+  float: right;
   color: rgba(255,255,255,0.7);
   line-height: 40px;
   text-transform: uppercase;
   font-size: 12px;
 
-  strong:first-of-type:after {
-    content: " ";
-    display: block;
+  .separator {
+    margin: 0 2px;
+    display: inline-block;
   }
 
   a {
     text-transform: none;
+    color: #fff;
   }
 }
 
@@ -170,7 +166,7 @@ a {
   margin-right: auto;
 }
 
-.module {
+.module:not(.calendarbox) {
   @extend %adminBox;
 
   > h2:first-of-type, caption {
@@ -178,6 +174,7 @@ a {
     @extend %letterSpacing-normal;
     margin: 0;
     background-color: $color-sidekick;
+    border-top-left-radius: 3px;
     color: $color-sand-dark;
     padding: 5px $distance-small;
     font-size: 13px;
@@ -194,6 +191,7 @@ a {
       position: absolute;
       right: -3px;
       width: 3px;
+      border-top-right-radius: 3px;
       height: 100%;
       bottom: 0;
       background-color: darken($color-sidekick, 5%);
@@ -238,7 +236,7 @@ table {
     th {
       color: #000;
       font-weight: 500;
-      border-bottom: 1px solid map-get($colorGrey, 'base');
+      border-bottom: 1px solid color('grey', 3);
     }
   }
 
@@ -263,7 +261,7 @@ table {
   caption + tbody {
     tr {
       th, td {
-        padding: 3px 10px;
+        padding: 3px 13px;
       }
 
       &:last-of-type {
@@ -323,12 +321,12 @@ select:not([multiple]) {
   appearance: none;
   font-size: map-get($fontSizes, 'base');
   border-radius: 2px;
-  border: 1px solid map-get($colorGrey, 'lighter');
+  border: 1px solid color('grey', 3);
   border-bottom-width: 2px;
-  border-bottom-color: map-get($colorGrey, 'light');
+  border-bottom-color: color('grey', 4);
   margin-right: 5px;
   padding: 7px 35px 7px 7px;
-  background: url(../img/select-arrows.png) no-repeat right 13px;
+  background: url(../img/select-arrows.png) #fff no-repeat right 13px;
   background-size: 25px 50px;
 
   &:focus, &:active {
@@ -359,6 +357,7 @@ select:not([multiple]) {
   list-style: none;
   margin: 0 0 20px;
   padding: 0;
+  text-align: right;
 
   li {
     display: inline-block;
@@ -394,10 +393,10 @@ select:not([multiple]) {
 
     li {
       padding: 5px $distance-small;
-      border-bottom: 1px solid map-get($colorGrey, 'lightest');
+      border-bottom: 1px solid color('grey', 2);
 
       &:before {
-        color: map-get($colorGrey, 'light');
+        color: color('grey', 4);
         width: 15px;
         display: inline-block;
         text-align: center;
@@ -405,7 +404,7 @@ select:not([multiple]) {
       }
 
       &.deletelink {
-        color: map-get($colorGrey, 'dark');
+        color: color('grey', 6);
 
         &:before {
           @include faIcon(fa-trash)
@@ -423,7 +422,7 @@ select:not([multiple]) {
       }
 
       &:nth-child(even) {
-        background-color: map-get($colorGrey, 'micro');
+        background-color: color('grey', 1);
       }
 
       br {
@@ -431,7 +430,7 @@ select:not([multiple]) {
       }
 
       span {
-        color: map-get($colorGrey, 'base');
+        color: color('grey');
         &:before { content: "(" };
         &:after { content: ")" };
       }
@@ -453,7 +452,7 @@ select:not([multiple]) {
 }
 
 form .aligned p.help {
-  color: map-get($colorGrey, 'base');
+  color: color('grey');
   margin-top: 5px;
   padding-left: 0;
 }
@@ -592,7 +591,7 @@ form .wide p.help {
   }
 
   .selector-filter {
-    border-color: map-get($colorGrey, 'lighter');
+    border-color: color('grey', 3);
     padding: 9px;
 
     label {
@@ -603,7 +602,7 @@ form .wide p.help {
   }
 
   .selector-available h2 {
-    background: map-get($colorGrey, 'lightest');
+    background: color('grey', 2);
   }
 
   .selector-chosen h2 {
@@ -612,7 +611,7 @@ form .wide p.help {
   }
 
   select {
-    border-color: map-get($colorGrey, 'lighter');
+    border-color: color('grey', 3);
     padding: 8px;
     font-size: map-get($fontSizes, 'base');
     height: 200px;
@@ -723,7 +722,7 @@ form .wide p.help {
     label {
       &:before {
         @include faIcon('fa-search');
-        color: map-get($colorGrey, 'light');
+        color: color('grey', 4);
         margin-right: 3px;
         display: inline-block;
       }
@@ -754,7 +753,7 @@ form .wide p.help {
     border-top: 1px solid #eee;
 
     .row2 {
-      background: map-get($colorGrey, 'micro');
+      background: color('grey', 1);
     }
 
     thead {
@@ -769,8 +768,8 @@ form .wide p.help {
         white-space: nowrap;
         vertical-align: middle;
         position: relative;
-        border-bottom: 1px solid map-get($colorGrey, 'base');
-        border-right: 1px solid map-get($colorGrey, 'lighter');
+        border-bottom: 1px solid color('grey');
+        border-right: 1px solid color('grey', 3);
 
         &:last-child {
           border-right: 0;
@@ -793,8 +792,7 @@ form .wide p.help {
 
           .sortpriority {
             font-size: 10px;
-            // background: map-get($colorGrey, 'lightest');
-            color: map-get($colorGrey, 'base');
+            color: color('grey');
             display: inline-block;
             vertical-align: 1px;
             width: 13px;
@@ -807,7 +805,7 @@ form .wide p.help {
         &:after {
           position: absolute;
           top: 12px;
-          color: map-get($colorGrey, 'dark');
+          color: color('grey', 6);
           right: 5px;
         }
 
@@ -830,7 +828,7 @@ form .wide p.help {
 
         td, th {
           padding: 4px 7px;
-          border-bottom: 1px solid map-get($colorGrey, 'lightest');
+          border-bottom: 1px solid color('grey', 2);
         }
 
         td.action-checkbox {
@@ -853,9 +851,9 @@ form .wide p.help {
     padding: 8px 5px;
     border-right: 0;
     position: absolute;
-    background: map-get($colorGrey, 'micro');
-    border-top: 1px solid map-get($colorGrey, 'lightest');
-    color: map-get($colorGrey, 'base');
+    background: color('grey', 2);
+    // border-top: 1px solid color('grey', 3);
+    color: color('grey');
     bottom: 0;
     left: 0;
     width: 100%;
@@ -898,11 +896,11 @@ form .wide p.help {
   tbody {
     tr {
       th, td {
-        border-bottom: 1px solid map-get($colorGrey, 'lightest');
+        border-bottom: 1px solid color('grey', 2);
       }
       &:nth-child(even) {
         th, td {
-          background-color: map-get($colorGrey, 'micro');
+          background-color: color('grey', 1);
         }
       }
     }
@@ -943,6 +941,12 @@ body.dashboard {
     height: 82px;
   }
 
+  &[class*=' app-'], &[class^='app-'] {
+    #header {
+      height: 100px;
+    }
+  }
+
   #content-main {
     -moz-column-count: 2;
     -webkit-column-count: 2;
@@ -961,7 +965,7 @@ body.dashboard {
       color: transparent;
       font-size: 0;
       &:before {
-        color: $color-hero;
+        color: lighten($color-hero, 10%);
         text-indent: 0;
         @include faIcon(fa-plus-circle, 3)
       }

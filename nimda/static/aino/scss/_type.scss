@@ -1,0 +1,18 @@
+@import url(http://fonts.googleapis.com/css?family=Maven+Pro:400,500,700);
+@import url(http://fonts.googleapis.com/css?family=Roboto:500,400);
+@import url(//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css);
+
+$fontSizes: (
+  'micro': 8px,
+  'smallest': 9px,
+  'smaller': 11px,
+  'small': 12px,
+  'base': 13px,
+  'large': 15px,
+  'larger': 17px,
+  'largest': 20px,
+  'jumbo': 25px
+);
+
+$letterSpacing: 0.25px;
+$letterSpacing-large: 0.75px;

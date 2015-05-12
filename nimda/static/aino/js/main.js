@@ -1,3 +1,3 @@
 $( document ).ready(function() {
-  console.log($('.breadcrumbs').length)
+  // console.log($('.breadcrumbs').length)
 });

@@ -1,0 +1,42 @@
+/* 	————————————————————————————————————————————————
+	 Icons
+	———————————————————————————————————————————————— */
+$faIcons: (
+  'fa-exclamation-circle': '\f06a',
+  'fa-globe': '\f0ac',
+  'fa-trash': '\f1f8',
+  'fa-cloud-upload': '\f0ee',
+  'fa-plus': '\f067',
+  'fa-sort-amount-asc': '\f160',
+  'fa-sort-amount-desc': '\f161',
+  'fa-sort-desc' : '\f0dd',
+  'fa-sort-asc' : '\f0de',
+  'fa-exchange' : '\f0ec',
+  'fa-pencil' : '\f040',
+  'fa-plus-circle' : '\f055',
+  'fa-search' : '\f002',
+  'fa-check-circle' : '\f058',
+  'fa-thumbs-up' : '\f164'
+);
+
+$faSizes: (
+  1: 14px,
+  2: 16px,
+  3: 18px,
+  4: 20px,
+  5: 24px
+);
+
+@mixin faIcon($name, $size: 1) {
+  // Alternate way of displaying Font Awesome icons.
+  // Used as a substitute to the standard, preferred way of <i class="fa fa-iconname"></i>
+  // when this is not feasible (like when you can't control the markup).
+
+  content: map-get($faIcons, $name);
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: map-get($faSizes, $size);
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transform: translate(0,0);
+}
