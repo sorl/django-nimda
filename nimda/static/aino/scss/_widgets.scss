@@ -8,13 +8,11 @@
     @extend %font-body;
     text-align: center;
     position: relative;
-    left: -1px;
-    right: -1px;
     padding: 5px;
     color: $color-site;
     border-top-right-radius: 3px;
     border-top-left-radius: 3px;
-    // background-color: $color-site;
+    background-color: color('grey', 2);
 
     &:before {
       content: " ";
@@ -23,7 +21,27 @@
       right: 0;
       bottom: 0;
       height: 1px;
-      background-color: color('grey',3)
+      background-color: color('grey',3);
+    }
+  }
+
+  .calendar {
+
+  }
+
+  .calendar-cancel a {
+    @extend %button-base;
+  }
+
+  .calendar-shortcuts {
+    border-top: 1px solid color('grey', 3);
+    border-bottom: 1px solid color('grey', 3);
+    padding: 5px;
+    // color: color('grey', 3);
+    color: transparent;
+    a {
+      display: inline-block;
+      margin: 0 8px;
     }
   }
 

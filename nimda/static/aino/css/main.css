@@ -29,7 +29,7 @@
    Extends
   ———————————————————————————————————————————————— */
 /* line 50, ../scss/_general.scss */
-.button, input[type="submit"], button, .object-tools li a, .submit-row input, .submit-row button, .submit-row .deletelink-box a.deletelink, #changelist form input[type="submit"], .inline-group ul.tools a.add, .inline-group div.add-row a, .inline-group .tabular tr.add-row td a, body, .calendarbox caption {
+.button, input[type="submit"], button, .object-tools li a, .submit-row input, .submit-row button, .submit-row .deletelink-box a.deletelink, #changelist form input[type="submit"], .inline-group ul.tools a.add, .inline-group div.add-row a, .inline-group .tabular tr.add-row td a, .calendarbox .calendar-cancel a, body, .calendarbox caption {
   font-family: 'Roboto', helvetica, arial, sans-serif;
 }
 
@@ -44,7 +44,7 @@ input[type="text"], input[type="email"], input[type="password"], input[type="num
 }
 
 /* line 60, ../scss/_general.scss */
-.button, input[type="submit"], button, .object-tools li a, .submit-row input, .submit-row button, .submit-row .deletelink-box a.deletelink, #changelist form input[type="submit"], .inline-group ul.tools a.add, .inline-group div.add-row a, .inline-group .tabular tr.add-row td a {
+.button, input[type="submit"], button, .object-tools li a, .submit-row input, .submit-row button, .submit-row .deletelink-box a.deletelink, #changelist form input[type="submit"], .inline-group ul.tools a.add, .inline-group div.add-row a, .inline-group .tabular tr.add-row td a, .calendarbox .calendar-cancel a {
   padding: 5px 10px;
   border: 1px solid #7a8ba0;
   border-radius: 2px;
@@ -58,13 +58,13 @@ input[type="text"], input[type="email"], input[type="password"], input[type="num
   display: inline-block;
 }
 /* line 75, ../scss/_general.scss */
-.button:before, input[type="submit"]:before, button:before, .object-tools li a:before, .submit-row input:before, .submit-row button:before, .submit-row .deletelink-box a.deletelink:before, #changelist form input[type="submit"]:before, .inline-group ul.tools a.add:before, .inline-group div.add-row a:before, .inline-group .tabular tr.add-row td a:before {
+.button:before, input[type="submit"]:before, button:before, .object-tools li a:before, .submit-row input:before, .submit-row button:before, .submit-row .deletelink-box a.deletelink:before, #changelist form input[type="submit"]:before, .inline-group ul.tools a.add:before, .inline-group div.add-row a:before, .inline-group .tabular tr.add-row td a:before, .calendarbox .calendar-cancel a:before {
   position: relative;
   top: 1px;
   margin-right: 8px;
 }
 /* line 81, ../scss/_general.scss */
-.button:hover, input[type="submit"]:hover, button:hover, .object-tools li a:hover, .submit-row input:hover, .submit-row .deletelink-box a.deletelink:hover, #changelist form input[type="submit"]:hover, .inline-group ul.tools a.add:hover, .inline-group div.add-row a:hover, .inline-group .tabular tr.add-row td a:hover {
+.button:hover, input[type="submit"]:hover, button:hover, .object-tools li a:hover, .submit-row input:hover, .submit-row .deletelink-box a.deletelink:hover, #changelist form input[type="submit"]:hover, .inline-group ul.tools a.add:hover, .inline-group div.add-row a:hover, .inline-group .tabular tr.add-row td a:hover, .calendarbox .calendar-cancel a:hover {
   box-shadow: none;
   background-color: #607187;
   border-color: #607187;
@@ -665,6 +665,7 @@ form .wide p.help {
 /* line 492, ../scss/main.scss */
 .submit-row {
   position: fixed;
+  z-index: 10;
   bottom: 0;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
@@ -678,24 +679,24 @@ form .wide p.help {
   border-radius: 2px;
   box-shadow: 3px -3px 3px rgba(0, 0, 0, 0.05);
 }
-/* line 509, ../scss/main.scss */
+/* line 510, ../scss/main.scss */
 .submit-row > div {
   max-width: 1100px;
   margin: 0 auto;
 }
-/* line 514, ../scss/main.scss */
+/* line 515, ../scss/main.scss */
 .submit-row p {
   margin: 0;
 }
-/* line 518, ../scss/main.scss */
+/* line 519, ../scss/main.scss */
 .submit-row input, .submit-row button {
   margin-left: 8px;
 }
-/* line 522, ../scss/main.scss */
+/* line 523, ../scss/main.scss */
 .submit-row input:first-child, .submit-row button:first-child {
   margin-left: 0;
 }
-/* line 527, ../scss/main.scss */
+/* line 528, ../scss/main.scss */
 .submit-row input.default:before, .submit-row button.default:before {
   content: "";
   font: normal normal normal 14px/1 FontAwesome;
@@ -705,12 +706,12 @@ form .wide p.help {
   -moz-osx-font-smoothing: grayscale;
   transform: translate(0, 0);
 }
-/* line 533, ../scss/main.scss */
+/* line 534, ../scss/main.scss */
 .submit-row .deletelink-box {
   position: relative;
   float: right;
 }
-/* line 541, ../scss/main.scss */
+/* line 542, ../scss/main.scss */
 .submit-row .deletelink-box a.deletelink:before {
   font-size: 14px;
 }
@@ -718,22 +719,22 @@ form .wide p.help {
 /*   ————————————————————————————————————————————————
    Message & Error list
   ———————————————————————————————————————————————— */
-/* line 553, ../scss/main.scss */
+/* line 554, ../scss/main.scss */
 .messagelist, .errorlist {
   padding: 0;
   margin-left: 0;
 }
-/* line 557, ../scss/main.scss */
+/* line 558, ../scss/main.scss */
 .messagelist li, .errorlist li {
   list-style: none;
   display: inline-block;
 }
 
-/* line 560, ../scss/main.scss */
+/* line 561, ../scss/main.scss */
 .messagelist {
   text-align: center;
 }
-/* line 563, ../scss/main.scss */
+/* line 564, ../scss/main.scss */
 .messagelist .success {
   background: #e1f1c6;
   border-right: 3px solid #d2eaa9;
@@ -741,7 +742,7 @@ form .wide p.help {
   padding: 10px;
   color: #6e8742;
 }
-/* line 570, ../scss/main.scss */
+/* line 571, ../scss/main.scss */
 .messagelist .success:before {
   content: "";
   font: normal normal normal 14px/1 FontAwesome;
@@ -753,7 +754,7 @@ form .wide p.help {
   margin-right: 6px;
 }
 
-/* line 578, ../scss/main.scss */
+/* line 579, ../scss/main.scss */
 .errorlist {
   color: #d31d1d;
 }
@@ -761,32 +762,32 @@ form .wide p.help {
 /*   ————————————————————————————————————————————————
    Changelist
   ———————————————————————————————————————————————— */
-/* line 588, ../scss/main.scss */
+/* line 589, ../scss/main.scss */
 .change-list .hiddenfields {
   display: none;
 }
-/* line 590, ../scss/main.scss */
+/* line 591, ../scss/main.scss */
 .change-list .filtered {
   background: #fff;
   min-height: 650px;
 }
-/* line 594, ../scss/main.scss */
+/* line 595, ../scss/main.scss */
 .change-list .filtered table {
   border-right: 1px solid #ddd;
 }
 
-/* line 600, ../scss/main.scss */
+/* line 601, ../scss/main.scss */
 .change-list .filtered .results, .change-list .filtered .paginator, .filtered #toolbar, .filtered div.xfull {
   margin-right: 160px !important;
   width: auto !important;
 }
 
-/* line 605, ../scss/main.scss */
+/* line 606, ../scss/main.scss */
 #changelist {
   position: relative;
   width: 100%;
 }
-/* line 609, ../scss/main.scss */
+/* line 610, ../scss/main.scss */
 #changelist #changelist-filter {
   background: none;
   width: 140px;
@@ -797,35 +798,35 @@ form .wide p.help {
   z-index: 40;
   margin: 0;
 }
-/* line 619, ../scss/main.scss */
+/* line 620, ../scss/main.scss */
 #changelist #changelist-filter ul {
   margin-left: 0;
   margin-top: 5px;
 }
-/* line 623, ../scss/main.scss */
+/* line 624, ../scss/main.scss */
 #changelist #changelist-filter ul li {
   padding-left: 0;
   border-left: 0;
 }
-/* line 627, ../scss/main.scss */
+/* line 628, ../scss/main.scss */
 #changelist #changelist-filter ul li.selected {
   margin-left: 0;
 }
-/* line 629, ../scss/main.scss */
+/* line 630, ../scss/main.scss */
 #changelist #changelist-filter ul li.selected a {
   color: #479eff !important;
 }
-/* line 637, ../scss/main.scss */
+/* line 638, ../scss/main.scss */
 #changelist #changelist-filter a {
   display: block;
   cursor: pointer;
 }
-/* line 641, ../scss/main.scss */
+/* line 642, ../scss/main.scss */
 #changelist #changelist-filter a:hover {
   color: inherit;
   text-decoration: none;
 }
-/* line 647, ../scss/main.scss */
+/* line 648, ../scss/main.scss */
 #changelist #changelist-filter h2 {
   border-bottom: 0;
   text-transform: uppercase;
@@ -833,7 +834,7 @@ form .wide p.help {
   color: #fff;
   position: relative;
 }
-/* line 654, ../scss/main.scss */
+/* line 655, ../scss/main.scss */
 #changelist #changelist-filter h2:after {
   content: " ";
   position: absolute;
@@ -843,11 +844,11 @@ form .wide p.help {
   right: -3px;
   background-color: #92a0b1;
 }
-/* line 666, ../scss/main.scss */
+/* line 667, ../scss/main.scss */
 #changelist .toplinks {
   border-bottom: 1px solid #ccc;
 }
-/* line 670, ../scss/main.scss */
+/* line 671, ../scss/main.scss */
 #changelist .paginator {
   color: #666;
   border-top: 1px solid #ddd;
@@ -855,7 +856,7 @@ form .wide p.help {
   border-right: 0;
   padding-left: 10px;
 }
-/* line 680, ../scss/main.scss */
+/* line 681, ../scss/main.scss */
 #changelist #changelist-search label:before {
   content: "";
   font: normal normal normal 14px/1 FontAwesome;
@@ -868,7 +869,7 @@ form .wide p.help {
   margin-right: 3px;
   display: inline-block;
 }
-/* line 689, ../scss/main.scss */
+/* line 690, ../scss/main.scss */
 #changelist #toolbar {
   padding: 10px 3px;
   color: #666;
@@ -876,29 +877,29 @@ form .wide p.help {
   margin: 5px 5px 0;
   position: relative;
 }
-/* line 697, ../scss/main.scss */
+/* line 698, ../scss/main.scss */
 #changelist #toolbar img {
   display: none;
 }
-/* line 701, ../scss/main.scss */
+/* line 702, ../scss/main.scss */
 #changelist #toolbar form #searchbar {
   width: 300px;
 }
-/* line 709, ../scss/main.scss */
+/* line 710, ../scss/main.scss */
 #changelist table {
   border-top: 1px solid #eee;
 }
-/* line 712, ../scss/main.scss */
+/* line 713, ../scss/main.scss */
 #changelist table .row2 {
   background: #fdfdfd;
 }
-/* line 717, ../scss/main.scss */
+/* line 718, ../scss/main.scss */
 #changelist table thead a {
   color: #000;
   display: block;
   -webkit-font-smoothing: subpixel-antialiased;
 }
-/* line 723, ../scss/main.scss */
+/* line 724, ../scss/main.scss */
 #changelist table thead th {
   padding: 5px 7px;
   white-space: nowrap;
@@ -907,26 +908,26 @@ form .wide p.help {
   border-bottom: 1px solid #b5b5b5;
   border-right: 1px solid #e7e7e7;
 }
-/* line 731, ../scss/main.scss */
+/* line 732, ../scss/main.scss */
 #changelist table thead th:last-child {
   border-right: 0;
 }
-/* line 735, ../scss/main.scss */
+/* line 736, ../scss/main.scss */
 #changelist table thead th.action-checkbox-column {
   width: 1.5em;
   text-align: center;
 }
-/* line 742, ../scss/main.scss */
+/* line 743, ../scss/main.scss */
 #changelist table thead .sorted .text {
   padding-right: 10px;
 }
-/* line 745, ../scss/main.scss */
+/* line 746, ../scss/main.scss */
 #changelist table thead .sorted .sortoptions {
   display: block;
   float: right;
   margin-right: 8px;
 }
-/* line 750, ../scss/main.scss */
+/* line 751, ../scss/main.scss */
 #changelist table thead .sorted .sortoptions .sortpriority {
   font-size: 10px;
   color: #b5b5b5;
@@ -936,14 +937,14 @@ form .wide p.help {
   height: 13px;
   text-align: center;
 }
-/* line 762, ../scss/main.scss */
+/* line 763, ../scss/main.scss */
 #changelist table thead .sorted:after {
   position: absolute;
   top: 12px;
   color: #9a9a9a;
   right: 5px;
 }
-/* line 770, ../scss/main.scss */
+/* line 771, ../scss/main.scss */
 #changelist table thead .sorted.ascending:after {
   content: "";
   font: normal normal normal 14px/1 FontAwesome;
@@ -953,7 +954,7 @@ form .wide p.help {
   -moz-osx-font-smoothing: grayscale;
   transform: translate(0, 0);
 }
-/* line 775, ../scss/main.scss */
+/* line 776, ../scss/main.scss */
 #changelist table thead .sorted.descending:after {
   top: 6px;
   content: "";
@@ -964,20 +965,20 @@ form .wide p.help {
   -moz-osx-font-smoothing: grayscale;
   transform: translate(0, 0);
 }
-/* line 786, ../scss/main.scss */
+/* line 787, ../scss/main.scss */
 #changelist table tbody tr td, #changelist table tbody tr th {
   padding: 4px 7px;
   border-bottom: 1px solid #fafafa;
 }
-/* line 791, ../scss/main.scss */
+/* line 792, ../scss/main.scss */
 #changelist table tbody tr td.action-checkbox {
   text-align: center;
 }
-/* line 796, ../scss/main.scss */
+/* line 797, ../scss/main.scss */
 #changelist table tbody tr:last-of-type td, #changelist table tbody tr:last-of-type th {
   border-bottom: 0;
 }
-/* line 806, ../scss/main.scss */
+/* line 807, ../scss/main.scss */
 #changelist .actions {
   background: none;
   padding: 8px 5px;
@@ -989,22 +990,22 @@ form .wide p.help {
   left: 0;
   width: 100%;
 }
-/* line 818, ../scss/main.scss */
+/* line 819, ../scss/main.scss */
 #changelist .actions .button {
   font-size: inherit;
   padding: inherit;
 }
-/* line 825, ../scss/main.scss */
+/* line 826, ../scss/main.scss */
 #changelist form input[type="submit"] {
   display: none;
 }
 
-/* line 835, ../scss/main.scss */
+/* line 836, ../scss/main.scss */
 #changelist-form {
   padding-bottom: 52px;
   /* height of .actions */
 }
-/* line 838, ../scss/main.scss */
+/* line 839, ../scss/main.scss */
 #changelist-form .results {
   overflow-x: auto;
 }
@@ -1012,15 +1013,15 @@ form .wide p.help {
 /*   ————————————————————————————————————————————————
    Change history table
   ———————————————————————————————————————————————— */
-/* line 849, ../scss/main.scss */
+/* line 850, ../scss/main.scss */
 #change-history th, #change-history td {
   padding: 4px 4px 4px 10px;
 }
-/* line 855, ../scss/main.scss */
+/* line 856, ../scss/main.scss */
 #change-history tbody tr th, #change-history tbody tr td {
   border-bottom: 1px solid #fafafa;
 }
-/* line 859, ../scss/main.scss */
+/* line 860, ../scss/main.scss */
 #change-history tbody tr:nth-child(even) th, #change-history tbody tr:nth-child(even) td {
   background-color: #fdfdfd;
 }
@@ -1028,17 +1029,17 @@ form .wide p.help {
 /*   ————————————————————————————————————————————————
    Inline
   ———————————————————————————————————————————————— */
-/* line 876, ../scss/main.scss */
+/* line 877, ../scss/main.scss */
 .inline-group td {
   padding: 10px 0 0;
 }
 
-/* line 882, ../scss/main.scss */
+/* line 883, ../scss/main.scss */
 .inline-related.tabular fieldset.module table td, .inline-related.tabular fieldset.module table th {
   padding: 7px 10px;
 }
 
-/* line 887, ../scss/main.scss */
+/* line 888, ../scss/main.scss */
 .inline-deletelink {
   float: left;
 }
@@ -1053,14 +1054,13 @@ form .wide p.help {
 .calendarbox caption {
   text-align: center;
   position: relative;
-  left: -1px;
-  right: -1px;
   padding: 5px;
   color: #7a8ba0;
   border-top-right-radius: 3px;
   border-top-left-radius: 3px;
+  background-color: #fafafa;
 }
-/* line 19, ../scss/_widgets.scss */
+/* line 17, ../scss/_widgets.scss */
 .calendarbox caption:before {
   content: " ";
   position: absolute;
@@ -1070,41 +1070,53 @@ form .wide p.help {
   height: 1px;
   background-color: #e7e7e7;
 }
-/* line 30, ../scss/_widgets.scss */
+/* line 36, ../scss/_widgets.scss */
+.calendarbox .calendar-shortcuts {
+  border-top: 1px solid #e7e7e7;
+  border-bottom: 1px solid #e7e7e7;
+  padding: 5px;
+  color: transparent;
+}
+/* line 42, ../scss/_widgets.scss */
+.calendarbox .calendar-shortcuts a {
+  display: inline-block;
+  margin: 0 8px;
+}
+/* line 48, ../scss/_widgets.scss */
 .calendarbox table {
   border-collapse: collapse;
   width: 100%;
 }
-/* line 34, ../scss/_widgets.scss */
+/* line 52, ../scss/_widgets.scss */
 .calendarbox table td, .calendarbox table th {
   text-align: center;
 }
-/* line 37, ../scss/_widgets.scss */
+/* line 55, ../scss/_widgets.scss */
 .calendarbox table td a, .calendarbox table th a {
   display: block;
 }
-/* line 43, ../scss/_widgets.scss */
+/* line 61, ../scss/_widgets.scss */
 .calendarbox table td.selected {
   background-color: #479eff;
 }
-/* line 45, ../scss/_widgets.scss */
+/* line 63, ../scss/_widgets.scss */
 .calendarbox table td.selected a {
   color: #fff;
 }
-/* line 52, ../scss/_widgets.scss */
+/* line 70, ../scss/_widgets.scss */
 .calendarbox .calendarnav-previous, .calendarbox .calendarnav-next {
   color: transparent;
   width: 17px;
 }
-/* line 56, ../scss/_widgets.scss */
+/* line 74, ../scss/_widgets.scss */
 .calendarbox .calendarnav-previous:before, .calendarbox .calendarnav-next:before {
   color: #7a8ba0;
 }
-/* line 61, ../scss/_widgets.scss */
+/* line 79, ../scss/_widgets.scss */
 .calendarbox .calendarnav-previous {
   float: left;
 }
-/* line 64, ../scss/_widgets.scss */
+/* line 82, ../scss/_widgets.scss */
 .calendarbox .calendarnav-previous:before {
   content: "";
   font: normal normal normal 14px/1 FontAwesome;
@@ -1114,11 +1126,11 @@ form .wide p.help {
   -moz-osx-font-smoothing: grayscale;
   transform: translate(0, 0);
 }
-/* line 69, ../scss/_widgets.scss */
+/* line 87, ../scss/_widgets.scss */
 .calendarbox .calendarnav-next {
   float: right;
 }
-/* line 72, ../scss/_widgets.scss */
+/* line 90, ../scss/_widgets.scss */
 .calendarbox .calendarnav-next:before {
   content: "";
   font: normal normal normal 14px/1 FontAwesome;
@@ -1130,7 +1142,7 @@ form .wide p.help {
 }
 
 /* CALENDARS & CLOCKS */
-/* line 81, ../scss/_widgets.scss */
+/* line 99, ../scss/_widgets.scss */
 .calendarbox, .clockbox {
   width: 300px;
   text-align: center;
@@ -1140,7 +1152,7 @@ form .wide p.help {
   box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
   border: 1px solid #ccc;
 }
-/* line 90, ../scss/_widgets.scss */
+/* line 108, ../scss/_widgets.scss */
 .calendarbox > div:first-of-type, .clockbox > div:first-of-type {
   position: absolute;
   width: 100%;
@@ -1148,7 +1160,7 @@ form .wide p.help {
   padding: 7px 10px;
 }
 
-/* line 98, ../scss/_widgets.scss */
+/* line 116, ../scss/_widgets.scss */
 .clockbox {
   width: auto;
 }
@@ -1156,7 +1168,7 @@ form .wide p.help {
 /*   ————————————————————————————————————————————————
    Selector
   ———————————————————————————————————————————————— */
-/* line 249, ../scss/_widgets.scss */
+/* line 267, ../scss/_widgets.scss */
 .selector h2 {
   margin: 0;
   text-transform: uppercase;
@@ -1164,34 +1176,34 @@ form .wide p.help {
   padding: 6px;
   border: 0;
 }
-/* line 258, ../scss/_widgets.scss */
+/* line 276, ../scss/_widgets.scss */
 .selector .selector-filter {
   border-color: #e7e7e7;
   padding: 9px;
 }
-/* line 262, ../scss/_widgets.scss */
+/* line 280, ../scss/_widgets.scss */
 .selector .selector-filter label {
   margin-right: 4px;
   margin-top: 5px;
   padding: 0;
 }
-/* line 269, ../scss/_widgets.scss */
+/* line 287, ../scss/_widgets.scss */
 .selector .selector-available h2 {
   background: #fafafa;
 }
-/* line 273, ../scss/_widgets.scss */
+/* line 291, ../scss/_widgets.scss */
 .selector .selector-chosen h2 {
   background: #eef6ff;
   color: #479eff;
 }
-/* line 278, ../scss/_widgets.scss */
+/* line 296, ../scss/_widgets.scss */
 .selector select {
   border-color: #e7e7e7;
   padding: 8px;
   font-size: 13px;
   height: 200px;
 }
-/* line 284, ../scss/_widgets.scss */
+/* line 302, ../scss/_widgets.scss */
 .selector select:active, .selector select:focus {
   outline: none;
   border-color: #479eff;

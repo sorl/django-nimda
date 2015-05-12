@@ -491,6 +491,7 @@ form .wide p.help {
   ———————————————————————————————————————————————— */
 .submit-row {
   position: fixed;
+  z-index: 10;
   bottom: 0;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
