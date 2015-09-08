@@ -10,8 +10,7 @@
 	———————————————————————————————————————————————— */
 /* Definitions */
 /* Semantic Aliases */
-@import url(http://fonts.googleapis.com/css?family=Maven+Pro:400,500,700);
-@import url(http://fonts.googleapis.com/css?family=Roboto:500,400);
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600);
 @import url(//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css);
 /* 	————————————————————————————————————————————————
 	 Icons
@@ -28,131 +27,91 @@
 /*   ————————————————————————————————————————————————
    Extends
   ———————————————————————————————————————————————— */
-/* line 50, ../scss/_general.scss */
-.button, input[type="submit"], button, .object-tools li a, .submit-row input, .submit-row button, .submit-row .deletelink-box a.deletelink, #changelist form input[type="submit"], .inline-group ul.tools a.add, .inline-group div.add-row a, .inline-group .tabular tr.add-row td a, .calendarbox .calendar-cancel a, body, .calendarbox caption {
-  font-family: 'Roboto', helvetica, arial, sans-serif;
-}
+.button, input[type="submit"], button, .object-tools li a, .submit-row input, .submit-row button, .submit-row .deletelink-box a.deletelink, #changelist form input[type="submit"], .inline-group ul.tools a.add, .inline-group div.add-row a, .inline-group .tabular tr.add-row td a, .calendarbox .calendar-cancel a, body, .calendarbox caption, h1, .module:not(.calendarbox):not(.clockbox) > h2:first-of-type, .module:not(.calendarbox):not(.clockbox) caption, table caption {
+  font-family: 'Source Sans Pro', helvetica, arial, sans-serif; }
 
-/* line 53, ../scss/_general.scss */
-h1, .module:not(.calendarbox):not(.clockbox) > h2:first-of-type, .module:not(.calendarbox):not(.clockbox) caption, table caption {
-  font-family: 'Maven Pro', helvetica, arial, sans-serif;
-}
-
-/* line 56, ../scss/_general.scss */
 input[type="text"], input[type="email"], input[type="password"], input[type="number"], textarea, #changelist #toolbar form #searchbar, body, label {
-  font-size: 13px;
-}
+  font-size: 15px; }
 
-/* line 60, ../scss/_general.scss */
 .button, input[type="submit"], button, .object-tools li a, .submit-row input, .submit-row button, .submit-row .deletelink-box a.deletelink, #changelist form input[type="submit"], .inline-group ul.tools a.add, .inline-group div.add-row a, .inline-group .tabular tr.add-row td a, .calendarbox .calendar-cancel a {
   padding: 5px 10px;
-  border: 1px solid #7a8ba0;
+  border: 1px solid #4c4c4c;
   border-radius: 2px;
   border-bottom-width: 2px;
   transition: all 100ms;
   box-shadow: inset 0px 1px rgba(255, 255, 255, 0.2);
-  background: #7a8ba0;
+  background: #4c4c4c;
   font-size: inherit;
   color: #fff;
   cursor: pointer;
-  display: inline-block;
-}
-/* line 75, ../scss/_general.scss */
-.button:before, input[type="submit"]:before, button:before, .object-tools li a:before, .submit-row input:before, .submit-row button:before, .submit-row .deletelink-box a.deletelink:before, #changelist form input[type="submit"]:before, .inline-group ul.tools a.add:before, .inline-group div.add-row a:before, .inline-group .tabular tr.add-row td a:before, .calendarbox .calendar-cancel a:before {
-  position: relative;
-  top: 1px;
-  margin-right: 8px;
-}
-/* line 81, ../scss/_general.scss */
-.button:hover, input[type="submit"]:hover, button:hover, .object-tools li a:hover, .submit-row input:hover, .submit-row .deletelink-box a.deletelink:hover, #changelist form input[type="submit"]:hover, .inline-group ul.tools a.add:hover, .inline-group div.add-row a:hover, .inline-group .tabular tr.add-row td a:hover, .calendarbox .calendar-cancel a:hover {
-  box-shadow: none;
-  background-color: #607187;
-  border-color: #607187;
-  color: #fff;
-  text-decoration: none;
-}
+  display: inline-block; }
+  .button:before, input[type="submit"]:before, button:before, .object-tools li a:before, .submit-row input:before, .submit-row button:before, .submit-row .deletelink-box a.deletelink:before, #changelist form input[type="submit"]:before, .inline-group ul.tools a.add:before, .inline-group div.add-row a:before, .inline-group .tabular tr.add-row td a:before, .calendarbox .calendar-cancel a:before {
+    position: relative;
+    top: 1px;
+    margin-right: 8px; }
+  .button:hover, input[type="submit"]:hover, button:hover, .object-tools li a:hover, .submit-row input:hover, .submit-row .deletelink-box a.deletelink:hover, #changelist form input[type="submit"]:hover, .inline-group ul.tools a.add:hover, .inline-group div.add-row a:hover, .inline-group .tabular tr.add-row td a:hover, .calendarbox .calendar-cancel a:hover {
+    box-shadow: none;
+    background-color: #333333;
+    border-color: #333333;
+    color: #fff;
+    text-decoration: none; }
 
-/* line 90, ../scss/_general.scss */
 .button.default, input[type="submit"].default, button.default {
   background-color: #479eff;
-  border-color: #479eff;
-}
-/* line 94, ../scss/_general.scss */
-.button.default:hover, input[type="submit"].default:hover, button.default:hover {
-  background-color: #1483ff;
-  border-color: #1483ff;
-}
+  border-color: #479eff; }
+  .button.default:hover, input[type="submit"].default:hover, button.default:hover {
+    background-color: #1483ff;
+    border-color: #1483ff; }
 
-/* line 100, ../scss/_general.scss */
 .submit-row .deletelink-box a.deletelink, body.delete-confirmation input[type="submit"] {
   background-color: #e85555;
   border-color: #d31d1d;
   padding: 5px 10px;
-  position: relative;
-}
-/* line 106, ../scss/_general.scss */
-.submit-row .deletelink-box a.deletelink:before, body.delete-confirmation input[type="submit"]:before {
-  content: "";
-  font: normal normal normal 14px/1 FontAwesome;
-  font-size: 18px;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  transform: translate(0, 0);
-  top: 0px;
-}
-/* line 111, ../scss/_general.scss */
-.submit-row .deletelink-box a.deletelink:hover, body.delete-confirmation input[type="submit"]:hover {
-  text-decoration: none;
-  border-color: #d31d1d;
-  background-color: #d31d1d;
-}
+  position: relative; }
+  .submit-row .deletelink-box a.deletelink:before, body.delete-confirmation input[type="submit"]:before {
+    content: "";
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: 18px;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate(0, 0);
+    top: 0px; }
+  .submit-row .deletelink-box a.deletelink:hover, body.delete-confirmation input[type="submit"]:hover {
+    text-decoration: none;
+    border-color: #d31d1d;
+    background-color: #d31d1d; }
 
-/* line 118, ../scss/_general.scss */
 .module:not(.calendarbox):not(.clockbox) {
   padding: 0;
   background-color: #fff;
   border: 0;
   border-radius: 3px;
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.03);
-  margin: 0 0 17px 0;
-}
+  margin: 0 0 17px 0; }
 
-/* line 137, ../scss/_general.scss */
 input[type="text"], input[type="email"], input[type="password"], input[type="number"], textarea, #changelist #toolbar form #searchbar {
   padding: 6px 8px;
   border-radius: 2px;
-  border: 1px solid #e7e7e7;
-  border-bottom-color: #ccc;
-  border-bottom-width: 2px;
-  width: 120px;
-}
-/* line 146, ../scss/_general.scss */
-input[type="text"]::selection, input[type="email"]::selection, input[type="password"]::selection, input[type="number"]::selection, textarea::selection, #changelist #toolbar form #searchbar::selection {
-  background: #479eff;
-  /* WebKit/Blink Browsers */
-  color: #fff;
-}
-/* line 151, ../scss/_general.scss */
-input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, input[type="number"]:focus, textarea:focus, #changelist #toolbar form #searchbar:focus {
-  outline: 0;
-  border-bottom-color: #479eff;
-}
+  border: 1px solid #ccc;
+  border-bottom-color: #b5b5b5;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.08) inset;
+  width: 120px; }
+  input[type="text"]::selection, input[type="email"]::selection, input[type="password"]::selection, input[type="number"]::selection, textarea::selection, #changelist #toolbar form #searchbar::selection {
+    background: #479eff;
+    /* WebKit/Blink Browsers */
+    color: #fff; }
+  input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, input[type="number"]:focus, textarea:focus, #changelist #toolbar form #searchbar:focus {
+    outline: 0;
+    border-color: #479eff;
+    box-shadow: 1px 1px 6px rgba(71, 158, 255, 0.2) inset; }
 
-/* line 157, ../scss/_general.scss */
-body, .module:not(.calendarbox):not(.clockbox) > h2:first-of-type, .module:not(.calendarbox):not(.clockbox) caption {
-  letter-spacing: 0.25px;
-}
-
-/* line 160, ../scss/_general.scss */
-.selector h2 {
-  letter-spacing: 0.75px;
-}
+body, #header + .breadcrumbs, .module:not(.calendarbox):not(.clockbox) > h2:first-of-type, .module:not(.calendarbox):not(.clockbox) caption {
+  letter-spacing: 0.25px; }
 
 /*  ————————————————————————————————————————————————
      Resets
     ———————————————————————————————————————————————— */
-/* line 11, ../scss/main.scss */
 html, body {
   min-height: 100%;
   background: #f4f4f4;
@@ -161,76 +120,55 @@ html, body {
   padding: 0;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-}
+  -moz-osx-font-smoothing: grayscale; }
 
-/* line 13, ../scss/main.scss */
 input, select {
   font-family: inherit;
-  font-size: inherit;
-}
+  font-size: inherit; }
 
-/* line 14, ../scss/main.scss */
 ::selection {
   background: #479eff;
   /* WebKit/Blink Browsers */
-  color: #fff;
-}
+  color: #fff; }
 
-/* line 19, ../scss/main.scss */
 * {
-  box-sizing: border-box;
-}
+  box-sizing: border-box; }
 
-/* line 23, ../scss/main.scss */
 th {
-  font-weight: inherit;
-}
+  font-weight: inherit; }
 
 /*  ————————————————————————————————————————————————
      Main
     ———————————————————————————————————————————————— */
-/* line 31, ../scss/main.scss */
 body {
   background: #f4f4f4;
   color: #333;
   padding-left: 17px;
   padding-right: 17px;
-  padding-top: 120px;
+  padding-top: 60px;
   /* for fixed header */
   padding-bottom: 60px;
-  /* for .submit-row */
-}
-/* line 43, ../scss/main.scss */
-body.popup {
-  padding-top: 20px;
-}
+  /* for .submit-row */ }
+  body.popup {
+    padding-top: 20px; }
 
-/* line 48, ../scss/main.scss */
 h1 {
-  text-transform: uppercase;
-}
+  letter-spacing: -0.5px;
+  font-size: 22px; }
 
-/* line 53, ../scss/main.scss */
 h2, h3 {
-  font-weight: 500;
-}
+  font-weight: 500; }
 
-/* line 57, ../scss/main.scss */
 a {
   text-decoration: none;
   color: #479eff;
-  border-bottom: 1px solid transparent;
-}
-/* line 62, ../scss/main.scss */
-a:hover {
-  text-decoration: underline;
-}
+  border-bottom: 1px solid transparent; }
+  a:hover {
+    text-decoration: underline; }
 
 /*  ————————————————————————————————————————————————
      Header
     ———————————————————————————————————————————————— */
-/* line 71, ../scss/main.scss */
 #header {
   position: fixed;
   z-index: 100;
@@ -240,111 +178,67 @@ a:hover {
   transform: translateX(-50%);
   top: 0;
   padding: 0 17px;
-  height: 100px;
-  background-color: #fff;
+  height: 60px;
+  background-color: #353535;
   box-shadow: 0 3px 1px rgba(0, 0, 0, 0.05);
-}
-/* line 84, ../scss/main.scss */
-#header:before {
-  content: " ";
-  position: absolute;
-  z-index: -1;
-  left: 0;
-  right: 0;
-  top: 0;
-  height: 42px;
-  background-color: #7a8ba0;
-}
+  color: #fff; }
+  #header + .breadcrumbs {
+    position: fixed;
+    z-index: 110;
+    top: 0;
+    height: 60px;
+    line-height: 60px;
+    font-size: 15px;
+    color: #fff;
+    margin-left: -2px;
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
+    font-weight: 600; }
+    @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (-moz-min-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+      #header + .breadcrumbs {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale; } }
+    #header + .breadcrumbs a {
+      margin: 0 3px;
+      color: inherit;
+      font-weight: 300;
+      font-weight: normal; }
 
-/* line 96, ../scss/main.scss */
 #branding {
   max-width: 1100px;
   margin-left: auto;
   margin-right: auto;
-  overflow: hidden;
-}
-/* line 102, ../scss/main.scss */
-#branding .welcome-msg {
-  float: right;
-  color: #fff;
-  text-transform: uppercase;
-}
+  overflow: hidden; }
+  #branding .welcome-msg {
+    float: right;
+    color: #fff;
+    text-transform: uppercase; }
 
-/* line 109, ../scss/main.scss */
 #site-name {
-  margin: 0;
-  float: left;
-}
-/* line 113, ../scss/main.scss */
-#site-name:before {
-  content: "";
-  font: normal normal normal 14px/1 FontAwesome;
-  font-size: 18px;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  transform: translate(0, 0);
-  color: #fff;
-  margin-right: 10px;
-}
-/* line 119, ../scss/main.scss */
-#site-name a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 18px;
-  display: inline-block;
-  vertical-align: middle;
-  padding: 10px 0;
-}
+  display: none; }
 
-/* line 129, ../scss/main.scss */
 #user-tools {
   position: relative;
   float: right;
   color: rgba(255, 255, 255, 0.7);
-  line-height: 40px;
-  text-transform: uppercase;
-  font-size: 12px;
-}
-/* line 137, ../scss/main.scss */
-#user-tools .separator {
-  margin: 0 2px;
-  display: inline-block;
-}
-/* line 142, ../scss/main.scss */
-#user-tools a {
-  text-transform: none;
-  color: #fff;
-}
-
-/* line 148, ../scss/main.scss */
-#header + .breadcrumbs {
-  position: fixed;
-  z-index: 110;
-  top: 71px;
-  font-size: 14px;
-  margin-left: -2px;
-}
-/* line 155, ../scss/main.scss */
-#header + .breadcrumbs a {
-  margin: 0 2px;
-}
+  line-height: 60px;
+  text-transform: uppercase; }
+  #user-tools a, #user-tools .separator {
+    display: none; }
+  #user-tools .separator + a {
+    display: block; }
+  #user-tools a {
+    text-transform: none;
+    color: #fff; }
 
 /*   ————————————————————————————————————————————————
    General Content styling
   ———————————————————————————————————————————————— */
-/* line 163, ../scss/main.scss */
 #content-main, .module {
   max-width: 1100px;
   margin-left: auto;
-  margin-right: auto;
-}
+  margin-right: auto; }
 
-/* line 172, ../scss/main.scss */
-.module:not(.calendarbox):not(.clockbox) p {
-  padding: 10px;
-}
-/* line 176, ../scss/main.scss */
 .module:not(.calendarbox):not(.clockbox) > h2:first-of-type, .module:not(.calendarbox):not(.clockbox) caption {
   margin: 0;
   background-color: #F5E9CC;
@@ -354,130 +248,80 @@ a:hover {
   font-size: 13px;
   font-weight: bold;
   text-transform: uppercase;
-  position: relative;
-}
-@media only all and (min-width: 1000px) {
-  /* line 176, ../scss/main.scss */
-  .module:not(.calendarbox):not(.clockbox) > h2:first-of-type, .module:not(.calendarbox):not(.clockbox) caption {
-    font-size: 14px;
-  }
-}
-/* line 193, ../scss/main.scss */
-.module:not(.calendarbox):not(.clockbox) > h2:first-of-type:after, .module:not(.calendarbox):not(.clockbox) caption:after {
-  content: " ";
-  position: absolute;
-  right: -3px;
-  width: 3px;
-  border-top-right-radius: 3px;
-  height: 100%;
-  bottom: 0;
-  background-color: #f1e0b7;
-}
-/* line 206, ../scss/main.scss */
+  position: relative; }
+  @media only all and (min-width: 1000px) {
+    .module:not(.calendarbox):not(.clockbox) > h2:first-of-type, .module:not(.calendarbox):not(.clockbox) caption {
+      font-size: 14px; } }
+  .module:not(.calendarbox):not(.clockbox) > h2:first-of-type:after, .module:not(.calendarbox):not(.clockbox) caption:after {
+    content: " ";
+    position: absolute;
+    right: -3px;
+    width: 3px;
+    border-top-right-radius: 3px;
+    height: 100%;
+    bottom: 0;
+    background-color: #f1e0b7; }
 .module:not(.calendarbox):not(.clockbox) .datetime input {
-  margin-bottom: 5px;
-}
+  margin-bottom: 5px; }
 
-/* line 212, ../scss/main.scss */
 #container {
   max-width: 1100px;
   margin-left: auto;
-  margin-right: auto;
-}
+  margin-right: auto; }
 
-/* line 218, ../scss/main.scss */
 #content {
   max-width: 1100px;
   margin-left: auto;
-  margin-right: auto;
-}
-/* line 223, ../scss/main.scss */
-#content > h1:first-of-type {
-  position: fixed;
-  z-index: 110;
-  top: 42px;
-  font-size: 16px;
-  font-weight: 500;
-  -webkit-font-smoothing: subpixel-antialiased;
-}
+  margin-right: auto; }
 
-/* line 234, ../scss/main.scss */
 table {
   text-align: left;
   width: 100%;
-  border-spacing: 0px;
-}
-/* line 240, ../scss/main.scss */
-table thead th {
-  color: #000;
-  font-weight: 500;
-  border-bottom: 1px solid #e7e7e7;
-}
-/* line 247, ../scss/main.scss */
-table caption {
-  text-transform: uppercase;
-  text-align: left;
-  font-weight: 500;
-  font-size: 15px;
-  letter-spacing: 0;
-}
-/* line 255, ../scss/main.scss */
-table caption a.section {
-  color: inherit;
-  cursor: default;
-}
-/* line 259, ../scss/main.scss */
-table caption a.section:hover {
-  text-decoration: none;
-}
-/* line 267, ../scss/main.scss */
-table caption + tbody tr th, table caption + tbody tr td {
-  padding: 3px 13px;
-}
-/* line 272, ../scss/main.scss */
-table caption + tbody tr:last-of-type th, table caption + tbody tr:last-of-type td {
-  padding-bottom: 10px;
-}
-/* line 277, ../scss/main.scss */
-table caption + tbody tr:first-of-type th, table caption + tbody tr:first-of-type td {
-  padding-top: 10px;
-}
+  border-spacing: 0px; }
+  table thead th {
+    color: #000;
+    font-weight: 500;
+    border-bottom: 1px solid #e7e7e7; }
+  table caption {
+    text-transform: uppercase;
+    text-align: left;
+    font-weight: 500;
+    font-size: 17px;
+    letter-spacing: 0; }
+    table caption a.section {
+      color: inherit;
+      cursor: default; }
+      table caption a.section:hover {
+        text-decoration: none; }
+  table caption + tbody tr th, table caption + tbody tr td {
+    padding: 3px 13px; }
+  table caption + tbody tr:last-of-type th, table caption + tbody tr:last-of-type td {
+    padding-bottom: 10px; }
+  table caption + tbody tr:first-of-type th, table caption + tbody tr:first-of-type td {
+    padding-top: 10px; }
 
-/* line 286, ../scss/main.scss */
 fieldset.collapsed {
-  display: block;
-}
-/* line 289, ../scss/main.scss */
-fieldset.collapsed * {
-  display: none;
-}
-/* line 293, ../scss/main.scss */
-fieldset.collapsed h2 {
-  display: block;
-}
-/* line 298, ../scss/main.scss */
+  display: block; }
+  fieldset.collapsed * {
+    display: none; }
+  fieldset.collapsed h2 {
+    display: block; }
 fieldset.collapse .collapse-toggle {
   display: inline-block !important;
-  padding: 0 2px;
-}
+  padding: 0 2px; }
 
-/* line 309, ../scss/main.scss */
 .aligned label {
-  width: 155px;
-  padding-top: 6px;
-}
+  width: 165px;
+  padding-top: 6px; }
 
-/* line 318, ../scss/main.scss */
 input.vTextField {
-  width: 220px;
-}
+  width: 350px; }
 
-/* line 322, ../scss/main.scss */
 select:not([multiple]) {
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
-  font-size: 13px;
+  font-size: 15px;
   border-radius: 2px;
   border: 1px solid #e7e7e7;
   border-bottom-width: 2px;
@@ -485,184 +329,131 @@ select:not([multiple]) {
   margin-right: 5px;
   padding: 7px 35px 7px 7px;
   background: url(../img/select-arrows.png) #fff no-repeat right 13px;
-  background-size: 25px 50px;
-}
-/* line 336, ../scss/main.scss */
-select:not([multiple]):focus, select:not([multiple]):active {
-  border-color: #479eff;
-  outline: none;
-}
-/* line 341, ../scss/main.scss */
-select:not([multiple]):hover {
-  background-position: right -30px;
-}
+  background-size: 25px 50px; }
+  select:not([multiple]):focus, select:not([multiple]):active {
+    border-color: #479eff;
+    outline: none; }
+  select:not([multiple]):hover {
+    background-position: right -30px; }
 
 /*   ————————————————————————————————————————————————
     Modules
   ———————————————————————————————————————————————— */
-/* line 360, ../scss/main.scss */
 .object-tools {
   list-style: none;
   margin: 0 0 20px;
   padding: 0;
-  text-align: right;
-}
-/* line 366, ../scss/main.scss */
-.object-tools li {
-  display: inline-block;
-}
-/* line 369, ../scss/main.scss */
-.object-tools li + li {
-  margin-left: 10px;
-}
-/* line 377, ../scss/main.scss */
-.object-tools li a.addlink:before {
-  content: "";
-  font: normal normal normal 14px/1 FontAwesome;
-  font-size: 14px;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  transform: translate(0, 0);
-}
+  text-align: right; }
+  .object-tools li {
+    display: inline-block; }
+    .object-tools li + li {
+      margin-left: 10px; }
+    .object-tools li a.addlink:before {
+      content: "";
+      font: normal normal normal 14px/1 FontAwesome;
+      font-size: 14px;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      transform: translate(0, 0); }
 
-/* line 386, ../scss/main.scss */
 #recent-actions-module h3 {
   padding-left: 13px;
-  -webkit-font-smoothing: subpixel-antialiased;
-}
-/* line 391, ../scss/main.scss */
+  -webkit-font-smoothing: subpixel-antialiased; }
 #recent-actions-module p {
-  padding-left: 13px;
-}
-/* line 395, ../scss/main.scss */
+  padding-left: 13px; }
 #recent-actions-module .actionlist {
-  padding-left: 0;
-}
-/* line 398, ../scss/main.scss */
-#recent-actions-module .actionlist li {
-  padding: 5px 13px;
-  border-bottom: 1px solid #fafafa;
-}
-/* line 402, ../scss/main.scss */
-#recent-actions-module .actionlist li:before {
-  color: #ccc;
-  width: 15px;
-  display: inline-block;
-  text-align: center;
-  margin-right: 5px;
-}
-/* line 410, ../scss/main.scss */
-#recent-actions-module .actionlist li.deletelink {
-  color: #9a9a9a;
-}
-/* line 413, ../scss/main.scss */
-#recent-actions-module .actionlist li.deletelink:before {
-  content: "";
-  font: normal normal normal 14px/1 FontAwesome;
-  font-size: 14px;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  transform: translate(0, 0);
-}
-/* line 418, ../scss/main.scss */
-#recent-actions-module .actionlist li.changelink:before {
-  content: "";
-  font: normal normal normal 14px/1 FontAwesome;
-  font-size: 14px;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  transform: translate(0, 0);
-}
-/* line 423, ../scss/main.scss */
-#recent-actions-module .actionlist li.addlink:before {
-  content: "";
-  font: normal normal normal 14px/1 FontAwesome;
-  font-size: 14px;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  transform: translate(0, 0);
-}
-/* line 428, ../scss/main.scss */
-#recent-actions-module .actionlist li:nth-child(even) {
-  background-color: #fdfdfd;
-}
-/* line 432, ../scss/main.scss */
-#recent-actions-module .actionlist li br {
-  display: none;
-}
-/* line 436, ../scss/main.scss */
-#recent-actions-module .actionlist li span {
-  color: #b5b5b5;
-}
-/* line 438, ../scss/main.scss */
-#recent-actions-module .actionlist li span:before {
-  content: "(";
-}
-/* line 439, ../scss/main.scss */
-#recent-actions-module .actionlist li span:after {
-  content: ")";
-}
+  padding-left: 0; }
+  #recent-actions-module .actionlist li {
+    padding: 5px 13px;
+    border-bottom: 1px solid #f8f8f8; }
+    #recent-actions-module .actionlist li:before {
+      color: #ccc;
+      width: 15px;
+      display: inline-block;
+      text-align: center;
+      margin-right: 5px; }
+    #recent-actions-module .actionlist li.deletelink {
+      color: #9a9a9a; }
+      #recent-actions-module .actionlist li.deletelink:before {
+        content: "";
+        font: normal normal normal 14px/1 FontAwesome;
+        font-size: 14px;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        transform: translate(0, 0); }
+    #recent-actions-module .actionlist li.changelink:before {
+      content: "";
+      font: normal normal normal 14px/1 FontAwesome;
+      font-size: 14px;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      transform: translate(0, 0); }
+    #recent-actions-module .actionlist li.addlink:before {
+      content: "";
+      font: normal normal normal 14px/1 FontAwesome;
+      font-size: 14px;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      transform: translate(0, 0); }
+    #recent-actions-module .actionlist li:nth-child(even) {
+      background-color: #fdfdfd; }
+    #recent-actions-module .actionlist li br {
+      display: none; }
+    #recent-actions-module .actionlist li span {
+      color: #b5b5b5; }
+      #recent-actions-module .actionlist li span:before {
+        content: "("; }
+      #recent-actions-module .actionlist li span:after {
+        content: ")"; }
 
-/* line 445, ../scss/main.scss */
 .required label, label.required {
-  color: #7a8ba0 !important;
-}
+  color: #000 !important;
+  font-weight: normal !important; }
 
-/* line 450, ../scss/main.scss */
 .errornote {
-  color: #d31d1d;
-}
-/* line 453, ../scss/main.scss */
-.errornote:before {
-  content: "";
-  font: normal normal normal 14px/1 FontAwesome;
-  font-size: 14px;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  transform: translate(0, 0);
-}
+  color: #d31d1d; }
+  .errornote:before {
+    content: "";
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: 14px;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate(0, 0); }
 
-/* line 458, ../scss/main.scss */
 form .aligned p.help {
   color: #b5b5b5;
   margin-top: 5px;
-  padding-left: 0;
-}
+  padding-left: 0; }
 
-/* line 464, ../scss/main.scss */
 form .aligned p, form .aligned ul {
-  margin-left: 155px;
+  margin-left: 165px;
   padding-left: 0;
-}
+  font-size: 12px; }
 
-/* line 469, ../scss/main.scss */
 form .wide p.help {
-  margin-left: 197px;
-}
+  margin-left: 197px; }
 
-/* line 473, ../scss/main.scss */
 .form-row {
+  padding: 10px 15px;
   border-bottom: 0;
-}
-/* line 476, ../scss/main.scss */
-.form-row:first-of-type {
-  padding-top: 15px;
-}
-/* line 480, ../scss/main.scss */
-.form-row:last-of-type {
-  border-bottom: 0;
-  padding-bottom: 15px;
-}
+  font-size: 13px;
+  border-bottom: 1px solid #f8f8f8; }
+  .form-row input {
+    margin-bottom: 7px; }
+  .form-row:first-of-type {
+    padding-top: 15px; }
+  .form-row:last-of-type {
+    border-bottom: 0;
+    padding-bottom: 15px; }
 
 /*   ————————————————————————————————————————————————
    Submit row
   ———————————————————————————————————————————————— */
-/* line 492, ../scss/main.scss */
 .submit-row {
   position: fixed;
   z-index: 10;
@@ -672,377 +463,250 @@ form .wide p.help {
   left: 50%;
   width: 100%;
   margin: 0;
-  background: #fff;
+  background: #353535;
   border: 0;
   text-align: left;
   padding: 13px 17px;
   border-radius: 2px;
-  box-shadow: 3px -3px 3px rgba(0, 0, 0, 0.05);
-}
-/* line 510, ../scss/main.scss */
-.submit-row > div {
-  max-width: 1100px;
-  margin: 0 auto;
-}
-/* line 515, ../scss/main.scss */
-.submit-row p {
-  margin: 0;
-}
-/* line 519, ../scss/main.scss */
-.submit-row input, .submit-row button {
-  margin-left: 8px;
-}
-/* line 523, ../scss/main.scss */
-.submit-row input:first-child, .submit-row button:first-child {
-  margin-left: 0;
-}
-/* line 528, ../scss/main.scss */
-.submit-row input.default:before, .submit-row button.default:before {
-  content: "";
-  font: normal normal normal 14px/1 FontAwesome;
-  font-size: 14px;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  transform: translate(0, 0);
-}
-/* line 534, ../scss/main.scss */
-.submit-row .deletelink-box {
-  position: relative;
-  float: right;
-}
-/* line 542, ../scss/main.scss */
-.submit-row .deletelink-box a.deletelink:before {
-  font-size: 14px;
-}
+  box-shadow: 3px -3px 3px rgba(0, 0, 0, 0.05); }
+  .submit-row > div {
+    max-width: 1100px;
+    margin: 0 auto; }
+  .submit-row p {
+    margin: 0; }
+  .submit-row input, .submit-row button {
+    margin-left: 8px; }
+    .submit-row input:first-child, .submit-row button:first-child {
+      margin-left: 0; }
+    .submit-row input.default:before, .submit-row button.default:before {
+      content: "";
+      font: normal normal normal 14px/1 FontAwesome;
+      font-size: 14px;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      transform: translate(0, 0); }
+  .submit-row .deletelink-box {
+    position: relative;
+    float: right; }
+    .submit-row .deletelink-box a.deletelink:before {
+      font-size: 14px; }
 
 /*   ————————————————————————————————————————————————
    Message & Error list
   ———————————————————————————————————————————————— */
-/* line 554, ../scss/main.scss */
 .messagelist, .errorlist {
   padding: 0;
-  margin-left: 0;
-}
-/* line 558, ../scss/main.scss */
-.messagelist li, .errorlist li {
-  list-style: none;
-  display: inline-block;
-}
+  margin-left: 0; }
+  .messagelist li, .errorlist li {
+    list-style: none;
+    display: inline-block; }
 
-/* line 561, ../scss/main.scss */
 .messagelist {
-  text-align: center;
-}
-/* line 564, ../scss/main.scss */
-.messagelist .success {
-  background: #e1f1c6;
-  border-right: 3px solid #d2eaa9;
-  border-bottom: 3px solid #d2eaa9;
-  padding: 10px;
-  color: #6e8742;
-}
-/* line 571, ../scss/main.scss */
-.messagelist .success:before {
-  content: "";
-  font: normal normal normal 14px/1 FontAwesome;
-  font-size: 14px;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  transform: translate(0, 0);
-  margin-right: 6px;
-}
+  text-align: center; }
+  .messagelist .success {
+    background: #e1f1c6;
+    border-right: 3px solid #d2eaa9;
+    border-bottom: 3px solid #d2eaa9;
+    padding: 10px;
+    color: #6e8742; }
+    .messagelist .success:before {
+      content: "";
+      font: normal normal normal 14px/1 FontAwesome;
+      font-size: 14px;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      transform: translate(0, 0);
+      margin-right: 6px; }
 
-/* line 579, ../scss/main.scss */
 .errorlist {
-  color: #d31d1d;
-}
+  color: #d31d1d; }
 
 /*   ————————————————————————————————————————————————
    Changelist
   ———————————————————————————————————————————————— */
-/* line 589, ../scss/main.scss */
 .change-list .hiddenfields {
-  display: none;
-}
-/* line 591, ../scss/main.scss */
+  display: none; }
 .change-list .filtered {
   background: #fff;
-  min-height: 650px;
-}
-/* line 595, ../scss/main.scss */
-.change-list .filtered table {
-  border-right: 1px solid #ddd;
-}
+  min-height: 650px; }
+  .change-list .filtered table {
+    border-right: 1px solid #ddd; }
 
-/* line 601, ../scss/main.scss */
 .change-list .filtered .results, .change-list .filtered .paginator, .filtered #toolbar, .filtered div.xfull {
   margin-right: 160px !important;
-  width: auto !important;
-}
+  width: auto !important; }
 
-/* line 606, ../scss/main.scss */
 #changelist {
   position: relative;
-  width: 100%;
-}
-/* line 610, ../scss/main.scss */
-#changelist #changelist-filter {
-  background: none;
-  width: 140px;
-  border-left: 0;
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: 40;
-  margin: 0;
-}
-/* line 620, ../scss/main.scss */
-#changelist #changelist-filter ul {
-  margin-left: 0;
-  margin-top: 5px;
-}
-/* line 624, ../scss/main.scss */
-#changelist #changelist-filter ul li {
-  padding-left: 0;
-  border-left: 0;
-}
-/* line 628, ../scss/main.scss */
-#changelist #changelist-filter ul li.selected {
-  margin-left: 0;
-}
-/* line 630, ../scss/main.scss */
-#changelist #changelist-filter ul li.selected a {
-  color: #479eff !important;
-}
-/* line 638, ../scss/main.scss */
-#changelist #changelist-filter a {
-  display: block;
-  cursor: pointer;
-}
-/* line 642, ../scss/main.scss */
-#changelist #changelist-filter a:hover {
-  color: inherit;
-  text-decoration: none;
-}
-/* line 648, ../scss/main.scss */
-#changelist #changelist-filter h2 {
-  border-bottom: 0;
-  text-transform: uppercase;
-  background: #b6bfcb;
-  color: #fff;
-  position: relative;
-}
-/* line 655, ../scss/main.scss */
-#changelist #changelist-filter h2:after {
-  content: " ";
-  position: absolute;
-  width: 3px;
-  top: 0;
-  height: 19px;
-  right: -3px;
-  background-color: #92a0b1;
-}
-/* line 667, ../scss/main.scss */
-#changelist .toplinks {
-  border-bottom: 1px solid #ccc;
-}
-/* line 671, ../scss/main.scss */
-#changelist .paginator {
-  color: #666;
-  border-top: 1px solid #ddd;
-  overflow: hidden;
-  border-right: 0;
-  padding-left: 10px;
-}
-/* line 681, ../scss/main.scss */
-#changelist #changelist-search label:before {
-  content: "";
-  font: normal normal normal 14px/1 FontAwesome;
-  font-size: 14px;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  transform: translate(0, 0);
-  color: #ccc;
-  margin-right: 3px;
-  display: inline-block;
-}
-/* line 690, ../scss/main.scss */
-#changelist #toolbar {
-  padding: 10px 3px;
-  color: #666;
-  background: #fff;
-  margin: 5px 5px 0;
-  position: relative;
-}
-/* line 698, ../scss/main.scss */
-#changelist #toolbar img {
-  display: none;
-}
-/* line 702, ../scss/main.scss */
-#changelist #toolbar form #searchbar {
-  width: 300px;
-}
-/* line 710, ../scss/main.scss */
-#changelist table {
-  border-top: 1px solid #eee;
-}
-/* line 713, ../scss/main.scss */
-#changelist table .row2 {
-  background: #fdfdfd;
-}
-/* line 718, ../scss/main.scss */
-#changelist table thead a {
-  color: #000;
-  display: block;
-  -webkit-font-smoothing: subpixel-antialiased;
-}
-/* line 724, ../scss/main.scss */
-#changelist table thead th {
-  padding: 5px 7px;
-  white-space: nowrap;
-  vertical-align: middle;
-  position: relative;
-  border-bottom: 1px solid #b5b5b5;
-  border-right: 1px solid #e7e7e7;
-}
-/* line 732, ../scss/main.scss */
-#changelist table thead th:last-child {
-  border-right: 0;
-}
-/* line 736, ../scss/main.scss */
-#changelist table thead th.action-checkbox-column {
-  width: 1.5em;
-  text-align: center;
-}
-/* line 743, ../scss/main.scss */
-#changelist table thead .sorted .text {
-  padding-right: 10px;
-}
-/* line 746, ../scss/main.scss */
-#changelist table thead .sorted .sortoptions {
-  display: block;
-  float: right;
-  margin-right: 8px;
-}
-/* line 751, ../scss/main.scss */
-#changelist table thead .sorted .sortoptions .sortpriority {
-  font-size: 10px;
-  color: #b5b5b5;
-  display: inline-block;
-  vertical-align: 1px;
-  width: 13px;
-  height: 13px;
-  text-align: center;
-}
-/* line 763, ../scss/main.scss */
-#changelist table thead .sorted:after {
-  position: absolute;
-  top: 12px;
-  color: #9a9a9a;
-  right: 5px;
-}
-/* line 771, ../scss/main.scss */
-#changelist table thead .sorted.ascending:after {
-  content: "";
-  font: normal normal normal 14px/1 FontAwesome;
-  font-size: 14px;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  transform: translate(0, 0);
-}
-/* line 776, ../scss/main.scss */
-#changelist table thead .sorted.descending:after {
-  top: 6px;
-  content: "";
-  font: normal normal normal 14px/1 FontAwesome;
-  font-size: 14px;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  transform: translate(0, 0);
-}
-/* line 787, ../scss/main.scss */
-#changelist table tbody tr td, #changelist table tbody tr th {
-  padding: 4px 7px;
-  border-bottom: 1px solid #fafafa;
-}
-/* line 792, ../scss/main.scss */
-#changelist table tbody tr td.action-checkbox {
-  text-align: center;
-}
-/* line 797, ../scss/main.scss */
-#changelist table tbody tr:last-of-type td, #changelist table tbody tr:last-of-type th {
-  border-bottom: 0;
-}
-/* line 807, ../scss/main.scss */
-#changelist .actions {
-  background: none;
-  padding: 8px 5px;
-  border-right: 0;
-  position: absolute;
-  background: #fafafa;
-  color: #b5b5b5;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-}
-/* line 819, ../scss/main.scss */
-#changelist .actions .button {
-  font-size: inherit;
-  padding: inherit;
-}
-/* line 826, ../scss/main.scss */
-#changelist form input[type="submit"] {
-  display: none;
-}
+  width: 100%; }
+  #changelist #changelist-filter {
+    background: none;
+    width: 140px;
+    border-left: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 40;
+    margin: 0; }
+    #changelist #changelist-filter ul {
+      margin-left: 0;
+      margin-top: 5px; }
+      #changelist #changelist-filter ul li {
+        padding-left: 0;
+        border-left: 0; }
+        #changelist #changelist-filter ul li.selected {
+          margin-left: 0; }
+          #changelist #changelist-filter ul li.selected a {
+            color: #479eff !important; }
+    #changelist #changelist-filter a {
+      display: block;
+      cursor: pointer; }
+      #changelist #changelist-filter a:hover {
+        color: inherit;
+        text-decoration: none; }
+    #changelist #changelist-filter h2 {
+      border-bottom: 0;
+      text-transform: uppercase;
+      background: #7f7f7f;
+      color: #fff;
+      position: relative; }
+  #changelist .toplinks {
+    border-bottom: 1px solid #ccc; }
+  #changelist .paginator {
+    color: #666;
+    border-top: 1px solid #ddd;
+    overflow: hidden;
+    border-right: 0;
+    padding-left: 10px; }
+  #changelist #changelist-search label:before {
+    content: "";
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: 14px;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate(0, 0);
+    color: #ccc;
+    margin-right: 3px;
+    display: inline-block; }
+  #changelist #toolbar {
+    padding: 10px 3px;
+    color: #666;
+    background: #fff;
+    margin: 5px 5px 0;
+    position: relative; }
+    #changelist #toolbar img {
+      display: none; }
+    #changelist #toolbar form #searchbar {
+      width: 300px; }
+  #changelist table {
+    border-top: 1px solid #eee; }
+    #changelist table .row2 {
+      background: #fdfdfd; }
+    #changelist table thead a {
+      color: #000;
+      display: block;
+      -webkit-font-smoothing: subpixel-antialiased; }
+    #changelist table thead th {
+      padding: 5px 7px;
+      white-space: nowrap;
+      vertical-align: middle;
+      position: relative;
+      border-bottom: 1px solid #b5b5b5;
+      border-right: 1px solid #e7e7e7; }
+      #changelist table thead th:last-child {
+        border-right: 0; }
+      #changelist table thead th.action-checkbox-column {
+        width: 1.5em;
+        text-align: center; }
+    #changelist table thead .sorted .text {
+      padding-right: 10px; }
+    #changelist table thead .sorted .sortoptions {
+      display: block;
+      float: right;
+      margin-right: 8px; }
+      #changelist table thead .sorted .sortoptions .sortpriority {
+        font-size: 10px;
+        color: #b5b5b5;
+        display: inline-block;
+        vertical-align: 1px;
+        width: 13px;
+        height: 13px;
+        text-align: center; }
+    #changelist table thead .sorted:after {
+      position: absolute;
+      top: 12px;
+      color: #9a9a9a;
+      right: 5px; }
+    #changelist table thead .sorted.ascending:after {
+      content: "";
+      font: normal normal normal 14px/1 FontAwesome;
+      font-size: 14px;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      transform: translate(0, 0); }
+    #changelist table thead .sorted.descending:after {
+      top: 6px;
+      content: "";
+      font: normal normal normal 14px/1 FontAwesome;
+      font-size: 14px;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      transform: translate(0, 0); }
+    #changelist table tbody tr td, #changelist table tbody tr th {
+      padding: 4px 7px;
+      border-bottom: 1px solid #f8f8f8; }
+    #changelist table tbody tr td.action-checkbox {
+      text-align: center; }
+    #changelist table tbody tr:last-of-type td, #changelist table tbody tr:last-of-type th {
+      border-bottom: 0; }
+  #changelist .actions {
+    background: none;
+    padding: 8px 5px;
+    border-right: 0;
+    position: absolute;
+    background: #f8f8f8;
+    color: #b5b5b5;
+    bottom: 0;
+    left: 0;
+    width: 100%; }
+    #changelist .actions .button {
+      font-size: inherit;
+      padding: inherit; }
+  #changelist form input[type="submit"] {
+    display: none; }
 
-/* line 836, ../scss/main.scss */
 #changelist-form {
   padding-bottom: 52px;
-  /* height of .actions */
-}
-/* line 839, ../scss/main.scss */
-#changelist-form .results {
-  overflow-x: auto;
-}
+  /* height of .actions */ }
+  #changelist-form .results {
+    overflow-x: auto; }
 
 /*   ————————————————————————————————————————————————
    Change history table
   ———————————————————————————————————————————————— */
-/* line 850, ../scss/main.scss */
 #change-history th, #change-history td {
-  padding: 4px 4px 4px 10px;
-}
-/* line 856, ../scss/main.scss */
+  padding: 4px 4px 4px 10px; }
 #change-history tbody tr th, #change-history tbody tr td {
-  border-bottom: 1px solid #fafafa;
-}
-/* line 860, ../scss/main.scss */
+  border-bottom: 1px solid #f8f8f8; }
 #change-history tbody tr:nth-child(even) th, #change-history tbody tr:nth-child(even) td {
-  background-color: #fdfdfd;
-}
+  background-color: #fdfdfd; }
 
 /*   ————————————————————————————————————————————————
    Inline
   ———————————————————————————————————————————————— */
-/* line 877, ../scss/main.scss */
 .inline-group td {
-  padding: 10px 0 0;
-}
+  padding: 10px 0 0; }
 
-/* line 883, ../scss/main.scss */
 .inline-related.tabular fieldset.module table td, .inline-related.tabular fieldset.module table th {
-  padding: 7px 10px;
-}
+  padding: 7px 10px; }
 
-/* line 888, ../scss/main.scss */
 .inline-deletelink {
-  float: left;
-}
+  float: left; }
 
 /*   ————————————————————————————————————————————————
    Widgets
@@ -1050,99 +714,68 @@ form .wide p.help {
 /*   ————————————————————————————————————————————————
    Calendarbox
   ———————————————————————————————————————————————— */
-/* line 7, ../scss/_widgets.scss */
 .calendarbox caption {
   text-align: center;
   position: relative;
   padding: 5px;
-  color: #7a8ba0;
+  color: #4c4c4c;
   border-top-right-radius: 3px;
   border-top-left-radius: 3px;
-  background-color: #fafafa;
-}
-/* line 17, ../scss/_widgets.scss */
-.calendarbox caption:before {
-  content: " ";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 1px;
-  background-color: #e7e7e7;
-}
-/* line 36, ../scss/_widgets.scss */
+  background-color: #f8f8f8; }
+  .calendarbox caption:before {
+    content: " ";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background-color: #e7e7e7; }
 .calendarbox .calendar-shortcuts {
   border-top: 1px solid #e7e7e7;
   border-bottom: 1px solid #e7e7e7;
   padding: 5px;
-  color: transparent;
-}
-/* line 42, ../scss/_widgets.scss */
-.calendarbox .calendar-shortcuts a {
-  display: inline-block;
-  margin: 0 8px;
-}
-/* line 48, ../scss/_widgets.scss */
+  color: transparent; }
+  .calendarbox .calendar-shortcuts a {
+    display: inline-block;
+    margin: 0 8px; }
 .calendarbox table {
   border-collapse: collapse;
-  width: 100%;
-}
-/* line 52, ../scss/_widgets.scss */
-.calendarbox table td, .calendarbox table th {
-  text-align: center;
-}
-/* line 55, ../scss/_widgets.scss */
-.calendarbox table td a, .calendarbox table th a {
-  display: block;
-}
-/* line 61, ../scss/_widgets.scss */
-.calendarbox table td.selected {
-  background-color: #479eff;
-}
-/* line 63, ../scss/_widgets.scss */
-.calendarbox table td.selected a {
-  color: #fff;
-}
-/* line 70, ../scss/_widgets.scss */
+  width: 100%; }
+  .calendarbox table td, .calendarbox table th {
+    text-align: center; }
+    .calendarbox table td a, .calendarbox table th a {
+      display: block; }
+  .calendarbox table td.selected {
+    background-color: #479eff; }
+    .calendarbox table td.selected a {
+      color: #fff; }
 .calendarbox .calendarnav-previous, .calendarbox .calendarnav-next {
   color: transparent;
-  width: 17px;
-}
-/* line 74, ../scss/_widgets.scss */
-.calendarbox .calendarnav-previous:before, .calendarbox .calendarnav-next:before {
-  color: #7a8ba0;
-}
-/* line 79, ../scss/_widgets.scss */
+  width: 17px; }
+  .calendarbox .calendarnav-previous:before, .calendarbox .calendarnav-next:before {
+    color: #4c4c4c; }
 .calendarbox .calendarnav-previous {
-  float: left;
-}
-/* line 82, ../scss/_widgets.scss */
-.calendarbox .calendarnav-previous:before {
-  content: "";
-  font: normal normal normal 14px/1 FontAwesome;
-  font-size: 18px;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  transform: translate(0, 0);
-}
-/* line 87, ../scss/_widgets.scss */
+  float: left; }
+  .calendarbox .calendarnav-previous:before {
+    content: "";
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: 18px;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate(0, 0); }
 .calendarbox .calendarnav-next {
-  float: right;
-}
-/* line 90, ../scss/_widgets.scss */
-.calendarbox .calendarnav-next:before {
-  content: "";
-  font: normal normal normal 14px/1 FontAwesome;
-  font-size: 18px;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  transform: translate(0, 0);
-}
+  float: right; }
+  .calendarbox .calendarnav-next:before {
+    content: "";
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: 18px;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate(0, 0); }
 
 /* CALENDARS & CLOCKS */
-/* line 99, ../scss/_widgets.scss */
 .calendarbox, .clockbox {
   width: 300px;
   text-align: center;
@@ -1150,64 +783,47 @@ form .wide p.help {
   position: relative;
   border-radius: 3px;
   box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
-  border: 1px solid #ccc;
-}
-/* line 108, ../scss/_widgets.scss */
-.calendarbox > div:first-of-type, .clockbox > div:first-of-type {
-  position: absolute;
-  width: 100%;
-  z-index: 2;
-  padding: 7px 10px;
-}
+  border: 1px solid #ccc; }
+  .calendarbox > div:first-of-type, .clockbox > div:first-of-type {
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+    padding: 7px 10px; }
 
-/* line 116, ../scss/_widgets.scss */
 .clockbox {
-  width: auto;
-}
+  width: auto; }
+
+.related-widget-wrapper {
+  overflow: hidden; }
 
 /*   ————————————————————————————————————————————————
    Selector
   ———————————————————————————————————————————————— */
-/* line 267, ../scss/_widgets.scss */
 .selector h2 {
   margin: 0;
   text-transform: uppercase;
-  font-size: 13px;
+  font-size: 15px;
   padding: 6px;
-  border: 0;
-}
-/* line 276, ../scss/_widgets.scss */
+  border: 0; }
 .selector .selector-filter {
   border-color: #e7e7e7;
-  padding: 9px;
-}
-/* line 280, ../scss/_widgets.scss */
-.selector .selector-filter label {
-  margin-right: 4px;
-  margin-top: 5px;
-  padding: 0;
-}
-/* line 287, ../scss/_widgets.scss */
+  padding: 9px; }
+  .selector .selector-filter label {
+    margin-right: 4px;
+    margin-top: 5px;
+    padding: 0; }
 .selector .selector-available h2 {
-  background: #fafafa;
-}
-/* line 291, ../scss/_widgets.scss */
+  background: #f8f8f8; }
 .selector .selector-chosen h2 {
-  background: #eef6ff;
-  color: #479eff;
-}
-/* line 296, ../scss/_widgets.scss */
+  background: #f8f8f8; }
 .selector select {
   border-color: #e7e7e7;
   padding: 8px;
-  font-size: 13px;
-  height: 200px;
-}
-/* line 302, ../scss/_widgets.scss */
-.selector select:active, .selector select:focus {
-  outline: none;
-  border-color: #479eff;
-}
+  font-size: 15px;
+  height: 200px; }
+  .selector select:active, .selector select:focus {
+    outline: none;
+    border-color: #479eff; }
 
 /*   ————————————————————————————————————————————————
    Specific page styles
@@ -1215,77 +831,55 @@ form .wide p.help {
 /*   ————————————————————————————————————————————————
    Page: Dashboard
   ———————————————————————————————————————————————— */
-/* line 6, ../scss/_page.scss */
 body.dashboard #header {
-  height: 82px;
-}
-/* line 11, ../scss/_page.scss */
+  height: 82px; }
 body.dashboard[class*=' app-'] #header, body.dashboard[class^='app-'] #header {
-  height: 100px;
-}
-/* line 16, ../scss/_page.scss */
+  height: 100px; }
 body.dashboard #content-main {
   -moz-column-count: 2;
   -webkit-column-count: 2;
   column-count: 2;
   -moz-column-gap: 1em;
   -webkit-column-gap: 20px;
-  column-gap: 1em;
-}
-/* line 26, ../scss/_page.scss */
+  column-gap: 1em; }
 body.dashboard div[class^="app-"] td:last-of-type, body.dashboard div[class^="app-"] .changelink {
-  display: none;
-}
-/* line 30, ../scss/_page.scss */
+  display: none; }
 body.dashboard div[class^="app-"] .addlink {
   color: transparent;
-  font-size: 0;
-}
-/* line 33, ../scss/_page.scss */
-body.dashboard div[class^="app-"] .addlink:before {
-  color: #7ab9ff;
-  text-indent: 0;
-  content: "";
-  font: normal normal normal 14px/1 FontAwesome;
-  font-size: 18px;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  transform: translate(0, 0);
-}
-/* line 42, ../scss/_page.scss */
+  font-size: 0; }
+  body.dashboard div[class^="app-"] .addlink:before {
+    color: #7ab9ff;
+    text-indent: 0;
+    content: "";
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: 18px;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate(0, 0); }
 body.dashboard .module {
   display: inline-block;
-  width: 100%;
-}
-/* line 47, ../scss/_page.scss */
-body.dashboard .module table th {
-  width: 100%;
-}
-/* line 50, ../scss/_page.scss */
-body.dashboard .module table td {
-  white-space: nowrap;
-}
-/* line 55, ../scss/_page.scss */
-body.dashboard .module ul.actionlist {
-  margin-left: 0;
-}
-/* line 58, ../scss/_page.scss */
-body.dashboard .module ul.actionlist li {
-  list-style-type: none;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  -o-text-overflow: ellipsis;
-}
+  width: 100%; }
+  body.dashboard .module table th {
+    width: 100%; }
+  body.dashboard .module table td {
+    white-space: nowrap; }
+  body.dashboard .module ul.actionlist {
+    margin-left: 0; }
+    body.dashboard .module ul.actionlist li {
+      list-style-type: none;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      -o-text-overflow: ellipsis; }
 
 /*   ————————————————————————————————————————————————
    Page: Popup
   ———————————————————————————————————————————————— */
-/* line 72, ../scss/_page.scss */
 body.popup #content h1:first-of-type {
-  position: static;
-}
+  position: static; }
 
 /*   ————————————————————————————————————————————————
    Page: Delete confirmation
   ———————————————————————————————————————————————— */
+
+/*# sourceMappingURL=main.css.map */

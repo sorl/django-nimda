@@ -16,12 +16,27 @@
 $distance: 17px;
 $distance-small: 13px;
 $border-grey: 3px solid rgba(0,0,0,0.07);
+$distance-labels: 165px;
+$header-height: 60px;
 
 
 
 /*   ————————————————————————————————————————————————
    Mixins
   ———————————————————————————————————————————————— */
+
+@mixin retina() {
+  @media only screen and (-webkit-min-device-pixel-ratio: 2),
+      only screen and (-moz-min-device-pixel-ratio: 2),
+      only screen and (-o-min-device-pixel-ratio: 2/1),
+      only screen and (min-device-pixel-ratio: 2),
+      only screen and (min-resolution: 192dpi),
+      only screen and (min-resolution: 2dppx) {
+      & {
+        @content;
+      }
+    }
+}
 
 @mixin adminBox() {
   padding: 0;
@@ -47,12 +62,10 @@ $border-grey: 3px solid rgba(0,0,0,0.07);
    Extends
   ———————————————————————————————————————————————— */
 
-%font-body {
-  font-family: 'Roboto', helvetica, arial, sans-serif;
+%font-body, %font-title {
+  font-family: 'Source Sans Pro', helvetica, arial, sans-serif;
 }
-%font-title {
-  font-family: 'Maven Pro', helvetica, arial, sans-serif;
-}
+
 %fontSize {
   font-size: map-get($fontSizes, base);
 }
@@ -138,9 +151,9 @@ $border-grey: 3px solid rgba(0,0,0,0.07);
   @extend %fontSize;
   padding: 6px 8px;
   border-radius: 2px;
-  border: 1px solid color('grey', 3);
-  border-bottom-color: color('grey', 4);
-  border-bottom-width: 2px;
+  border: 1px solid color('grey', 4);
+  border-bottom-color: color('grey', 5);
+  box-shadow: 1px 1px 6px rgba(0,0,0,0.08) inset;
   width: 120px;
 
   &::selection {
@@ -150,7 +163,8 @@ $border-grey: 3px solid rgba(0,0,0,0.07);
 
   &:focus {
     outline: 0;
-    border-bottom-color: $color-hero;
+    border-color: $color-hero;
+    box-shadow: 1px 1px 6px rgba($color-hero,0.2) inset;
   }
 }
 

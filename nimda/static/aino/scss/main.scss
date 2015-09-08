@@ -37,7 +37,7 @@ body {
   // padding: $distance;
   padding-left: $distance;
   padding-right: $distance;
-  padding-top: 120px; /* for fixed header */
+  padding-top: $header-height; /* for fixed header */
   padding-bottom: 60px; /* for .submit-row */
 
   &.popup {
@@ -47,7 +47,9 @@ body {
 
 h1 {
     @extend %font-title;
-    text-transform: uppercase;
+    letter-spacing: -0.5px;
+    font-size: fontsize('largest');
+    // text-transform: uppercase;
 }
 
 h2,h3 {
@@ -77,19 +79,48 @@ a {
   transform: translateX(-50%);
   top: 0;
   padding: 0 $distance;
-  height: 100px;
-  background-color: #fff;
+  height: $header-height;
+  background-color: color('grey', 8);
   box-shadow: 0 3px 1px rgba(0,0,0,0.05);
+  color: #fff;
 
-  &:before {
-    content: " ";
-    position: absolute;
-    z-index: -1;
-    left: 0;
-    right: 0;
+  // &:before {
+  //   content: " ";
+  //   position: absolute;
+  //   z-index: -1;
+  //   left: 0;
+  //   right: 0;
+  //   top: 0;
+  //   height: 42px;
+  //   background-color: $color-site;
+  // }
+
+  & + .breadcrumbs {
+    position: fixed;
+    z-index: 110;
     top: 0;
-    height: 42px;
-    background-color: $color-site;
+    height: $header-height;
+    line-height: $header-height;
+    font-size: fontsize('base');
+    color: #fff;
+    margin-left: -2px;
+    @include subpixel();
+
+    @include retina() {
+      @include antialias();
+    }
+
+
+    @extend %letterSpacing-normal;
+    font-weight: 600;
+
+    a {
+      margin: 0 3px;
+      color: inherit;
+      font-weight: 300;
+      // @include subpixel();
+      font-weight: normal;
+    }
   }
 }
 
@@ -107,36 +138,25 @@ a {
 }
 
 #site-name {
-  margin: 0;
-  float: left;
-
-  &:before {
-    @include faIcon(fa-globe, 3);
-    color: #fff;
-    margin-right: 10px;
-  }
-
-  a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 18px;
-    display: inline-block;
-    vertical-align: middle;
-    padding: 10px 0;
-  }
+  display: none;
 }
 
 #user-tools {
   position: relative;
   float: right;
   color: rgba(255,255,255,0.7);
-  line-height: 40px;
+  line-height: $header-height;
   text-transform: uppercase;
-  font-size: 12px;
+
+  a,.separator {
+    display: none;
+  }
 
   .separator {
-    margin: 0 2px;
-    display: inline-block;
+
+    & + a {
+      display: block;
+    }
   }
 
   a {
@@ -145,17 +165,7 @@ a {
   }
 }
 
-#header + .breadcrumbs {
-  position: fixed;
-  z-index: 110;
-  top: 71px;
-  font-size: 14px;
-  margin-left: -2px;
 
-  a {
-    margin: 0 2px;
-  }
-}
 
 /*   ————————————————————————————————————————————————
    General Content styling
@@ -170,7 +180,7 @@ a {
   @extend %adminBox;
 
   p {
-    padding: 10px;
+    // padding: 10px;
   }
 
   > h2:first-of-type, caption {
@@ -220,14 +230,14 @@ a {
   margin-left: auto;
   margin-right: auto;
 
-  & > h1:first-of-type {
-    position: fixed;
-    z-index: 110;
-    top: 42px;
-    font-size: 16px;
-    font-weight: 500;
-    -webkit-font-smoothing: subpixel-antialiased;
-  }
+  // & > h1:first-of-type {
+  //   position: fixed;
+  //   z-index: 110;
+  //   top: 42px;
+  //   font-size: 16px;
+  //   font-weight: 500;
+  //   -webkit-font-smoothing: subpixel-antialiased;
+  // }
 }
 
 
@@ -307,7 +317,7 @@ label {
 }
 
 .aligned label {
-  width: 155px;
+  width: $distance-labels;
   padding-top: 6px;
 }
 
@@ -316,7 +326,8 @@ input[type="text"], input[type="email"], input[type="password"], input[type="num
 }
 
 input.vTextField {
-  width: 220px;
+  // width: 220px;
+  width: 350px;
 }
 
 select:not([multiple]) {
@@ -443,8 +454,8 @@ select:not([multiple]) {
 }
 
 .required label, label.required {
-  color: $color-site !important;
-  // font-weight: normal !important;
+  color: #000 !important;
+  font-weight: normal !important;
 }
 
 .errornote {
@@ -462,8 +473,9 @@ form .aligned p.help {
 }
 
 form .aligned p, form .aligned ul {
-  margin-left: 155px;
+  margin-left: $distance-labels;
   padding-left: 0;
+  font-size: map-get($fontSizes, 'smaller');
 }
 
 form .wide p.help {
@@ -471,7 +483,14 @@ form .wide p.help {
 }
 
 .form-row {
+  padding: 10px 15px;
   border-bottom: 0;
+  font-size: map-get($fontSizes, 'small');
+  border-bottom: 1px solid color('grey', 2);
+
+  input {
+    margin-bottom: 7px;
+  }
 
   &:first-of-type {
     padding-top: 15px;
@@ -498,7 +517,7 @@ form .wide p.help {
   left: 50%;
   width: 100%;
   margin: 0;
-  background: #fff;
+  background: color('grey', 8);
   border: 0;
   text-align: left;
   padding: $distance-small $distance;
@@ -651,16 +670,6 @@ form .wide p.help {
       background: lighten($color-site,20%);
       color: #fff;
       position: relative;
-
-      &:after {
-        content: " ";
-        position: absolute;
-        width: 3px;
-        top: 0;
-        height: 19px;
-        right: -3px;
-        background-color: lighten($color-site, 8%);
-      }
     }
   }
 

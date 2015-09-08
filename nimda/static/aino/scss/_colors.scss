@@ -5,6 +5,7 @@
 $color-steel: #7a8ba0;
 $color-steel-light: #c4cdd8;
 $color-blue: #479eff;
+$color-graphite: #4c4c4c;
 $color-sand: #F5E9CC;
 $color-sand-dark: #A09480;
 $color-red-dark: #d31d1d;
@@ -13,7 +14,7 @@ $color-green-light: #e1f1c6;
 $color-green-darker: #6e8742;
 
 /* Semantic Aliases */
-$color-site: $color-steel;
+$color-site: $color-graphite;
 $color-sidekick: $color-sand;
 $color-hero: $color-blue;
 $color-destroy: $color-red-dark;
@@ -22,7 +23,7 @@ $color-destroy: $color-red-dark;
 $colors: (
   'grey': (
     1: #fdfdfd,
-    2: #fafafa,
+    2: #f8f8f8,
     3: #e7e7e7,
     4: #ccc,
     5: #b5b5b5,

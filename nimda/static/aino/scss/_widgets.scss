@@ -259,13 +259,20 @@
 
 
 
+// =============================
+//  Related widget wrapper
+// =============================
+.related-widget-wrapper {
+  overflow: hidden;
+}
+
 
 /*   ————————————————————————————————————————————————
    Selector
   ———————————————————————————————————————————————— */
 .selector {
   h2 {
-    @extend %letterSpacing-large;
+    // @extend %letterSpacing-large;
     margin: 0;
     text-transform: uppercase;
     font-size: map-get($fontSizes, 'base');
@@ -289,8 +296,8 @@
   }
 
   .selector-chosen h2 {
-    background: #eef6ff;
-    color: $color-hero;
+    background: color('grey', 2);
+    // color: #fff;
   }
 
   select {
