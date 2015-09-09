@@ -3,13 +3,12 @@
 <html lang="{{ LANGUAGE_CODE|default:"en-us" }}" {% if LANGUAGE_BIDI %}dir="rtl"{% endif %}>
 <head>
 <title>{% block title %}{% endblock %}</title>
+<link rel="stylesheet" type="text/css" href="{% block stylesheet %}{% static "admin/css/base.css" %}{% endblock %}" />
 {% block extrastyle %}{% endblock %}
-<link rel="stylesheet" type="text/css" href="{% block stylesheet %}{% static "aino/css/main.css" %}{% endblock %}" />
 <!--[if lte IE 7]><link rel="stylesheet" type="text/css" href="{% block stylesheet_ie %}{% static "admin/css/ie.css" %}{% endblock %}" /><![endif]-->
 {% if LANGUAGE_BIDI %}<link rel="stylesheet" type="text/css" href="{% block stylesheet_rtl %}{% static "admin/css/rtl.css" %}{% endblock %}" />{% endif %}
 <script type="text/javascript">window.__admin_media_prefix__ = "{% filter escapejs %}{% static "admin/" %}{% endfilter %}";</script>
 <script type="text/javascript">window.__admin_utc_offset__ = "{% filter escapejs %}{% now "Z" %}{% endfilter %}";</script>
-<script src="{% block javascript %}{% static "aino/js/main.js" %}{% endblock %}"></script>
 {% block extrahead %}{% endblock %}
 {% block blockbots %}<meta name="robots" content="NONE,NOARCHIVE" />{% endblock %}
 </head>
@@ -19,34 +18,36 @@
 
 <!-- Container -->
 <div id="container">
+
     {% if not is_popup %}
     <!-- Header -->
     <div id="header">
         <div id="branding">
         {% block branding %}{% endblock %}
-
+        </div>
+        {% block usertools %}
+        {% if has_permission %}
         <div id="user-tools">
-
+            {% block welcome-msg %}
+                {% trans 'Welcome,' %}
+                <strong>{% firstof user.get_short_name user.get_username %}</strong>.
+            {% endblock %}
             {% block userlinks %}
                 {% if site_url %}
-                    <a href="{{ site_url }}">{% trans 'View site' %}</a> <span class="separator">/</span>
+                    <a href="{{ site_url }}">{% trans 'View site' %}</a> /
                 {% endif %}
                 {% if user.is_active and user.is_staff %}
                     {% url 'django-admindocs-docroot' as docsroot %}
                     {% if docsroot %}
-                        <a href="{{ docsroot }}">{% trans 'Documentation' %}</a> <span class="separator">/</span>
+                        <a href="{{ docsroot }}">{% trans 'Documentation' %}</a> /
                     {% endif %}
                 {% endif %}
                 {% if user.has_usable_password %}
-                <a href="{% url 'admin:password_change' %}">{% trans 'Change password' %}</a> <span class="separator">/</span>
+                <a href="{% url 'admin:password_change' %}">{% trans 'Change password' %}</a> /
                 {% endif %}
-                <a href="{% url 'admin:logout' %}">{% trans 'Log out' %} ({% firstof user.get_short_name user.get_username %})</a>
+                <a href="{% url 'admin:logout' %}">{% trans 'Log out' %}</a>
             {% endblock %}
         </div>
-        </div>
-        {% block usertools %}
-        {% if has_permission %}
-
         {% endif %}
         {% endblock %}
         {% block nav-global %}{% endblock %}

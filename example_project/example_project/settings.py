@@ -1,4 +1,4 @@
-import ConfigParser
+import configparser
 import os
 from os.path import abspath, dirname, join
 
@@ -10,7 +10,7 @@ BASE_DIR = abspath(join(here, os.pardir))
 
 default = join(CONF_DIR, 'default.ini')
 env = join(CONF_DIR, '%s.ini' % os.environ.get('DJANGO_ENV', 'development'))
-c = ConfigParser.RawConfigParser(allow_no_value=True)
+c = configparser.RawConfigParser(allow_no_value=True)
 c.optionxform = str
 c.read([default, env])
 
