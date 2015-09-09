@@ -31,15 +31,13 @@
   font-family: 'Source Sans Pro', helvetica, arial, sans-serif; }
 
 input[type="text"], input[type="email"], input[type="password"], input[type="number"], textarea, #changelist #toolbar form #searchbar, body, label {
-  font-size: 15px; }
+  font-size: 16px; }
 
 .button, input[type="submit"], button, .object-tools li a, .submit-row input, .submit-row button, .submit-row .deletelink-box a.deletelink, #changelist form input[type="submit"], .inline-group ul.tools a.add, .inline-group div.add-row a, .inline-group .tabular tr.add-row td a, .calendarbox .calendar-cancel a {
-  padding: 5px 10px;
+  padding: 10px 15px;
   border: 1px solid #4c4c4c;
   border-radius: 2px;
-  border-bottom-width: 2px;
   transition: all 100ms;
-  box-shadow: inset 0px 1px rgba(255, 255, 255, 0.2);
   background: #4c4c4c;
   font-size: inherit;
   color: #fff;
@@ -51,8 +49,8 @@ input[type="text"], input[type="email"], input[type="password"], input[type="num
     margin-right: 8px; }
   .button:hover, input[type="submit"]:hover, button:hover, .object-tools li a:hover, .submit-row input:hover, .submit-row .deletelink-box a.deletelink:hover, #changelist form input[type="submit"]:hover, .inline-group ul.tools a.add:hover, .inline-group div.add-row a:hover, .inline-group .tabular tr.add-row td a:hover, .calendarbox .calendar-cancel a:hover {
     box-shadow: none;
-    background-color: #333333;
-    border-color: #333333;
+    background-color: #3f3f3f;
+    border-color: #3f3f3f;
     color: #fff;
     text-decoration: none; }
 
@@ -60,13 +58,12 @@ input[type="text"], input[type="email"], input[type="password"], input[type="num
   background-color: #479eff;
   border-color: #479eff; }
   .button.default:hover, input[type="submit"].default:hover, button.default:hover {
-    background-color: #1483ff;
-    border-color: #1483ff; }
+    background-color: #2d91ff;
+    border-color: #2d91ff; }
 
 .submit-row .deletelink-box a.deletelink, body.delete-confirmation input[type="submit"] {
-  background-color: #e85555;
-  border-color: #d31d1d;
-  padding: 5px 10px;
+  background-color: #f04444;
+  border-color: #f04444;
   position: relative; }
   .submit-row .deletelink-box a.deletelink:before, body.delete-confirmation input[type="submit"]:before {
     content: "";
@@ -79,8 +76,8 @@ input[type="text"], input[type="email"], input[type="password"], input[type="num
     top: 0px; }
   .submit-row .deletelink-box a.deletelink:hover, body.delete-confirmation input[type="submit"]:hover {
     text-decoration: none;
-    border-color: #d31d1d;
-    background-color: #d31d1d; }
+    border-color: #ee2c2c;
+    background-color: #ee2c2c; }
 
 .module:not(.calendarbox):not(.clockbox) {
   padding: 0;
@@ -95,7 +92,6 @@ input[type="text"], input[type="email"], input[type="password"], input[type="num
   border-radius: 2px;
   border: 1px solid #ccc;
   border-bottom-color: #b5b5b5;
-  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.08) inset;
   width: 120px; }
   input[type="text"]::selection, input[type="email"]::selection, input[type="password"]::selection, input[type="number"]::selection, textarea::selection, #changelist #toolbar form #searchbar::selection {
     background: #479eff;
@@ -188,20 +184,23 @@ a {
     top: 0;
     height: 60px;
     line-height: 60px;
-    font-size: 15px;
+    font-size: 16px;
     color: #fff;
     margin-left: -2px;
+    font-weight: 600;
     -webkit-font-smoothing: subpixel-antialiased;
-    -moz-osx-font-smoothing: auto;
-    font-weight: 600; }
+    -moz-osx-font-smoothing: auto; }
     @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (-moz-min-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
       #header + .breadcrumbs {
         -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale; } }
+        -moz-osx-font-smoothing: grayscale; }
+        #header + .breadcrumbs a {
+          opacity: 1; } }
     #header + .breadcrumbs a {
       margin: 0 3px;
       color: inherit;
       font-weight: 300;
+      opacity: 0.9;
       font-weight: normal; }
 
 #branding {
@@ -321,7 +320,7 @@ select:not([multiple]) {
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
-  font-size: 15px;
+  font-size: 16px;
   border-radius: 2px;
   border: 1px solid #e7e7e7;
   border-bottom-width: 2px;
@@ -415,7 +414,7 @@ select:not([multiple]) {
   font-weight: normal !important; }
 
 .errornote {
-  color: #d31d1d; }
+  color: #f04444; }
   .errornote:before {
     content: "";
     font: normal normal normal 14px/1 FontAwesome;
@@ -441,7 +440,7 @@ form .wide p.help {
 .form-row {
   padding: 10px 15px;
   border-bottom: 0;
-  font-size: 13px;
+  font-size: 14px;
   border-bottom: 1px solid #f8f8f8; }
   .form-row input {
     margin-bottom: 7px; }
@@ -466,7 +465,7 @@ form .wide p.help {
   background: #353535;
   border: 0;
   text-align: left;
-  padding: 13px 17px;
+  padding: 25px 17px;
   border-radius: 2px;
   box-shadow: 3px -3px 3px rgba(0, 0, 0, 0.05); }
   .submit-row > div {
@@ -521,7 +520,7 @@ form .wide p.help {
       margin-right: 6px; }
 
 .errorlist {
-  color: #d31d1d; }
+  color: #f04444; }
 
 /*   ————————————————————————————————————————————————
    Changelist
@@ -802,7 +801,7 @@ form .wide p.help {
 .selector h2 {
   margin: 0;
   text-transform: uppercase;
-  font-size: 15px;
+  font-size: 16px;
   padding: 6px;
   border: 0; }
 .selector .selector-filter {
@@ -819,7 +818,7 @@ form .wide p.help {
 .selector select {
   border-color: #e7e7e7;
   padding: 8px;
-  font-size: 15px;
+  font-size: 16px;
   height: 200px; }
   .selector select:active, .selector select:focus {
     outline: none;

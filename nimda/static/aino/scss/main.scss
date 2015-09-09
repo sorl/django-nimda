@@ -104,21 +104,24 @@ a {
     font-size: fontsize('base');
     color: #fff;
     margin-left: -2px;
+    @extend %letterSpacing-normal;
+    font-weight: 600;
+
     @include subpixel();
 
     @include retina() {
       @include antialias();
+
+      a {
+        opacity: 1;
+      }
     }
-
-
-    @extend %letterSpacing-normal;
-    font-weight: 600;
 
     a {
       margin: 0 3px;
       color: inherit;
       font-weight: 300;
-      // @include subpixel();
+      opacity: 0.9;
       font-weight: normal;
     }
   }
@@ -520,7 +523,7 @@ form .wide p.help {
   background: color('grey', 8);
   border: 0;
   text-align: left;
-  padding: $distance-small $distance;
+  padding: 25px $distance;
   border-radius: 2px;
   // border-right: $border-grey;
   // border-top: $border-grey;

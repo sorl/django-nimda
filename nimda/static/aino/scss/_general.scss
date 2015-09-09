@@ -72,12 +72,11 @@ $header-height: 60px;
 
 %button-base {
   @extend %font-body;
-  padding: 5px 10px;
+  padding: 10px 15px;
   border: 1px solid $color-site;
   border-radius: 2px;
-  border-bottom-width: 2px;
   transition: all 100ms;
-  box-shadow: inset 0px 1px rgba(255,255,255,0.2);
+  // box-shadow: inset 0px 1px rgba(255,255,255,0.2);
   background: $color-site;
   font-size: inherit;
   // color: $color-hero;
@@ -93,8 +92,8 @@ $header-height: 60px;
 
   &:hover {
     box-shadow: none;
-    background-color: darken($color-site, 10%);
-    border-color: darken($color-site, 10%);
+    background-color: darken($color-site, 5%);
+    border-color: darken($color-site, 5%);
     color: #fff;
     text-decoration: none;
   }
@@ -105,15 +104,14 @@ $header-height: 60px;
   border-color: $color-hero;
 
   &:hover {
-    background-color: darken($color-hero, 10%);
-    border-color: darken($color-hero, 10%);
+    background-color: darken($color-hero, 5%);
+    border-color: darken($color-hero, 5%);
   }
 }
 
 %button-destroy {
-  background-color: lighten($color-destroy, 15%);
+  background-color: $color-destroy; //lighten($color-destroy, 15%);
   border-color: $color-destroy;
-  padding: 5px 10px;
   position: relative;
 
   &:before {
@@ -123,8 +121,8 @@ $header-height: 60px;
 
   &:hover {
     text-decoration: none;
-    border-color: $color-destroy;
-    background-color: $color-destroy;
+    border-color: darken($color-destroy, 5%);
+    background-color: darken($color-destroy, 5%);
   }
 }
 
@@ -153,7 +151,7 @@ $header-height: 60px;
   border-radius: 2px;
   border: 1px solid color('grey', 4);
   border-bottom-color: color('grey', 5);
-  box-shadow: 1px 1px 6px rgba(0,0,0,0.08) inset;
+  // box-shadow: 1px 1px 6px rgba(0,0,0,0.08) inset;
   width: 120px;
 
   &::selection {
