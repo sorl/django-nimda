@@ -1,0 +1,208 @@
+// ======================================================================================
+//  Reset
+// ======================================================================================
+
+@import "_reset";
+
+
+// ======================================================================================
+//  Helpers
+// ======================================================================================
+
+@function map-deep-get($map, $keys...) {
+  $value: $map;
+  @each $key in $keys {
+    $value: map-get($value, $key);
+  }
+  @return $value;
+}
+
+
+// ======================================================================================
+//  Typography
+// ======================================================================================
+
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600);
+@import url(//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css);
+
+$fontSizes: (
+  'micro': 9px,
+  'xs': 10px,
+  's': 12px,
+  'm': 16px,
+  'l': 16px,
+  'xl': 17px,
+  'xxl': 27px,
+  'jumbo': 60px
+);
+
+@function fontsize($size: 'm') {
+  // Expectations: A map called $colors and map-deep-get function
+  // @param string $base: The base color to use inside an expected global map called $colors
+  // @param string $tone: The tone value of the base color
+  @if map-get($fontSizes, $size) {
+    @return map-get($fontSizes, $size);
+  }
+  @warn "Did not find any matching size";
+  @return 12px;
+}
+
+@mixin antialias() {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+@mixin subpixel() {
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: auto;
+}
+
+
+// • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • •
+//  Letter spacing
+
+$letterSpacing: (
+  's': 0.25px,
+  'm': 0.5px
+);
+
+@mixin ls($size) {
+  letter-spacing: map-get($letterSpacing, $size);
+}
+
+
+// ======================================================================================
+//  Icons
+// ======================================================================================
+
+$faIcons: (
+  'fa-arrow-circle-left' : '\f0a8',
+  'fa-arrow-circle-right' : '\f0a9',
+  'fa-check-circle' : '\f058',
+  'fa-cloud-upload': '\f0ee',
+  'fa-exchange' : '\f0ec',
+  'fa-exclamation-circle': '\f06a',
+  'fa-globe': '\f0ac',
+  'fa-pencil' : '\f040',
+  'fa-plus': '\f067',
+  'fa-plus-circle' : '\f055',
+  'fa-search' : '\f002',
+  'fa-sort-amount-asc': '\f160',
+  'fa-sort-amount-desc': '\f161',
+  'fa-sort-asc' : '\f0de',
+  'fa-sort-desc' : '\f0dd',
+  'fa-thumbs-up' : '\f164',
+  'fa-trash': '\f1f8'
+);
+
+$faSizes: (
+  's': 14px,
+  'm': 20px
+);
+
+@mixin faIcon($name, $size: 'm') {
+  // Alternate way of displaying Font Awesome icons.
+  // Used as a substitute to the standard, preferred way of <i class="fa fa-iconname"></i>
+  // when this is not feasible (like when you can't control the markup).
+
+  content: map-get($faIcons, $name);
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: map-get($faSizes, $size);
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transform: translate(0,0);
+}
+
+
+
+// ======================================================================================
+//  Colors
+// ======================================================================================
+
+$color-hero: #2594ee;
+$color-destroy: red;
+$color-grey: #ccc;
+$color-grey-light: #eee;
+
+
+
+// ======================================================================================
+//  Responsive / Retina
+// ======================================================================================
+@mixin retina() {
+  @media only screen and (-webkit-min-device-pixel-ratio: 2),
+      only screen and (-moz-min-device-pixel-ratio: 2),
+      only screen and (-o-min-device-pixel-ratio: 2/1),
+      only screen and (min-device-pixel-ratio: 2),
+      only screen and (min-resolution: 192dpi),
+      only screen and (min-resolution: 2dppx) {
+      & {
+        @content;
+      }
+    }
+}
+
+@mixin breakpoint($breakpoint, $value: null, $media: all) {
+  //  @param string $breakpoint: Name of a pre-specified breakpoint, or an integer to be used for max-width (for lazy people)
+  //  @param integer $value: If a variable breakpoint name is used, like "max-width", specify a value to which the breakpoint should respond to
+  //  @param string $media: Apply only to a specific media type
+  //  Move the "or" statement with "main-desktop-breakpoint" to where you want the main breakpoint to be, if you have one
+
+  @if $breakpoint == 'mobile-small' {
+    @media only #{$media} and (max-width: 320px) {
+      @content;
+    }
+  } @else if $breakpoint == 'mobile-large' {
+    @media only #{$media} and (min-width: 414px) {
+      @content;
+    }
+  } @else if $breakpoint == 'mobile-huge' {
+    @media only #{$media} and (min-width: 600px) {
+      @content;
+    }
+  } @else if $breakpoint == 'tablet-portrait' {
+    @media only #{$media} and (min-width: 768px) {
+      @content;
+    }
+  } @else if $breakpoint == 'desktop' {
+    @media only #{$media} and (min-width: 1000px) {
+      @content;
+    }
+  } @else if $breakpoint == 'desktop-wide' {
+    @media only #{$media} and (min-width: 1200px) {
+      @content;
+    }
+  } @else if $breakpoint == 'laptop-height' {
+    @media only #{$media} and (min-width: 600px) and (max-height: 820px) {
+      @content;
+    }
+  } @else if $breakpoint == 'device-touch' {
+    @media only #{$media} and (min-device-width: 320px) and (max-device-width: 1024px) {
+      @content;
+    }
+  } @else if $breakpoint == 'device-notouch' {
+    @media only #{$media} and (min-device-width: 1025px) {
+      @content;
+    }
+  } @else if $breakpoint == 'max-width' {
+    @media only #{$media} and (max-width: $value) {
+      @content;
+    }
+  } @else if $breakpoint == 'min-width' {
+    @media only #{$media} and (min-width: $value) {
+      @content;
+    }
+  } @else if $breakpoint == 'max-height' {
+    @media only #{$media} and (max-height: $value) {
+      @content;
+    }
+  } @else if $breakpoint == 'min-height' {
+    @media only #{$media} and (min-height: $value) {
+      @content;
+    }
+  } @else {
+    @media only #{$media} and (max-width: $breakpoint) {
+      @content;
+    }
+  }
+}

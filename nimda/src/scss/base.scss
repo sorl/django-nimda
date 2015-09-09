@@ -1,3 +1,11 @@
+// • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • •
+//  Init Nimda
+@import "_init";
+
+
+
+
+
 /*
     DJANGO Admin styles
 */
@@ -5,6 +13,7 @@
 body {
     margin: 0;
     padding: 0;
+    background-color: red !important;
     font-size: 12px;
     font-family: "Lucida Grande","DejaVu Sans","Bitstream Vera Sans",Verdana,Arial,sans-serif;
     color: #333;

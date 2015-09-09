@@ -1,0 +1,15 @@
+html,body{min-height:100%;background:#f4f4f4;-webkit-font-smoothing:antialiased;margin:0;padding:0;-webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%; -moz-osx-font-smoothing: grayscale;}
+input, select { font-family: inherit; font-size: inherit; }
+::selection {
+  background: #333; /* WebKit/Blink Browsers */
+  color: #fff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+th {
+  font-weight: inherit;
+}
