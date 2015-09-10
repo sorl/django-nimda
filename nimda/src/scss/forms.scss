@@ -1,3 +1,7 @@
+// • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • •
+//  Init Nimda
+@import "_init";
+
 @import url('widgets.css');
 
 /* FORM ROWS */
@@ -5,7 +9,6 @@
 .form-row {
     overflow: hidden;
     padding: 8px 12px;
-    font-size: 11px;
     border-bottom: 1px solid #eee;
 }
 
@@ -15,7 +18,6 @@
 
 form .form-row p {
     padding-left: 0;
-    font-size: 11px;
 }
 
 .hidden {
@@ -33,12 +35,13 @@ form h4 {
 label {
     font-weight: normal !important;
     color: #666;
-    font-size: 12px;
 }
 
 .required label, label.required {
-    font-weight: bold !important;
-    color: #333 !important;
+    &:after {
+        content: "*";
+        color: $color-destroy;
+    }
 }
 
 /* RADIO BUTTONS */
@@ -66,9 +69,9 @@ form ul.inline li {
 
 .aligned label {
     display: block;
-    padding: 3px 10px 0 0;
+    padding: 6px 10px 0 0;
     float: left;
-    width: 8em;
+    width: 10em;
     word-wrap: break-word;
 }
 
@@ -94,7 +97,8 @@ form .aligned table p {
 
 form .aligned p.help {
     clear: left;
-    padding-left: 38px;
+    padding-left: 56px;
+    font-size: fs('s');
 }
 
 .aligned .vCheckboxLabel {

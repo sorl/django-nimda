@@ -19,24 +19,34 @@
 
 
 // ======================================================================================
+//  Distance
+// ======================================================================================
+$distance: 15px;
+$distance-s: 10px;
+$header-height: 60px;
+
+
+// ======================================================================================
 //  Typography
 // ======================================================================================
 
-@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600);
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700);
 @import url(//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css);
+
+$font-main: "Source Sans Pro", "Lucida grande", lucida, arial, sans-serif;
 
 $fontSizes: (
   'micro': 9px,
   'xs': 10px,
   's': 12px,
-  'm': 16px,
+  'm': 14px,
   'l': 16px,
-  'xl': 17px,
-  'xxl': 27px,
+  'xl': 20px,
+  'xxl': 23px,
   'jumbo': 60px
 );
 
-@function fontsize($size: 'm') {
+@function fs($size: 'm') {
   // Expectations: A map called $colors and map-deep-get function
   // @param string $base: The base color to use inside an expected global map called $colors
   // @param string $tone: The tone value of the base color
@@ -47,10 +57,13 @@ $fontSizes: (
   @return 12px;
 }
 
+
+
 @mixin antialias() {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 @mixin subpixel() {
   -webkit-font-smoothing: subpixel-antialiased;
   -moz-osx-font-smoothing: auto;
@@ -65,7 +78,7 @@ $letterSpacing: (
   'm': 0.5px
 );
 
-@mixin ls($size) {
+@mixin ls($size: 'm') {
   letter-spacing: map-get($letterSpacing, $size);
 }
 
@@ -120,9 +133,10 @@ $faSizes: (
 // ======================================================================================
 
 $color-hero: #2594ee;
-$color-destroy: red;
+$color-destroy: #e44158;
 $color-grey: #ccc;
 $color-grey-light: #eee;
+$color-grey-lighter: #f8f8f8;
 
 
 

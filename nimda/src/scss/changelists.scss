@@ -1,3 +1,8 @@
+// • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • •
+//  Init Nimda
+@import "_init";
+
+
 /* CHANGELISTS */
 
 #changelist {
@@ -34,6 +39,11 @@
 
 #changelist-form .results {
   overflow-x: auto;
+
+  img[alt="True"], img[alt="False"] {
+    border-radius: 50%;
+    overflow: hidden;
+  }
 }
 
 #changelist .toplinks {
@@ -43,8 +53,6 @@
 #changelist .paginator {
     color: #666;
     border-top: 1px solid #eee;
-    border-bottom: 1px solid #eee;
-    background: white url(../img/nav-bg.gif) 0 180% repeat-x;
     overflow: hidden;
 }
 
@@ -85,14 +93,12 @@
 /* TOOLBAR */
 
 #changelist #toolbar {
-    padding: 3px;
-    border-bottom: 1px solid #ddd;
-    background: #e1e1e1 url(../img/nav-bg.gif) top left repeat-x;
-    color: #666;
+    padding: $distance-s;
+    // color: #666;
 }
 
 #changelist #toolbar form input {
-    font-size: 11px;
+    // font-size: 11px;
     padding: 1px 2px;
 }
 
@@ -101,7 +107,8 @@
 }
 
 #changelist #changelist-search img {
-    vertical-align: middle;
+    // vertical-align: middle;
+    display: none;
 }
 
 /* FILTER COLUMN */
@@ -234,7 +241,7 @@
 
 .filtered .actions {
     margin-right: 160px !important;
-    border-right: 1px solid #ddd;
+    // border-right: 1px solid #ddd;
 }
 
 #changelist table input {
@@ -242,15 +249,14 @@
 }
 
 #changelist table tbody tr.selected {
-    background-color: #FFFFCC;
+    background-color: rgba($color-hero, 0.1);
 }
 
 #changelist .actions {
     color: #999;
     padding: 3px;
-    border-top: 1px solid #fff;
+    // border-top: 1px solid #fff;
     border-bottom: 1px solid #ddd;
-    background: white url(../img/nav-bg-reverse.gif) 0 -10px repeat-x;
 }
 
 #changelist .actions.selected {
