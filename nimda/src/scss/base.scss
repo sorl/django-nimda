@@ -34,8 +34,7 @@ a img {
 }
 
 a.section:link, a.section:visited {
-    color: $color-grey;
-    text-decoration: none;
+    color: $color-grey-darker;
 }
 
 /* GLOBAL DEFAULTS */
@@ -442,11 +441,7 @@ textarea, select, .vTextField {
 /* FORM BUTTONS */
 
 .button, input[type=submit], input[type=button], .submit-row input, a.button {
-    background: #fff url(../img/nav-bg.gif) bottom repeat-x;
-    padding: 3px 5px;
-    color: black;
-    border: 1px solid #bbb;
-    border-color: #ddd #aaa #aaa #ddd;
+    @include button($color-grey-dark);
 }
 
 a.button {
@@ -465,10 +460,7 @@ a.button {
 }
 
 .button.default, input[type=submit].default, .submit-row input.default {
-    border: 2px solid #5b80b2;
-    background: #7CA0C7 url(../img/default-bg.gif) bottom repeat-x;
-    font-weight: bold;
-    color: #fff;
+    @include button($color-hero);
     float: right;
 }
 
@@ -516,6 +508,11 @@ a.button {
     text-align: left;
     border-bottom: 1px solid $color-grey-light;
     color: $color-grey;
+    font-weight: normal;
+}
+
+.module caption {
+    padding: 5px 10px;
 }
 
 .module table {
@@ -649,27 +646,17 @@ div.breadcrumbs {
 /* ACTION ICONS */
 
 .addlink {
-    padding-left: 12px;
-    background: url(../img/icon_addlink.gif) 0 .2em no-repeat;
+    @include faIconPlacement('fa-plus', 's');
 }
 
 .changelink, .inlinechangelink {
-    padding-left: 12px;
-    background: url(../img/icon_changelink.gif) 0 .2em no-repeat;
+    @include faIconPlacement('fa-pencil', 's');
 }
 
-.deletelink {
-    padding-left: 12px;
-    background: url(../img/icon_deletelink.gif) 0 .25em no-repeat;
+.deletelink, a.deletelink {
+    @include button($color-destroy);
 }
 
-a.deletelink:link, a.deletelink:visited {
-    color: #CC3434;
-}
-
-a.deletelink:hover {
-    color: #993333;
-}
 
 /* OBJECT TOOLS */
 
@@ -677,7 +664,7 @@ a.deletelink:hover {
     padding-left: 0;
     float: right;
     position: relative;
-    margin-top: -3em;
+    margin-top: -3.5em;
     margin-bottom: -2em;
 }
 
@@ -696,16 +683,11 @@ a.deletelink:hover {
     height: 16px;
 }
 
-.object-tools a {
-    border-radius: 4px;
-}
 
 .object-tools a:link, .object-tools a:visited {
+    @include button($color-grey-dark);
     display: block;
     float: left;
-    color: #fff;
-    padding: $distance-s 10px;
-    background: $color-hero;
 }
 
 .object-tools a:hover, .object-tools li:hover a {
@@ -741,7 +723,7 @@ table#change-history tbody th {
 }
 
 #content {
-    margin: $distance;
+    margin: $distance*2 $distance;
     max-width: 1200px;
 
     > h1 {

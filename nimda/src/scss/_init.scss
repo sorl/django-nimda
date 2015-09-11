@@ -37,8 +37,8 @@ $font-main: "Source Sans Pro", "Lucida grande", lucida, arial, sans-serif;
 
 $fontSizes: (
   'micro': 9px,
-  'xs': 10px,
-  's': 12px,
+  'xs': 11px,
+  's': 13px,
   'm': 14px,
   'l': 16px,
   'xl': 20px,
@@ -126,6 +126,49 @@ $faSizes: (
   transform: translate(0,0);
 }
 
+@mixin faIconPlacement($name, $size) {
+  padding-left: 20px;
+
+  &:before {
+      position: absolute;
+      margin-top: 3px;
+      margin-left: -17px;
+      @include faIcon($name, $size)
+  }
+
+}
+
+
+
+// ======================================================================================
+//  Buttons
+// ======================================================================================
+
+@mixin button($color) {
+  color: #fff;
+  padding: $distance-s $distance;
+  background: $color;
+  border-radius: 3px;
+  cursor: pointer;
+  line-height: 1;
+  display: inline-block;
+  vertical-align: middle;
+  transition-property: background-color;
+  transition-duration: 150ms;
+  border: 0;
+  text-align: center;
+
+  &:before {
+    // No icons in buttons
+    display: none;
+  }
+
+  &:hover {
+    text-decoration: none;
+    background-color: lighten($color, 7%);
+  }
+}
+
 
 
 // ======================================================================================
@@ -134,6 +177,9 @@ $faSizes: (
 
 $color-hero: #2594ee;
 $color-destroy: #e44158;
+
+$color-grey-darker: #333;
+$color-grey-dark: #858585;
 $color-grey: #ccc;
 $color-grey-light: #eee;
 $color-grey-lighter: #f8f8f8;

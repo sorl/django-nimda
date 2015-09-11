@@ -1,4 +1,14 @@
+// • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • •
+//  Init Nimda
+@import "_init";
+
+
 /* DASHBOARD */
+
+.dashboard .module h2 {
+  font-size: fs('m');
+  padding: 5px $distance-s;
+}
 
 .dashboard .module table th {
     width: 100%;
@@ -21,6 +31,7 @@
 
 ul.actionlist li {
     list-style-type: none;
+    margin-bottom: 5px;
 }
 
 ul.actionlist li {

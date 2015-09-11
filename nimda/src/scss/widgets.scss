@@ -1,3 +1,7 @@
+// • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • •
+//  Init Nimda
+@import "_init";
+
 /* SELECTOR (FILTER INTERFACE) */
 
 .selector {
@@ -26,17 +30,14 @@
 }
 
 .selector .selector-available h2 {
-    background: white url(../img/nav-bg.gif) bottom left repeat-x;
-    color: #666;
+    // color: #666;
 }
 
 .selector .selector-filter {
-    background: white;
-    border: 1px solid #ccc;
+
+    border: 1px solid $color-grey;
     border-width: 0 1px;
     padding: 3px;
-    color: #999;
-    font-size: 10px;
     margin: 0;
     text-align: left;
 }

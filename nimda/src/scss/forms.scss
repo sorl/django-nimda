@@ -9,7 +9,7 @@
 .form-row {
     overflow: hidden;
     padding: 8px 12px;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid $color-grey-lighter;
 }
 
 .form-row img, .form-row input {
@@ -87,7 +87,7 @@ form ul.inline li {
 
 form .aligned p, form .aligned ul {
     margin-left: 7em;
-    padding-left: 30px;
+    padding-left: 74px;
 }
 
 form .aligned table p {
@@ -97,7 +97,7 @@ form .aligned table p {
 
 form .aligned p.help {
     clear: left;
-    padding-left: 56px;
+    padding-left: 49px;
     font-size: fs('s');
 }
 
@@ -169,12 +169,9 @@ fieldset.monospace textarea {
 /* SUBMIT ROW */
 
 .submit-row {
-    padding: 5px 7px;
     text-align: right;
-    background: white url(../img/nav-bg.gif) 0 100% repeat-x;
-    border: 1px solid #ccc;
     margin: 5px 0;
-    overflow: hidden;
+    overflow: auto;
 }
 
 body.popup .submit-row {
@@ -182,20 +179,15 @@ body.popup .submit-row {
 }
 
 .submit-row input {
-    margin: 0 0 0 5px;
+    margin: 0 0 0 $distance-s;
 }
 
-.submit-row p {
-    margin: 0.3em;
-}
+// .submit-row p {
+//     margin: 0.3em;
+// }
 
 .submit-row p.deletelink-box {
     float: left;
-}
-
-.submit-row .deletelink {
-    background: url(../img/icon_deletelink.gif) 0 50% no-repeat;
-    padding-left: 14px;
 }
 
 /* CUSTOM FORM FIELDS */

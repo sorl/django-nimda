@@ -14,6 +14,12 @@
     width: 100%;
 }
 
+#changelist-search input[type="submit"] {
+    @include button($color-hero);
+    padding: 8px $distance;
+    margin: 0 5px;
+}
+
 .change-list .hiddenfields { display:none; }
 
 .change-list .filtered table {
@@ -22,6 +28,10 @@
 
 .change-list .filtered {
     min-height: 400px;
+}
+
+.model-user.change-list .object-tools {
+    margin-right: 160px;
 }
 
 .change-list .filtered {
@@ -39,6 +49,7 @@
 
 #changelist-form .results {
   overflow-x: auto;
+  border-top: 1px solid $color-grey-light;
 
   img[alt="True"], img[alt="False"] {
     border-radius: 50%;
@@ -51,7 +62,7 @@
 }
 
 #changelist .paginator {
-    color: #666;
+    color: $color-grey;
     border-top: 1px solid #eee;
     overflow: hidden;
 }
@@ -99,11 +110,11 @@
 
 #changelist #toolbar form input {
     // font-size: 11px;
-    padding: 1px 2px;
+    // padding: 1px 2px;
 }
 
 #changelist #toolbar form #searchbar {
-    padding: 2px;
+
 }
 
 #changelist #changelist-search img {
@@ -125,17 +136,19 @@
 }
 
 #changelist-filter h2 {
-    font-size: 11px;
-    padding: 2px 5px;
+    font-size: fs('m');
+    padding: 2px 10px;
+    color: #333;
     border-bottom: 1px solid #ddd;
 }
 
 #changelist-filter h3 {
-    font-size: 12px;
+    font-size: fs('s');
     margin-bottom: 0;
 }
 
 #changelist-filter ul {
+    font-size: fs('s');
     padding-left: 0;
     margin-left: 10px;
 }
@@ -147,21 +160,17 @@
 }
 
 #changelist-filter a {
-    color: #999;
-}
-
-#changelist-filter a:hover {
-    color: #036;
+    color: $color-grey-dark;
 }
 
 #changelist-filter li.selected {
-    border-left: 5px solid #ccc;
-    padding-left: 5px;
+    // border-left: 5px solid #ccc;
+    padding-left: 10px;
     margin-left: -10px;
 }
 
 #changelist-filter li.selected a {
-    color: #5b80b2 !important;
+    color: $color-hero;
 }
 
 /* DATE DRILLDOWN */
@@ -194,7 +203,6 @@
 /* PAGINATOR */
 
 .paginator {
-    font-size: 11px;
     padding-top: 10px;
     padding-bottom: 10px;
     line-height: 22px;
@@ -242,6 +250,8 @@
 .filtered .actions {
     margin-right: 160px !important;
     // border-right: 1px solid #ddd;
+    color: $color-grey;
+    padding: 3px;
 }
 
 #changelist table input {
@@ -249,14 +259,15 @@
 }
 
 #changelist table tbody tr.selected {
-    background-color: rgba($color-hero, 0.1);
+    background-color: rgba($color-hero, 0.05);
 }
 
 #changelist .actions {
-    color: #999;
-    padding: 3px;
-    // border-top: 1px solid #fff;
-    border-bottom: 1px solid #ddd;
+    @include breakpoint('min-width', 1000px) {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
 }
 
 #changelist .actions.selected {
@@ -269,7 +280,7 @@
 #changelist .actions span.action-counter,
 #changelist .actions span.clear,
 #changelist .actions span.question {
-    font-size: 11px;
+    // font-size: 11px;
     margin: 0 0.5em;
     display: none;
 }
@@ -285,7 +296,7 @@
 }
 
 #changelist .actions label {
-    font-size: 11px;
+    // font-size: 11px;
     margin-left: 0.5em;
 }
 
@@ -294,6 +305,8 @@
 }
 
 #changelist .actions .button {
-    font-size: 11px;
-    padding: 1px 2px;
+    // font-size: 11px;
+    font-size: fs('s');
+    padding: 6px 8px;
+    margin-left: 5px;
 }
