@@ -97,11 +97,11 @@ th {
   .selector-add:before {
     content: "";
     font: normal normal normal 14px/1 FontAwesome;
-    font-size: 20px;
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    transform: translate(0, 0); }
+    transform: translate(0, 0);
+    font-size: 20px; }
 
 .active.selector-add:before, .active.selector-remove:before {
   color: #2594ee; }
@@ -114,11 +114,11 @@ th {
   .selector-remove:before {
     content: "";
     font: normal normal normal 14px/1 FontAwesome;
-    font-size: 20px;
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    transform: translate(0, 0); }
+    transform: translate(0, 0);
+    font-size: 20px; }
 
 .active.selector-remove {
   cursor: pointer; }
@@ -215,19 +215,19 @@ p.datetime {
 .datetimeshortcuts a[id^="calendarlink"]:before {
   content: "";
   font: normal normal normal 14px/1 FontAwesome;
-  font-size: 15px;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  transform: translate(0, 0); }
+  transform: translate(0, 0);
+  font-size: 15px; }
 .datetimeshortcuts a[id^="clocklink"]:before {
   content: "";
   font: normal normal normal 14px/1 FontAwesome;
-  font-size: 15px;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  transform: translate(0, 0); }
+  transform: translate(0, 0);
+  font-size: 15px; }
 
 .datetime span {
   color: #ccc;

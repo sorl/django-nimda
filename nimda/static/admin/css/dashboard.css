@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700);
 @import url(//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css);
 html, body {
@@ -26,7 +27,6 @@ th {
 
 /* DASHBOARD */
 .dashboard .module h2 {
-  font-size: 14px;
   padding: 5px 10px; }
 
 .dashboard .module table th {
@@ -39,17 +39,85 @@ th {
   display: block;
   padding-right: .6em; }
 
+.dashboard .module {
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  overflow: hidden; }
+  .dashboard .module td, .dashboard .module th {
+    padding: 6px 10px;
+    border-bottom-color: #f8f8f8; }
+  .dashboard .module caption {
+    background-color: #f8f8f8; }
+
 /* RECENT ACTIONS MODULE */
 .module ul.actionlist {
   margin-left: 0; }
 
 ul.actionlist li {
   list-style-type: none;
-  margin-bottom: 5px; }
-
-ul.actionlist li {
+  margin-bottom: 5px;
+  line-height: 1.25;
   overflow: hidden;
   text-overflow: ellipsis;
   -o-text-overflow: ellipsis; }
+  ul.actionlist li:before {
+    color: #ccc; }
+
+/* Icons */
+.app-auth caption {
+  padding-left: 31px; }
+  .app-auth caption:before {
+    position: absolute;
+    margin-top: 4px;
+    margin-left: -19px;
+    content: "";
+    font: normal normal normal 14px/1 FontAwesome;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate(0, 0);
+    font-size: 13px; }
+
+.app-carts caption {
+  padding-left: 31px; }
+  .app-carts caption:before {
+    position: absolute;
+    margin-top: 4px;
+    margin-left: -20px;
+    content: "";
+    font: normal normal normal 14px/1 FontAwesome;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate(0, 0);
+    font-size: 13px; }
+
+.app-orders caption {
+  padding-left: 31px; }
+  .app-orders caption:before {
+    position: absolute;
+    margin-top: 4px;
+    margin-left: -19px;
+    content: "";
+    font: normal normal normal 14px/1 FontAwesome;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate(0, 0);
+    font-size: 12px; }
+
+.app-products caption {
+  padding-left: 31px; }
+  .app-products caption:before {
+    position: absolute;
+    margin-top: 4px;
+    margin-left: -19px;
+    content: "";
+    font: normal normal normal 14px/1 FontAwesome;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate(0, 0);
+    font-size: 13px; }
 
 /*# sourceMappingURL=dashboard.css.map */

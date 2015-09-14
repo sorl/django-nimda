@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700);
 @import url(//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css);
 @import url("widgets.css");
@@ -101,8 +102,9 @@ form .aligned p.help {
 
 .aligned .vCheckboxLabel {
   float: none !important;
-  display: inline;
-  padding-left: 4px; }
+  display: inline-block;
+  vertical-align: -1px;
+  padding-left: 8px; }
 
 .colM .aligned .vLargeTextField, .colM .aligned .vXMLLargeTextField {
   width: 610px; }
@@ -207,7 +209,8 @@ body.popup .submit-row {
 .inline-group {
   padding: 0;
   border: 1px solid #ccc;
-  margin: 10px 0; }
+  margin: 10px 0;
+  overflow-x: auto; }
 
 .inline-group .aligned label {
   width: 8em; }
@@ -291,21 +294,32 @@ body.popup .submit-row {
 .inline-group .tabular tr.add-row td {
   color: #666;
   padding: 3px 5px;
-  border-bottom: 1px solid #ddd;
-  background: #e1e1e1 url(../img/nav-bg.gif) top left repeat-x; }
+  border-bottom: 1px solid #ddd; }
 
 .inline-group .tabular tr.add-row td {
-  padding: 4px 5px 3px;
+  padding: 10px;
   border-bottom: none; }
 
 .inline-group ul.tools a.add,
 .inline-group div.add-row a,
 .inline-group .tabular tr.add-row td a {
-  background: url(../img/icon_addlink.gif) 0 50% no-repeat;
+  padding-left: 20px;
   padding-left: 14px;
-  font-size: 11px;
   outline: 0;
   /* Remove dotted border around link */ }
+  .inline-group ul.tools a.add:before,
+  .inline-group div.add-row a:before,
+  .inline-group .tabular tr.add-row td a:before {
+    position: absolute;
+    margin-top: 3px;
+    margin-left: -17px;
+    content: "";
+    font: normal normal normal 14px/1 FontAwesome;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate(0, 0);
+    font-size: 13px; }
 
 .empty-form {
   display: none; }

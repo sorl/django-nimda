@@ -251,7 +251,7 @@
     margin-right: 160px !important;
     // border-right: 1px solid #ddd;
     color: $color-grey;
-    padding: 3px;
+    margin-left: 0.5em;
 }
 
 #changelist table input {
@@ -263,10 +263,15 @@
 }
 
 #changelist .actions {
+    padding: $distance-s;
+}
+
+#changelist #toolbar ~ #changelist-form .actions {
     @include breakpoint('min-width', 1000px) {
         position: absolute;
         top: 10px;
         right: 10px;
+        padding: 3px;
     }
 }
 
@@ -297,7 +302,7 @@
 
 #changelist .actions label {
     // font-size: 11px;
-    margin-left: 0.5em;
+
 }
 
 #changelist #action-toggle {

@@ -110,10 +110,13 @@ $faIcons: (
   'fa-thumbs-up' : '\f164',
   'fa-trash': '\f1f8',
   'fa-user' : '\f007',
+  'fa-shopping-cart': '\f07a',
+  'fa-cube': '\f1b2',
+  'fa-file': '\f15b',
 );
 
 $faSizes: (
-  'xs': 14px,
+  'xs': 13px,
   's': 15px,
   'm': 20px
 );
@@ -125,19 +128,26 @@ $faSizes: (
 
   content: map-get($faIcons, $name);
   font: normal normal normal 14px/1 FontAwesome;
-  font-size: map-get($faSizes, $size);
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   transform: translate(0,0);
+
+  @if type-of($size) == string {
+    font-size: map-get($faSizes, $size);
+  } @else if type-of($size) == number {
+    font-size: $size;
+  }
+
+
 }
 
-@mixin faIconPlacement($name, $size, $paddingLeft: 20px, $negMarginLeft: -17px) {
+@mixin faIconPlacement($name, $size: 's', $paddingLeft: 20px, $negMarginLeft: -17px, $topMargin: 3px) {
   padding-left: $paddingLeft;
 
   &:before {
       position: absolute;
-      margin-top: 3px;
+      margin-top: $topMargin;
       margin-left: $negMarginLeft;
       @include faIcon($name, $size)
   }

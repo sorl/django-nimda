@@ -34,7 +34,7 @@ a img {
 }
 
 a.section:link, a.section:visited {
-    color: $color-grey-darker;
+    color: $color-grey-dark;
 }
 
 /* GLOBAL DEFAULTS */
@@ -129,6 +129,10 @@ form {
 fieldset {
     margin: 0;
     padding: 0;
+}
+
+strong {
+    font-weight: 600;
 }
 
 blockquote {
@@ -260,7 +264,7 @@ th {
 thead th,
 tfoot td {
     color: #666;
-    padding: $distance-s;
+    padding: 5px $distance-s;
     border-left: 1px solid #ddd;
     border-bottom: 1px solid #ddd;
 }
@@ -308,7 +312,7 @@ tr.alt {
 /* SORTABLE TABLES */
 
 thead th {
-    padding: 2px 5px;
+    // padding: 2px 5px;
     line-height: normal;
     border-bottom: 1px solid $color-grey;
 }
@@ -329,14 +333,14 @@ thead th.sorted .text {
 }
 
 table thead th .text span {
-    padding: 2px 5px;
+    padding: 5px $distance-s;
     display:block;
 }
 
 table thead th .text a {
     display: block;
     cursor: pointer;
-    padding: $distance-s;
+    padding: 5px $distance-s;
 }
 
 table thead th.sortable:hover {
@@ -517,7 +521,8 @@ a.button {
 }
 
 .module caption {
-    padding: 5px 10px;
+    padding: 6px 10px;
+    font-size: fs('l');
 }
 
 .module table {
@@ -551,14 +556,16 @@ ul.messagelist li.error {
 }
 
 .errornote {
-    font-size: 12px !important;
-    font-weight: bold;
+    // font-size: 12px !important;
+    font-weight: 600;
     display: block;
     padding: 5px 5px 4px 25px;
     margin: 0 0 3px 0;
-    border: 1px solid #c22;
-    color: #c11;
-    background: #ffefef url(../img/icon_error.gif) 5px .38em no-repeat;
+    // border: 1px solid #c22;
+    color: $color-destroy;
+    background: lighten($color-destroy, 40%);
+
+    @include faIconPlacement('fa-exclamation-circle', 'xs', 28px, -18px);
 }
 
 .errornote, ul.errorlist {
@@ -568,15 +575,13 @@ ul.messagelist li.error {
 ul.errorlist {
     margin: 0 0 4px !important;
     padding: 0 !important;
-    color: #fff;
-    background: #c11;
+    color: $color-destroy;
 }
 
 ul.errorlist li {
-    font-size: 12px !important;
     display: block;
-    padding: 5px 5px 4px 7px;
-    margin: 3px 0 0 0;
+    // padding: $distance-s;
+    margin: 5px 0 0 0;
 }
 
 ul.errorlist li:first-child {
@@ -598,16 +603,16 @@ td ul.errorlist li {
 }
 
 .errors, .form-row.errors {
-    background: #ffefef;
+    background: lighten($color-destroy, 40%);
 }
 
 .form-row.errors {
-    border: 1px solid #c22;
+    // border: 1px solid #c22;
     margin: -1px;
 }
 
 .errors input, .errors select, .errors textarea {
-    border: 1px solid #c11;
+    border: 1px solid $color-destroy;
 }
 
 div.system-message {
@@ -669,7 +674,7 @@ div.breadcrumbs {
     padding-left: 0;
     float: right;
     position: relative;
-    margin-top: -3.5em;
+    margin-top: -30px;
     margin-bottom: -2em;
 }
 
@@ -690,9 +695,13 @@ div.breadcrumbs {
 
 
 .object-tools a:link, .object-tools a:visited {
-    @include button($color-grey-dark);
+    // @include button($color-grey-dark);
     display: block;
     float: left;
+}
+
+.object-tools a.historylink {
+    @include faIconPlacement($name:'fa-clock-o', $topMargin: 0px);
 }
 
 .object-tools a:hover, .object-tools li:hover a {
@@ -845,25 +854,20 @@ table#change-history tbody th {
     font-size: fs();
     text-align: right;
 
+    strong + a {
+        margin-left: $distance;
+    }
+
     a {
-        font-weight: bold;
+        font-weight: 600;
         margin: 0 2px;
     }
 }
 
 /* SIDEBAR */
 
-#content-related h3 {
-    color: #666;
-    margin-bottom: 3px;
-}
-
-#content-related h4 {
-    font-size: 11px;
-}
-
-#content-related .module h2 {
-    // color: #666;
+#content-related h3, #content-related h4 {
+    font-weight: normal;
 }
 
 
@@ -876,6 +880,10 @@ body.model-user {
 
         &:nth-child(3) > h2 {
             @include faIconPlacement('fa-lock', 's', 30px)
+        }
+
+        &:nth-child(4) > h2 {
+            @include faIconPlacement('fa-calendar', 's', 30px, -20px)
         }
 
     }

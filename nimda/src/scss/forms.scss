@@ -103,8 +103,9 @@ form .aligned p.help {
 
 .aligned .vCheckboxLabel {
     float: none !important;
-    display: inline;
-    padding-left: 4px;
+    display: inline-block;
+    vertical-align: -1px;
+    padding-left: 8px;
 }
 
 .colM .aligned .vLargeTextField, .colM .aligned .vXMLLargeTextField {
@@ -248,8 +249,9 @@ body.popup .submit-row {
 
 .inline-group {
     padding: 0;
-    border: 1px solid #ccc;
+    border: 1px solid $color-grey;
     margin: 10px 0;
+    overflow-x: auto;
 }
 
 .inline-group .aligned label {
@@ -351,20 +353,21 @@ body.popup .submit-row {
     color: #666;
     padding: 3px 5px;
     border-bottom: 1px solid #ddd;
-    background: #e1e1e1 url(../img/nav-bg.gif) top left repeat-x;
+    // background: #e1e1e1 url(../img/nav-bg.gif) top left repeat-x;
 }
 
 .inline-group .tabular tr.add-row td {
-    padding: 4px 5px 3px;
+    padding: $distance-s;
     border-bottom: none;
 }
 
 .inline-group ul.tools a.add,
 .inline-group div.add-row a,
 .inline-group .tabular tr.add-row td a {
-    background: url(../img/icon_addlink.gif) 0 50% no-repeat;
+    // background: url(../img/icon_addlink.gif) 0 50% no-repeat;
+    @include faIconPlacement('fa-plus', 'xs');
     padding-left: 14px;
-    font-size: 11px;
+    // font-size: 11px;
     outline: 0; /* Remove dotted border around link */
 }
 

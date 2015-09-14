@@ -227,7 +227,7 @@ th {
 .filtered .actions {
   margin-right: 160px !important;
   color: #ccc;
-  padding: 3px; }
+  margin-left: 0.5em; }
 
 #changelist table input {
   margin: 0; }
@@ -235,11 +235,15 @@ th {
 #changelist table tbody tr.selected {
   background-color: rgba(37, 148, 238, 0.05); }
 
+#changelist .actions {
+  padding: 10px; }
+
 @media only all and (min-width: 1000px) {
-  #changelist .actions {
+  #changelist #toolbar ~ #changelist-form .actions {
     position: absolute;
     top: 10px;
-    right: 10px; } }
+    right: 10px;
+    padding: 3px; } }
 
 #changelist .actions.selected {
   background: #fffccf;
@@ -260,9 +264,6 @@ th {
   border: 1px solid #aaa;
   margin-left: 0.5em;
   padding: 1px 2px; }
-
-#changelist .actions label {
-  margin-left: 0.5em; }
 
 #changelist #action-toggle {
   display: none; }
