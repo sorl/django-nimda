@@ -502,13 +502,18 @@ a.button {
     margin-top: .6em;
 }
 
+
 .module h2, .module caption, .inline-group h2 {
     margin: 0;
     padding: $distance-s;
     text-align: left;
     border-bottom: 1px solid $color-grey-light;
-    color: $color-grey;
+    color: $color-grey-dark;
     font-weight: normal;
+}
+
+.module:not(#recent-actions-module) > h2 {
+    @include faIconPlacement('fa-clone', 's', 30px, -20px);
 }
 
 .module caption {
@@ -646,11 +651,11 @@ div.breadcrumbs {
 /* ACTION ICONS */
 
 .addlink {
-    @include faIconPlacement('fa-plus', 's');
+    @include faIconPlacement('fa-plus', 'xs');
 }
 
 .changelink, .inlinechangelink {
-    @include faIconPlacement('fa-pencil', 's');
+    @include faIconPlacement('fa-pencil', 'xs');
 }
 
 .deletelink, a.deletelink {
@@ -859,4 +864,19 @@ table#change-history tbody th {
 
 #content-related .module h2 {
     // color: #666;
+}
+
+
+/* Icons */
+body.model-user {
+    #content-main .module {
+        &:nth-child(2) > h2 {
+            @include faIconPlacement('fa-user', 's', 30px)
+        }
+
+        &:nth-child(3) > h2 {
+            @include faIconPlacement('fa-lock', 's', 30px)
+        }
+
+    }
 }

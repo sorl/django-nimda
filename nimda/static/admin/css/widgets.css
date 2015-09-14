@@ -1,5 +1,6 @@
+@charset "UTF-8";
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700);
-@import url(//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css);
+@import url(//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css);
 html, body {
   min-height: 100%;
   -webkit-font-smoothing: antialiased;
@@ -36,14 +37,15 @@ th {
 .selector-available, .selector-chosen {
   float: left;
   width: 400px;
-  text-align: center;
   margin-bottom: 5px; }
 
 .selector-chosen select {
   border-top: none; }
 
 .selector-available h2, .selector-chosen h2 {
-  border: 1px solid #ccc; }
+  border: 1px solid #ccc;
+  background-color: #f8f8f8;
+  color: #858585; }
 
 .selector .selector-filter {
   border: 1px solid #ccc;
@@ -51,10 +53,13 @@ th {
   padding: 3px;
   margin: 0;
   text-align: left; }
+  .selector .selector-filter img {
+    margin-top: 6px;
+    margin-left: 3px; }
 
 .selector .selector-filter label,
 .inline-group .aligned .selector .selector-filter label {
-  width: 16px;
+  width: 28px;
   padding: 2px; }
 
 .selector .selector-available input {
@@ -62,7 +67,7 @@ th {
 
 .selector ul.selector-chooser {
   float: left;
-  width: 22px;
+  width: 23px;
   background-color: #eee;
   border-radius: 10px;
   margin: 10em 5px 0 5px;
@@ -78,60 +83,75 @@ th {
   margin-top: 0; }
 
 .selector-add, .selector-remove {
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
   display: block;
-  text-indent: -3000px;
+  font-size: 0;
   overflow: hidden; }
+  .selector-add:before, .selector-remove:before {
+    color: #ccc; }
 
 .selector-add {
-  background: url(../img/selector-icons.gif) 0 -161px no-repeat;
   cursor: default;
   margin-bottom: 2px; }
+  .selector-add:before {
+    content: "";
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: 20px;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate(0, 0); }
+
+.active.selector-add:before, .active.selector-remove:before {
+  color: #2594ee; }
 
 .active.selector-add {
-  background: url(../img/selector-icons.gif) 0 -187px no-repeat;
   cursor: pointer; }
 
 .selector-remove {
-  background: url(../img/selector-icons.gif) 0 -109px no-repeat;
   cursor: default; }
+  .selector-remove:before {
+    content: "";
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: 20px;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate(0, 0); }
 
 .active.selector-remove {
-  background: url(../img/selector-icons.gif) 0 -135px no-repeat;
   cursor: pointer; }
 
 a.selector-chooseall, a.selector-clearall {
+  color: #fff;
+  padding: 10px 15px;
+  background: #2594ee;
+  border-radius: 3px;
+  cursor: pointer;
+  line-height: 1;
   display: inline-block;
-  text-align: left;
-  margin-left: auto;
-  margin-right: auto;
-  font-weight: bold;
-  color: #666; }
+  vertical-align: middle;
+  transition-property: background-color;
+  transition-duration: 150ms;
+  border: 0;
+  text-align: center; }
+  a.selector-chooseall:before, a.selector-clearall:before {
+    display: none; }
+  a.selector-chooseall:hover, a.selector-clearall:hover {
+    text-decoration: none;
+    background-color: #46a4f1; }
 
 a.selector-chooseall {
-  padding: 3px 18px 3px 0; }
-
-a.selector-clearall {
-  padding: 3px 0 3px 18px; }
-
-a.active.selector-chooseall:hover, a.active.selector-clearall:hover {
-  color: #036; }
-
-a.selector-chooseall {
-  background: url(../img/selector-icons.gif) right -263px no-repeat;
   cursor: default; }
 
 a.active.selector-chooseall {
-  background: url(../img/selector-icons.gif) right -289px no-repeat;
   cursor: pointer; }
 
 a.selector-clearall {
-  background: url(../img/selector-icons.gif) left -211px no-repeat;
   cursor: default; }
 
 a.active.selector-clearall {
-  background: url(../img/selector-icons.gif) left -237px no-repeat;
   cursor: pointer; }
 
 /* STACKED SELECTORS */
@@ -186,13 +206,30 @@ a.active.selector-clearall {
 p.datetime {
   line-height: 20px;
   margin: 0;
-  padding: 0;
-  color: #666;
-  font-size: 11px;
-  font-weight: bold; }
+  padding: 0; }
+
+.datetimeshortcuts img {
+  display: none; }
+.datetimeshortcuts a:hover {
+  text-decoration: none; }
+.datetimeshortcuts a[id^="calendarlink"]:before {
+  content: "";
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: 15px;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transform: translate(0, 0); }
+.datetimeshortcuts a[id^="clocklink"]:before {
+  content: "";
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: 15px;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transform: translate(0, 0); }
 
 .datetime span {
-  font-size: 11px;
   color: #ccc;
   font-weight: normal;
   white-space: nowrap; }
