@@ -64,6 +64,9 @@ ul.actionlist li {
     color: #ccc; }
 
 /* Icons */
+.module caption:before {
+  color: #ccc; }
+
 .app-auth caption {
   padding-left: 31px; }
   .app-auth caption:before {

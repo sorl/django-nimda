@@ -87,7 +87,6 @@ th {
 
 #changelist .paginator {
   color: #ccc;
-  border-top: 1px solid #eee;
   overflow: hidden; }
 
 .change-list .filtered .paginator {

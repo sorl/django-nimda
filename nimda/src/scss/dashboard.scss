@@ -62,6 +62,7 @@ ul.actionlist li {
 
 
 /* Icons */
+.module caption:before  { color: $color-grey}
 .app-auth caption { @include faIconPlacement('fa-user', 'xs', 31px, -19px, 4px) }
 .app-carts caption { @include faIconPlacement('fa-shopping-cart', 'xs', 31px, -20px, 4px) }
 .app-orders caption { @include faIconPlacement('fa-file', 12px, 31px, -19px, 4px) }
