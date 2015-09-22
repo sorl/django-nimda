@@ -1,3 +1,16 @@
-django-nimda
-============
-This is yet another take to make the django admin hot.
+What is it?
+===========
+A light weight attempt at spicing up the django admin.
+
+
+Installation
+------------
+::
+    INSTALLED_APPS = (
+        ...
+        'nimda',
+        ...
+        'django.contrib.admin',
+        ....
+    )
+
