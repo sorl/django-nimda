@@ -2,5 +2,5 @@ include AUTHORS
 include LICENSE
 include README.rst
 include runtests.py
-recursive-include nimda/static *
-recursive-include nimda/templates *
+recursive-include static *
+recursive-include templates *

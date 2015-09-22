@@ -10,6 +10,7 @@ setup(
     author_email='mikko@aino.com',
     url='http://github.com/aino/django-nimda',
     packages=['nimda'],
+    include_package_data=True,
     install_requires=['Django>=1.8'],
     license='ICS',
     classifiers=[
