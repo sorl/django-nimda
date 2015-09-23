@@ -47,9 +47,6 @@ $fontSizes: (
 );
 
 @function fs($size: 'm') {
-  // Expectations: A map called $colors and map-deep-get function
-  // @param string $base: The base color to use inside an expected global map called $colors
-  // @param string $tone: The tone value of the base color
   @if map-get($fontSizes, $size) {
     @return map-get($fontSizes, $size);
   }
