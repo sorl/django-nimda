@@ -199,6 +199,7 @@ p.mini {
 
 img.help-tooltip {
     cursor: help;
+    margin-left: 3px;
 }
 
 p img, h1 img, h2 img, h3 img, h4 img, td img {
@@ -445,11 +446,11 @@ textarea, select, .vTextField {
 /* FORM BUTTONS */
 
 .button, input[type=submit], input[type=button], .submit-row input, a.button {
-    @include button($color-grey-dark);
+    @include button();
 }
 
 a.button {
-    padding: 4px 5px;
+    // padding: 4px 5px;
 }
 
 .button:active, input[type=submit]:active, input[type=button]:active {
@@ -537,33 +538,36 @@ ul.messagelist {
 }
 
 ul.messagelist li {
-    font-size: 12px;
     font-weight: bold;
     display: block;
-    padding: 5px 5px 4px 25px;
-    margin: 0 0 3px 0;
-    border-bottom: 1px solid #ddd;
-    color: #666;
-    background: #dfd url(../img/icon_success.gif) 5px .3em no-repeat;
-}
+    padding: $distance $distance $distance 30px;
+    margin: $distance;
+    color: #fff;
 
-ul.messagelist li.warning {
-    background: #ffc url(../img/icon_alert.gif) 5px .3em no-repeat;
-}
+    &.success {
+        // background-color: $color-success;
+        color: $color-success;
+        @include faIconPlacement('fa-thumbs-up', $topMargin: 0, $paddingLeft: 0px);
+    }
 
-ul.messagelist li.error {
-    background: #ffefef url(../img/icon_error.gif) 5px .3em no-repeat;
+    &.warning {
+        background-color: lighten($color-destroy, 10%);
+        @include faIconPlacement('fa-exclamation-triangle');
+    }
+
+    &.error {
+        background-color: lighten($color-destroy, 10%);
+        @include faIconPlacement('fa-exclamation-circle');
+    }
 }
 
 .errornote {
-    // font-size: 12px !important;
     font-weight: 600;
     display: block;
     padding: 5px 5px 4px 25px;
     margin: 0 0 3px 0;
-    // border: 1px solid #c22;
     color: $color-destroy;
-    background: lighten($color-destroy, 40%);
+    // background: lighten($color-destroy, 40%);
 
     @include faIconPlacement('fa-exclamation-circle', 'xs', 28px, -18px);
 }
@@ -603,7 +607,7 @@ td ul.errorlist li {
 }
 
 .errors, .form-row.errors {
-    background: lighten($color-destroy, 40%);
+
 }
 
 .form-row.errors {
@@ -612,7 +616,7 @@ td ul.errorlist li {
 }
 
 .errors input, .errors select, .errors textarea {
-    border: 1px solid $color-destroy;
+    // border: 1px solid $color-destroy;
 }
 
 div.system-message {
@@ -664,7 +668,8 @@ div.breadcrumbs {
 }
 
 .deletelink, a.deletelink {
-    @include button($color-destroy);
+    @include faIconPlacement('fa-trash', 'xs');
+    color: $color-destroy;
 }
 
 
@@ -686,6 +691,8 @@ div.breadcrumbs {
     padding-left: 3.5em;
 }
 
+
+
 .object-tools li {
     display: block;
     float: left;
@@ -695,7 +702,6 @@ div.breadcrumbs {
 
 
 .object-tools a:link, .object-tools a:visited {
-    // @include button($color-grey-dark);
     display: block;
     float: left;
 }
@@ -744,12 +750,21 @@ table#change-history tbody th {
         font-size: fs('xxl');
         font-weight: 600;
         letter-spacing: -0.5px;
+        display: inline-block;
     }
 }
 
 #content-main {
     float: left;
     width: 100%;
+
+    form > div > .submit-row:first-child {
+        /* if save on top has been enabled in admin, make sure it is on the same line as h1 above */
+        // background: red !important;
+        // position: relative;
+        margin-top: -40px;
+        margin-bottom: 10px;
+    }
 }
 
 #content-related {
@@ -886,5 +901,19 @@ body.model-user {
             @include faIconPlacement('fa-calendar', 's', 30px, -20px)
         }
 
+    }
+}
+
+body.delete-confirmation {
+    form {
+        margin-top: $distance;
+
+        input[type="submit"] {
+            @include button($color-destroy);
+            margin-right: $distance;
+        }
+        a.cancel-link {
+            @include button();
+        }
     }
 }

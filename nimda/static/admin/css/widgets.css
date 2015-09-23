@@ -53,9 +53,21 @@ th {
   padding: 3px;
   margin: 0;
   text-align: left; }
+  .selector .selector-filter label {
+    padding-left: 20px; }
+    .selector .selector-filter label:before {
+      position: absolute;
+      margin-top: 7px;
+      margin-left: 3px;
+      content: "";
+      font: normal normal normal 14px/1 FontAwesome;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      transform: translate(0, 0);
+      font-size: 15px; }
   .selector .selector-filter img {
-    margin-top: 6px;
-    margin-left: 3px; }
+    display: none; }
 
 .selector .selector-filter label,
 .inline-group .aligned .selector .selector-filter label {
@@ -84,12 +96,14 @@ th {
 
 .selector-add, .selector-remove {
   width: 18px;
-  height: 18px;
+  height: 19px;
   display: block;
   font-size: 0;
   overflow: hidden; }
   .selector-add:before, .selector-remove:before {
     color: #ccc; }
+  .selector-add:hover, .selector-remove:hover {
+    text-decoration: none; }
 
 .selector-add {
   cursor: default;

@@ -177,7 +177,8 @@ p.mini {
   color: #999; }
 
 img.help-tooltip {
-  cursor: help; }
+  cursor: help;
+  margin-left: 3px; }
 
 p img, h1 img, h2 img, h3 img, h4 img, td img {
   vertical-align: middle; }
@@ -383,9 +384,6 @@ textarea, select, .vTextField {
     text-decoration: none;
     background-color: #979797; }
 
-a.button {
-  padding: 4px 5px; }
-
 .button:active, input[type=submit]:active, input[type=button]:active {
   background-image: url(../img/nav-bg-reverse.gif);
   background-position: top; }
@@ -478,20 +476,53 @@ ul.messagelist {
   margin: 0; }
 
 ul.messagelist li {
-  font-size: 12px;
   font-weight: bold;
   display: block;
-  padding: 5px 5px 4px 25px;
-  margin: 0 0 3px 0;
-  border-bottom: 1px solid #ddd;
-  color: #666;
-  background: #dfd url(../img/icon_success.gif) 5px 0.3em no-repeat; }
-
-ul.messagelist li.warning {
-  background: #ffc url(../img/icon_alert.gif) 5px 0.3em no-repeat; }
-
-ul.messagelist li.error {
-  background: #ffefef url(../img/icon_error.gif) 5px 0.3em no-repeat; }
+  padding: 15px 15px 15px 30px;
+  margin: 15px;
+  color: #fff; }
+  ul.messagelist li.success {
+    color: #59A559;
+    padding-left: 0px; }
+    ul.messagelist li.success:before {
+      position: absolute;
+      margin-top: 0;
+      margin-left: -17px;
+      content: "";
+      font: normal normal normal 14px/1 FontAwesome;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      transform: translate(0, 0);
+      font-size: 15px; }
+  ul.messagelist li.warning {
+    background-color: #ea6e7f;
+    padding-left: 20px; }
+    ul.messagelist li.warning:before {
+      position: absolute;
+      margin-top: 3px;
+      margin-left: -17px;
+      content: "";
+      font: normal normal normal 14px/1 FontAwesome;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      transform: translate(0, 0);
+      font-size: 15px; }
+  ul.messagelist li.error {
+    background-color: #ea6e7f;
+    padding-left: 20px; }
+    ul.messagelist li.error:before {
+      position: absolute;
+      margin-top: 3px;
+      margin-left: -17px;
+      content: "";
+      font: normal normal normal 14px/1 FontAwesome;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      transform: translate(0, 0);
+      font-size: 15px; }
 
 .errornote {
   font-weight: 600;
@@ -499,7 +530,6 @@ ul.messagelist li.error {
   padding: 5px 5px 4px 25px;
   margin: 0 0 3px 0;
   color: #e44158;
-  background: #fdf4f5;
   padding-left: 28px; }
   .errornote:before {
     position: absolute;
@@ -539,14 +569,8 @@ td ul.errorlist {
 td ul.errorlist li {
   margin: 0 !important; }
 
-.errors, .form-row.errors {
-  background: #fdf4f5; }
-
 .form-row.errors {
   margin: -1px; }
-
-.errors input, .errors select, .errors textarea {
-  border: 1px solid #e44158; }
 
 div.system-message {
   background: #ffc;
@@ -607,23 +631,19 @@ div.breadcrumbs {
     font-size: 13px; }
 
 .deletelink, a.deletelink {
-  color: #fff;
-  padding: 10px 15px;
-  background: #e44158;
-  border-radius: 3px;
-  cursor: pointer;
-  line-height: 1;
-  display: inline-block;
-  vertical-align: middle;
-  transition-property: background-color;
-  transition-duration: 150ms;
-  border: 0;
-  text-align: center; }
+  padding-left: 20px;
+  color: #e44158; }
   .deletelink:before, a.deletelink:before {
-    display: none; }
-  .deletelink:hover, a.deletelink:hover {
-    text-decoration: none;
-    background-color: #e86073; }
+    position: absolute;
+    margin-top: 3px;
+    margin-left: -17px;
+    content: "";
+    font: normal normal normal 14px/1 FontAwesome;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate(0, 0);
+    font-size: 13px; }
 
 /* OBJECT TOOLS */
 .object-tools {
@@ -688,11 +708,16 @@ table#change-history tbody th {
   #content > h1 {
     font-size: 23px;
     font-weight: 600;
-    letter-spacing: -0.5px; }
+    letter-spacing: -0.5px;
+    display: inline-block; }
 
 #content-main {
   float: left;
   width: 100%; }
+  #content-main form > div > .submit-row:first-child {
+    /* if save on top has been enabled in admin, make sure it is on the same line as h1 above */
+    margin-top: -40px;
+    margin-bottom: 10px; }
 
 #content-related {
   float: right;
@@ -825,5 +850,45 @@ body.model-user #content-main .module:nth-child(4) > h2 {
     -moz-osx-font-smoothing: grayscale;
     transform: translate(0, 0);
     font-size: 15px; }
+
+body.delete-confirmation form {
+  margin-top: 15px; }
+  body.delete-confirmation form input[type="submit"] {
+    color: #fff;
+    padding: 10px 15px;
+    background: #e44158;
+    border-radius: 3px;
+    cursor: pointer;
+    line-height: 1;
+    display: inline-block;
+    vertical-align: middle;
+    transition-property: background-color;
+    transition-duration: 150ms;
+    border: 0;
+    text-align: center;
+    margin-right: 15px; }
+    body.delete-confirmation form input[type="submit"]:before {
+      display: none; }
+    body.delete-confirmation form input[type="submit"]:hover {
+      text-decoration: none;
+      background-color: #e86073; }
+  body.delete-confirmation form a.cancel-link {
+    color: #fff;
+    padding: 10px 15px;
+    background: #858585;
+    border-radius: 3px;
+    cursor: pointer;
+    line-height: 1;
+    display: inline-block;
+    vertical-align: middle;
+    transition-property: background-color;
+    transition-duration: 150ms;
+    border: 0;
+    text-align: center; }
+    body.delete-confirmation form a.cancel-link:before {
+      display: none; }
+    body.delete-confirmation form a.cancel-link:hover {
+      text-decoration: none;
+      background-color: #979797; }
 
 /*# sourceMappingURL=base.css.map */

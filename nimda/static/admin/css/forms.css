@@ -125,7 +125,7 @@ form .wide p {
   margin-left: 15em; }
 
 form .wide p.help {
-  padding-left: 38px; }
+  padding-left: 16px; }
 
 .colM fieldset.wide .vLargeTextField, .colM fieldset.wide .vXMLLargeTextField {
   width: 450px; }
@@ -155,6 +155,24 @@ fieldset.monospace textarea {
   text-align: right;
   margin: 5px 0;
   overflow: auto; }
+  .submit-row .deletelink {
+    color: #fff;
+    padding: 10px 15px;
+    background: #e44158;
+    border-radius: 3px;
+    cursor: pointer;
+    line-height: 1;
+    display: inline-block;
+    vertical-align: middle;
+    transition-property: background-color;
+    transition-duration: 150ms;
+    border: 0;
+    text-align: center; }
+    .submit-row .deletelink:before {
+      display: none; }
+    .submit-row .deletelink:hover {
+      text-decoration: none;
+      background-color: #e86073; }
 
 body.popup .submit-row {
   overflow: auto; }
@@ -273,7 +291,6 @@ body.popup .submit-row {
 .inline-group .tabular td.original p {
   position: absolute;
   left: 0;
-  height: 1.1em;
   padding: 2px 7px;
   overflow: hidden;
   font-size: 9px;

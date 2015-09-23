@@ -133,7 +133,7 @@ form .wide p {
 }
 
 form .wide p.help {
-    padding-left: 38px;
+    padding-left: 16px;
 }
 
 .colM fieldset.wide .vLargeTextField, .colM fieldset.wide .vXMLLargeTextField {
@@ -173,6 +173,10 @@ fieldset.monospace textarea {
     text-align: right;
     margin: 5px 0;
     overflow: auto;
+
+    .deletelink {
+        @include button($color-destroy);
+    }
 }
 
 body.popup .submit-row {
@@ -328,7 +332,7 @@ body.popup .submit-row {
 .inline-group .tabular td.original p {
     position: absolute;
     left: 0;
-    height: 1.1em;
+    // height: 1.1em;
     padding: 2px 7px;
     overflow: hidden;
     font-size: 9px;

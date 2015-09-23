@@ -32,18 +32,23 @@
 }
 
 .selector .selector-filter {
-
     border: 1px solid $color-grey;
     border-width: 0 1px;
     padding: 3px;
     margin: 0;
     text-align: left;
 
-    img {
-        margin-top: 6px;
-        margin-left: 3px;
+
+    label {
+        @include faIconPlacement($name: 'fa-search', $topMargin: 7px, $marginLeft: 3px);
     }
+
+    img {
+        display: none;
+    }
+
 }
+
 
 .selector .selector-filter label,
 .inline-group .aligned .selector .selector-filter label {
@@ -77,7 +82,7 @@
 
 .selector-add, .selector-remove {
     width: 18px;
-    height: 18px;
+    height: 19px;
     display: block;
     font-size: 0;
     // text-indent: -3000px;
@@ -85,6 +90,10 @@
 
     &:before {
         color: $color-grey;
+    }
+
+    &:hover {
+        text-decoration: none;
     }
 }
 
