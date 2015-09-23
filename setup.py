@@ -4,12 +4,13 @@ from setuptools import setup
 setup(
     name='django-nimda',
     version='0.0.1',
-    description='Makes your Django admin nice.',
+    description='A light weight attempt at spicing up the django admin',
     long_description=open('README.rst').read(),
     author='Mikko Hellsing',
     author_email='mikko@aino.com',
     url='http://github.com/aino/django-nimda',
     packages=['nimda'],
+    include_package_data=True,
     install_requires=['Django>=1.8'],
     license='ICS',
     classifiers=[
