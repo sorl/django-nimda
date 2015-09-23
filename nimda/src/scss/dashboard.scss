@@ -63,7 +63,12 @@ ul.actionlist li {
 
 /* Icons */
 .module caption:before  { color: $color-grey}
-.app-auth caption { @include faIconPlacement('fa-user', 'xs', 31px, -19px, 4px) }
+[class^="app-"] caption { @include faIconPlacement('fa-clone', 'xs', 31px, -19px, 4px) }
+.app-auth caption { @include faIconPlacement('fa-lock', 's', 31px, -19px, 4px) }
 .app-carts caption { @include faIconPlacement('fa-shopping-cart', 'xs', 31px, -20px, 4px) }
 .app-orders caption { @include faIconPlacement('fa-file', 12px, 31px, -19px, 4px) }
 .app-products caption { @include faIconPlacement('fa-cube', 'xs', 31px, -19px, 4px) }
+.app-pages caption { @include faIconPlacement('fa-file', 'xs', 31px, -19px, 4px) }
+.app-staff caption { @include faIconPlacement('fa-users', 'xs', 31px, -19px, 4px) }
+.app-blog caption { @include faIconPlacement('fa-rss', 'xs', 31px, -19px, 4px) }
+.app-jobs, .app-case, .app-cases { caption { @include faIconPlacement('fa-trophy', 's', 31px, -19px, 4px) }}

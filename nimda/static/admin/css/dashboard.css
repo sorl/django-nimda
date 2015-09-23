@@ -67,19 +67,33 @@ ul.actionlist li {
 .module caption:before {
   color: #ccc; }
 
-.app-auth caption {
+[class^="app-"] caption {
   padding-left: 31px; }
-  .app-auth caption:before {
+  [class^="app-"] caption:before {
     position: absolute;
     margin-top: 4px;
     margin-left: -19px;
-    content: "";
+    content: "";
     font: normal normal normal 14px/1 FontAwesome;
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     transform: translate(0, 0);
     font-size: 13px; }
+
+.app-auth caption {
+  padding-left: 31px; }
+  .app-auth caption:before {
+    position: absolute;
+    margin-top: 4px;
+    margin-left: -19px;
+    content: "";
+    font: normal normal normal 14px/1 FontAwesome;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate(0, 0);
+    font-size: 15px; }
 
 .app-carts caption {
   padding-left: 31px; }
@@ -122,5 +136,61 @@ ul.actionlist li {
     -moz-osx-font-smoothing: grayscale;
     transform: translate(0, 0);
     font-size: 13px; }
+
+.app-pages caption {
+  padding-left: 31px; }
+  .app-pages caption:before {
+    position: absolute;
+    margin-top: 4px;
+    margin-left: -19px;
+    content: "";
+    font: normal normal normal 14px/1 FontAwesome;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate(0, 0);
+    font-size: 13px; }
+
+.app-staff caption {
+  padding-left: 31px; }
+  .app-staff caption:before {
+    position: absolute;
+    margin-top: 4px;
+    margin-left: -19px;
+    content: "";
+    font: normal normal normal 14px/1 FontAwesome;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate(0, 0);
+    font-size: 13px; }
+
+.app-blog caption {
+  padding-left: 31px; }
+  .app-blog caption:before {
+    position: absolute;
+    margin-top: 4px;
+    margin-left: -19px;
+    content: "";
+    font: normal normal normal 14px/1 FontAwesome;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate(0, 0);
+    font-size: 13px; }
+
+.app-jobs caption, .app-case caption, .app-cases caption {
+  padding-left: 31px; }
+  .app-jobs caption:before, .app-case caption:before, .app-cases caption:before {
+    position: absolute;
+    margin-top: 4px;
+    margin-left: -19px;
+    content: "";
+    font: normal normal normal 14px/1 FontAwesome;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate(0, 0);
+    font-size: 15px; }
 
 /*# sourceMappingURL=dashboard.css.map */
