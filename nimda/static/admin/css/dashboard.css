@@ -165,9 +165,9 @@ ul.actionlist li {
     transform: translate(0, 0);
     font-size: 13px; }
 
-.app-blog caption {
+.app-blog caption, .app-news caption {
   padding-left: 31px; }
-  .app-blog caption:before {
+  .app-blog caption:before, .app-news caption:before {
     position: absolute;
     margin-top: 4px;
     margin-left: -19px;
@@ -179,11 +179,11 @@ ul.actionlist li {
     transform: translate(0, 0);
     font-size: 13px; }
 
-.app-jobs caption, .app-case caption, .app-cases caption {
+.app-jobs caption, .app-case caption, .app-cases caption, .app-showcase caption {
   padding-left: 31px; }
-  .app-jobs caption:before, .app-case caption:before, .app-cases caption:before {
+  .app-jobs caption:before, .app-case caption:before, .app-cases caption:before, .app-showcase caption:before {
     position: absolute;
-    margin-top: 4px;
+    margin-top: 3px;
     margin-left: -19px;
     content: "";
     font: normal normal normal 14px/1 FontAwesome;

@@ -522,12 +522,14 @@ ul.orderer li.deleted:hover, ul.orderer li.deleted a.selector:hover {
 
 .inline-deletelink {
     float: right;
-    text-indent: -9999px;
-    background: transparent url(../img/inline-delete.png) no-repeat;
-    width: 15px;
-    height: 15px;
+    // text-indent: -9999px;
+    // background: transparent url(../img/inline-delete.png) no-repeat;
+    // width: 15px;
+    // height: 15px;
     border: 0px none;
     outline: 0; /* Remove dotted border around link */
+
+    @include faIconPlacement($name:'fa-times-circle', $topMargin: 2px);
 }
 
 .inline-deletelink:hover {
@@ -621,4 +623,17 @@ ul.orderer li.deleted:hover, ul.orderer li.deleted a.selector:hover {
 
 .related-widget-wrapper-link:link {
     opacity: 1;
+}
+
+.change-related, .add-related {
+    margin-left: 5px;
+    &:hover {text-decoration: none}
+    img {display: none;}
+}
+
+.change-related:before {
+    @include faIcon('fa-pencil', 's');
+}
+.add-related:before {
+    @include faIcon('fa-plus', 's');
 }

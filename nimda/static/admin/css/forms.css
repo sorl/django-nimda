@@ -226,7 +226,7 @@ body.popup .submit-row {
 /* INLINES */
 .inline-group {
   padding: 0;
-  border: 1px solid #ccc;
+  border: 1px solid #e0e0e0;
   margin: 10px 0;
   overflow-x: auto; }
 
@@ -267,8 +267,7 @@ body.popup .submit-row {
   color: #fff; }
 
 .inline-group .tabular fieldset.module {
-  border: none;
-  border-bottom: 1px solid #ddd; }
+  border: none; }
 
 .inline-related.tabular fieldset.module table {
   width: 100%; }
@@ -291,7 +290,7 @@ body.popup .submit-row {
 .inline-group .tabular td.original p {
   position: absolute;
   left: 0;
-  padding: 2px 7px;
+  padding: 2px 12px;
   overflow: hidden;
   font-size: 9px;
   font-weight: bold;
@@ -355,5 +354,11 @@ body.popup .submit-row {
   width: 16px;
   height: 16px;
   background-image: url(../img/selector-search.gif); }
+
+.timezonewarning {
+  margin-left: 10em;
+  color: #858585;
+  margin-top: 3px;
+  display: block; }
 
 /*# sourceMappingURL=forms.css.map */

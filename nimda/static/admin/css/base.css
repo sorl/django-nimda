@@ -351,6 +351,10 @@ input, textarea, select, .form-row p, form .button {
   font-weight: normal;
   font-size: 14px; }
 
+select {
+  min-height: 300px;
+  min-width: 20em; }
+
 textarea {
   vertical-align: top !important; }
 
@@ -368,7 +372,7 @@ textarea, select, .vTextField {
 .button, input[type=submit], input[type=button], .submit-row input, a.button {
   color: #fff;
   padding: 10px 15px;
-  background: #858585;
+  background: #b8b8b8;
   border-radius: 3px;
   cursor: pointer;
   line-height: 1;
@@ -382,7 +386,7 @@ textarea, select, .vTextField {
     display: none; }
   .button:hover, input[type=submit]:hover, input[type=button]:hover, .submit-row input:hover, a.button:hover {
     text-decoration: none;
-    background-color: #979797; }
+    background-color: #cacaca; }
 
 .button:active, input[type=submit]:active, input[type=button]:active {
   background-image: url(../img/nav-bg-reverse.gif);
@@ -406,6 +410,9 @@ textarea, select, .vTextField {
   transition-duration: 150ms;
   border: 0;
   text-align: center;
+  min-width: 100px;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: auto;
   float: right; }
   .button.default:before, input[type=submit].default:before, .submit-row input.default:before {
     display: none; }
@@ -703,7 +710,7 @@ table#change-history tbody th {
   padding: 0; }
 
 #content {
-  margin: 30px 15px;
+  margin: 15px;
   max-width: 1200px; }
   #content > h1 {
     font-size: 23px;
@@ -714,10 +721,6 @@ table#change-history tbody th {
 #content-main {
   float: left;
   width: 100%; }
-  #content-main form > div > .submit-row:first-child {
-    /* if save on top has been enabled in admin, make sure it is on the same line as h1 above */
-    margin-top: -40px;
-    margin-bottom: 10px; }
 
 #content-related {
   float: right;
@@ -875,7 +878,7 @@ body.delete-confirmation form {
   body.delete-confirmation form a.cancel-link {
     color: #fff;
     padding: 10px 15px;
-    background: #858585;
+    background: #b8b8b8;
     border-radius: 3px;
     cursor: pointer;
     line-height: 1;
@@ -889,6 +892,6 @@ body.delete-confirmation form {
       display: none; }
     body.delete-confirmation form a.cancel-link:hover {
       text-decoration: none;
-      background-color: #979797; }
+      background-color: #cacaca; }
 
 /*# sourceMappingURL=base.css.map */

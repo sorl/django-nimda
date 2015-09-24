@@ -427,6 +427,11 @@ input, textarea, select, .form-row p, form .button {
     font-size: fs();
 }
 
+select {
+    min-height: 300px;
+    min-width: 20em;
+}
+
 textarea {
     vertical-align: top !important;
 }
@@ -465,7 +470,8 @@ a.button {
 }
 
 .button.default, input[type=submit].default, .submit-row input.default {
-    @include button($color-hero);
+    @include button($color-hero, 100px);
+    @include subpixel();
     float: right;
 }
 
@@ -743,7 +749,7 @@ table#change-history tbody th {
 }
 
 #content {
-    margin: $distance*2 $distance;
+    margin: $distance;
     max-width: 1200px;
 
     > h1 {
@@ -757,14 +763,6 @@ table#change-history tbody th {
 #content-main {
     float: left;
     width: 100%;
-
-    form > div > .submit-row:first-child {
-        /* if save on top has been enabled in admin, make sure it is on the same line as h1 above */
-        // background: red !important;
-        // position: relative;
-        margin-top: -40px;
-        margin-bottom: 10px;
-    }
 }
 
 #content-related {

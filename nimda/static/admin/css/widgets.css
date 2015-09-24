@@ -470,13 +470,21 @@ ul.orderer li.deleted:hover, ul.orderer li.deleted a.selector:hover {
 /* EDIT INLINE */
 .inline-deletelink {
   float: right;
-  text-indent: -9999px;
-  background: transparent url(../img/inline-delete.png) no-repeat;
-  width: 15px;
-  height: 15px;
   border: 0px none;
   outline: 0;
-  /* Remove dotted border around link */ }
+  /* Remove dotted border around link */
+  padding-left: 20px; }
+  .inline-deletelink:before {
+    position: absolute;
+    margin-top: 2px;
+    margin-left: -17px;
+    content: "";
+    font: normal normal normal 14px/1 FontAwesome;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate(0, 0);
+    font-size: 15px; }
 
 .inline-deletelink:hover {
   background-position: -15px 0;
@@ -553,5 +561,30 @@ ul.orderer li.deleted:hover, ul.orderer li.deleted a.selector:hover {
 
 .related-widget-wrapper-link:link {
   opacity: 1; }
+
+.change-related, .add-related {
+  margin-left: 5px; }
+  .change-related:hover, .add-related:hover {
+    text-decoration: none; }
+  .change-related img, .add-related img {
+    display: none; }
+
+.change-related:before {
+  content: "";
+  font: normal normal normal 14px/1 FontAwesome;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transform: translate(0, 0);
+  font-size: 15px; }
+
+.add-related:before {
+  content: "";
+  font: normal normal normal 14px/1 FontAwesome;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transform: translate(0, 0);
+  font-size: 15px; }
 
 /*# sourceMappingURL=widgets.css.map */

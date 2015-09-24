@@ -114,6 +114,7 @@ $faIcons: (
   'fa-trophy': '\f091',
   'fa-user' : '\f007',
   'fa-users': '\f0c0',
+  'fa-times-circle': '\f057',
 );
 
 $faSizes: (
@@ -161,7 +162,7 @@ $faSizes: (
 //  Buttons
 // ======================================================================================
 
-@mixin button($color: $color-grey-dark) {
+@mixin button($color: $color-button, $minwidth: null) {
   color: #fff;
   padding: $distance-s $distance;
   background: $color;
@@ -175,6 +176,10 @@ $faSizes: (
   border: 0;
   text-align: center;
 
+  @if $minwidth {
+    min-width: $minwidth;
+  }
+
   &:before {
     // No icons in buttons
     display: none;
@@ -187,14 +192,9 @@ $faSizes: (
 }
 
 
-
 // ======================================================================================
 //  Colors
 // ======================================================================================
-
-$color-hero: #2594ee;
-$color-destroy: #e44158;
-$color-success: #59A559;
 
 $color-grey-darker: #333;
 $color-grey-dark: #858585;
@@ -202,6 +202,10 @@ $color-grey: #ccc;
 $color-grey-light: #eee;
 $color-grey-lighter: #f8f8f8;
 
+$color-hero: #2594ee;
+$color-destroy: #e44158;
+$color-success: #59A559;
+$color-button: lighten($color-grey-dark, 20%);
 
 
 // ======================================================================================
