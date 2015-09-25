@@ -483,18 +483,17 @@ ul.messagelist {
   margin: 0; }
 
 ul.messagelist li {
-  font-weight: bold;
   display: block;
   padding: 15px 15px 15px 30px;
   margin: 15px;
   color: #fff; }
   ul.messagelist li.success {
     color: #59A559;
-    padding-left: 20px; }
+    padding-left: 23px; }
     ul.messagelist li.success:before {
       position: absolute;
       margin-top: 0;
-      margin-left: -17px;
+      margin-left: -20px;
       content: "";
       font: normal normal normal 14px/1 FontAwesome;
       text-rendering: auto;

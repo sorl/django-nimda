@@ -544,7 +544,7 @@ ul.messagelist {
 }
 
 ul.messagelist li {
-    font-weight: bold;
+    // font-weight: bold;
     display: block;
     padding: $distance $distance $distance 30px;
     margin: $distance;
@@ -553,7 +553,7 @@ ul.messagelist li {
     &.success {
         // background-color: $color-success;
         color: $color-success;
-        @include faIconPlacement('fa-thumbs-up', $topMargin: 0, $paddingLeft: 20px);
+        @include faIconPlacement('fa-thumbs-up', $topMargin: 0, $paddingLeft: 23px, $marginLeft: -20px);
     }
 
     &.warning {
