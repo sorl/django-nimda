@@ -388,10 +388,6 @@ textarea, select, .vTextField {
     text-decoration: none;
     background-color: #cacaca; }
 
-.button:active, input[type=submit]:active, input[type=button]:active {
-  background-image: url(../img/nav-bg-reverse.gif);
-  background-position: top; }
-
 .button[disabled], input[type=submit][disabled], input[type=button][disabled] {
   background-image: url(../img/nav-bg.gif);
   background-position: bottom;
@@ -419,10 +415,6 @@ textarea, select, .vTextField {
   .button.default:hover, input[type=submit].default:hover, .submit-row input.default:hover {
     text-decoration: none;
     background-color: #46a4f1; }
-
-.button.default:active, input[type=submit].default:active {
-  background-image: url(../img/default-bg-reverse.gif);
-  background-position: top; }
 
 .button[disabled].default, input[type=submit][disabled].default, input[type=button][disabled].default {
   background-image: url(../img/default-bg.gif);

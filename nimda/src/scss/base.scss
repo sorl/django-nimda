@@ -459,8 +459,8 @@ a.button {
 }
 
 .button:active, input[type=submit]:active, input[type=button]:active {
-    background-image: url(../img/nav-bg-reverse.gif);
-    background-position: top;
+    // background-image: url(../img/nav-bg-reverse.gif);
+    // background-position: top;
 }
 
 .button[disabled], input[type=submit][disabled], input[type=button][disabled] {
@@ -476,8 +476,8 @@ a.button {
 }
 
 .button.default:active, input[type=submit].default:active {
-    background-image: url(../img/default-bg-reverse.gif);
-    background-position: top;
+    // background-image: url(../img/default-bg-reverse.gif);
+    // background-position: top;
 }
 
 .button[disabled].default, input[type=submit][disabled].default, input[type=button][disabled].default {
