@@ -427,7 +427,7 @@ input, textarea, select, .form-row p, form .button {
     font-size: fs();
 }
 
-select {
+select[multiple] {
     min-height: 300px;
     min-width: 20em;
 }
@@ -553,7 +553,7 @@ ul.messagelist li {
     &.success {
         // background-color: $color-success;
         color: $color-success;
-        @include faIconPlacement('fa-thumbs-up', $topMargin: 0, $paddingLeft: 0px);
+        @include faIconPlacement('fa-thumbs-up', $topMargin: 0, $paddingLeft: 20px);
     }
 
     &.warning {

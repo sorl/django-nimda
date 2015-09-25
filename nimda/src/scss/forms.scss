@@ -185,6 +185,22 @@ body.popup .submit-row {
 
 .submit-row input {
     margin: 0 0 0 $distance-s;
+
+    -webkit-appearance: none;
+    appearance: none;
+    padding: 0;
+    background-color: transparent;
+    font-size: inherit;
+    border: 0;
+    color: $color-hero;
+    margin: 0 0 0 15px;
+    min-height: 34px;
+
+    &:hover {
+        text-decoration: underline;
+        cursor: pointer;
+        background-color: transparent;
+    }
 }
 
 // .submit-row p {

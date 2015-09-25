@@ -351,7 +351,7 @@ input, textarea, select, .form-row p, form .button {
   font-weight: normal;
   font-size: 14px; }
 
-select {
+select[multiple] {
   min-height: 300px;
   min-width: 20em; }
 
@@ -490,7 +490,7 @@ ul.messagelist li {
   color: #fff; }
   ul.messagelist li.success {
     color: #59A559;
-    padding-left: 0px; }
+    padding-left: 20px; }
     ul.messagelist li.success:before {
       position: absolute;
       margin-top: 0;
