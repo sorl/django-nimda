@@ -259,7 +259,7 @@ tr.alt {
   background: #f6f6f6; }
 
 .row1 {
-  background-color: #f8f8f8; }
+  background-color: #FBFBFB; }
 
 .row2 {
   background: #fff; }
@@ -666,7 +666,8 @@ div.breadcrumbs {
 
 .object-tools a:link, .object-tools a:visited {
   display: block;
-  float: left; }
+  float: left;
+  margin-left: 10px; }
 
 .object-tools a.historylink {
   padding-left: 20px; }
@@ -683,8 +684,18 @@ div.breadcrumbs {
     font-size: 15px; }
 
 .object-tools a.viewsitelink, .object-tools a.golink {
-  background: #999 url(../img/tooltag-arrowright.png) 95% center no-repeat;
-  padding-right: 26px; }
+  padding-left: 20px; }
+  .object-tools a.viewsitelink:before, .object-tools a.golink:before {
+    position: absolute;
+    margin-top: 0px;
+    margin-left: -17px;
+    content: "";
+    font: normal normal normal 14px/1 FontAwesome;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate(0, 0);
+    font-size: 15px; }
 
 /* OBJECT HISTORY */
 table#change-history {

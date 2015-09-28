@@ -27,7 +27,7 @@ th {
 
 /* DASHBOARD */
 .dashboard .module h2 {
-  padding: 5px 10px; }
+  padding: 6px 10px; }
 
 .dashboard .module table th {
   width: 100%; }
@@ -45,9 +45,9 @@ th {
   overflow: hidden; }
   .dashboard .module td, .dashboard .module th {
     padding: 6px 10px;
-    border-bottom-color: #f8f8f8; }
+    border-bottom-color: #FBFBFB; }
   .dashboard .module caption {
-    background-color: #f8f8f8; }
+    background-color: #FBFBFB; }
 
 /* RECENT ACTIONS MODULE */
 .module ul.actionlist {
