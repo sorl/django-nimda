@@ -194,7 +194,8 @@ body.popup .submit-row {
     background-color: transparent; }
 
 .submit-row p.deletelink-box {
-  float: left; }
+  float: left;
+  margin-top: 0; }
 
 /* CUSTOM FORM FIELDS */
 .vSelectMultipleField {

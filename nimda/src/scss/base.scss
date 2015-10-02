@@ -553,7 +553,7 @@ ul.messagelist li {
     &.success {
         // background-color: $color-success;
         color: $color-success;
-        @include faIconPlacement('fa-thumbs-up', $topMargin: 0, $paddingLeft: 23px, $marginLeft: -20px);
+        @include faIconPlacement('fa-check-circle', $topMargin: 0, $paddingLeft: 23px, $marginLeft: -20px);
     }
 
     &.warning {
@@ -735,6 +735,15 @@ div.breadcrumbs {
 
 table#change-history {
     width: 100%;
+
+    td,th {
+        padding: 7px 10px;
+        border-right: 1px solid $color-grey-light;
+
+        &:last-child {
+            border-right: none;
+        }
+    }
 }
 
 table#change-history tbody th {

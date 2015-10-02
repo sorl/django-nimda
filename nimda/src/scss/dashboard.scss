@@ -68,5 +68,8 @@ ul.actionlist li {
 .app-products caption { @include faIconPlacement('fa-cube', 'xs', 31px, -19px, 4px) }
 .app-pages caption { @include faIconPlacement('fa-file', 'xs', 31px, -19px, 4px) }
 .app-staff caption { @include faIconPlacement('fa-users', 'xs', 31px, -19px, 4px) }
-.app-blog, .app-news { caption { @include faIconPlacement('fa-rss', 'xs', 31px, -19px, 4px) } }
-.app-jobs, .app-case, .app-cases, .app-showcase { caption { @include faIconPlacement('fa-trophy', 's', 31px, -19px, 3px) }}
+.app-blog, .app-news { caption { @include faIconPlacement('fa-rss', 'xs', 31px, -19px, 5px) } }
+.app-case, .app-cases, .app-showcase { caption { @include faIconPlacement('fa-trophy', 's', 31px, -19px, 3px) }}
+.app-jobs caption { @include faIconPlacement('fa-briefcase', 'xs', 31px, -19px, 5px) }
+.app-redirects caption { @include faIconPlacement('fa-exchange', 'xs', 31px, -19px, 4px) }
+.app-startpage caption { @include faIconPlacement('fa-home', 's', 31px, -19px, 3px) }

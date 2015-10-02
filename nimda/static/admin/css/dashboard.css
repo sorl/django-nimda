@@ -169,7 +169,7 @@ ul.actionlist li {
   padding-left: 31px; }
   .app-blog caption:before, .app-news caption:before {
     position: absolute;
-    margin-top: 4px;
+    margin-top: 5px;
     margin-left: -19px;
     content: "";
     font: normal normal normal 14px/1 FontAwesome;
@@ -179,13 +179,55 @@ ul.actionlist li {
     transform: translate(0, 0);
     font-size: 13px; }
 
-.app-jobs caption, .app-case caption, .app-cases caption, .app-showcase caption {
+.app-case caption, .app-cases caption, .app-showcase caption {
   padding-left: 31px; }
-  .app-jobs caption:before, .app-case caption:before, .app-cases caption:before, .app-showcase caption:before {
+  .app-case caption:before, .app-cases caption:before, .app-showcase caption:before {
     position: absolute;
     margin-top: 3px;
     margin-left: -19px;
     content: "";
+    font: normal normal normal 14px/1 FontAwesome;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate(0, 0);
+    font-size: 15px; }
+
+.app-jobs caption {
+  padding-left: 31px; }
+  .app-jobs caption:before {
+    position: absolute;
+    margin-top: 5px;
+    margin-left: -19px;
+    content: "";
+    font: normal normal normal 14px/1 FontAwesome;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate(0, 0);
+    font-size: 13px; }
+
+.app-redirects caption {
+  padding-left: 31px; }
+  .app-redirects caption:before {
+    position: absolute;
+    margin-top: 4px;
+    margin-left: -19px;
+    content: "";
+    font: normal normal normal 14px/1 FontAwesome;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate(0, 0);
+    font-size: 13px; }
+
+.app-startpage caption {
+  padding-left: 31px; }
+  .app-startpage caption:before {
+    position: absolute;
+    margin-top: 3px;
+    margin-left: -19px;
+    content: "";
     font: normal normal normal 14px/1 FontAwesome;
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;

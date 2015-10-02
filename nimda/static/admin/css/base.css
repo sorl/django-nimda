@@ -486,7 +486,7 @@ ul.messagelist li {
       position: absolute;
       margin-top: 0;
       margin-left: -20px;
-      content: "";
+      content: "";
       font: normal normal normal 14px/1 FontAwesome;
       text-rendering: auto;
       -webkit-font-smoothing: antialiased;
@@ -700,6 +700,11 @@ div.breadcrumbs {
 /* OBJECT HISTORY */
 table#change-history {
   width: 100%; }
+  table#change-history td, table#change-history th {
+    padding: 7px 10px;
+    border-right: 1px solid #eee; }
+    table#change-history td:last-child, table#change-history th:last-child {
+      border-right: none; }
 
 table#change-history tbody th {
   width: 16em; }
