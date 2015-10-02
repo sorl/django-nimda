@@ -408,7 +408,6 @@ table.orderable tbody tr td:hover {
 
 table.orderable tbody tr td:first-child {
     padding-left: 14px;
-    background-image: url(../img/nav-bg-grabber.gif);
     background-repeat: repeat-y;
 }
 
@@ -464,7 +463,6 @@ a.button {
 }
 
 .button[disabled], input[type=submit][disabled], input[type=button][disabled] {
-    background-image: url(../img/nav-bg.gif);
     background-position: bottom;
     opacity: 0.4;
 }

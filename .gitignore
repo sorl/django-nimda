@@ -12,3 +12,4 @@ build
 dist
 .sass-cache/
 npm-debug.log
+node_modules
