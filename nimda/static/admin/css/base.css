@@ -423,7 +423,6 @@ textarea, select, .vTextField {
 .module {
   border: 0;
   margin-bottom: 15px;
-  padding: 7px 0;
   background: #fff; }
 
 .module p, .module ul, .module h3, .module h4, .module dl, .module pre {
@@ -440,7 +439,7 @@ textarea, select, .vTextField {
   margin-top: .6em; }
 
 .module h2, .module caption, .inline-group h2 {
-  margin: -7px 0 0 0;
+  margin: 0;
   padding: 10px;
   text-align: left;
   border-bottom: 1px solid #eee;
