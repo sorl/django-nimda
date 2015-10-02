@@ -478,7 +478,7 @@ ul.messagelist li {
   color: #fff; }
   ul.messagelist li.success {
     color: #59A559;
-    padding-left: 23px; }
+    padding-left: 19px; }
     ul.messagelist li.success:before {
       position: absolute;
       margin-top: 0;

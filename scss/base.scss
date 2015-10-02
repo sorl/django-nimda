@@ -550,7 +550,7 @@ ul.messagelist li {
     &.success {
         // background-color: $color-success;
         color: $color-success;
-        @include faIconPlacement('fa-check-circle', $topMargin: 0, $paddingLeft: 23px, $marginLeft: -20px);
+        @include faIconPlacement('fa-check-circle', $topMargin: 0, $paddingLeft: 19px, $marginLeft: -20px);
     }
 
     &.warning {
