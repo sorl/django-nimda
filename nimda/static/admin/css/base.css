@@ -522,8 +522,6 @@ ul.messagelist li {
 .errornote {
   font-weight: 600;
   display: block;
-  padding: 5px 5px 4px 25px;
-  margin: 0 0 3px 0;
   color: #e44158;
   padding-left: 28px; }
   .errornote:before {
