@@ -280,7 +280,8 @@ p.file-upload {
   font-size: 11px; }
 
 .file-upload a {
-  font-weight: normal; }
+  font-weight: normal;
+  margin-right: 5px; }
 
 .file-upload .deletelink {
   margin-left: 5px; }
