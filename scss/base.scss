@@ -570,7 +570,7 @@ ul.messagelist li {
     color: $color-destroy;
     // background: lighten($color-destroy, 40%);
 
-    @include faIconPlacement('fa-exclamation-circle', 'xs', 28px, -18px);
+    @include faIconPlacement('fa-exclamation-circle', 'xs', 19px, -18px);
 }
 
 .errornote, ul.errorlist {
