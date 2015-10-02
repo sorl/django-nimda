@@ -323,7 +323,6 @@ span.clearable-file-input label {
   color: #666;
   padding: 2px 3px;
   text-align: center;
-  background: #e1e1e1 url(../img/nav-bg.gif) 0 50% repeat-x;
   border-bottom: 1px solid #ddd; }
 
 .calendar td {
@@ -380,7 +379,7 @@ span.clearable-file-input label {
   position: absolute;
   font-weight: bold;
   font-size: 12px;
-  background: #C9DBED url(../img/default-bg.gif) bottom left repeat-x;
+  background-color: #2594ee;
   padding: 1px 4px 2px 4px;
   color: white; }
 
@@ -399,11 +398,7 @@ span.clearable-file-input label {
   margin: 0 !important;
   padding: 0 !important;
   font-size: 10px;
-  background: #e1e1e1 url(../img/nav-bg.gif) 0 50% repeat-x;
   border-top: 1px solid #ddd; }
-
-.calendar-cancel:hover {
-  background: #e1e1e1 url(../img/nav-bg-reverse.gif) 0 50% repeat-x; }
 
 .calendar-cancel a {
   color: black;
