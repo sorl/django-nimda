@@ -753,12 +753,13 @@ table#change-history tbody th {
 #container {
     position: relative;
     width: 100%;
-    min-width: 760px;
+    min-width: 700px;
     padding: 0;
 }
 
 #content {
     margin: $distance;
+    margin-right: $distance + 10;
     max-width: 1200px;
 
     > h1 {

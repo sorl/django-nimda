@@ -711,11 +711,12 @@ table#change-history tbody th {
 #container {
   position: relative;
   width: 100%;
-  min-width: 760px;
+  min-width: 700px;
   padding: 0; }
 
 #content {
   margin: 15px;
+  margin-right: 25px;
   max-width: 1200px; }
   #content > h1 {
     font-size: 23px;
