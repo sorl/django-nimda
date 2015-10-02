@@ -490,7 +490,7 @@ a.button {
 .module {
     border: 0;
     margin-bottom: $distance;
-    padding-top: 4px;
+    padding: 7px 0;
     background: #fff;
     // box-shadow: 2px 2px 3px rgba(0,0,0,0.01)
 }
@@ -514,7 +514,7 @@ a.button {
 
 
 .module h2, .module caption, .inline-group h2 {
-    margin: 0;
+    margin: -7px 0 0 0;
     padding: $distance-s;
     text-align: left;
     border-bottom: 1px solid $color-grey-light;

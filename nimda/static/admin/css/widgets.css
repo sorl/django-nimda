@@ -220,7 +220,8 @@ a.active.selector-clearall {
 p.datetime {
   line-height: 20px;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  color: #666; }
 
 p.datetime br {
   display: none; }
