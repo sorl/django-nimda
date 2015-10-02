@@ -222,29 +222,31 @@ p.datetime {
   margin: 0;
   padding: 0; }
 
-.datetimeshortcuts img {
+p.datetime br {
   display: none; }
 
-.datetimeshortcuts a:hover {
-  text-decoration: none; }
-
-.datetimeshortcuts a[id^="calendarlink"]:before {
-  content: "";
-  font: normal normal normal 14px/1 FontAwesome;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  transform: translate(0, 0);
-  font-size: 15px; }
-
-.datetimeshortcuts a[id^="clocklink"]:before {
-  content: "";
-  font: normal normal normal 14px/1 FontAwesome;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  transform: translate(0, 0);
-  font-size: 15px; }
+.datetimeshortcuts {
+  margin-right: 20px; }
+  .datetimeshortcuts img {
+    display: none; }
+  .datetimeshortcuts a:hover {
+    text-decoration: none; }
+  .datetimeshortcuts a[id^="calendarlink"]:before {
+    content: "";
+    font: normal normal normal 14px/1 FontAwesome;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate(0, 0);
+    font-size: 15px; }
+  .datetimeshortcuts a[id^="clocklink"]:before {
+    content: "";
+    font: normal normal normal 14px/1 FontAwesome;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate(0, 0);
+    font-size: 15px; }
 
 .datetime span {
   color: #ccc;

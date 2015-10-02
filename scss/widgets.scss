@@ -221,8 +221,10 @@ p.datetime {
     margin: 0;
     padding: 0;
 }
+p.datetime br {display:none}
 
 .datetimeshortcuts {
+    margin-right:20px;
     img {
         display: none;
     }
