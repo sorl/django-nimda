@@ -423,6 +423,7 @@ textarea, select, .vTextField {
 .module {
   border: 0;
   margin-bottom: 15px;
+  padding-top: 4px;
   background: #fff; }
 
 .module p, .module ul, .module h3, .module h4, .module dl, .module pre {

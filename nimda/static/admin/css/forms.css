@@ -148,7 +148,7 @@ fieldset.monospace textarea {
 /* SUBMIT ROW */
 .submit-row {
   text-align: right;
-  margin: 5px 0;
+  margin: 5px 0 10px 0;
   overflow: auto; }
   .submit-row .deletelink {
     color: #fff;
