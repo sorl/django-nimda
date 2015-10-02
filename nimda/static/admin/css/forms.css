@@ -89,7 +89,7 @@ form ul.inline li {
 
 form .aligned p, form .aligned ul {
   margin-left: 7em;
-  padding-left: 74px; }
+  /*padding-left: 74px;*/ }
 
 form .aligned table p {
   margin-left: 0;
