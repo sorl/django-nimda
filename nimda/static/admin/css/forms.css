@@ -185,7 +185,6 @@ body.popup .submit-row {
   font-size: inherit;
   border: 0;
   color: #2594ee;
-  margin: 0 0 0 15px;
   min-height: 34px; }
   .submit-row input:hover {
     text-decoration: underline;
