@@ -801,7 +801,7 @@ table#change-history tbody th {
 
 #user-tools {
   float: right;
-  margin: 0 15px;
+  margin: 0 25px 0 0;
   display: inline-block;
   vertical-align: middle;
   font-size: 14px;
