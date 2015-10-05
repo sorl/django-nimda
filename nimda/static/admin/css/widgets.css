@@ -42,6 +42,9 @@ th {
 .selector-chosen select {
   border-top: none; }
 
+fieldset.module .selector h2 {
+  margin-top: 0; }
+
 .selector-available h2, .selector-chosen h2 {
   border: 1px solid #ccc;
   background-color: #FBFBFB;
@@ -230,7 +233,9 @@ p.datetime br {
   margin-right: 20px; }
   .datetimeshortcuts img {
     display: none; }
-  .datetimeshortcuts a:hover {
+  .datetimeshortcuts a {
+    margin: 0 2px; }
+  .datetimeshortcuts a[id^="calendarlink"]:hover {
     text-decoration: none; }
   .datetimeshortcuts a[id^="calendarlink"]:before {
     content: "";
@@ -240,6 +245,8 @@ p.datetime br {
     -moz-osx-font-smoothing: grayscale;
     transform: translate(0, 0);
     font-size: 15px; }
+  .datetimeshortcuts a[id^="clocklink"]:hover {
+    text-decoration: none; }
   .datetimeshortcuts a[id^="clocklink"]:before {
     content: "";
     font: normal normal normal 14px/1 FontAwesome;
@@ -295,14 +302,16 @@ span.clearable-file-input label {
 /* CALENDARS & CLOCKS */
 .calendarbox, .clockbox {
   margin: 5px auto;
-  font-size: 11px;
   width: 16em;
   text-align: center;
   background: white;
-  position: relative; }
+  position: relative;
+  box-shadow: 0px 0px 12px 4px #ccc; }
 
 .clockbox {
   width: auto; }
+  .clockbox h2:before {
+    display: none; }
 
 .calendar {
   margin: 0;
@@ -317,46 +326,40 @@ span.clearable-file-input label {
 
 .calendar caption, .calendarbox h2 {
   margin: 0;
-  font-size: 11px;
   text-align: center;
   border-top: none; }
 
 .calendar th {
-  font-size: 10px;
   color: #666;
   padding: 2px 3px;
   text-align: center;
-  border-bottom: 1px solid #ddd; }
+  background-color: #fff;
+  border-bottom: 1px solid #ccc; }
 
 .calendar td {
-  font-size: 11px;
   text-align: center;
   padding: 0;
-  border-top: 1px solid #eee;
+  border-right: 1px solid #FBFBFB;
+  border-top: 1px solid #FBFBFB;
   border-bottom: none; }
 
-.calendar td.selected a {
-  background: #C9DBED; }
-
 .calendar td.nonday {
-  background: #efefef; }
+  background: #FBFBFB; }
 
 .calendar td.today a {
-  background: #ffc; }
+  background: #eee; }
 
 .calendar td a, .timelist a {
   display: block;
-  font-weight: bold;
   padding: 4px;
-  text-decoration: none;
-  color: #444; }
+  text-decoration: none; }
 
 .calendar td a:hover, .timelist a:hover {
-  background: #5b80b2;
+  background: #2594ee;
   color: white; }
 
 .calendar td a:active, .timelist a:active {
-  background: #036;
+  background: #000;
   color: white; }
 
 .calendarnav {
@@ -375,45 +378,58 @@ span.clearable-file-input label {
   line-height: 11px;
   border-top: 1px solid #eee;
   padding: 3px 0 4px;
-  color: #ccc; }
+  color: #ccc;
+  display: none; }
 
 .calendarbox .calendarnav-previous, .calendarbox .calendarnav-next {
   display: block;
   position: absolute;
   font-weight: bold;
-  font-size: 12px;
-  background-color: #2594ee;
-  padding: 1px 4px 2px 4px;
-  color: white; }
+  font-size: 0;
+  color: transparent;
+  margin-top: 5px;
+  padding: 1px 8px 2px 8px; }
 
 .calendarnav-previous:hover, .calendarnav-next:hover {
-  background: #036; }
+  cursor: pointer; }
 
 .calendarnav-previous {
   top: 0;
   left: 0; }
+  .calendarnav-previous:before {
+    content: "";
+    font: normal normal normal 14px/1 FontAwesome;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate(0, 0);
+    font-size: 20px;
+    color: #2594ee; }
 
 .calendarnav-next {
   top: 0;
   right: 0; }
+  .calendarnav-next:before {
+    content: "";
+    font: normal normal normal 14px/1 FontAwesome;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate(0, 0);
+    font-size: 20px;
+    color: #2594ee; }
 
 .calendar-cancel {
   margin: 0 !important;
   padding: 0 !important;
   font-size: 10px;
-  border-top: 1px solid #ddd; }
-
-.calendar-cancel a {
-  color: black;
-  display: block; }
+  border-top: 1px solid #ddd;
+  display: none; }
 
 ul.timelist, .timelist li {
   list-style-type: none;
   margin: 0;
   padding: 0; }
-
-.timelist a {
-  padding: 2px; }
 
 /* INLINE ORDERER */
 ul.orderer {

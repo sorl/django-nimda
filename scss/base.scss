@@ -521,7 +521,7 @@ a.button {
     font-weight: normal;
 }
 
-.module:not(#recent-actions-module) > h2 {
+.module:not(#recent-actions-module,.clockbox) > h2 {
     @include faIconPlacement('fa-clone', 's', 30px, -20px);
 }
 

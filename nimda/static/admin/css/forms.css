@@ -31,6 +31,8 @@ th {
   overflow: hidden;
   padding: 8px 12px;
   border-bottom: 1px solid #FBFBFB; }
+  .form-row:last-of-type {
+    border-bottom: 0; }
 
 .form-row img, .form-row input {
   vertical-align: middle; }

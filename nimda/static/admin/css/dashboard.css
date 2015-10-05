@@ -56,12 +56,14 @@ ul.actionlist li {
   list-style-type: none;
   margin-bottom: 5px;
   line-height: 1.25;
+  border-bottom: #eee 1px solid;
   overflow: hidden;
   text-overflow: ellipsis;
-  -o-text-overflow: ellipsis;
-  border-bottom: #eee 1px solid; }
+  -o-text-overflow: ellipsis; }
   ul.actionlist li:before {
     color: #ccc; }
+  ul.actionlist li:last-of-type {
+    border-bottom: 0; }
 
 /* Icons */
 .module caption:before {
