@@ -47,6 +47,7 @@ ul.actionlist li {
     list-style-type: none;
     margin-bottom: 5px;
     line-height: 1.25;
+    border-bottom: $color-grey-light 1px solid;
 
     overflow: hidden;
     text-overflow: ellipsis;
@@ -55,7 +56,10 @@ ul.actionlist li {
     &:before {
       color: $color-grey;
     }
-    border-bottom: $color-grey-light 1px solid;
+
+    &:last-of-type {
+      border-bottom: 0;
+    }
 }
 
 

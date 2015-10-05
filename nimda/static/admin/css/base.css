@@ -446,9 +446,9 @@ textarea, select, .vTextField {
   color: #858585;
   font-weight: normal; }
 
-.module:not(#recent-actions-module) > h2 {
+.module:not(#recent-actions-module, .clockbox) > h2 {
   padding-left: 30px; }
-  .module:not(#recent-actions-module) > h2:before {
+  .module:not(#recent-actions-module, .clockbox) > h2:before {
     position: absolute;
     margin-top: 3px;
     margin-left: -20px;

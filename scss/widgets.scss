@@ -4,6 +4,7 @@
 
 /* SELECTOR (FILTER INTERFACE) */
 
+
 .selector {
     width: 840px;
     float: left;
@@ -24,7 +25,9 @@
 .selector-chosen select {
     border-top: none;
 }
-
+fieldset.module .selector h2 {
+    margin-top: 0;
+}
 .selector-available h2, .selector-chosen h2 {
     border: 1px solid $color-grey;
     background-color: $color-grey-lighter;
@@ -230,11 +233,14 @@ p.datetime br {display:none}
         display: none;
     }
 
-    a:hover {
-        text-decoration: none;
+    a {
+        margin: 0 2px;
     }
 
     a[id^="calendarlink"] {
+        &:hover {
+            text-decoration: none;
+        }
 
         &:before {
             @include faIcon('fa-calendar', 's');
@@ -242,6 +248,10 @@ p.datetime br {display:none}
     }
 
     a[id^="clocklink"] {
+        &:hover {
+            text-decoration: none;
+        }
+
         &:before {
             @include faIcon('fa-clock-o', 's');
         }
@@ -306,7 +316,6 @@ span.clearable-file-input label {
 
 .calendarbox, .clockbox {
     margin: 5px auto;
-    font-size: fs('s');
     width: 16em;
     text-align: center;
     background: white;
@@ -316,6 +325,12 @@ span.clearable-file-input label {
 
 .clockbox {
     width: auto;
+
+    h2 {
+        &:before {
+            display: none;
+        }
+    }
 }
 
 .calendar {
@@ -348,10 +363,11 @@ span.clearable-file-input label {
 }
 
 .calendar td {
-    font-size: 11px;
+    // font-size: 11px;
     text-align: center;
     padding: 0;
-    border-top: 1px solid #eee;
+    border-right: 1px solid $color-grey-lighter;
+    border-top: 1px solid $color-grey-lighter;
     border-bottom: none;
 }
 
@@ -369,10 +385,9 @@ span.clearable-file-input label {
 
 .calendar td a, .timelist a {
     display: block;
-    font-weight: bold;
     padding: 4px;
     text-decoration: none;
-    color: #444;
+
 }
 
 .calendar td a:hover, .timelist a:hover {
@@ -381,7 +396,7 @@ span.clearable-file-input label {
 }
 
 .calendar td a:active, .timelist a:active {
-    background: #036;
+    background: #000;
     color: white;
 }
 
@@ -455,10 +470,6 @@ ul.timelist, .timelist li {
     list-style-type: none;
     margin: 0;
     padding: 0;
-}
-
-.timelist a {
-    padding: 2px;
 }
 
 /* INLINE ORDERER */
