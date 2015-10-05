@@ -141,11 +141,11 @@ fieldset .field-box {
   margin-right: 0; }
 
 .errorlist li {
-  background-position: 100% .3em;
+  background-position: 100% 0.3em;
   padding: 4px 25px 4px 5px; }
 
 .errornote {
-  background-position: 100% .3em;
+  background-position: 100% 0.3em;
   padding: 4px 25px 4px 5px; }
 
 /* WIDGETS */

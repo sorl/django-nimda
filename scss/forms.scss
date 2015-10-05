@@ -87,7 +87,7 @@ form ul.inline li {
 
 form .aligned p, form .aligned ul {
     margin-left: 7em;
-    padding-left: 74px;
+    /*padding-left: 74px;*/
 }
 
 form .aligned table p {
@@ -122,6 +122,14 @@ fieldset .field-box {
     margin-right: 20px;
 }
 
+form > div > fieldset.module {
+    padding: 7px 0;
+}
+
+form > div > fieldset.module h2 {
+    margin: -7px 0 0 0;
+}
+
 /* WIDE FIELDSETS */
 
 .wide label {
@@ -151,7 +159,6 @@ fieldset.collapsed h2, fieldset.collapsed {
 }
 
 fieldset.collapsed h2 {
-    background-image: url(../img/nav-bg.gif);
     background-position: bottom left;
     color: #999;
 }
@@ -171,7 +178,7 @@ fieldset.monospace textarea {
 
 .submit-row {
     text-align: right;
-    margin: 5px 0;
+    margin: 5px 0 10px 0;
     overflow: auto;
 
     .deletelink {
@@ -184,7 +191,7 @@ body.popup .submit-row {
 }
 
 .submit-row input {
-    margin: 0 0 0 $distance-s;
+    margin: 0;
 
     -webkit-appearance: none;
     appearance: none;
@@ -193,7 +200,6 @@ body.popup .submit-row {
     font-size: inherit;
     border: 0;
     color: $color-hero;
-    margin: 0 0 0 15px;
     min-height: 34px;
 
     &:hover {
@@ -209,7 +215,7 @@ body.popup .submit-row {
 
 .submit-row p.deletelink-box {
     float: left;
-    margin-top: 0;
+    margin: 0;
 }
 
 /* CUSTOM FORM FIELDS */
@@ -331,7 +337,7 @@ body.popup .submit-row {
 }
 
 .inline-group .tabular tr.has_original td {
-    padding-top: 2em;
+    padding-top: 1em;
 }
 
 .inline-group .tabular tr td.original {

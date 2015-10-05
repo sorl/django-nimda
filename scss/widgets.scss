@@ -216,13 +216,16 @@ a.active.selector-clearall {
 
 /* DATE AND TIME */
 
-p.datetime {
+form .aligned p.datetime {
     line-height: 20px;
     margin: 0;
     padding: 0;
+    color: #666;
 }
+p.datetime br {display:none}
 
 .datetimeshortcuts {
+    margin-right:20px;
     img {
         display: none;
     }
@@ -281,11 +284,11 @@ p.file-upload {
     padding: 0;
     color: #666;
     font-size: 11px;
-    font-weight: bold;
 }
 
 .file-upload a {
     font-weight: normal;
+    margin-right: 5px;
 }
 
 .file-upload .deletelink {
@@ -446,10 +449,6 @@ span.clearable-file-input label {
     font-size: 10px;
     border-top: 1px solid #ddd;
     display: none;
-}
-.calendar-cancel a {
-    color: black;
-    display: block;
 }
 
 ul.timelist, .timelist li {

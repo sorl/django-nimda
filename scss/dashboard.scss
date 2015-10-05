@@ -28,11 +28,10 @@
   overflow: hidden;
 
   td,th {
-    padding: 6px 10px;
-    border-bottom-color: $color-grey-lighter;
+    padding: 10px;
   }
 
-  caption {
+  caption,h2 {
     background-color: $color-grey-lighter;
   }
 
@@ -56,6 +55,7 @@ ul.actionlist li {
     &:before {
       color: $color-grey;
     }
+    border-bottom: $color-grey-light 1px solid;
 }
 
 

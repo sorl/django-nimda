@@ -1,6 +1,6 @@
 @charset "UTF-8";
-@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700);
-@import url(//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css);
+@import url("//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700");
+@import url("//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css");
 @import url("widgets.css");
 html, body {
   min-height: 100%;
@@ -89,7 +89,7 @@ form ul.inline li {
 
 form .aligned p, form .aligned ul {
   margin-left: 7em;
-  padding-left: 74px; }
+  /*padding-left: 74px;*/ }
 
 form .aligned table p {
   margin-left: 0;
@@ -117,6 +117,12 @@ fieldset .field-box {
   float: left;
   margin-right: 20px; }
 
+form > div > fieldset.module {
+  padding: 7px 0; }
+
+form > div > fieldset.module h2 {
+  margin: -7px 0 0 0; }
+
 /* WIDE FIELDSETS */
 .wide label {
   width: 15em !important; }
@@ -138,7 +144,6 @@ fieldset.collapsed h2, fieldset.collapsed {
   display: block !important; }
 
 fieldset.collapsed h2 {
-  background-image: url(../img/nav-bg.gif);
   background-position: bottom left;
   color: #999; }
 
@@ -153,7 +158,7 @@ fieldset.monospace textarea {
 /* SUBMIT ROW */
 .submit-row {
   text-align: right;
-  margin: 5px 0;
+  margin: 5px 0 10px 0;
   overflow: auto; }
   .submit-row .deletelink {
     color: #fff;
@@ -178,7 +183,7 @@ body.popup .submit-row {
   overflow: auto; }
 
 .submit-row input {
-  margin: 0 0 0 10px;
+  margin: 0;
   -webkit-appearance: none;
   appearance: none;
   padding: 0;
@@ -186,7 +191,6 @@ body.popup .submit-row {
   font-size: inherit;
   border: 0;
   color: #2594ee;
-  margin: 0 0 0 15px;
   min-height: 34px; }
   .submit-row input:hover {
     text-decoration: underline;
@@ -195,7 +199,7 @@ body.popup .submit-row {
 
 .submit-row p.deletelink-box {
   float: left;
-  margin-top: 0; }
+  margin: 0; }
 
 /* CUSTOM FORM FIELDS */
 .vSelectMultipleField {
@@ -290,7 +294,7 @@ body.popup .submit-row {
   border: none; }
 
 .inline-group .tabular tr.has_original td {
-  padding-top: 2em; }
+  padding-top: 1em; }
 
 .inline-group .tabular tr td.original {
   padding: 2px 0 0 0;
