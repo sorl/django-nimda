@@ -29,6 +29,11 @@
 
   td,th {
     padding: 8px 10px;
+    position: relative;
+
+    .addlink {
+      padding-right: 0;
+    }
   }
 
   caption,h2 {
