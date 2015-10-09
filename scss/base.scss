@@ -451,6 +451,9 @@ textarea, select, .vTextField {
 
 .button, input[type=submit], input[type=button], .submit-row input, a.button {
     @include button();
+    &:focus {
+        outline: 0;
+    }
 }
 
 a.button {
@@ -546,11 +549,13 @@ ul.messagelist li {
     display: block;
     margin: $distance;
     color: #fff;
+    padding: $distance-s 30px;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
 
     &.success {
-        // background-color: $color-success;
+        background-color: #E9FFE9;
         color: $color-success;
-        @include faIconPlacement('fa-check-circle', $topMargin: 0, $paddingLeft: 19px, $marginLeft: -20px);
+        @include faIconPlacement('fa-check-circle', $topMargin: 0, $paddingLeft: 30px, $marginLeft: -20px);
     }
 
     &.warning {

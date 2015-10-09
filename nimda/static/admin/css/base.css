@@ -386,6 +386,8 @@ textarea, select, .vTextField {
   .button:hover, input[type=submit]:hover, input[type=button]:hover, .submit-row input:hover, a.button:hover {
     text-decoration: none;
     background-color: #cacaca; }
+  .button:focus, input[type=submit]:focus, input[type=button]:focus, .submit-row input:focus, a.button:focus {
+    outline: 0; }
 
 .button[disabled], input[type=submit][disabled], input[type=button][disabled] {
   background-position: bottom;
@@ -475,10 +477,13 @@ ul.messagelist {
 ul.messagelist li {
   display: block;
   margin: 15px;
-  color: #fff; }
+  color: #fff;
+  padding: 10px 30px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
   ul.messagelist li.success {
+    background-color: #E9FFE9;
     color: #59A559;
-    padding-left: 19px; }
+    padding-left: 30px; }
     ul.messagelist li.success:before {
       position: absolute;
       margin-top: 0;
