@@ -573,9 +573,11 @@ ul.messagelist li {
     font-weight: 600;
     display: block;
     color: $color-destroy;
-    // background: lighten($color-destroy, 40%);
+    padding: $distance-s 30px;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    background: lighten($color-destroy, 40%);
 
-    @include faIconPlacement('fa-exclamation-circle', 'xs', 19px, -18px);
+    @include faIconPlacement('fa-exclamation-circle', 'xs', 30px, -18px);
 }
 
 .errornote, ul.errorlist {

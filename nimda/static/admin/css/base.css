@@ -528,7 +528,10 @@ ul.messagelist li {
   font-weight: 600;
   display: block;
   color: #e44158;
-  padding-left: 19px; }
+  padding: 10px 30px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  background: #fdf4f5;
+  padding-left: 30px; }
   .errornote:before {
     position: absolute;
     margin-top: 3px;
