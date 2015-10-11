@@ -548,6 +548,7 @@ ul.messagelist li {
     // font-weight: bold;
     display: block;
     margin: $distance;
+    margin-right: $distance-right;
     color: #fff;
     padding: $distance-s 30px;
     border-bottom: 1px solid rgba(0,0,0,0.1);
@@ -763,7 +764,7 @@ table#change-history tbody th {
 
 #content {
     margin: $distance;
-    margin-right: $distance + 10;
+    margin-right: $distance-right;
     max-width: 1200px;
 
     > h1 {
@@ -875,7 +876,8 @@ table#change-history tbody th {
 
 #user-tools {
     float: right;
-    margin: 0 25px 0 0;
+    margin: 0;
+    margin-right: $distance-right;
     display: inline-block;
     vertical-align: middle;
     font-size: fs();
