@@ -268,6 +268,7 @@ th {
 #changelist .actions .button {
   font-size: 13px;
   padding: 6px 8px;
-  margin-left: 5px; }
+  margin-left: 5px;
+  background-color: #2594ee; }
 
 /*# sourceMappingURL=changelists.css.map */
