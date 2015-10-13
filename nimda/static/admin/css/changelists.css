@@ -62,7 +62,7 @@ th {
 .change-list .filtered {
   min-height: 400px; }
 
-.model-user.change-list .object-tools {
+.change-list .object-tools.filter {
   margin-right: 160px; }
 
 .change-list .filtered {

@@ -49,7 +49,7 @@
   <div id="content-main">
     {% block object-tools %}
       {% if has_add_permission %}
-        <ul class="object-tools">
+        <ul class="object-tools{% if cl.has_filters %} filter{% endif %}">
           {% block object-tools-items %}
             <li>
               {% url cl.opts|admin_urlname:'add' as add_url %}
