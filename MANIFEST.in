@@ -3,3 +3,4 @@ include LICENSE
 include README.rst
 recursive-include nimda/static *
 recursive-include nimda/templates *
+exclude runtests.py
