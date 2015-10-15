@@ -139,6 +139,9 @@ form .wide p.help {
   width: 450px; }
 
 /* COLLAPSED FIELDSETS */
+fieldset.collapsed {
+  padding-bottom: 0 !important; }
+
 fieldset.collapsed * {
   display: none; }
 

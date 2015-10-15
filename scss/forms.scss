@@ -154,6 +154,9 @@ form .wide p.help {
 
 /* COLLAPSED FIELDSETS */
 
+fieldset.collapsed {
+    padding-bottom: 0 !important;
+}
 fieldset.collapsed * {
     display: none;
 }
