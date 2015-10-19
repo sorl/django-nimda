@@ -31,15 +31,15 @@
 }
 
 .change-list .object-tools.filter {
-    margin-right: 160px;
+    // margin-right: 160px;
 }
 
 .change-list .filtered {
-    background: white url(../img/changelist-bg.gif) top right repeat-y !important;
+    // background: white url(../img/changelist-bg.gif) top right repeat-y !important;
 }
 
 .change-list .filtered .results, .change-list .filtered .paginator, .filtered #toolbar, .filtered div.xfull {
-    margin-right: 160px !important;
+    // margin-right: 160px !important;
     width: auto !important;
 }
 
@@ -125,13 +125,30 @@
 /* FILTER COLUMN */
 
 #changelist-filter {
-    position: absolute;
+    // position: absolute;
     top: 0;
     right: 0;
     z-index: 1000;
-    width: 160px;
+    // width: 160px;
     // background: #efefef;
     margin: 0;
+    // padding: 10px;
+    border-top: 1px solid $color-grey-light;
+
+    fieldset {
+        border: 0;
+        display: inline-block;
+        // margin-right: 15px;
+        padding: 10px;
+        border-right: 1px solid $color-grey-light;
+
+        label {
+            // text-transform: uppercase;
+            color: $color-grey-dark;
+            margin-right: 5px;
+            // letter-spacing: 0.5px;
+        }
+    }
 }
 
 #changelist-filter h2 {
@@ -247,10 +264,10 @@
 /* ACTIONS */
 
 .filtered .actions {
-    margin-right: 160px !important;
+    // margin-right: 160px !important;
     // border-right: 1px solid #ddd;
-    color: $color-grey;
-    margin-left: 0.5em;
+    // color: $color-grey;
+    // margin-left: 0.5em;
 }
 
 #changelist table input {

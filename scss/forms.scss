@@ -175,7 +175,7 @@ fieldset .collapse-toggle {
     border-radius: 3px;
     padding: 3px;
 
-    @include faIconPlacement('fa-minus-square', $topMargin: 1px);
+    @include faIconPlacement('fa-minus-square', $topMargin: 2px, $size: 'xs');
     &:before {
         color: $color-hero;
     }
@@ -201,7 +201,7 @@ fieldset.collapsed .collapse-toggle {
     display: inline !important;
 
     &:before {
-        @include faIcon('fa-plus-square', 's');
+        @include faIcon('fa-plus-square', $size: 'xs');
     }
 }
 

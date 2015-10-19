@@ -157,7 +157,7 @@ fieldset .collapse-toggle {
   padding-left: 20px; }
   fieldset .collapse-toggle:before {
     position: absolute;
-    margin-top: 1px;
+    margin-top: 2px;
     margin-left: -17px;
     content: "";
     font: normal normal normal 14px/1 FontAwesome;
@@ -165,7 +165,7 @@ fieldset .collapse-toggle {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     transform: translate(0, 0);
-    font-size: 15px; }
+    font-size: 13px; }
   fieldset .collapse-toggle:before {
     color: #2594ee; }
 
@@ -191,7 +191,7 @@ fieldset.collapsed .collapse-toggle {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     transform: translate(0, 0);
-    font-size: 15px; }
+    font-size: 13px; }
 
 /* MONOSPACE TEXTAREAS */
 fieldset.monospace textarea {

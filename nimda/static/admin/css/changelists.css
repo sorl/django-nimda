@@ -62,14 +62,7 @@ th {
 .change-list .filtered {
   min-height: 400px; }
 
-.change-list .object-tools.filter {
-  margin-right: 160px; }
-
-.change-list .filtered {
-  background: white url(../img/changelist-bg.gif) top right repeat-y !important; }
-
 .change-list .filtered .results, .change-list .filtered .paginator, .filtered #toolbar, .filtered div.xfull {
-  margin-right: 160px !important;
   width: auto !important; }
 
 .change-list .filtered table tbody th {
@@ -124,12 +117,19 @@ th {
 
 /* FILTER COLUMN */
 #changelist-filter {
-  position: absolute;
   top: 0;
   right: 0;
   z-index: 1000;
-  width: 160px;
-  margin: 0; }
+  margin: 0;
+  border-top: 1px solid #eee; }
+  #changelist-filter fieldset {
+    border: 0;
+    display: inline-block;
+    padding: 10px;
+    border-right: 1px solid #eee; }
+    #changelist-filter fieldset label {
+      color: #858585;
+      margin-right: 5px; }
 
 #changelist-filter h2 {
   font-size: 14px;
@@ -221,11 +221,6 @@ th {
   border-color: #036; }
 
 /* ACTIONS */
-.filtered .actions {
-  margin-right: 160px !important;
-  color: #ccc;
-  margin-left: 0.5em; }
-
 #changelist table input {
   margin: 0; }
 
