@@ -139,6 +139,36 @@ form .wide p.help {
   width: 450px; }
 
 /* COLLAPSED FIELDSETS */
+fieldset.collapse {
+  cursor: pointer; }
+  fieldset.collapse h2 {
+    transition: background 200ms; }
+  fieldset.collapse h2:hover {
+    background-color: #FBFBFB; }
+
+fieldset .collapse-toggle {
+  color: #2594ee;
+  float: right;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 1px;
+  border-radius: 3px;
+  padding: 3px;
+  padding-left: 20px; }
+  fieldset .collapse-toggle:before {
+    position: absolute;
+    margin-top: 1px;
+    margin-left: -17px;
+    content: "";
+    font: normal normal normal 14px/1 FontAwesome;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate(0, 0);
+    font-size: 15px; }
+  fieldset .collapse-toggle:before {
+    color: #2594ee; }
+
 fieldset.collapsed {
   padding-bottom: 0 !important; }
 
@@ -153,8 +183,15 @@ fieldset.collapsed h2 {
   color: #999; }
 
 fieldset.collapsed .collapse-toggle {
-  background: transparent;
   display: inline !important; }
+  fieldset.collapsed .collapse-toggle:before {
+    content: "";
+    font: normal normal normal 14px/1 FontAwesome;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate(0, 0);
+    font-size: 15px; }
 
 /* MONOSPACE TEXTAREAS */
 fieldset.monospace textarea {
