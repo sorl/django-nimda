@@ -20,7 +20,7 @@
 			}
 			return false;
 		});
-		$("fieldset.collapse").click(function(ev) {
+		$("fieldset.collapse h2").click(function(ev) {
 			$(this).find('a.collapse-toggle').trigger('click')
 		})
 	});

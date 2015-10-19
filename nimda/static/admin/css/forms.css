@@ -141,9 +141,13 @@ form .wide p.help {
 /* COLLAPSED FIELDSETS */
 fieldset.collapse {
   cursor: pointer; }
+  fieldset.collapse h2 {
+    transition: background 200ms; }
+  fieldset.collapse h2:hover {
+    background-color: #FBFBFB; }
 
 fieldset .collapse-toggle {
-  color: #333;
+  color: #2594ee;
   float: right;
   text-transform: uppercase;
   font-size: 12px;
@@ -155,7 +159,7 @@ fieldset .collapse-toggle {
     position: absolute;
     margin-top: 1px;
     margin-left: -17px;
-    content: "";
+    content: "";
     font: normal normal normal 14px/1 FontAwesome;
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
@@ -181,7 +185,7 @@ fieldset.collapsed h2 {
 fieldset.collapsed .collapse-toggle {
   display: inline !important; }
   fieldset.collapsed .collapse-toggle:before {
-    content: "";
+    content: "";
     font: normal normal normal 14px/1 FontAwesome;
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;

@@ -155,11 +155,19 @@ form .wide p.help {
 /* COLLAPSED FIELDSETS */
 fieldset.collapse {
     cursor: pointer;
+
+    h2 {
+        transition: background 200ms;
+    }
+    h2:hover {
+        background-color: $color-grey-lighter
+    }
+
 }
 fieldset .collapse-toggle {
     // background: $color-grey-light;
     // border: 1px solid $color-grey-light;
-    color: $color-grey-darker;
+    color: $color-hero;
     float: right;
     text-transform: uppercase;
     font-size: 12px;
@@ -167,7 +175,7 @@ fieldset .collapse-toggle {
     border-radius: 3px;
     padding: 3px;
 
-    @include faIconPlacement('fa-plus-square', $topMargin: 1px);
+    @include faIconPlacement('fa-minus-square', $topMargin: 1px);
     &:before {
         color: $color-hero;
     }
@@ -193,7 +201,7 @@ fieldset.collapsed .collapse-toggle {
     display: inline !important;
 
     &:before {
-        @include faIcon('fa-minus-square', 's');
+        @include faIcon('fa-plus-square', 's');
     }
 }
 
