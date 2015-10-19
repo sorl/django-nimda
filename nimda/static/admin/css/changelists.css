@@ -221,6 +221,9 @@ th {
   border-color: #036; }
 
 /* ACTIONS */
+.filtered .actions {
+  border-top: 1px solid #eee; }
+
 #changelist table input {
   margin: 0; }
 
@@ -233,6 +236,7 @@ th {
 @media only all and (min-width: 1000px) {
   #changelist #toolbar ~ #changelist-form .actions {
     position: absolute;
+    border-top: none;
     top: 10px;
     right: 10px;
     padding: 3px; } }
