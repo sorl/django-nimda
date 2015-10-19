@@ -56,9 +56,6 @@ th {
 .change-list .hiddenfields {
   display: none; }
 
-.change-list .filtered table {
-  border-right: 1px solid #ddd; }
-
 .change-list .filtered {
   min-height: 400px; }
 
@@ -81,9 +78,6 @@ th {
 #changelist .paginator {
   color: #ccc;
   overflow: hidden; }
-
-.change-list .filtered .paginator {
-  border-right: 1px solid #ddd; }
 
 /* CHANGELIST TABLES */
 #changelist table thead th {
