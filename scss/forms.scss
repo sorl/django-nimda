@@ -153,7 +153,25 @@ form .wide p.help {
 }
 
 /* COLLAPSED FIELDSETS */
+fieldset.collapse {
+    cursor: pointer;
+}
+fieldset .collapse-toggle {
+    // background: $color-grey-light;
+    // border: 1px solid $color-grey-light;
+    color: $color-grey-darker;
+    float: right;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 1px;
+    border-radius: 3px;
+    padding: 3px;
 
+    @include faIconPlacement('fa-plus-square', $topMargin: 1px);
+    &:before {
+        color: $color-hero;
+    }
+}
 fieldset.collapsed {
     padding-bottom: 0 !important;
 }
@@ -171,8 +189,12 @@ fieldset.collapsed h2 {
 }
 
 fieldset.collapsed .collapse-toggle {
-    background: transparent;
+    // background: transparent;
     display: inline !important;
+
+    &:before {
+        @include faIcon('fa-minus-square', 's');
+    }
 }
 
 /* MONOSPACE TEXTAREAS */

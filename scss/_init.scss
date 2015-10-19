@@ -103,9 +103,11 @@ $faIcons: (
   'fa-graduation-cap': '\f19d',
   'fa-home': '\f015',
   'fa-lock' : '\f023',
+  'fa-minus-square': '\f146',
   'fa-pencil' : '\f040',
   'fa-plus': '\f067',
   'fa-plus-circle' : '\f055',
+  'fa-plus-square': '\f0fe',
   'fa-rss': '\f09e',
   'fa-search' : '\f002',
   'fa-shopping-cart': '\f07a',
@@ -118,7 +120,7 @@ $faIcons: (
   'fa-trash': '\f1f8',
   'fa-trophy': '\f091',
   'fa-user' : '\f007',
-  'fa-users': '\f0c0',
+  'fa-users': '\f0c0'
 );
 
 $faSizes: (
@@ -152,10 +154,10 @@ $faSizes: (
   padding-left: $paddingLeft;
 
   &:before {
-      position: absolute;
-      margin-top: $topMargin;
-      margin-left: $marginLeft;
-      @include faIcon($name, $size)
+    position: absolute;
+    margin-top: $topMargin;
+    margin-left: $marginLeft;
+    @include faIcon($name, $size)
   }
 
 }
