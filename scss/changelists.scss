@@ -14,10 +14,17 @@
     width: 100%;
 }
 
-#changelist-search input[type="submit"] {
-    @include button($color-hero);
-    padding: 8px $distance;
-    margin: 0 5px;
+#changelist-search {
+    #searchbar {
+        width: 300px;
+
+    }
+
+    input[type="submit"] {
+        @include button($color-hero);
+        padding: 8px $distance;
+        margin: 0 5px;
+    }
 }
 
 .change-list .hiddenfields { display:none; }
@@ -105,13 +112,8 @@
 
 #changelist #toolbar {
     padding: $distance-s;
-    // color: #666;
 }
 
-#changelist #toolbar form input {
-    // font-size: 11px;
-    // padding: 1px 2px;
-}
 
 #changelist #toolbar form #searchbar {
 
@@ -125,28 +127,20 @@
 /* FILTER COLUMN */
 
 #changelist-filter {
-    // position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 1000;
-    // width: 160px;
-    // background: #efefef;
     margin: 0;
-    // padding: 10px;
     border-top: 1px solid $color-grey-light;
+    margin-bottom: -1px; /* remove double border bottom */
 
     fieldset {
         border: 0;
         display: inline-block;
-        // margin-right: 15px;
         padding: 10px;
         border-right: 1px solid $color-grey-light;
+        border-bottom: 1px solid $color-grey-light;
 
         label {
-            // text-transform: uppercase;
             color: $color-grey-dark;
             margin-right: 5px;
-            // letter-spacing: 0.5px;
         }
     }
 }
@@ -284,7 +278,7 @@
 }
 
 #changelist #toolbar ~ #changelist-form .actions {
-    @include breakpoint('min-width', 1000px) {
+    @include breakpoint('desktop') {
         position: absolute;
         border-top: none;
         top: 10px;

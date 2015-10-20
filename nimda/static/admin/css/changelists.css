@@ -32,6 +32,9 @@ th {
 #changelist table {
   width: 100%; }
 
+#changelist-search #searchbar {
+  width: 300px; }
+
 #changelist-search input[type="submit"] {
   color: #fff;
   padding: 10px 15px;
@@ -111,16 +114,16 @@ th {
 
 /* FILTER COLUMN */
 #changelist-filter {
-  top: 0;
-  right: 0;
-  z-index: 1000;
   margin: 0;
-  border-top: 1px solid #eee; }
+  border-top: 1px solid #eee;
+  margin-bottom: -1px;
+  /* remove double border bottom */ }
   #changelist-filter fieldset {
     border: 0;
     display: inline-block;
     padding: 10px;
-    border-right: 1px solid #eee; }
+    border-right: 1px solid #eee;
+    border-bottom: 1px solid #eee; }
     #changelist-filter fieldset label {
       color: #858585;
       margin-right: 5px; }
