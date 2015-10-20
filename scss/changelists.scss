@@ -142,6 +142,10 @@
             color: $color-grey-dark;
             margin-right: 5px;
         }
+
+        select {
+            padding: 4px;
+        }
     }
 }
 
@@ -275,6 +279,7 @@
 
 #changelist .actions {
     padding: $distance-s;
+    display: none; /* default */
 }
 
 #changelist #toolbar ~ #changelist-form .actions {

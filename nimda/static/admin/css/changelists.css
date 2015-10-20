@@ -127,6 +127,8 @@ th {
     #changelist-filter fieldset label {
       color: #858585;
       margin-right: 5px; }
+    #changelist-filter fieldset select {
+      padding: 4px; }
 
 #changelist-filter h2 {
   font-size: 14px;
@@ -228,7 +230,9 @@ th {
   background-color: rgba(37, 148, 238, 0.05); }
 
 #changelist .actions {
-  padding: 10px; }
+  padding: 10px;
+  display: none;
+  /* default */ }
 
 @media only all and (min-width: 1000px) {
   #changelist #toolbar ~ #changelist-form .actions {
