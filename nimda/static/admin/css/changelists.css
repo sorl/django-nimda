@@ -32,29 +32,30 @@ th {
 #changelist table {
   width: 100%; }
 
-#changelist-search #searchbar {
-  width: 300px; }
-
-#changelist-search input[type="submit"] {
-  color: #fff;
-  padding: 10px 15px;
-  background: #2594ee;
-  border-radius: 3px;
-  cursor: pointer;
-  line-height: 1;
-  display: inline-block;
-  vertical-align: middle;
-  transition-property: background-color;
-  transition-duration: 150ms;
-  border: 0;
-  text-align: center;
-  padding: 8px 15px;
-  margin: 0 5px; }
-  #changelist-search input[type="submit"]:before {
-    display: none; }
-  #changelist-search input[type="submit"]:hover {
-    text-decoration: none;
-    background-color: #46a4f1; }
+#changelist-search {
+  text-align: center; }
+  #changelist-search #searchbar {
+    width: 300px; }
+  #changelist-search input[type="submit"] {
+    color: #fff;
+    padding: 10px 15px;
+    background: #2594ee;
+    border-radius: 3px;
+    cursor: pointer;
+    line-height: 1;
+    display: inline-block;
+    vertical-align: middle;
+    transition-property: background-color;
+    transition-duration: 150ms;
+    border: 0;
+    text-align: center;
+    padding: 8px 15px;
+    margin: 0 5px; }
+    #changelist-search input[type="submit"]:before {
+      display: none; }
+    #changelist-search input[type="submit"]:hover {
+      text-decoration: none;
+      background-color: #46a4f1; }
 
 .change-list .hiddenfields {
   display: none; }
@@ -114,16 +115,12 @@ th {
 
 /* FILTER COLUMN */
 #changelist-filter {
-  margin: 0;
-  border-top: 1px solid #eee;
-  margin-bottom: -1px;
-  /* remove double border bottom */ }
+  text-align: center;
+  margin: 0 0 10px; }
   #changelist-filter fieldset {
     border: 0;
     display: inline-block;
-    padding: 10px;
-    border-right: 1px solid #eee;
-    border-bottom: 1px solid #eee; }
+    padding: 0 10px 10px; }
     #changelist-filter fieldset label {
       color: #858585;
       margin-right: 5px; }

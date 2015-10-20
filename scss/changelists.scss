@@ -15,9 +15,10 @@
 }
 
 #changelist-search {
+    text-align: center;
+
     #searchbar {
         width: 300px;
-
     }
 
     input[type="submit"] {
@@ -127,16 +128,16 @@
 /* FILTER COLUMN */
 
 #changelist-filter {
-    margin: 0;
-    border-top: 1px solid $color-grey-light;
-    margin-bottom: -1px; /* remove double border bottom */
+    text-align: center;
+    margin: 0 0 10px;
+    // border-top: 1px solid $color-grey-light;
 
     fieldset {
         border: 0;
         display: inline-block;
-        padding: 10px;
-        border-right: 1px solid $color-grey-light;
-        border-bottom: 1px solid $color-grey-light;
+        padding: 0 10px 10px;
+        // border-right: 1px solid $color-grey-light;
+        // border-bottom: 1px solid $color-grey-light;
 
         label {
             color: $color-grey-dark;

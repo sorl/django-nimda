@@ -3,19 +3,10 @@ $( document ).ready(function() {
   var $changelistFormCheckboxes = $changelistForm.find('input[type=checkbox]')
 
   $changelistFormCheckboxes.on('change', function(e) {
-    if ( $(this).is(':checked') ) {
-
-      console.log('is checked');
-    } else {
-
-    }
-
     if ( $changelistFormCheckboxes.is(':checked') ) {
-      console.log('at least one is checked');
-      $changelistForm.find('.actions').slideDown()
+      $changelistForm.find('.actions').slideDown(200)
     } else {
-      console.log('none are checked');
-      $changelistForm.find('.actions').slideUp()
+      $changelistForm.find('.actions').slideUp(100)
     }
   })
 });
