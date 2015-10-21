@@ -135,6 +135,14 @@
         border: 0;
         display: inline-block;
         padding: 0 0 10px 10px;
+
+        &.active {
+            label {
+                // color: $color-hero;
+                font-weight: bold;
+                color: #000;
+            }
+        }
         // border-right: 1px solid $color-grey-light;
         // border-bottom: 1px solid $color-grey-light;
 
@@ -151,6 +159,7 @@
             padding: 4px;
             min-width: 100px;
             width: 100%;
+            font-size: 13px;
         }
     }
 }
