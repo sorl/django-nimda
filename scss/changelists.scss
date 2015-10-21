@@ -120,17 +120,12 @@
 }
 
 #changelist #changelist-search img {
-    // vertical-align: middle;
     display: none;
 }
 
 /* FILTER COLUMN */
 
 #changelist-filter {
-    // text-align: center;
-    // margin: 0 0 10px;
-    // border-top: 1px solid $color-grey-light;
-
     fieldset {
         border: 0;
         display: inline-block;
@@ -138,13 +133,10 @@
 
         &.active {
             label {
-                // color: $color-hero;
                 font-weight: bold;
-                color: #000;
+                color: #333;
             }
         }
-        // border-right: 1px solid $color-grey-light;
-        // border-bottom: 1px solid $color-grey-light;
 
         label {
             color: $color-grey-dark;
