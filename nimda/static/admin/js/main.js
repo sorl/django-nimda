@@ -57,7 +57,7 @@ $( document ).ready(function() {
   $tabs.find('li').on('click', function(e) {
     $tabs.find('li').removeClass('active')
     $(this).addClass('active')
-    $('fieldset.module').hide()
+    $('fieldset.module').attr('style','display:none !important'); /* so it doesnt interfere with .collapsed */
     $('.'+$(this).data('target')).show()
   })
 
