@@ -132,7 +132,7 @@
         padding: 0 0 10px 10px;
 
         &.active {
-            label {
+            label, select {
                 font-weight: bold;
                 color: #333;
             }
