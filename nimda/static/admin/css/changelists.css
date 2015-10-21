@@ -32,30 +32,29 @@ th {
 #changelist table {
   width: 100%; }
 
-#changelist-search {
-  text-align: center; }
-  #changelist-search #searchbar {
-    width: 300px; }
-  #changelist-search input[type="submit"] {
-    color: #fff;
-    padding: 10px 15px;
-    background: #2594ee;
-    border-radius: 3px;
-    cursor: pointer;
-    line-height: 1;
-    display: inline-block;
-    vertical-align: middle;
-    transition-property: background-color;
-    transition-duration: 150ms;
-    border: 0;
-    text-align: center;
-    padding: 8px 15px;
-    margin: 0 5px; }
-    #changelist-search input[type="submit"]:before {
-      display: none; }
-    #changelist-search input[type="submit"]:hover {
-      text-decoration: none;
-      background-color: #46a4f1; }
+#changelist-search #searchbar {
+  width: 300px; }
+
+#changelist-search input[type="submit"] {
+  color: #fff;
+  padding: 10px 15px;
+  background: #2594ee;
+  border-radius: 3px;
+  cursor: pointer;
+  line-height: 1;
+  display: inline-block;
+  vertical-align: middle;
+  transition-property: background-color;
+  transition-duration: 150ms;
+  border: 0;
+  text-align: center;
+  padding: 8px 15px;
+  margin: 0 5px; }
+  #changelist-search input[type="submit"]:before {
+    display: none; }
+  #changelist-search input[type="submit"]:hover {
+    text-decoration: none;
+    background-color: #46a4f1; }
 
 .change-list .hiddenfields {
   display: none; }
@@ -114,18 +113,21 @@ th {
   display: none; }
 
 /* FILTER COLUMN */
-#changelist-filter {
-  text-align: center;
-  margin: 0 0 10px; }
-  #changelist-filter fieldset {
-    border: 0;
-    display: inline-block;
-    padding: 0 10px 10px; }
-    #changelist-filter fieldset label {
-      color: #858585;
-      margin-right: 5px; }
-    #changelist-filter fieldset select {
-      padding: 4px; }
+#changelist-filter fieldset {
+  border: 0;
+  display: inline-block;
+  padding: 0 0 10px 10px; }
+  #changelist-filter fieldset label {
+    color: #858585;
+    margin-right: 5px;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: block; }
+  #changelist-filter fieldset select {
+    padding: 4px;
+    min-width: 100px;
+    width: 100%; }
 
 #changelist-filter h2 {
   font-size: 14px;
@@ -230,14 +232,6 @@ th {
   padding: 10px;
   display: none;
   /* default */ }
-
-@media only all and (min-width: 1000px) {
-  #changelist #toolbar ~ #changelist-form .actions {
-    position: absolute;
-    border-top: none;
-    top: 10px;
-    right: 10px;
-    padding: 3px; } }
 
 #changelist .actions.selected {
   background: #fffccf;
