@@ -14,16 +14,23 @@
     width: 100%;
 }
 
-#changelist-search input[type="submit"] {
-    @include button($color-hero);
-    padding: 8px $distance;
-    margin: 0 5px;
+#changelist-search {
+
+    #searchbar {
+        width: 300px;
+    }
+
+    input[type="submit"] {
+        @include button($color-hero);
+        padding: 8px $distance;
+        margin: 0 5px;
+    }
 }
 
 .change-list .hiddenfields { display:none; }
 
 .change-list .filtered table {
-    border-right: 1px solid #ddd;
+    // border-right: 1px solid #ddd;
 }
 
 .change-list .filtered {
@@ -31,15 +38,15 @@
 }
 
 .change-list .object-tools.filter {
-    margin-right: 160px;
+    // margin-right: 160px;
 }
 
 .change-list .filtered {
-    background: white url(../img/changelist-bg.gif) top right repeat-y !important;
+    // background: white url(../img/changelist-bg.gif) top right repeat-y !important;
 }
 
 .change-list .filtered .results, .change-list .filtered .paginator, .filtered #toolbar, .filtered div.xfull {
-    margin-right: 160px !important;
+    // margin-right: 160px !important;
     width: auto !important;
 }
 
@@ -68,7 +75,7 @@
 }
 
 .change-list .filtered .paginator {
-    border-right: 1px solid #ddd;
+    // border-right: 1px solid #ddd;
 }
 
 /* CHANGELIST TABLES */
@@ -105,33 +112,48 @@
 
 #changelist #toolbar {
     padding: $distance-s;
-    // color: #666;
 }
 
-#changelist #toolbar form input {
-    // font-size: 11px;
-    // padding: 1px 2px;
-}
 
 #changelist #toolbar form #searchbar {
 
 }
 
 #changelist #changelist-search img {
-    // vertical-align: middle;
     display: none;
 }
 
 /* FILTER COLUMN */
 
 #changelist-filter {
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 1000;
-    width: 160px;
-    // background: #efefef;
-    margin: 0;
+    fieldset {
+        border: 0;
+        display: inline-block;
+        padding: 0 0 10px 10px;
+
+        &.active {
+            label, select {
+                font-weight: bold;
+                color: #333;
+            }
+        }
+
+        label {
+            color: $color-grey-dark;
+            margin-right: 5px;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: block;
+        }
+
+        select {
+            padding: 4px;
+            min-width: 100px;
+            width: 100%;
+            font-size: 13px;
+        }
+    }
 }
 
 #changelist-filter h2 {
@@ -247,10 +269,11 @@
 /* ACTIONS */
 
 .filtered .actions {
-    margin-right: 160px !important;
+    // margin-right: 160px !important;
     // border-right: 1px solid #ddd;
-    color: $color-grey;
-    margin-left: 0.5em;
+    // color: $color-grey;
+    // margin-left: 0.5em;
+    border-top: 1px solid $color-grey-light;
 }
 
 #changelist table input {
@@ -263,16 +286,18 @@
 
 #changelist .actions {
     padding: $distance-s;
+    display: none; /* default */
 }
 
-#changelist #toolbar ~ #changelist-form .actions {
-    @include breakpoint('min-width', 1000px) {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        padding: 3px;
-    }
-}
+// #changelist #toolbar ~ #changelist-form .actions {
+//     @include breakpoint('desktop') {
+//         position: absolute;
+//         border-top: none;
+//         top: 10px;
+//         right: 10px;
+//         padding: 3px;
+//     }
+// }
 
 #changelist .actions.selected {
     background: #fffccf;

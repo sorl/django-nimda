@@ -175,7 +175,7 @@ fieldset .collapse-toggle {
     border-radius: 3px;
     padding: 3px;
 
-    @include faIconPlacement('fa-minus-square', $topMargin: 1px);
+    @include faIconPlacement('fa-minus-square', $topMargin: 2px, $size: 'xs');
     &:before {
         color: $color-hero;
     }
@@ -201,8 +201,50 @@ fieldset.collapsed .collapse-toggle {
     display: inline !important;
 
     &:before {
-        @include faIcon('fa-plus-square', 's');
+        @include faIcon('fa-plus-square', $size: 'xs');
     }
+}
+
+/* TABBED FIELDSETS */
+ul.tabs  {
+    margin: 0;
+    padding: 0;
+
+    li {
+        display: inline-block;
+        padding: 10px 12px;
+        position: relative;
+        cursor: pointer;
+        color: #666;
+        margin-right: 1px;
+        transition: color 100ms;
+        background-color: rgba(#fff,0.5);
+
+        &:hover {
+            color: #000;
+        }
+
+        &.active {
+            background-color: #fff;
+            border: 0;
+            color: #000;
+            // color: $color-hero;
+            // font-weight: bold;
+            // border-top: 1px solid $color-hero;
+            box-shadow: 1px 0 0 rgba(0, 0, 0, 0.05), 0px 4px 6px rgba($color-hero, 0.02) inset
+        }
+
+        &:last-child {
+            border-top-right-radius: 3px;
+        }
+    }
+}
+fieldset.tabbed {
+    display: none;
+}
+
+fieldset.untabbed {
+    display: block;
 }
 
 /* MONOSPACE TEXTAREAS */

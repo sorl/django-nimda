@@ -9,9 +9,13 @@ gulp.task('build', function () {
     .pipe(sass().on('error', sass.logError))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('./nimda/static/admin/css'))
+
+  gulp.src('./js/*.js')
+    .pipe(gulp.dest('./nimda/static/admin/js'))
 })
 
 
 gulp.task('default', function () {
   gulp.watch('./scss/*.scss', ['build'])
+  gulp.watch('./js/*.js', ['build'])
 })

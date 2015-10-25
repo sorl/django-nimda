@@ -32,6 +32,9 @@ th {
 #changelist table {
   width: 100%; }
 
+#changelist-search #searchbar {
+  width: 300px; }
+
 #changelist-search input[type="submit"] {
   color: #fff;
   padding: 10px 15px;
@@ -56,20 +59,10 @@ th {
 .change-list .hiddenfields {
   display: none; }
 
-.change-list .filtered table {
-  border-right: 1px solid #ddd; }
-
 .change-list .filtered {
   min-height: 400px; }
 
-.change-list .object-tools.filter {
-  margin-right: 160px; }
-
-.change-list .filtered {
-  background: white url(../img/changelist-bg.gif) top right repeat-y !important; }
-
 .change-list .filtered .results, .change-list .filtered .paginator, .filtered #toolbar, .filtered div.xfull {
-  margin-right: 160px !important;
   width: auto !important; }
 
 .change-list .filtered table tbody th {
@@ -88,9 +81,6 @@ th {
 #changelist .paginator {
   color: #ccc;
   overflow: hidden; }
-
-.change-list .filtered .paginator {
-  border-right: 1px solid #ddd; }
 
 /* CHANGELIST TABLES */
 #changelist table thead th {
@@ -123,13 +113,25 @@ th {
   display: none; }
 
 /* FILTER COLUMN */
-#changelist-filter {
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: 1000;
-  width: 160px;
-  margin: 0; }
+#changelist-filter fieldset {
+  border: 0;
+  display: inline-block;
+  padding: 0 0 10px 10px; }
+  #changelist-filter fieldset.active label, #changelist-filter fieldset.active select {
+    font-weight: bold;
+    color: #333; }
+  #changelist-filter fieldset label {
+    color: #858585;
+    margin-right: 5px;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: block; }
+  #changelist-filter fieldset select {
+    padding: 4px;
+    min-width: 100px;
+    width: 100%;
+    font-size: 13px; }
 
 #changelist-filter h2 {
   font-size: 14px;
@@ -222,9 +224,7 @@ th {
 
 /* ACTIONS */
 .filtered .actions {
-  margin-right: 160px !important;
-  color: #ccc;
-  margin-left: 0.5em; }
+  border-top: 1px solid #eee; }
 
 #changelist table input {
   margin: 0; }
@@ -233,14 +233,9 @@ th {
   background-color: rgba(37, 148, 238, 0.05); }
 
 #changelist .actions {
-  padding: 10px; }
-
-@media only all and (min-width: 1000px) {
-  #changelist #toolbar ~ #changelist-form .actions {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    padding: 3px; } }
+  padding: 10px;
+  display: none;
+  /* default */ }
 
 #changelist .actions.selected {
   background: #fffccf;
