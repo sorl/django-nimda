@@ -1,12 +1,19 @@
 {% load i18n admin_static %}
-{% if results %}
+
 <div class="box-body">
+  {% if result_hidden_fields %}
+    <div>{# DIV for HTML validation #}
+      {% for item in result_hidden_fields %}{{ item }}{% endfor %}
+    </div>
+  {% endif %}
+
   <table id="result_list" class="table table-bordered table-striped">
   <thead>
     <tr>
     {% for header in result_headers %}
-      <th>{{ header.text|capfirst }}</th>
       {% comment %}
+      <th>{{ header.text|capfirst }}</th>
+      {% endcomment %}
       <th scope="col" {{ header.class_attrib }}>
          {% if header.sortable %}
            {% if header.sort_priority > 0 %}
@@ -20,7 +27,7 @@
          <div class="text">{% if header.sortable %}<a href="{{ header.url_primary }}">{{ header.text|capfirst }}</a>{% else %}<span>{{ header.text|capfirst }}</span>{% endif %}</div>
          <div class="clear"></div>
       </th>
-      {% endcomment %}
+
       {% endfor %}
     </tr>
     </thead>
@@ -34,12 +41,13 @@
     </tbody>
   </table>
 </div>
+{% comment %}
 <script>
   $(function () {
     $('#result_list').DataTable();
   });
 </script>
-{% endif %}
+{% endcomment %}
 
 {% comment %}
 {% if result_hidden_fields %}
