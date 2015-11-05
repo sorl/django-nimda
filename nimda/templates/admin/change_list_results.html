@@ -1,7 +1,7 @@
 {% load i18n admin_static %}
 
 {% if result_hidden_fields %}
-  <div>{# DIV for HTML validation #}
+  <div>
     {% for item in result_hidden_fields %}{{ item }}{% endfor %}
   </div>
 {% endif %}
