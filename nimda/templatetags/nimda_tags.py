@@ -1,7 +1,6 @@
 import random
 from django import template
 from nimda.base import NimdaException
-from django.core.urlresolvers import reverse
 from django.apps import apps
 
 register = template.Library()
@@ -35,7 +34,6 @@ def model_summary(context):
                 cidx = j % len(colors)
                 M = apps.get_model(app['app_label'], m['object_name'])
                 models.append({
-                    'label': app['app_label'][0].upper(),
                     'name': m['name'],
                     'count': M._default_manager.all().count(),
                     'color': colors[cidx],
