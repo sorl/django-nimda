@@ -5,6 +5,12 @@
   background-color: #dd4b39 !important;
 }
 
+.select2-selection--multiple .select2-dropdown .select2-search__field:focus,
+.select2-selection--multiple .select2-search--inline .select2-search__field:focus {
+  outline: none;
+  border: none;
+}
+
 /* action cols */
 table thead th.action-checkbox-column {
   width: 1.5em;

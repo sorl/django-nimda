@@ -85,10 +85,32 @@
 
   {% prepopulated_fields_js %}
   <script>
+    // remove ugly : on labels
+    $('label').replaceWith(function() {
+      var self = $(this)
+      if(!self.children().length) {
+        var s = self.text().replace(':', '')
+        return self.text(s)
+      }
+      return this.innerHTML
+    })
+    // add required form-control
     $('input[type=text]').addClass('form-control')
     $('input[type=password]').addClass('form-control')
+    $('input[type=email]').addClass('form-control')
     $('textarea').addClass('form-control')
-    $('select').addClass('form-control')
+    // use select2 eve
+    $('select').addClass('form-control').each(function(){
+      var self = $(this)
+      if (self.prop('multiple')) {
+        // Select % is in translations, use that
+        var placeholder = self.closest('div.form-group').find('label').text().replace(':', '')
+        placeholder = '{% blocktrans %}Select {{ n00p }}{% endblocktrans %}' + placeholder.toLowerCase()
+        self.select2({'placeholder': placeholder})     
+      } else {
+        self.select2()
+      }
+    })
   </script>
 
   {% block admin_change_form_document_ready %}
