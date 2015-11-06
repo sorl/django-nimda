@@ -1,29 +1,62 @@
-<fieldset class="module aligned {{ fieldset.classes }}">
-    {% if fieldset.name %}<h2>{{ fieldset.name }}</h2>{% endif %}
-    {% if fieldset.description %}
-        <div class="description">{{ fieldset.description|safe }}</div>
-    {% endif %}
+
+<div class="box">
+
+  {% if fieldset.name %}
+    <div class="box-header with-border">
+      <h3 class="box-title">{{ fieldset.name }}</h3>
+    </div>
+  {% endif %}
+
+  {% if fieldset.description %}
+    <div class="box-body">
+      {{ fieldset.description|safe }}
+    </div>
+  {% endif %}
+
+  <div class="box-body">
     {% for line in fieldset %}
-        <div class="form-row{% if line.fields|length_is:'1' and line.errors %} errors{% endif %}{% if not line.has_visible_field %} hidden{% endif %}{% for field in line %}{% if field.field.name %} field-{{ field.field.name }}{% endif %}{% endfor %}">
-            {% if line.fields|length_is:'1' %}{{ line.errors }}{% endif %}
-            {% for field in line %}
-                <div{% if not line.fields|length_is:'1' %} class="field-box{% if field.field.name %} field-{{ field.field.name }}{% endif %}{% if not field.is_readonly and field.errors %} errors{% endif %}{% if field.field.is_hidden %} hidden{% endif %}"{% elif field.is_checkbox %} class="checkbox-row"{% endif %}>
-                    {% if not line.fields|length_is:'1' and not field.is_readonly %}{{ field.errors }}{% endif %}
-                    {% if field.is_checkbox %}
-                        {{ field.field }}{{ field.label_tag }}
-                    {% else %}
-                        {{ field.label_tag }}
-                        {% if field.is_readonly %}
-                            <p>{{ field.contents }}</p>
-                        {% else %}
-                            {{ field.field }}
-                        {% endif %}
-                    {% endif %}
-                    {% if field.field.help_text %}
-                        <p class="help">{{ field.field.help_text|safe }}</p>
-                    {% endif %}
+      <div class="form-row{% if line.fields|length_is:'1' and line.errors %} errors{% endif %}{% if not line.has_visible_field %} hidden{% endif %}{% for field in line %}{% if field.field.name %} field-{{ field.field.name }}{% endif %}{% endfor %}">
+
+        {% if line.fields|length_is:'1' %}{{ line.errors }}{% endif %}
+
+        {% for field in line %}
+          {% comment %}
+          <div{% if not line.fields|length_is:'1' %} class="field-box{% if field.field.name %} field-{{ field.field.name }}{% endif %}{% if not field.is_readonly and field.errors %} errors{% endif %}{% if field.field.is_hidden %} hidden{% endif %}"{% elif field.is_checkbox %} class="checkbox-row"{% endif %}>
+            {% if not line.fields|length_is:'1' and not field.is_readonly %}{{ field.errors }}{% endif %}
+          {% endcomment %}
+          <div class="col-md-6">
+            {% if field.is_checkbox %}
+              <div class="checkbox">
+                <label>
+                  {{ field.field }} {{ field.field.label }}
+                </label>
+              </div>
+            {% else %}
+              {% if field.is_readonly %}
+                <div class="form-group">
+                  {{ field.label_tag }}
+                  <p>{{ field.contents }}</p>
                 </div>
-            {% endfor %}
-        </div>
-    {% endfor %}
-</fieldset>
+              {% else %}
+                <div class="form-group">
+                  {{ field.label_tag }}
+                  {{ field.field }}
+                </div>
+              {% endif %}
+            {% endif %}
+
+            {% if field.field.help_text %}
+              <p class="help-block">{{ field.field.help_text|safe }}</p>
+            {% endif %}
+          </div>
+          {% comment %}
+          </div>
+          {% endcomment %}
+        {% endfor %}
+
+      </div>
+  {% endfor %}
+  </div>
+
+</div>
+{# end box #}

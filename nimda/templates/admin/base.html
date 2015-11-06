@@ -76,6 +76,7 @@ desired effect
 <div class="wrapper">
 
   <!-- Main Header -->
+  {% if not is_popup %}
   <header class="main-header">
 
     <!-- Logo -->
@@ -256,6 +257,7 @@ desired effect
     </nav>
   </header>
   <!-- Left side column. contains the logo and sidebar -->
+
   <aside class="main-sidebar">
 
     <!-- sidebar: style can be found in sidebar.less -->
@@ -290,54 +292,59 @@ desired effect
 {% endcomment %}
 
       {% block sidebar_menu %}
-      {% sidebar_menu %}
-      <script src="{% static "admin/js/path.js" %}"></script>
-      <script>$('ul.sidebar-menu a:path').parent().addClass('active')</script>
+        {% sidebar_menu %}
+        <script src="{% static "admin/js/path.js" %}"></script>
+        <script>$('ul.sidebar-menu a:path').parent().addClass('active')</script>
       {% endblock %}
 
     </section>
     <!-- /.sidebar -->
   </aside>
+  {% endif %}
+
 
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <h1>
-        {% block content_title %}{% if title %}{{ title }}{% endif %}{% endblock %}
-        {% block pretitle %}{% endblock %}
-      </h1>
+  <div class="content-wrapper"{% if is_popup %} style="margin-left:0"{% endif %}>
+    {% if not is_popup %}
+      <section class="content-header">
+        <h1>
+          {% block content_title %}{% if title %}{{ title }}{% endif %}{% endblock %}
+          {% block pretitle %}{% endblock %}
+        </h1>
 
-
-      {% block breadcrumbs %}
-      <ol class="breadcrumb">
-        <li><a href="{% url 'admin:index' %}"><i class="fa fa-dashboard"></i> {% trans 'Home' %}</a></li>
-        <li class="active">{{ title }}</li>
-      </ol>
-      {% endblock %}
-
-    </section>
-
-    {% block messages %}
-    {% if messages %}
-      {# danger, warning, info, success #}
-      <div class="pad margin no-print">
-        {% for message in messages %}
-          <div class="callout{% if message.tags %} callout-{{ message.tags }}{% endif %}" style="margin-bottom: 0!important;">
-            {{ message|capfirst }}
-          </div>
-        {% endfor %}
-      </div>
+        {% block breadcrumbs %}
+          <ol class="breadcrumb">
+            <li><a href="{% url 'admin:index' %}"><i class="fa fa-dashboard"></i> {% trans 'Home' %}</a></li>
+            <li class="active">{{ title }}</li>
+          </ol>
+        {% endblock %}
+        
+      </section>
     {% endif %}
-    {% endblock messages %}
 
     <!-- Main content -->
     <section class="content">
-        {% block content %}
+
+      {% block messages %}
+      {% if messages %}
+        {# danger, warning, info, success #}
+        <div>
+          {% for message in messages %}
+            <div class="flat alert{% if message.tags %} alert-{{ message.tags }}{% endif %} alert-dismissible">
+              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+              {{ message|capfirst }}
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+      {% endblock messages %}
+
+      {% block content %}
         {% block object-tools %}{% endblock %}
-        {{ content }}
+          {{ content }}
         {% endblock %}
-        {% block sidebar %}{% endblock %}
+      {% block sidebar %}{% endblock %}
+
     </section>
     <!-- /.content -->
   </div>
