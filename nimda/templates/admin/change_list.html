@@ -32,7 +32,7 @@
     {% if has_add_permission %}
       {% block object-tools-items %}
         {% url cl.opts|admin_urlname:'add' as add_url %}
-        <a style="margin-left:10px"href="{% add_preserved_filters add_url is_popup to_field %}" class="btn btn-flat btn-primary btn-sm">+ {% blocktrans with cl.opts.verbose_name as name %}Add {{ name }}{% endblocktrans %}</a>
+        <a style="margin-left:10px"href="{% add_preserved_filters add_url is_popup to_field %}" class="btn btn-flat btn-primary btn-sm">+ {% trans 'Add' %}</a>
       {% endblock %}
     {% endif %}
   {% endblock %}
