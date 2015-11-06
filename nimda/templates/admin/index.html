@@ -1,5 +1,5 @@
 {% extends "admin/base_site.html" %}
-{% load i18n admin_static %}
+{% load i18n admin_static nimda_tags %}
 
 {% block breadcrumbs %}
   <ol class="breadcrumb">
@@ -8,6 +8,7 @@
 {% endblock %}
 
 {% block content %}
+  {% model_summary %}
 {% endblock %}
 
 {% block sidebar %}
