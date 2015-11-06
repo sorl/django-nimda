@@ -2,10 +2,10 @@
 
 {% if cl.search_fields %}
 <form action="" method="get" style="margin-bottom: 5px">
-	<div class="input-group">
-   	<input class="form-control" type="text" name="{{ search_var }}" value="{{ cl.query }}">
+	<div class="input-group input-group-sm">
+   	<input class="form-control" type="text" name="{{ search_var }}" value="{{ cl.query }}" placeholder="{% trans 'Search' %}">
 		<span class="input-group-btn">
-    	<button type="submit" class="btn btn-flat btn-primary"><i class="fa fa-search"></i></button>
+    	<button type="submit" class="btn btn-flat btn-default"><i class="fa fa-search"></i></button>
      </span>
 		{% for pair in cl.params.items %}
 		    {% ifnotequal pair.0 search_var %}<input type="hidden" name="{{ pair.0 }}" value="{{ pair.1 }}"/>{% endifnotequal %}

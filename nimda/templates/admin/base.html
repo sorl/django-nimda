@@ -12,10 +12,6 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-  <!-- DataTables -->
-  <link rel="stylesheet" href="{% static "admin/plugins/datatables/dataTables.bootstrap.css" %}">
-  <!-- Select2 -->
-  <link rel="stylesheet" href="{% static "admin/plugins/select2/select2.min.css" %}">
   <!-- Theme style -->
   <link rel="stylesheet" href="{% static "admin/css/AdminLTE.min.css" %}">
   <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
@@ -31,13 +27,8 @@
   <script src="{% static "admin/plugins/jQuery/jQuery-2.1.4.min.js" %}"></script>
   <!-- Bootstrap 3.3.5 -->
   <script src="{% static "admin/bootstrap/js/bootstrap.min.js" %}"></script>
-  <!-- Select2 -->
-  <script src="{% static "admin/plugins/select2/select2.full.min.js" %}"></script>
   <!-- AdminLTE App -->
   <script src="{% static "admin/js/app.min.js" %}"></script>
-  <!-- DataTables -->
-  <script src="{% static "admin/plugins/datatables/jquery.dataTables.min.js" %}"></script>
-  <script src="{% static "admin/plugins/datatables/dataTables.bootstrap.min.js" %}"></script>
   <!-- Optionally, you can add Slimscroll and FastClick plugins.
        Both of these plugins are recommended to enhance the
        user experience. Slimscroll is required when using the
@@ -332,7 +323,7 @@ desired effect
       {# danger, warning, info, success #}
       <div class="pad margin no-print">
         {% for message in messages %}
-          <div class="callout{% if message.tags %} callout-{% if message.tags == "error" %}danger{% else %}{{ message.tags }}{% endif %}{% endif %}" style="margin-bottom: 0!important;">
+          <div class="callout{% if message.tags %} callout-{{ message.tags }}{% endif %}" style="margin-bottom: 0!important;">
             {{ message|capfirst }}
           </div>
         {% endfor %}
