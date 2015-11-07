@@ -76,9 +76,12 @@ function dismissAddRelatedObjectPopup(win, newId, newRepr) {
     if (elem) {
         var elemName = elem.nodeName.toUpperCase();
         if (elemName == 'SELECT') {
+            // select2 hacked
+            $(elem).select2('destroy')
             o = new Option(newRepr, newId);
             elem.options[elem.options.length] = o;
             o.selected = true;
+            $(elem).select2()
         } else if (elemName == 'INPUT') {
             if (elem.className.indexOf('vManyToManyRawIdAdminField') != -1 && elem.value) {
                 elem.value += ',' + newId;
@@ -103,6 +106,8 @@ function dismissChangeRelatedObjectPopup(win, objId, newRepr, newId) {
     var id = windowname_to_id(win.name).replace(/^edit_/, '');
     var selectsSelector = interpolate('#%s, #%s_from, #%s_to', [id, id, id]);
     var selects = django.jQuery(selectsSelector);
+    // select2 hacked
+    $(selects).select2('destroy')
     selects.find('option').each(function() {
         if (this.value == objId) {
             this.innerHTML = newRepr;
@@ -110,6 +115,7 @@ function dismissChangeRelatedObjectPopup(win, objId, newRepr, newId) {
         }
     });
     win.close();
+    $(selects).select2()
 };
 
 function dismissDeleteRelatedObjectPopup(win, objId) {
@@ -117,12 +123,15 @@ function dismissDeleteRelatedObjectPopup(win, objId) {
     var id = windowname_to_id(win.name).replace(/^delete_/, '');
     var selectsSelector = interpolate('#%s, #%s_from, #%s_to', [id, id, id]);
     var selects = django.jQuery(selectsSelector);
+    // select2 hacked
+    $(selects).select2('destroy')
     selects.find('option').each(function() {
         if (this.value == objId) {
             django.jQuery(this).remove();
         }
     }).trigger('change');
     win.close();
+    $(selects).select2()
 };
 
 // Kept for backward compatibility

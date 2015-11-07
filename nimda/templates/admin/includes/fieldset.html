@@ -15,46 +15,44 @@
 
   <div class="box-body">
     {% for line in fieldset %}
-      <div class="form-row{% if line.fields|length_is:'1' and line.errors %} errors{% endif %}{% if not line.has_visible_field %} hidden{% endif %}{% for field in line %}{% if field.field.name %} field-{{ field.field.name }}{% endif %}{% endfor %}">
 
-        {% if line.fields|length_is:'1' %}{{ line.errors }}{% endif %}
+      {% if line.fields|length_is:'1' %}{{ line.errors }}{% endif %}
 
-        {% for field in line %}
-          {% comment %}
-          <div{% if not line.fields|length_is:'1' %} class="field-box{% if field.field.name %} field-{{ field.field.name }}{% endif %}{% if not field.is_readonly and field.errors %} errors{% endif %}{% if field.field.is_hidden %} hidden{% endif %}"{% elif field.is_checkbox %} class="checkbox-row"{% endif %}>
-            {% if not line.fields|length_is:'1' and not field.is_readonly %}{{ field.errors }}{% endif %}
-          {% endcomment %}
-          <div class="col-md-6">
-            {% if field.is_checkbox %}
-              <div class="checkbox">
-                <label>
-                  {{ field.field }} {{ field.field.label }}
-                </label>
+      {% for field in line %}
+        {% comment %}
+        <div{% if not line.fields|length_is:'1' %} class="field-box{% if field.field.name %} field-{{ field.field.name }}{% endif %}{% if not field.is_readonly and field.errors %} errors{% endif %}{% if field.field.is_hidden %} hidden{% endif %}"{% elif field.is_checkbox %} class="checkbox-row"{% endif %}>
+          {% if not line.fields|length_is:'1' and not field.is_readonly %}{{ field.errors }}{% endif %}
+        {% endcomment %}
+        <div class="col-md-6">
+          {% if field.is_checkbox %}
+            <div class="checkbox">
+              <label>
+                {{ field.field }} {{ field.field.label }}
+              </label>
+            </div>
+          {% else %}
+            {% if field.is_readonly %}
+              <div class="form-group">
+                {{ field.label_tag }}
+                <div>{{ field.contents }}</div>
               </div>
             {% else %}
-              {% if field.is_readonly %}
-                <div class="form-group">
-                  {{ field.label_tag }}
-                  <div>{{ field.contents }}</div>
-                </div>
-              {% else %}
-                <div class="form-group">
-                  {{ field.label_tag }}
-                  {{ field.field }}
-                </div>
-              {% endif %}
+              <div class="form-group">
+                {{ field.label_tag }}
+                {{ field.field }}
+              </div>
             {% endif %}
+          {% endif %}
 
-            {% if field.field.help_text %}
-              <p class="help-block">{{ field.field.help_text|safe }}</p>
-            {% endif %}
-          </div>
-          {% comment %}
-          </div>
-          {% endcomment %}
-        {% endfor %}
+          {% if field.field.help_text %}
+            <p class="help-block">{{ field.field.help_text|safe }}</p>
+          {% endif %}
+        </div>
+        {% comment %}
+        </div>
+        {% endcomment %}
+      {% endfor %}
 
-      </div>
   {% endfor %}
   </div>
 

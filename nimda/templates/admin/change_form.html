@@ -86,51 +86,100 @@
   {% prepopulated_fields_js %}
   <script>
     // remove ugly : on labels
-    $('label').replaceWith(function() {
+    $('label').each(function() {
       var self = $(this)
       if(!self.children().length) {
         var s = self.text().replace(':', '')
-        return self.text(s)
+        self.replaceWith(self.text(s))
       }
-      return this.innerHTML
     })
     // add required form-control
     $('input[type=text]').addClass('form-control')
     $('input[type=password]').addClass('form-control')
     $('input[type=email]').addClass('form-control')
     $('textarea').addClass('form-control')
-    // use select2 eve
+
+
+    ;(function(){
+      // lets find those add change relations and move them
+      // we need to do this before select2 because select2
+      function moveLink(name, icon) {
+        $('.related-widget-wrapper-link.' + name + '-related').each(function() {
+          var label = $(this).parent('div').siblings('label')
+          var el = $(this).detach()
+          el.find('img').replaceWith('<i class="fa fa-' + icon + '">')
+          el.addClass('pull-right')
+          el.css('margin-left', '7px')
+          label.after(el)
+        })
+      }
+      moveLink('delete', 'remove')
+      moveLink('change', 'pencil')
+      moveLink('add', 'plus')
+    }())
+
+
+    ;(function() {
+      function updateLinks() {
+        var self = $(this);
+        var siblings = self.parent().prevAll('.change-related', '.delete-related')
+        var value = self.val()
+        if (value) {
+          siblings.each(function() {
+            var el = $(this)
+            el.attr('href', el.attr('data-href-template').replace('__fk__', value))
+          })
+        } else {
+          siblings.removeAttr('href')
+        }
+      }
+      var content = $('section.content')
+      content.on('change', '.related-widget-wrapper select', updateLinks)
+      content.find('.related-widget-wrapper select').each(updateLinks)
+      content.on('click', '.related-widget-wrapper-link', function(e) {
+        if (this.href) {
+          showRelatedObjectPopup(this)
+        }
+        e.preventDefault()
+      })
+    }())
+
+    //use select2
+    //TODO for some reason select2 breaks editiing adding related objects
     $('select').addClass('form-control').each(function(){
       var self = $(this)
       if (self.prop('multiple')) {
+        // remove help text for multiselects
+        var mhelp = '{% trans 'Hold down "Control", or "Command" on a Mac, to select more than one.' %}'
+        var phelp = self.parents('div').siblings('p.help-block')
+        var s = phelp.text().replace(mhelp, '').trim()
+        phelp.replaceWith(phelp.text(s))
         // Select % is in translations, use that
-        var placeholder = self.closest('div.form-group').find('label').text().replace(':', '')
+        var placeholder = self.closest('div.form-group').find('label').text()
         placeholder = '{% blocktrans %}Select {{ n00p }}{% endblocktrans %}' + placeholder.toLowerCase()
         self.select2({'placeholder': placeholder})     
       } else {
         self.select2()
       }
     })
+
+    $('.add-another').click(function(e) {
+      e.preventDefault()
+      showAddAnotherPopup(this)
+    })
+    $('.related-lookup').click(function(e) {
+      e.preventDefault()
+      showRelatedObjectLookupPopup(this)
+    })
+
+    {% if adminform and add %}
+      $('form#{{ opts.model_name }}_form :input:visible:enabled:first').focus()
+    {% endif %}
+    
   </script>
 
   {% block admin_change_form_document_ready %}
-    <script>
-      (function($) {
-        $(document).ready(function() {
-          $('.add-another').click(function(e) {
-            e.preventDefault()
-            showAddAnotherPopup(this)
-          })
-          $('.related-lookup').click(function(e) {
-            e.preventDefault()
-            showRelatedObjectLookupPopup(this)
-          })
-        {% if adminform and add %}
-          $('form#{{ opts.model_name }}_form :input:visible:enabled:first').focus()
-        {% endif %}
-        })
-      })(django.jQuery)
-    </script>
+
   {% endblock %}
 
 {% endblock %}
