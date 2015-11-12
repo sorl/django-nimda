@@ -12,20 +12,23 @@ register = template.Library()
 
 @register.filter
 def label_tag(field):
-    contents = field.field.label
-    widget = field.field.field.widget
-    id_ = widget.attrs.get('id') or field.field.auto_id
-    if id_:
-        attrs = {}
-        id_for_label = widget.id_for_label(id_)
-        if id_for_label:
-            attrs['for'] = id_for_label
-        if field.field.field.required:
-            attrs['class'] = 'required'
-        attrs = flatatt(attrs)
-        contents = format_html('<label{}>{}</label>', attrs, contents)
+    if 'label' in field.field:
+        contents = format_html('<label>{}</label>', field.field['label'])
     else:
-        contents = conditional_escape(contents)
+        contents = field.field.label
+        widget = field.field.field.widget
+        id_ = widget.attrs.get('id') or field.field.auto_id
+        if id_:
+            attrs = {}
+            id_for_label = widget.id_for_label(id_)
+            if id_for_label:
+                attrs['for'] = id_for_label
+            if field.field.field.required:
+                attrs['class'] = 'required'
+            attrs = flatatt(attrs)
+            contents = format_html('<label{}>{}</label>', attrs, contents)
+        else:
+            contents = conditional_escape(contents)
     return mark_safe(contents)
 
 
