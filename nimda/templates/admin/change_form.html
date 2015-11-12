@@ -85,21 +85,6 @@
 
   {% prepopulated_fields_js %}
   <script>
-    // remove ugly : on labels
-    $('label').each(function() {
-      var self = $(this)
-      if(!self.children().length) {
-        var s = self.text().replace(':', '')
-        self.replaceWith(self.text(s))
-      }
-    })
-    // add required form-control
-    $('input[type=text]').addClass('form-control')
-    $('input[type=password]').addClass('form-control')
-    $('input[type=email]').addClass('form-control')
-    $('textarea').addClass('form-control')
-
-
     ;(function(){
       // lets find those add change relations and move them
       // we need to do this before select2 because select2
