@@ -85,24 +85,6 @@
 
   {% prepopulated_fields_js %}
   <script>
-    // ;(function(){
-    //   // lets find those add change relations and move them
-    //   function moveLink(name, icon) {
-    //     $('.related-widget-wrapper-link.' + name + '-related').each(function() {
-    //       var label = $(this).parent('div').siblings('label')
-    //       var el = $(this).detach()
-    //       el.find('img').replaceWith('<i class="fa fa-' + icon + '">')
-    //       el.addClass('pull-right')
-    //       el.css('margin-left', '7px')
-    //       label.after(el)
-    //     })
-    //   }
-    //   moveLink('delete', 'remove')
-    //   moveLink('change', 'pencil')
-    //   moveLink('add', 'plus')
-    // }())
-
-
     ;(function() {
       function updateLinks() {
         var self = $(this);
