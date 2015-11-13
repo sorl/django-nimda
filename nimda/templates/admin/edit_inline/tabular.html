@@ -61,22 +61,22 @@
                   {% endfor %}
                 {% endfor %}
               </td>
-                {% for fieldset in inline_admin_form %}
-                  {% for line in fieldset %}
-                    {% for field in line %}
-                      {% if not field.field.is_hidden %}
-                        <td{% if field.field.name %} class="field-{{ field.field.name }}"{% endif %}>
-                          {% if field.is_readonly %}
-                            <p>{{ field.contents }}</p>
-                          {% else %}
-                            {{ field.field.errors.as_ul }}
-                            {{ field.field|add_classes }}
-                          {% endif %}
-                        </td>
-                      {% endif %}
-                    {% endfor %}
+              {% for fieldset in inline_admin_form %}
+                {% for line in fieldset %}
+                  {% for field in line %}
+                    {% if not field.field.is_hidden %}
+                      <td{% if field.field.name %} class="field-{{ field.field.name }}"{% endif %}>
+                        {% if field.is_readonly %}
+                          <p>{{ field.contents }}</p>
+                        {% else %}
+                          {{ field.field.errors.as_ul }}
+                          {{ field.field|add_classes }}
+                        {% endif %}
+                      </td>
+                    {% endif %}
                   {% endfor %}
                 {% endfor %}
+              {% endfor %}
               {% if inline_admin_formset.formset.can_delete %}
                 <td class="delete">
                   {% if inline_admin_form.original %}
@@ -93,6 +93,7 @@
   </div>
 </div>
 {% endspaceless %}
+
 <script type="text/javascript">
   (function() {
     $("#{{ inline_admin_formset.formset.prefix }}-group .tabular.inline-related tbody tr").tabularFormset({

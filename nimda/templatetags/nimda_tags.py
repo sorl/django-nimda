@@ -49,6 +49,7 @@ def add_classes(field):
 
     rmthis = str(_('Hold down "Control", or "Command" on a Mac, to select more than one.'))
     field.help_text = str(field.help_text).replace(rmthis, '')
+    css_classes.append('select2')
     if isinstance(field.field.widget, RelatedFieldWidgetWrapper):
         # make that ugly filter go away
         if isinstance(field.field.widget.widget, FilteredSelectMultiple):

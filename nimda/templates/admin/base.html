@@ -56,7 +56,7 @@
   {% block extrahead %}{% endblock %}
   {% block blockbots %}<meta name="robots" content="NONE,NOARCHIVE">{% endblock %}
 </head>
-<!--
+{% comment %}
 BODY TAG OPTIONS:
 =================
 Apply one or more of the following classes to get the
@@ -75,7 +75,7 @@ desired effect
 |               | sidebar-collapse                        |
 |               | sidebar-mini                            |
 |---------------------------------------------------------|
--->
+{% endcomment %}
 <body class="{% if is_popup %}popup {% endif %}{% block bodyclass %}hold-transition skin-black sidebar-mini{% endblock %}">
 <div class="wrapper">
 
@@ -445,6 +445,7 @@ desired effect
   <div class="control-sidebar-bg"></div>
 </div>
 {% endcomment %}
+</div>
 <!-- ./wrapper -->
 
 </body>
