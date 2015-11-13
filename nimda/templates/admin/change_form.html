@@ -85,23 +85,22 @@
 
   {% prepopulated_fields_js %}
   <script>
-    ;(function(){
-      // lets find those add change relations and move them
-      // we need to do this before select2 because select2
-      function moveLink(name, icon) {
-        $('.related-widget-wrapper-link.' + name + '-related').each(function() {
-          var label = $(this).parent('div').siblings('label')
-          var el = $(this).detach()
-          el.find('img').replaceWith('<i class="fa fa-' + icon + '">')
-          el.addClass('pull-right')
-          el.css('margin-left', '7px')
-          label.after(el)
-        })
-      }
-      moveLink('delete', 'remove')
-      moveLink('change', 'pencil')
-      moveLink('add', 'plus')
-    }())
+    // ;(function(){
+    //   // lets find those add change relations and move them
+    //   function moveLink(name, icon) {
+    //     $('.related-widget-wrapper-link.' + name + '-related').each(function() {
+    //       var label = $(this).parent('div').siblings('label')
+    //       var el = $(this).detach()
+    //       el.find('img').replaceWith('<i class="fa fa-' + icon + '">')
+    //       el.addClass('pull-right')
+    //       el.css('margin-left', '7px')
+    //       label.after(el)
+    //     })
+    //   }
+    //   moveLink('delete', 'remove')
+    //   moveLink('change', 'pencil')
+    //   moveLink('add', 'plus')
+    // }())
 
 
     ;(function() {
@@ -129,25 +128,6 @@
       })
     }())
 
-    //use select2
-    //TODO for some reason select2 breaks editiing adding related objects
-    $('select').addClass('form-control').each(function(){
-      var self = $(this)
-      if (self.prop('multiple')) {
-        // remove help text for multiselects
-        var mhelp = '{% trans 'Hold down "Control", or "Command" on a Mac, to select more than one.' %}'
-        var phelp = self.parents('div').siblings('p.help-block')
-        var s = phelp.text().replace(mhelp, '').trim()
-        phelp.replaceWith(phelp.text(s))
-        // Select % is in translations, use that
-        var placeholder = self.closest('div.form-group').find('label').text()
-        placeholder = '{% blocktrans %}Select {{ n00p }}{% endblocktrans %}' + placeholder.toLowerCase()
-        self.select2({'placeholder': placeholder})     
-      } else {
-        self.select2()
-      }
-    })
-
     $('.add-another').click(function(e) {
       e.preventDefault()
       showAddAnotherPopup(this)
@@ -160,7 +140,7 @@
     {% if adminform and add %}
       $('form#{{ opts.model_name }}_form :input:visible:enabled:first').focus()
     {% endif %}
-    
+
   </script>
 
   {% block admin_change_form_document_ready %}

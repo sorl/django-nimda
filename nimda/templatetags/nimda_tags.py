@@ -5,6 +5,9 @@ from django.apps import apps
 from django.utils.html import conditional_escape, format_html
 from django.forms.utils import flatatt
 from django.utils.safestring import mark_safe
+from django.contrib.admin.widgets import RelatedFieldWidgetWrapper, FilteredSelectMultiple
+from django.forms import Select, SelectMultiple
+from django.utils.translation import ugettext as _
 
 
 register = template.Library()
@@ -13,6 +16,7 @@ register = template.Library()
 @register.filter
 def label_tag(field):
     if 'label' in field.field:
+        # read only field
         contents = format_html('<label>{}</label>', field.field['label'])
     else:
         contents = field.field.label
@@ -20,11 +24,13 @@ def label_tag(field):
         id_ = widget.attrs.get('id') or field.field.auto_id
         if id_:
             attrs = {}
+            css_classes = []
             id_for_label = widget.id_for_label(id_)
             if id_for_label:
                 attrs['for'] = id_for_label
             if field.field.field.required:
-                attrs['class'] = 'required'
+                css_classes.append('required')
+            attrs['class'] = ' '.join(css_classes)
             attrs = flatatt(attrs)
             contents = format_html('<label{}>{}</label>', attrs, contents)
         else:
@@ -33,12 +39,26 @@ def label_tag(field):
 
 
 @register.filter
-def add_class(field, class_name):
-    css_classes = field.field.widget.attrs.get('class', '')
-    if css_classes.find(class_name) == -1:
-        css_classes += " %s" % class_name
-    field.field.widget.attrs['class'] = css_classes
-    return field
+def add_classes(field):
+    classes_str = field.field.widget.attrs.get('class', '')
+    css_classes = [c.strip() for c in classes_str.split(' ')]
+    css_classes.append('form-control')
+    field.field.widget.attrs['class'] = ' '.join(css_classes)
+    if not isinstance(field.field.widget, (Select, SelectMultiple, RelatedFieldWidgetWrapper)):
+        return field
+
+    rmthis = str(_('Hold down "Control", or "Command" on a Mac, to select more than one.'))
+    field.help_text = str(field.help_text).replace(rmthis, '')
+    if isinstance(field.field.widget, RelatedFieldWidgetWrapper):
+        # make that ugly filter go away
+        if isinstance(field.field.widget.widget, FilteredSelectMultiple):
+            field.field.widget.widget = SelectMultiple()
+        field.field.widget.widget.attrs['class'] = ' '.join(css_classes)
+        id_ = field.field.widget.widget.attrs.get('id') or field.auto_id
+    else:
+        id_ = field.field.widget.attrs.get('id') or field.auto_id
+    placeholder = _('Select %s') % str(field.label).lower()
+    return mark_safe('%s<script>$("#%s").select2({"placeholder": "%s"})</script>' % (field, id_, placeholder))
 
 
 @register.inclusion_tag('admin/includes/sidebar_menu.html', takes_context=True)
