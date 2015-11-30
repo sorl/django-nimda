@@ -20,7 +20,7 @@
       {{ line.errors }}
 
       {% for field in line %}
-        <div class="col-md-6">
+        <div class="col-md-{% if field.field.field.widget.is_wide %}12{% else %}6{% endif %}">
           {% if field.is_checkbox %}
             <div class="checkbox">
               <label>

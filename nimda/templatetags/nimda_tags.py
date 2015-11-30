@@ -40,8 +40,7 @@ def label_tag(field):
 
 @register.filter
 def add_classes(field):
-    classes_str = field.field.widget.attrs.get('class', '')
-    css_classes = [c.strip() for c in classes_str.split(' ')]
+    css_classes = field.field.widget.attrs.get('class', '').split(' ')
     css_classes.append('form-control')
     field.field.widget.attrs['class'] = ' '.join(css_classes)
     if not isinstance(field.field.widget, (Select, SelectMultiple, RelatedFieldWidgetWrapper)):
@@ -60,6 +59,16 @@ def add_classes(field):
         id_ = field.field.widget.attrs.get('id') or field.auto_id
     placeholder = _('Select %s') % str(field.label).lower()
     return mark_safe('%s<script>$("#%s").select2({"placeholder": "%s"})</script>' % (field, id_, placeholder))
+
+
+@register.filter
+def inline_td_classes(field):
+    import pdb;pdb.set_trace()
+    css_classes = field.field.widget.attrs.get('class', '').split(' ')
+    css_classes.append(field.field.widget.attrs.get('type', ''))
+    if field.name:
+        css_classes.append(field.name)
+    return ' '.join(css_classes)
 
 
 @register.inclusion_tag('admin/includes/sidebar_menu.html', takes_context=True)

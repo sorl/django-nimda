@@ -2,6 +2,20 @@
   margin-left: 7px;
 }
 
+.table .original {
+  padding:0;
+}
+
+.inline-related .vIntegerField,
+.inline-related input[type=number] {
+  width: 7em;
+}
+
+.inline-related .delete {
+  width: 1em;
+}
+
+
 /* make error look the same as danger */
 .callout.callout-error {
   border-color: #c23321;

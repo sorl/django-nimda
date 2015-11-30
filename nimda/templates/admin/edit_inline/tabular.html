@@ -65,7 +65,7 @@
                 {% for line in fieldset %}
                   {% for field in line %}
                     {% if not field.field.is_hidden %}
-                      <td{% if field.field.name %} class="field-{{ field.field.name }}"{% endif %}>
+                      <td class="{{ field.field|inline_td_classes }}">
                         {% if field.is_readonly %}
                           <p>{{ field.contents }}</p>
                         {% else %}
