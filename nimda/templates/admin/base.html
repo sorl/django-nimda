@@ -49,6 +49,7 @@
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
   <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+  {% block extrastyle %}{% endblock %}
   <script>
     window.__admin_media_prefix__ = "{% filter escapejs %}{% static "admin/" %}{% endfilter %}"
     window.__admin_utc_offset__ = "{% filter escapejs %}{% now "Z" %}{% endfilter %}"
