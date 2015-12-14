@@ -150,3 +150,9 @@ body.delete-confirmation {
         }
     }
 }
+
+.errorlist {
+  li {
+    color: $color-destroy;
+  }
+}

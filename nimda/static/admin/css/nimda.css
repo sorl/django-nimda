@@ -187,4 +187,7 @@ body.delete-confirmation form {
       text-decoration: none;
       background-color: #cacaca; }
 
+.errorlist li {
+  color: #e44158; }
+
 /*# sourceMappingURL=nimda.css.map */
