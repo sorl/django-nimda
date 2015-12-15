@@ -28,6 +28,8 @@
   {% endblock %}
 {% endif %}
 
+{% block content_title %}{{ title }}: {{ original|truncatewords:"18" }}{% endblock %}
+
 {% block content %}
   {% if errors %}
     <div>
