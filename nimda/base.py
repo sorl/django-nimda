@@ -1,3 +1,23 @@
+def line_fields(fields):
+    """
+    Makes lines of two fields, basically turns any vector
+    into a 2 columns wide matrix.
+    """
+    lines = []
+    counter = 0
+    while counter < len(fields):
+        try:
+            next_field = fields[counter + 1]
+        except IndexError:
+            line = (fields[counter],)
+            counter = counter + 1
+        else:
+            line = (fields[counter], next_field)
+            counter = counter + 2
+        lines.append(line)
+    return lines
+
+
 class NimdaException(Exception):
     pass
 
