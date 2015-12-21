@@ -46,6 +46,8 @@ def add_classes(field):
     field.field.widget.attrs['class'] = ' '.join(css_classes)
     if not isinstance(field.field.widget, (Select, SelectMultiple, RelatedFieldWidgetWrapper)):
         return field
+    if field.field.widget.no_select2:
+        return field
 
     rmthis = str(_('Hold down "Control", or "Command" on a Mac, to select more than one.'))
     field.help_text = str(field.help_text).replace(rmthis, '')
