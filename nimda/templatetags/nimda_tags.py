@@ -43,12 +43,12 @@ def label_tag(field):
 def add_classes(field):
     css_classes = field.field.widget.attrs.get('class', '').split(' ')
     css_classes.append('form-control')
-    field.field.widget.attrs['class'] = ' '.join(css_classes)
-    if not isinstance(field.field.widget, (Select, SelectMultiple, RelatedFieldWidgetWrapper)):
+    widget = field.field.widget
+    widget.attrs['class'] = ' '.join(css_classes)
+    if not isinstance(widget, (Select, SelectMultiple, RelatedFieldWidgetWrapper)):
         return field
-    if field.field.widget.no_select2:
+    if hasattr(field, 'no_select2') and widget.no_select2:
         return field
-
     rmthis = str(_('Hold down "Control", or "Command" on a Mac, to select more than one.'))
     field.help_text = str(field.help_text).replace(rmthis, '')
     css_classes.append('select2')
@@ -66,7 +66,6 @@ def add_classes(field):
 
 @register.filter
 def inline_td_classes(field):
-    import pdb;pdb.set_trace()
     css_classes = field.field.widget.attrs.get('class', '').split(' ')
     css_classes.append(field.field.widget.attrs.get('type', ''))
     if field.name:
