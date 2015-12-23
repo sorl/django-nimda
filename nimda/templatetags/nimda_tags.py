@@ -61,7 +61,7 @@ def add_classes(field):
     else:
         id_ = field.field.widget.attrs.get('id') or field.auto_id
     placeholder = _('Select %s') % str(field.label).lower()
-    return mark_safe('%s<script>$("#%s").select2({"placeholder": "%s"})</script>' % (field, id_, placeholder))
+    return mark_safe('%s<script>$(function() { $("#%s").select2({"placeholder": "%s"}) });</script>' % (field, id_, placeholder))
 
 
 @register.filter
