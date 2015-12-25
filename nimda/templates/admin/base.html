@@ -27,10 +27,17 @@
 
   <!-- jQuery 2.1.4 -->
   <script src="{% static "admin/plugins/jQuery/jQuery-2.1.4.min.js" %}"></script>
+  <!-- Vue.js -->
+  {% if debug %}
+    <script src="{% static "admin/js/vue.js" %}"></script>
+  {% else %}
+    <script src="{% static "admin/js/vue.min.js" %}"></script>
+  {% endif %}
   <!-- Bootstrap 3.3.5 -->
   <script src="{% static "admin/bootstrap/js/bootstrap.min.js" %}"></script>
   <!-- Select2 -->
   <script src="{% static "admin/plugins/select2/select2.full.min.js" %}"></script>
+  <!-- nimda application -->
   <script src="{% static "admin/js/nimda.js" %}"></script>
   <!-- AdminLTE App -->
   <script src="{% static "admin/js/app.min.js" %}"></script>
