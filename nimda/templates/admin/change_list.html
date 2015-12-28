@@ -66,12 +66,9 @@
             {% search_form cl %}
           {% endblock %}
         </div>
-        {% comment %}
-        {% if action_form and actions_on_top and cl.show_admin_actions %}
-          {% admin_actions %}
-        {% endif %}
-        {% endcomment %}
       </div>
+
+      <form id="changelist-form" method="post"{% if cl.formset.is_multipart %} enctype="multipart/form-data"{% endif %} novalidate>{% csrf_token %}
 
       {% block result_list %}
         <div class="box-body">
@@ -79,19 +76,19 @@
         </div>
       {% endblock %}
 
-      {% comment %}
-      {% if action_form and actions_on_bottom and cl.show_admin_actions %}
+      {% if action_form and actions_on_bottom or actions_on_top and cl.show_admin_actions %}
         <div class="box-body">
           {% admin_actions %}
         </div>
       {% endif %}
-      {% endcomment %}
 
       {% block pagination %}
         <div class="box-footer clearfix">
           {% pagination cl %}
         </div>
       {% endblock %}
+
+      </form>
 
   </div>
 </div>

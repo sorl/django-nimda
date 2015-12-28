@@ -1,24 +1,36 @@
 {% load i18n %}
-<div class="col-xs-6 pull-right">
-  {% for field in action_form %}
-    {% if field.label %}
-      <label>{{ field.label }}
+<div class="col-xs-4 pull-left">
+	<div class="actions">
+    <div class="input-group">
+      {% for field in action_form %}{{ field }}{% endfor %}
+      <span class="input-group-btn">
+        <button type="submit" class="btn btn-info btn-flat" title="{% trans "Run the selected action" %}" name="index" value="{{ action_index|default:0 }}">{% trans "Go" %}</button>
+      </span>
+    </div>
+    {% if actions_selection_counter %}
+      <span class="action-counter" data-actions-icnt="{{ cl.result_list|length }}">{{ selection_note }}</span>
+      {% if cl.result_count != cl.result_list|length %}
+        <span class="all">{{ selection_note_all }}</span>
+        <span class="question">
+            <a href="#" title="{% trans "Click here to select the objects across all pages" %}">{% blocktrans with cl.result_count as total_count %}Select all {{ total_count }} {{ module_name }}{% endblocktrans %}</a>
+        </span>
+        <span class="clear"><a href="#">{% trans "Clear selection" %}</a></span>
+      {% endif %}
     {% endif %}
-    {{ field }}
-    {% if field.label %}
-      </label>
-    {% endif %}
-  {% endfor %}
-  <button type="submit" class="btn btn-default btn-sm" name="index" value="{{ action_index|default:0 }}">{% trans "Go" %}</button>
-  {% if actions_selection_counter %}
-    <script type="text/javascript">var _actions_icnt="{{ cl.result_list|length|default:"0" }}";</script>
-    <span class="action-counter">{{ selection_note }}</span>
-    {% if cl.result_count != cl.result_list|length %}
-    <span class="all">{{ selection_note_all }}</span>
-    <span class="question">
-      <a href="javascript:;" title="{% trans "Click here to select the objects across all pages" %}">{% blocktrans with cl.result_count as total_count %}Select all {{ total_count }} {{ module_name }}{% endblocktrans %}</a>
-    </span>
-    <span class="clear"><a href="javascript:;">{% trans "Clear selection" %}</a></span>
-    {% endif %}
-  {% endif %}
+  </div>
 </div>
+
+<style>
+  .actions .action-counter { display:block;margin-top: 7px }
+  .actions .all { display:block }
+  .actions .question { display:block }
+  .actions .clear { display:block }
+</style>
+
+<script>
+  $('.actions select').addClass('form-control')
+  $('.actions .all').hide()
+  $('.actions .question').hide()
+  $('.actions .clear').hide()
+  $($('.actions select[name=action] option')[0]).text('{% trans 'Action' %}')
+</script>
