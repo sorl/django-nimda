@@ -4,4 +4,4 @@ django-superuser==0.1.0
 Pillow==2.8.1
 psycopg2==2.6
 sqlparse==0.1.14
-wheel==0.24.0
+wheel==0.38.1
